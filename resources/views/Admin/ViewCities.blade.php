@@ -2,7 +2,22 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row">
-            <h3>view cities</h3>
+            <h3>View All Cities</h3>
+        </div>
+
+        <div class="row d-flex justify-content-around">
+            @foreach ($AllCities as $city)
+                <div class="col-md-4 mb-5">
+                    <img src="{{ asset('City/' . $city->city_image) }}" alt="" class="img-fluid shadow rounded">
+                    <p class="mb-0"><i class="fa-solid fa-location-dot"></i> {{ $city->city_name }},
+                        {{ $city->country_name }}</p>
+
+                    <a href="" class="text-decoration-none text-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" class="text-decoration-none text-danger"><i class="fa-solid fa-trash"></i></a>
+
+                </div>
+            @endforeach
+
         </div>
     </div>
 @endsection

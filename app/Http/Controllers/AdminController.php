@@ -14,7 +14,8 @@ class AdminController extends Controller
 
     public function ViewCities()
     {
-        return view('Admin.ViewCities');
+        $AllCities = Cities::all();
+        return view('Admin.ViewCities')->with(compact('AllCities'));
     }
 
     public function addCity()
