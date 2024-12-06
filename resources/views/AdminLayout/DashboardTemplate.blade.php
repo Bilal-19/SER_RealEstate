@@ -162,7 +162,7 @@
 
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
-            Hope Bridge ~ Connecting Lives, Creating Futures
+            Steerling Executive Residential
         </a>
         <ul class="navbar-nav flex-row d-md-none">
             <li class="nav-item text-nowrap">
@@ -205,55 +205,38 @@
                         <ul class="nav flex-column">
                             <li class="nav-item mb-1">
                                 <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3" aria-current="page"
-                                    href="#">
-                                    <i class="fa-solid fa-house"></i>
+                                    href="{{route('Dashboard')}}">
+                                    <i class="fa-solid fa-dashboard"></i>
                                     Dashboard
                                 </a>
                             </li>
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fa-solid fa-tree"></i> Projects
+                                    href="{{route('View.Cities')}}">
+                                    <i class="fa-solid fa-city"></i> View Cities
                                 </a>
                             </li>
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fa-solid fa-handshake"></i>Partners
+                                    href="{{route('Add.City')}}">
+                                    <i class="fa-regular fa-square-plus"></i>Add New City
 
-                                </a>
-                            </li>
-
-                            <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fa-solid fa-hand-holding-dollar"></i>
-                                    Donation
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fa-solid fa-people-group"></i>
-                                    Our Team
-                                </a>
-                            </li>
-
-
-                            <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    News
+                                    href="{{route('View.Appartment')}}">
+                                    <i class="fa-solid fa-building"></i>
+                                    View Appartments
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fa-solid fa-users"></i>
-                                    User Management
+                                    href="{{route('Add.Appartment')}}">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    Add New Appartments
                                 </a>
                             </li>
                         </ul>
