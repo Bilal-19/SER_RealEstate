@@ -2,27 +2,59 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cities;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function Dashboard(){
+    public function Dashboard()
+    {
         return view('Admin.Dashboard');
     }
 
-    public function ViewCities(){
+    public function ViewCities()
+    {
         return view('Admin.ViewCities');
     }
 
-    public function addCity(){
+    public function addCity()
+    {
         return view('Admin.AddNewCity');
     }
 
-    public function viewAppartment(){
+    public function createCityRecord(Request $request)
+    {
+        $request->validate([
+            'cityImage' => 'required',
+            'cityName' => 'required',
+            'countryName' => 'required',
+        ]);
+
+        //
+        $cityTimestampImg = time() . '.' . $request->cityImage->getClientOriginalExtension();
+
+        // Store Image to public folder
+        $request->cityImage->move('City', $cityTimestampImg);
+
+        $cityRecord = new Cities();
+        $cityRecord->city_image = $cityTimestampImg;
+        $cityRecord->city_name = $request['cityName'];
+        $cityRecord->country_name = $request['countryName'];
+        $res = $cityRecord->save();
+
+        if ($res) {
+            return redirect()->back();
+        }
+
+    }
+
+    public function viewAppartment()
+    {
         return view('Admin.ViewAppartments');
     }
 
-    public function addAppartment(){
+    public function addAppartment()
+    {
         return view('Admin.AddAppartments');
     }
 }

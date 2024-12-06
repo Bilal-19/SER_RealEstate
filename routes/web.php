@@ -20,3 +20,6 @@ Route::get("/admin/view/cities", [AdminController::class, 'ViewCities'])->name('
 Route::get("/admin/add/city", [AdminController::class, 'addCity'])->name('Add.City');
 Route::get("/admin/view/appartment", [AdminController::class, 'viewAppartment'])->name('View.Appartment');
 Route::get("/admin/add/appartment", [AdminController::class, 'addAppartment'])->name('Add.Appartment');
+
+
+Route::post("/admin/add/city/record", [AdminController::class, 'createCityRecord'])->name('Create.City.Record');
