@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get("/", [UserController::class, 'index'])->name(name: 'Landing.Page');
+Route::get("/view/appartments", [UserController::class, 'viewAppartments'])->name('View.Appartments');
+Route::get("/view/benefits", [UserController::class, 'viewBenefits'])->name('View.Benefits');
+Route::get("/view/corporate", [UserController::class, 'viewCorporate'])->name('View.Corporate');
+Route::get("/view/about", [UserController::class, 'viewAbout'])->name('View.About');
+Route::get("/view/blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
+Route::get("/view/enquiry/form", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
 
 // Admin Dashboard
 Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Dashboard');

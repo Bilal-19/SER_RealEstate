@@ -1,8 +1,8 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3>View All Cities</h3>
+        <div class="row mt-2">
+            <h3 class="text-center text-uppercase">View All Cities</h3>
         </div>
 
         <div class="row d-flex justify-content-around">
@@ -13,7 +13,7 @@
                         {{ $city->country_name }}</p>
 
                     <a href="" class="text-decoration-none text-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="text-decoration-none text-danger"><i class="fa-solid fa-trash"></i></a>
+                    <a href="" class="text-decoration-none text-danger mx-2"><i class="fa-solid fa-trash"></i></a>
 
                 </div>
             @endforeach

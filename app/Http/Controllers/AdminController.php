@@ -44,6 +44,7 @@ class AdminController extends Controller
         $res = $cityRecord->save();
 
         if ($res) {
+            toastr()->success('New City Added Successfully');
             return redirect()->back();
         }
 

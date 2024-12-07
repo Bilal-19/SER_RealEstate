@@ -1,0 +1,165 @@
+#home-hero-banner-img {
+    background-image: url('../images/hero_banner.webp');
+    background-size: cover;
+    height: 632px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+
+  #mt-20 {
+    margin-top: 200px;
+  }
+
+  .search-container {
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  #form-elements {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+    width: fit-content;
+    padding: 10px;
+  }
+
+  input[type="text"]:focus,
+  input[type="date"]:focus {
+    outline: none;
+  }
+
+  #search-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    width: fit-content;
+  }
+
+  #search-btn:hover {
+    color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .neighbourhood-img {
+    height: 200px;
+    width: 300px;
+  }
+
+  .blog-img {
+    height: 620px;
+    width: 620px;
+    object-fit: cover;
+  }
+
+  #contact-btn {
+    color: white;
+    border: 1px solid white;
+    text-decoration-line: none;
+    padding: 10px;
+  }
+
+  #contact-btn:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #enquiry-btn {
+    background-color: white;
+    color: black;
+    padding: 11px 10px;
+    text-decoration: none;
+  }
+  #enquiry-btn:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .sitemap-link {
+    color: white;
+  }
+
+  .fa-brands {
+    color: white;
+  }
+
+  #footer-color {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Hiding the logo which is appearing on the left side of the sidebae for desktop screen */
+  .hide-img-md {
+    display: none;
+  }
+
+  /* Media Query */
+
+  @media screen and (max-width: 768px) {
+    #home-hero-banner-img {
+      height: 650px;
+    }
+    /* Hiding the logo which is appearing on the center of the navbar for small screen */
+    .hide-img-sm {
+      display: none;
+    }
+
+    .show-img-sm {
+      display: block;
+      margin-right: 100px;
+    }
+
+    .margin-sm-right-20 {
+      margin-right: 20px;
+    }
+
+    #form-elements {
+      flex-direction: column;
+      height: 200px;
+      margin-bottom: 100px;
+    }
+
+    input[type="date"],
+    input[type="text"] {
+      width: 75%;
+    }
+
+    #search-btn {
+      width: 75%;
+    }
+
+    .search-container {
+      height: fit-content;
+    }
+
+    #mt-20 {
+      margin-top: 10px;
+    }
+
+    .favourite-card > .card {
+      height: 300px;
+      width: 300px;
+      margin: 10px;
+    }
+
+    .neighbourhood-card {
+      height: 320px;
+      width: 320px;
+    }
+
+    #enquiry-btn{
+      display: block;
+      width: fit-content;
+      margin-top: 20px;
+    }
+
+  }
