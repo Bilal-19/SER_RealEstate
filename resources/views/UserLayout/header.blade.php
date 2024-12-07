@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Real Estate</title>
-    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,9 +17,10 @@
 <body>
     <div class="container-fluid">
         <div class="row" id="home-hero-banner-img">
-            <div class="col-md-1 d-flex flex-md-column flex-sm-row justify-content-md-around justify-content-sm-between align-items-center" style="background-color: rgba(0,0,0,0.7)">
-                <a class="navbar-brand hide-img-md show-img-sm" href="{{route('Landing.Page')}}">
-                    <img src="{{asset('assets/images/company_logo.jpg')}}" alt="company logo" class="img-fluid">
+            <div class="col-md-1 d-flex flex-md-column flex-sm-row justify-content-md-around justify-content-sm-between align-items-center"
+                style="background-color: rgba(0,0,0,0.7)">
+                <a class="navbar-brand hide-img-md show-img-sm" href="{{ route('Landing.Page') }}">
+                    <img src="{{ asset('assets/images/company_logo.jpg') }}" alt="company logo" class="img-fluid">
                 </a>
                 <a href="#"><i class="fa-brands fa-square-facebook fa-2x margin-sm-right-20"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter fa-2x margin-sm-right-20"></i></a>
@@ -37,27 +38,29 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="{{route('View.Appartments')}}">APPARTMENTS</a>
+                                    <a class="nav-link text-light" aria-current="page"
+                                        href="{{ route('View.Appartments') }}">APPARTMENTS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{route('View.Benefits')}}">BENEFITS</a>
+                                    <a class="nav-link text-light" href="{{ route('View.Benefits') }}">BENEFITS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{route('View.Corporate')}}">CORPORATE</a>
+                                    <a class="nav-link text-light" href="{{ route('View.Corporate') }}">CORPORATE</a>
                                 </li>
                             </ul>
-                            <a class="navbar-brand hide-img-sm" href="{{route('Landing.Page')}}">
-                                <img src="{{asset('assets/images/company_logo.jpg')}}" alt="company logo" class="img-fluid">
+                            <a class="navbar-brand hide-img-sm" href="{{ route('Landing.Page') }}">
+                                <img src="{{ asset('assets/images/company_logo.jpg') }}" alt="company logo"
+                                    class="img-fluid">
                             </a>
                             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{route('View.About')}}">ABOUT</a>
+                                    <a class="nav-link text-light" href="{{ route('View.About') }}">ABOUT</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{route('View.Blogs')}}">BLOG</a>
+                                    <a class="nav-link text-light" href="{{ route('View.Blogs') }}">BLOG</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{route('View.Enquiry.Form')}}">ENQUIRY</a>
+                                    <a class="nav-link text-light" href="{{ route('View.Enquiry.Form') }}">ENQUIRY</a>
                                 </li>
                             </ul>
                         </div>
@@ -76,6 +79,4 @@
                 </div>
             </div>
         </div>
-
-
-
+    </div>
