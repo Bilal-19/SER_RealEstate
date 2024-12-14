@@ -29,6 +29,9 @@ Route::get("/admin/view/cities", [AdminController::class, 'ViewCities'])->name('
 Route::get("/admin/add/city", [AdminController::class, 'addCity'])->name('Add.City');
 Route::get("/admin/view/appartment", [AdminController::class, 'viewAppartment'])->name('View.Appartment');
 Route::get("/admin/add/appartment", [AdminController::class, 'addAppartment'])->name('Add.Appartment');
+Route::get("/admin/favourite/appartment", [AdminController::class, 'favouriteApartments'])->name('Favourite.Apartment');
+Route::get("/admin/add/favourite/appartment", [AdminController::class, 'addFavouriteApartment'])->name('Add.Favourite.Apartment');
+Route::post("/admin/create/favourite/appartment", [AdminController::class, 'createFavouriteApartment'])->name('Create.Favourite.Apartment');
 
 
 Route::post("/admin/add/city/record", [AdminController::class, 'createCityRecord'])->name('Create.City.Record');

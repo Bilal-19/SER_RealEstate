@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     public function index()
     {
-        return view('User.LandingPage');
+        $favApartmentRecords = DB::table('favourite_apartment')->get();
+        return view('User.LandingPage')->with(compact('favApartmentRecords'));
     }
 
     public function viewAppartments()

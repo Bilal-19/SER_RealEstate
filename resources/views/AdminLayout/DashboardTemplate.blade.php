@@ -160,9 +160,11 @@
         </symbol>
     </svg>
 
-    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
-            Steerling Executive Residential
+    <header class="navbar sticky-top bg-light-brown flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+        {{-- 'navbar-brand' --}}
+        <a class="text-decoration-none text-light col-md-3 col-lg-2 me-0 px-3 fs-6 d-flex align-items-center justify-content-between"
+            href="#">
+            STERLING EXECUTIVE RESIDENTIAL
         </a>
         <ul class="navbar-nav flex-row d-md-none">
             <li class="nav-item text-nowrap">
@@ -193,8 +195,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-dark-green">
-                <div class="offcanvas-md offcanvas-end bg-dark-green" tabindex="-1" id="sidebarMenu"
+            <div class="sidebar border border-right col-md-3 col-lg-2 p-0">
+                <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu"
                     aria-labelledby="sidebarMenuLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="sidebarMenuLabel">Admin Dashboard</h5>
@@ -204,21 +206,30 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-1">
-                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3" aria-current="page"
-                                    href="{{route('Dashboard')}}">
+                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                    aria-current="page" href="{{ route('Dashboard') }}">
                                     <i class="fa-solid fa-dashboard"></i>
                                     Dashboard
                                 </a>
                             </li>
+
+                            <li class="nav-item mb-1">
+                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                    aria-current="page" href="{{ route('Favourite.Apartment') }}">
+                                    <i class="fa-solid fa-dashboard"></i>
+                                    Favourite Appartments
+                                </a>
+                            </li>
+
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{route('View.Cities')}}">
+                                    href="{{ route('View.Cities') }}">
                                     <i class="fa-solid fa-city"></i> View Cities
                                 </a>
                             </li>
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{route('Add.City')}}">
+                                    href="{{ route('Add.City') }}">
                                     <i class="fa-regular fa-square-plus"></i>Add New City
 
                                 </a>
@@ -226,7 +237,7 @@
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{route('View.Appartment')}}">
+                                    href="{{ route('View.Appartment') }}">
                                     <i class="fa-solid fa-building"></i>
                                     View Appartments
                                 </a>
@@ -234,7 +245,7 @@
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{route('Add.Appartment')}}">
+                                    href="{{ route('Add.Appartment') }}">
                                     <i class="fa-solid fa-circle-plus"></i>
                                     Add New Appartments
                                 </a>
