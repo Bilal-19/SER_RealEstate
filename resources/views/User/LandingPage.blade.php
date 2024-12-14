@@ -4,68 +4,140 @@
 @section('user-main-section')
     <div class="row">
         <div class="col-md-12">
-            <p class="fs-3 text-uppercase mt-5">Favourites:</p>
+            <p class="text-capitalize ff-poppins fs-40 mt-5">Favourites:</p>
         </div>
     </div>
 
+    {{--  --}}
     <div class="row">
-        <div class="col-md-3 favourite-card">
-            <div class="card shadow">
-                <img src="{{ asset('assets/images/favourites_1.webp') }}" alt="" class="img-fluid object-fit-cover">
-                <h6 class="card-text p-2">FLEET STREET</h6>
-                <div class="d-flex justify-content-between">
-                    <p class="mb-0 px-2">City of London</p>
-                    <p class="mb-0 px-2">from £259</p>
+       <div class="col-md-11 mx-auto">
+         <!-- Slider main container -->
+         <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_1.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">FLEET STREET</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">City of London</p>
+                        <p class="mb-0 px-2">from £259</p>
+                    </div>
+                    <p class="mt-0 px-2">2 bedroom</p>
                 </div>
-                <p class="mt-0 px-2">2 bedroom</p>
-            </div>
-        </div>
 
 
-        <div class="col-md-3 favourite-card">
-            <div class="card shadow">
-                <img src="{{ asset('assets/images/favourites_2.webp') }}" alt="" class="img-fluid object-fit-cover">
-                <h6 class="card-text p-2">MOORFIELDS</h6>
-                <div class="d-flex justify-content-between">
-                    <p class="mb-0 px-2">Hackney</p>
-                    <p class="mb-0 px-2">from £299</p>
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_2.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">MOORFIELDS</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">Hackney</p>
+                        <p class="mb-0 px-2">from £299</p>
+                    </div>
+                    <p class="mt-0 px-2">2 bedroom</p>
                 </div>
-                <p class="mt-0 px-2">2 bedrooms</p>
-            </div>
-        </div>
 
 
-        <div class="col-md-3 favourite-card">
-            <div class="card shadow">
-                <img src="{{ asset('assets/images/favourites_3.webp') }}" alt="" class="img-fluid object-fit-cover">
-                <h6 class="card-text p-2">HOXTON</h6>
-                <div class="d-flex justify-content-between">
-                    <p class="mb-0 px-2">Hackney</p>
-                    <p class="mb-0 px-2">from £199</p>
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_3.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">HOXTON</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">Hackney</p>
+                        <p class="mb-0 px-2">from £199</p>
+                    </div>
+                    <p class="mt-0 px-2">1 & 2 bedrooms</p>
                 </div>
-                <p class="mt-0 px-2">1 & 2 bedrooms</p>
-            </div>
-        </div>
 
-        <div class="col-md-3 favourite-card">
-            <div class="card shadow">
-                <img src="{{ asset('assets/images/favourites_4.webp') }}" alt="" class="img-fluid object-fit-cover">
-                <h6 class="card-text p-2">BATHCOURT</h6>
-                <div class="d-flex justify-content-between">
-                    <p class="mb-0 px-2">Islington</p>
-                    <p class="mb-0 px-2">from £299</p>
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_4.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">BATHCOURT</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">Islington</p>
+                        <p class="mb-0 px-2">from £299</p>
+                    </div>
+                    <p class="mt-0 px-2">1 bedroom</p>
                 </div>
-                <p class="mt-0 px-2">1 bedroom</p>
+
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_1.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">FLEET STREET</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">City of London</p>
+                        <p class="mb-0 px-2">from £259</p>
+                    </div>
+                    <p class="mt-0 px-2">2 bedroom</p>
+                </div>
+
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_1.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">FLEET STREET</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">City of London</p>
+                        <p class="mb-0 px-2">from £259</p>
+                    </div>
+                    <p class="mt-0 px-2">2 bedroom</p>
+                </div>
+
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_1.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">FLEET STREET</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">City of London</p>
+                        <p class="mb-0 px-2">from £259</p>
+                    </div>
+                    <p class="mt-0 px-2">2 bedroom</p>
+                </div>
+
+                <div class="col-md-3 swiper-slide">
+                    <img src="{{ asset('assets/images/favourites_1.webp') }}" alt=""
+                        class="img-fluid object-fit-cover">
+                    <h6 class="card-text p-2">FLEET STREET</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 px-2">City of London</p>
+                        <p class="mb-0 px-2">from £259</p>
+                    </div>
+                    <p class="mt-0 px-2">2 bedroom</p>
+                </div>
+
             </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-slider-button swiper-button-prev"></div>
+            <div class="swiper-slider-button swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
         </div>
+       </div>
     </div>
 
-    <div class="row mt-3">
-        <div class="col-md-12">
+    <div class="row mt-5 bg-light d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9933.259719847401!2d-0.13748113914276847!3d51.507438004617406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ce37bbdb95%3A0x5120415568fd2d8b!2sCentral%20London%2C%20London%20WC2N%205DU%2C%20UK!5e0!3m2!1sen!2s!4v1732259214866!5m2!1sen!2s"
                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="col-md-4">
+            <h3 class="ff-inter">Central London Location</h3>
+            <p class="ff-inter">
+                Central London is the innermost part of London, in England, spanning the City of London and several
+                boroughs. Over time, a number of definitions have been used to define the scope of Central London for
+                statistics, urban planning and local government. Its characteristics are understood to include a
+                high-density built environment, high land values, an elevated daytime population and a concentration of
+                regionally, nationally and internationally significant organisations and facilities.
+            </p>
+            <a href="" class="brand-btn">Explore Now</a>
         </div>
     </div>
 
@@ -127,6 +199,5 @@
                 everything from used vinyl to hand crafted jewellery and vintage clothes.
             </p>
         </div>
-    </div>
     </div>
 @endsection
