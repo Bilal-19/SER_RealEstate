@@ -25,13 +25,20 @@ Route::get("/view/enquiry/form", [UserController::class, 'viewEnquiryForm'])->na
 
 // Admin Dashboard
 Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Dashboard');
-Route::get("/admin/view/cities", [AdminController::class, 'ViewCities'])->name('View.Cities');
-Route::get("/admin/add/city", [AdminController::class, 'addCity'])->name('Add.City');
 Route::get("/admin/view/appartment", [AdminController::class, 'viewAppartment'])->name('View.Appartment');
 Route::get("/admin/add/appartment", [AdminController::class, 'addAppartment'])->name('Add.Appartment');
 Route::get("/admin/favourite/appartment", [AdminController::class, 'favouriteApartments'])->name('Favourite.Apartment');
 Route::get("/admin/add/favourite/appartment", [AdminController::class, 'addFavouriteApartment'])->name('Add.Favourite.Apartment');
 Route::post("/admin/create/favourite/appartment", [AdminController::class, 'createFavouriteApartment'])->name('Create.Favourite.Apartment');
 
+Route::get("/admin/benefits", [AdminController::class, 'Benefits'])->name('Benefits');
+Route::get("/admin/add/benefits", [AdminController::class, 'AddBenefit'])->name('Add.Benefits');
+Route::post("/admin/create/benefit", [AdminController::class, 'createBenefit'])->name('Create.Benefit');
 
 Route::post("/admin/add/city/record", [AdminController::class, 'createCityRecord'])->name('Create.City.Record');
+
+
+// Blog - Admin
+Route::get("/admin/blog", [AdminController::class, 'Blog'])->name('Blog');
+Route::get("/admin/add/blog", [AdminController::class, 'AddBlog'])->name('Add.Blog');
+Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name('Create.Blog');

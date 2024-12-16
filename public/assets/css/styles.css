@@ -14,10 +14,16 @@
 }
 
 .navbar-brand {
-    color: #b1895a;
+    /* color: #b1895a; */
     font-weight: medium;
     font-size: 26px;
     letter-spacing: 11%;
+}
+
+.navbar-brand > img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
 }
 
 #home-hero-banner-img {
@@ -64,6 +70,20 @@
     color: black;
     border: 1px solid black;
 }
+
+.brand-btn-invert {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.brand-btn-invert:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
 .search-container {
     height: 200px;
 }
@@ -138,9 +158,16 @@ a {
 }
 
 #footer-color {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #191919;
 }
 
+.benefit-card {
+    width: 283px;
+    height: 353px;
+    padding: 32px 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 /* Hiding the logo which is appearing on the left side of the sidebae for desktop screen */
 .hide-img-md {
     display: none;
@@ -148,7 +175,13 @@ a {
 
 /* Benefit - Page */
 .benefits-point > li {
-    list-style-type: square;
+    list-style-type: none;
+}
+
+.benefits-point > li::before{
+    content: "\2713";
+    color: #b1895a;
+    margin-right: 20px;
 }
 
 .amenities-points > li,
@@ -173,6 +206,9 @@ a {
 }
 
 /* Font Size */
+.fs-18 {
+    font-size: 18px;
+}
 .fs-56 {
     font-size: 56px;
 }
@@ -181,6 +217,9 @@ a {
     font-size: 40px;
 }
 
+.fs-48{
+    font-size: 48px;
+}
 /* Text Style */
 .text-light-brown {
     color: #b1895a;
@@ -189,6 +228,14 @@ a {
 /* Background */
 .bg-light-brown {
     background-color: #b1895a;
+}
+
+.bg-light-gray {
+    background-color: #f1f1f1;
+}
+
+.bg-white{
+    background-color: #FFFFFF;
 }
 
 /* Bootstrap 5 Slider */
@@ -219,10 +266,13 @@ a {
 }
 
 .swiper .swiper-slider-button {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border-radius: 12px;
     color: #b1895a;
+    border: none;
+    background-color: black;
+    padding: 10px;
 }
 
 .swiper-slide > img {
@@ -232,6 +282,44 @@ a {
     margin-bottom: 10px;
 }
 
+.blog-card {
+    height: 417px;
+    width: 382px;
+    margin-bottom: 10px;
+}
+.blog-card > img {
+    height: 230px;
+    width: 382px;
+    object-fit: cover;
+}
+.footer{
+    padding: 66px 100px;
+
+}
+#footer_bg {
+    background-image: url("../images/footer_img.jpg");
+    background-size: cover;
+}
+
+.footer-top-border {
+    border-top: 10px solid #b1895a;
+}
+
+.footer-search-btn{
+    text-align: center;
+    display: block;
+    height: 56px;
+    width: 187px;
+    padding: 12px 15px;
+    color: black;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.footer-search-btn:hover{
+    background-color: black;
+    color: #FFFFFF;
+}
 /* Media Query */
 
 @media screen and (max-width: 768px) {
@@ -293,14 +381,9 @@ a {
     }
 
     .navbar-brand {
-        color: #b1895a;
+        /* color: #b1895a; */
         font-weight: medium;
         font-size: 16px;
         letter-spacing: 5.5%;
-    }
-
-    /* Hide Next Previous button */
-    .swiper .swiper-slider-button {
-        display: none;
     }
 }

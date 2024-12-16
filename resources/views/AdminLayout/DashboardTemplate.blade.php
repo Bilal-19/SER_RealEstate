@@ -5,9 +5,6 @@
     <script src="{{ asset('js/color-modes.js') }}"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
     <title>Sterling Executive International</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -22,7 +19,6 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
 </head>
 
 <body>
@@ -208,48 +204,64 @@
                             <li class="nav-item mb-1">
                                 <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="{{ route('Dashboard') }}">
-                                    <i class="fa-solid fa-dashboard"></i>
-                                    Dashboard
+                                    <i class="fa-solid fa-gauge"></i> Dashboard
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-1">
+                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                    aria-current="page" href="#">
+                                    <i class="fa-solid fa-building"></i>
+                                    Apartments
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="{{ route('Favourite.Apartment') }}">
-                                    <i class="fa-solid fa-dashboard"></i>
-                                    Favourite Appartments
+                                    <i class="fa-solid fa-building-user"></i>
+                                    Favourite Apartments
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-1">
+                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                    aria-current="page" href="{{ route('Benefits') }}">
+                                    <i class="fa-solid fa-concierge-bell"></i>
+                                    Benefits
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-1">
+                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Blog')}}">
+                                    <i class="fa-solid fa-newspaper"></i> Blogs
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{ route('View.Cities') }}">
-                                    <i class="fa-solid fa-city"></i> View Cities
+                                    href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Neighbourhood
                                 </a>
                             </li>
+
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{ route('Add.City') }}">
-                                    <i class="fa-regular fa-square-plus"></i>Add New City
+                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="#">
+                                    <i class="fa-regular fa-file-alt"></i>Policy
 
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{ route('View.Appartment') }}">
-                                    <i class="fa-solid fa-building"></i>
-                                    View Appartments
+                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="#">
+                                    <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
+
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{ route('Add.Appartment') }}">
-                                    <i class="fa-solid fa-circle-plus"></i>
-                                    Add New Appartments
-                                </a>
-                            </li>
+
+
                         </ul>
 
                         <h6

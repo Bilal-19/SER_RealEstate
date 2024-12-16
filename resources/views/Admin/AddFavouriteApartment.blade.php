@@ -6,7 +6,8 @@
         </div>
 
         <div class="row mx-auto">
-            <form action="{{route('Create.Favourite.Apartment')}}" method="post" enctype="multipart/form-data" autocomplete="off">
+            <form action="{{ route('Create.Favourite.Apartment') }}" method="post" enctype="multipart/form-data"
+                autocomplete="off">
                 @csrf
                 <div class="col-md-6 mx-auto">
                     <label class="form-label mb-0">Upload Featured Image: </label>
@@ -20,7 +21,8 @@
 
                 <div class="col-md-6 mt-3 mx-auto">
                     <label class="form-label mb-0">Enter Apartment Location: </label>
-                    <input type="text" name="apartmentLocation" class="form-control" placeholder="Enter apartment location">
+                    <input type="text" name="apartmentLocation" class="form-control"
+                        placeholder="Enter apartment location">
                 </div>
 
                 <div class="col-md-6 mt-3 mx-auto">
@@ -35,7 +37,8 @@
 
                 <div class="col-md-6 mt-3 mx-auto">
                     <label class="form-label mb-0">Enter Number of Bathroom: </label>
-                    <input type="number" name="totalBathroom" class="form-control" placeholder="Enter total no of bathroom">
+                    <input type="number" name="totalBathroom" class="form-control"
+                        placeholder="Enter total no of bathroom">
                 </div>
 
                 <div class="col-md-6 mt-3 mx-auto">

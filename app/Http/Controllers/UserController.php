@@ -10,7 +10,13 @@ class UserController extends Controller
     public function index()
     {
         $favApartmentRecords = DB::table('favourite_apartment')->get();
-        return view('User.LandingPage')->with(compact('favApartmentRecords'));
+        $benefitsRecords = DB::table('benefits')->get();
+        $blogRecords = DB::table('blogs')->limit(3)->get();
+        return view('User.LandingPage')->with(compact(
+            'favApartmentRecords',
+             'benefitsRecords',
+             'blogRecords'
+            ));
     }
 
     public function viewAppartments()
@@ -20,7 +26,8 @@ class UserController extends Controller
 
     public function viewBenefits()
     {
-        return view('User.Benefits');
+        $amenities = DB::table('benefits')->get();
+        return view('User.Benefits')->with(compact('amenities'));
     }
 
     public function viewCorporate()

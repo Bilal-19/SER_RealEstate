@@ -25,11 +25,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
 
 
-        {{-- Swiper JS CDN --}}
-        <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+    {{-- Swiper JS CDN --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -58,6 +55,7 @@
             <nav class="navbar navbar-expand-lg mb-5 bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
+                        <img src="{{ asset('assets/images/company_logo.png') }}" alt="">
                         STERLING EXECUTIVE RESIDENTIAL
                     </a>
                     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
@@ -96,13 +94,8 @@
                     </div>
                 </div>
             </nav>
-            <div class="row mt-5">
-                <div class="col-md-9 mx-auto text-light search-container">
-                    <p class="text-center ff-poppins">Your Home Away from Home with Citadel Apartments</p>
-                    <h2 class="text-center ff-poppins fs-56">Experience Comfort and Flexibility in the Heart of London
-                    </h2>
-                </div>
-            </div>
+            @stack('CTA')
+
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto rounded bg-light">
                     <form action="" id="form-elements" class="form mt-3 mb-3">

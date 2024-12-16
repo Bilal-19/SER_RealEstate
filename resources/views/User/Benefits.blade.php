@@ -1,5 +1,14 @@
 @extends('UserLayout.main')
-
+@push('CTA')
+    <div class="row mt-5">
+        <div class="col-md-6 mx-auto text-light search-container">
+            <p class="text-center ff-poppins">BENEFITS</p>
+            <h2 class="text-center ff-poppins fs-48">
+                Corporate Housing Solutions in London
+            </h2>
+        </div>
+    </div>
+@endpush
 
 @section('user-main-section')
     <div class="row mt-5 bg-body-tertiary pt-2 pb-2 d-flex justify-content-around align-items-center">
@@ -7,7 +16,7 @@
             <img src="{{ asset('assets/images/teamwork_benefit_pg.webp') }}" alt="" class="img-fluid rounded">
         </div>
         <div class="col-md-5">
-            <h4 class="text-uppercase bg-light pt-2 pb-2 px-4 rouned">Why Serviced Appartments?</h4>
+            <h4 class="text-capitalize bg-light pt-2 pb-2 px-4 rouned">Why Serviced Appartments?</h4>
             <p>
                 Fully serviced apartments offer a home away from home for the reserved business traveller. <b>Sterling
                     Executive Residential</b> deliver this luxury from start to finish. Online bookings ensure the lowest
@@ -25,11 +34,6 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <hr style="border: thin solid black;">
-        </div>
-    </div>
 
     <div class="row d-flex justify-content-around align-items-center">
         <div class="col-md-5">
@@ -54,22 +58,17 @@
         </div>
     </div>
 
-    <div class="row d-flex justify-content-around mt-5 mb-5">
-        <div class="col-md-5 bg-light rounded">
+    <div class="row d-flex justify-content-around mt-5 mb-5 bg-light-gray pt-5 pb-5">
+        <div class="col-md-5 bg-white rounded">
             <p class="fw-bold text-uppercase pt-3">Amenities</p>
             <ul class="amenities-points">
                 <hr>
-                <li>📶 Wi-Fi</li>
-                <li>🌀 On Site Laundry</li>
-                <li>🍴 Fully Equiped Kitchens</li>
-                <li>🤵‍♀️ Weekly Maid Service</li>
-                <li>🛋️ Living Area</li>
-                <li>📺 TV with Freeview</li>
-                <li>🚶 Convenient locations in London city centre</li>
-                <li>🏋️ Some apartments have complimentary gym access</li>
+                @foreach ($amenities as $val)
+                    <li><img src="{{ asset('Benefits/' . $val->benefit_icon) }}" alt=""> {{ $val->benefit_text }}</li>
+                @endforeach
             </ul>
         </div>
-        <div class="col-md-5 bg-light rounded">
+        <div class="col-md-5 bg-white rounded">
             <p class="fw-bold text-uppercase pt-3">Policy</p>
             <ul class="policy-points">
                 <hr>
@@ -94,6 +93,4 @@
     </div>
 
     {{-- Reviews Slider --}}
-
-
 @endsection

@@ -13,44 +13,6 @@ class AdminController extends Controller
         return view('Admin.Dashboard');
     }
 
-    public function ViewCities()
-    {
-        $AllCities = Cities::all();
-        return view('Admin.ViewCities')->with(compact('AllCities'));
-    }
-
-    public function addCity()
-    {
-        return view('Admin.AddNewCity');
-    }
-
-    public function createCityRecord(Request $request)
-    {
-        $request->validate([
-            'cityImage' => 'required',
-            'cityName' => 'required',
-            'countryName' => 'required',
-        ]);
-
-        //
-        $cityTimestampImg = time() . '.' . $request->cityImage->getClientOriginalExtension();
-
-        // Store Image to public folder
-        $request->cityImage->move('City', $cityTimestampImg);
-
-        $cityRecord = new Cities();
-        $cityRecord->city_image = $cityTimestampImg;
-        $cityRecord->city_name = $request['cityName'];
-        $cityRecord->country_name = $request['countryName'];
-        $res = $cityRecord->save();
-
-        if ($res) {
-            toastr()->success('New City Added Successfully');
-            return redirect()->back();
-        }
-
-    }
-
     public function viewAppartment()
     {
         return view('Admin.ViewAppartments');
@@ -91,6 +53,73 @@ class AdminController extends Controller
 
         if ($result) {
             toastr()->success('New Favourite Apartment Added Successfully');
+            return redirect()->back();
+        }
+    }
+
+    public function Benefits()
+    {
+        return view('Admin.Benefits');
+    }
+
+    public function AddBenefit()
+    {
+        return view('Admin.AddBenefits');
+    }
+
+    public function createBenefit(Request $request)
+    {
+        $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
+
+        $request->icon->move('Benefits', $timeStampImg);
+
+        $result = DB::table('benefits')->insert([
+            'benefit_icon' => $timeStampImg,
+            'benefit_text' => $request->benefitName,
+            'benefit_description' => $request->benefitDescription
+        ]);
+
+        if ($result) {
+            toastr()->success('Benefit added successfully');
+            return redirect()->back();
+        }
+    }
+
+    // Blog
+    public function Blog()
+    {
+        return view('Admin.Blog');
+    }
+
+    public function AddBlog()
+    {
+        return view('Admin.AddBlog');
+    }
+
+    public function createBlog(Request $request)
+    {
+        $request->validate([
+            'thumbnailImage' => 'required',
+            'blogHeadline' => 'required',
+            'blogBriefDesc' => 'required',
+            'blogDetailContent' => 'required',
+            'blogPublishDate' => 'required'
+        ]);
+
+        $timeStampImg = time() . '.' . $request->thumbnailImage->getClientOriginalExtension();
+
+        // Store image to public folder
+        $request->thumbnailImage->move('Blog', $timeStampImg);
+        $result = DB::table('blogs')->insert([
+            'thumbnail_image' => $timeStampImg,
+            'blog_headline' => $request->blogHeadline,
+            'blog_brief_description' => $request->blogBriefDesc,
+            'blog_detailed_content' => $request->blogDetailContent,
+            'publish_date' => $request->blogPublishDate
+        ]);
+
+        if ($result) {
+            toastr()->success('New blog published successfully');
             return redirect()->back();
         }
     }

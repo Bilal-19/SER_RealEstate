@@ -1,15 +1,49 @@
-<div class="container-fluid  text-light pb-5" id="footer-color">
-    <div class="row d-flex flex-md-row flex-sm-column justify-content-around align-items-center">
+<div class="container-fluid footer" id="footer_bg">
+    <div class="row d-flex justify-content-around align-items-center">
         <div class="col-md-5">
-            <h5 class="pt-5">Home away from home</h5>
-            <p>
-                Feel like home at one of our modern appartments located in the heart of London. Make your own meals,
-                order & takeaway, enjoy the space and privacy, just like home.
-            </p>
+            <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>
+            <p class="ff-inter text-light">Feel like home at one of our modern apartments located in the heart of London.
+                Make your own meals, order a
+                take-away, enjoy the space and privacy, just like home.</p>
         </div>
-        <div class="col-md-5">
-            <a href="#" id="contact-btn">+44 7921919426</a>
-            <a href="mailto:zain.rav@gmail.com" target="_blank" id="enquiry-btn">MAKE AN ENQUIRY</a>
+        <div class="col-md-3">
+            <a href="" class="footer-search-btn">Search</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-light pb-2 footer-top-border" id="footer-color">
+    <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5">
+        <div class="col-md-4">
+            <h5 class="ff-poppins">STERLING EXECUTIVE RESIDENTIAL</h5>
+            <p class="ff-inter">Design amazing digital experiences that create more happy in the world.</p>
+        </div>
+        <div class="col-md-2">
+            <p class="ff-inter">Sitemap</p>
+            <a href="#" class="text-light d-block ff-inter">Home</a>
+            <a href="#" class="text-light d-block ff-inter">About Us</a>
+            <a href="#" class="text-light d-block ff-inter">Corporate</a>
+            <a href="#" class="text-light d-block ff-inter">Benefits</a>
+            <a href="#" class="text-light d-block ff-inter">Inquiry</a>
+            <a href="#" class="text-light d-block ff-inter">Blogs</a>
+        </div>
+        <div class="col-md-3">
+            <p>Contact Us</p>
+            <a href="" class="text-light d-block">+44 7921919426</a>
+            <a href="" class="text-light d-block">zain.rav@gmail.com</a>
+        </div>
+        <div class="col-md-2">
+            <p>Follow us</p>
+            <a href="">
+                <i class="fa-brands fa-instagram fa-xl"></i>
+            </a>
+            <span>|</span>
+            <a href="">
+                <i class="fa-brands fa-tiktok fa-xl"></i>
+            </a>
+            <span>|</span>
+            <a href="">
+                <i class="fa-brands fa-facebook fa-xl"></i>
+            </a>
         </div>
     </div>
 
@@ -20,42 +54,6 @@
     </div>
 
     <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-4">
-            <p class="px-2 fw-bold">Site Map</p>
-            <div class="d-flex flex-md-row flex-sm-column justify-content-between">
-                <a href="#" class="sitemap-link px-2">Home Page</a>
-                <a href="#" class="sitemap-link px-2">Benefits</a>
-                <a href="#" class="sitemap-link px-2">About Us</a>
-            </div>
-            <div class="d-flex justify-content-between">
-                <a href="#" class="sitemap-link px-2">Our Appartment</a>
-                <a href="#" class="sitemap-link px-2">Corporate</a>
-                <a href="#" class="sitemap-link px-2">Make An Enquiry</a>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <p class="px-2 fw-bold">Social Media</p>
-            <div class="d-flex justify-content-between">
-                <a href="#" class="sitemap-link px-2">Facebook</a>
-                <a href="#" class="sitemap-link px-2">Linkedin</a>
-            </div>
-            <div class="d-flex justify-content-between">
-                <a href="#" class="sitemap-link px-2">Twitter</a>
-                <a href="#" class="sitemap-link px-2">YouTube</a>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <p class="px-2 fw-bold">Contact Us</p>
-            <a href="#" class="sitemap-link px-2 d-block">+44 7921919426</a>
-            <a href="mailto:zain.rav@gmail.com" class="sitemap-link px-2">zain.rav@gmail.com</a>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid bg-dark text-light">
-    <div class="row pt-2 d-flex justify-content-around align-items-center">
         <div class="col-md-5">
             <p>&copy; Copyright 2024 Sterling Executive Residential. All rights reserved.</p>
         </div>
@@ -71,7 +69,7 @@
 
 {{-- Swiper JS Script --}}
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="{{asset('assets/js/swiperJS.js')}}"></script>
+<script src="{{ asset('assets/js/swiperJS.js') }}"></script>
 </body>
 
 </html>
