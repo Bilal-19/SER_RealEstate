@@ -27,7 +27,11 @@ class UserController extends Controller
     public function viewBenefits()
     {
         $amenities = DB::table('benefits')->get();
-        return view('User.Benefits')->with(compact('amenities'));
+        $policies = DB::table('policy')->get();
+        return view('User.Benefits')->with(compact(
+            'amenities',
+            'policies'
+        ));
     }
 
     public function viewCorporate()

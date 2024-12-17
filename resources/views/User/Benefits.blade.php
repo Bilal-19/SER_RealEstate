@@ -11,13 +11,13 @@
 @endpush
 
 @section('user-main-section')
-    <div class="row mt-5 bg-body-tertiary pt-2 pb-2 d-flex justify-content-around align-items-center">
-        <div class="col-md-5">
-            <img src="{{ asset('assets/images/teamwork_benefit_pg.webp') }}" alt="" class="img-fluid rounded">
+    <div class="row mt-5 pt-2 pb-2 d-flex justify-content-evenly align-items-center">
+        <div class="col-md-6">
+            <img src="{{ asset('assets/images/teamwork_benefit_pg.png') }}" alt="" class="img-fluid rounded">
         </div>
         <div class="col-md-5">
-            <h4 class="text-capitalize bg-light pt-2 pb-2 px-4 rouned">Why Serviced Appartments?</h4>
-            <p>
+            <h4 class="text-capitalize pt-2 ff-inter fs-36 fw-medium">Why Service Apartments?</h4>
+            <p class="ff-inter">
                 Fully serviced apartments offer a home away from home for the reserved business traveller. <b>Sterling
                     Executive Residential</b> deliver this luxury from start to finish. Online bookings ensure the lowest
                 price point
@@ -29,15 +29,15 @@
                 avoid living in the crowded hotels.
             </p>
 
-            <b>Book online or contact us for more information.</b>
-            <p>Group rates are available.</p>
+            <b class="ff-inter">Book online or contact us for more information.</b>
+            <p class="ff-inter">Group rates are available.</p>
         </div>
     </div>
 
 
-    <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-5">
-            <p class="text-uppercase fw-bold">Benefits</p>
+    <div class="row d-flex justify-content-evenly align-items-center mt-5">
+        <div class="col-md-6">
+            <h4 class="ff-inter fs-36">Benefits</h4>
             <ul class="benefits-point">
                 <li>At least three times the space of an average hotel room</li>
                 <li>Personalised service with welcoming staff in our onsite receptions</li>
@@ -58,37 +58,33 @@
         </div>
     </div>
 
-    <div class="row d-flex justify-content-around mt-5 mb-5 bg-light-gray pt-5 pb-5">
-        <div class="col-md-5 bg-white rounded">
-            <p class="fw-bold text-uppercase pt-3">Amenities</p>
-            <ul class="amenities-points">
-                <hr>
-                @foreach ($amenities as $val)
-                    <li><img src="{{ asset('Benefits/' . $val->benefit_icon) }}" alt=""> {{ $val->benefit_text }}</li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="col-md-5 bg-white rounded">
-            <p class="fw-bold text-uppercase pt-3">Policy</p>
-            <ul class="policy-points">
-                <hr>
-                <li>🛏️ Minimum three-night stay</li>
-                <li>🚫🐾 No pets</li>
-                <li>🚭 No smoking</li>
-                <li>📆 Fourteen days cancellation policy</li>
-                <li>🤝 Preferred rate negotiation for long term stays</li>
-                <li>💵 Lower rates on VAT for stays over 29 days</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <p class="text-center fw-bold">
-                Sterling Executive Residential are spacious with a superb value for the money as rates are up to 30% less
-                than a comparable hotel room and offer a giant increase in space. Our booking transactions are secure and
-                trusted. Hear what people have to say:
-            </p>
+    <div class="row mt-5 mb-5">
+        <div class="col-md-11 mx-auto bg-light-gray rounded">
+            <div class="row d-flex justify-content-around mt-5 mb-5">
+                <div class="col-md-5 bg-white rounded">
+                    <p class="fw-medium fs-24 pt-3 ff-inter">Amenities</p>
+                    <ul class="amenities-points">
+                        <hr>
+                        @foreach ($amenities as $val)
+                            <li><img src="{{ asset('Benefits/' . $val->benefit_icon) }}" alt="">
+                                <span class="mx-1 ff-inter">{{ $val->benefit_text }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-md-5 bg-white rounded">
+                    <p class="fw-bold text-uppercase pt-3">Policy</p>
+                    <ul class="policy-points">
+                        <hr>
+                        @foreach ($policies as $val)
+                            <li>
+                                <img src="{{ asset('Policy/Icons/' . $val->policy_icon) }}" alt="">
+                                <span class="mx-1 ff-inter">{{ $val->policy_name }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -42,3 +42,9 @@ Route::post("/admin/add/city/record", [AdminController::class, 'createCityRecord
 Route::get("/admin/blog", [AdminController::class, 'Blog'])->name('Blog');
 Route::get("/admin/add/blog", [AdminController::class, 'AddBlog'])->name('Add.Blog');
 Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name('Create.Blog');
+
+
+// Policy - Admin
+Route::get("/admin/policy", [AdminController::class, 'Policy'])->name('Policy');
+Route::get("/admin/add/policy", [AdminController::class, 'AddPolicy'])->name('Add.Policy');
+Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->name('Create.Policy');

@@ -247,7 +247,7 @@
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Policy')}}">
                                     <i class="fa-regular fa-file-alt"></i>Policy
 
                                 </a>

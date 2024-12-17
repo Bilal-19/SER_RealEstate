@@ -123,4 +123,31 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+
+    public function Policy()
+    {
+        return view('Admin.Policy');
+    }
+
+    public function AddPolicy()
+    {
+        return view('Admin.AddPolicy');
+    }
+
+    public function createPolicy(Request $request)
+    {
+        // Store Policy Icon to Public folder
+        $timeStmpImg = time() . '.' . $request->icon->getClientOriginalExtension();
+
+        $request->icon->move('Policy/Icons', $timeStmpImg);
+        $res = DB::table('policy')->insert([
+            'policy_icon' => $timeStmpImg,
+            'policy_name' => $request->policyName
+        ]);
+
+        if ($res) {
+            toastr()->success('Policy Information Added Successfully');
+            return redirect()->back();
+        }
+    }
 }

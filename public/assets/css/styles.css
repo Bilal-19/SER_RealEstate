@@ -176,6 +176,7 @@ a {
 /* Benefit - Page */
 .benefits-point > li {
     list-style-type: none;
+    font-family: "inter";
 }
 
 .benefits-point > li::before{
@@ -222,6 +223,9 @@ a {
 
 .fs-23{
     font-size: 23px;
+}
+.fs-24{
+    font-size: 24px;
 }
 .fs-56 {
     font-size: 56px;
