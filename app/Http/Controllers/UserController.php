@@ -14,9 +14,9 @@ class UserController extends Controller
         $blogRecords = DB::table('blogs')->limit(3)->get();
         return view('User.LandingPage')->with(compact(
             'favApartmentRecords',
-             'benefitsRecords',
-             'blogRecords'
-            ));
+            'benefitsRecords',
+            'blogRecords'
+        ));
     }
 
     public function viewAppartments()
@@ -53,6 +53,12 @@ class UserController extends Controller
     public function viewEnquiryForm()
     {
         return view('User.Enquiry');
+    }
+
+    // View Available Apartments
+    public function viewAvailableAparment(Request $request)
+    {
+        print_r($request->all());
     }
 }
 

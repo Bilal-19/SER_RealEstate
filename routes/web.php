@@ -23,6 +23,7 @@ Route::get("/view/about", [UserController::class, 'viewAbout'])->name('View.Abou
 Route::get("/view/blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
 Route::get("/view/enquiry/form", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
 
+Route::get("/view/available/appartment", [UserController::class,'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
 Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Dashboard');
 Route::get("/admin/view/appartment", [AdminController::class, 'viewAppartment'])->name('View.Appartment');

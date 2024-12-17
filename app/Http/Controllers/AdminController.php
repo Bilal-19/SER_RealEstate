@@ -13,6 +13,7 @@ class AdminController extends Controller
         return view('Admin.Dashboard');
     }
 
+    // Appartment Section
     public function viewAppartment()
     {
         return view('Admin.ViewAppartments');
@@ -23,6 +24,7 @@ class AdminController extends Controller
         return view('Admin.AddAppartments');
     }
 
+    // Fav Appartment Section
     public function favouriteApartments()
     {
         return view('Admin.FavouriteApartment');
