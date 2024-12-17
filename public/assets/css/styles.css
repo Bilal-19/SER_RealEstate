@@ -88,7 +88,7 @@
     height: 200px;
 }
 
-#form-elements {
+/* #form-elements {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -103,7 +103,7 @@
 #form-elements > input[type="text"]:focus,
 #form-elements > input[type="date"]:focus {
     outline: none;
-}
+} */
 
 .favourite-card {
     width: 299px;
@@ -188,7 +188,7 @@ a {
 .policy-points > li {
     list-style-type: none;
     border: 1px solid rgb(228, 228, 228);
-    background-color: rgb(233, 233, 233);
+    background-color: #FFFFFF;
     margin-bottom: 10px;
     border-radius: 2px;
     padding: 10px 12px;
@@ -205,9 +205,23 @@ a {
     font-family: "Poppins", sans-serif;
 }
 
+.ff-playfair-display{
+    font-family: "Playfair Display", serif;
+}
+
 /* Font Size */
+.fs-17{
+    font-size: 17px;
+}
+.fs-15{
+    font-size: 15px;
+}
 .fs-18 {
     font-size: 18px;
+}
+
+.fs-23{
+    font-size: 23px;
 }
 .fs-56 {
     font-size: 56px;
@@ -219,6 +233,15 @@ a {
 
 .fs-48{
     font-size: 48px;
+}
+
+.fs-36{
+    font-size: 36px;
+}
+
+/* Font Weight */
+.fw-medium{
+    font-weight: medium;
 }
 /* Text Style */
 .text-light-brown {
@@ -236,6 +259,21 @@ a {
 
 .bg-white{
     background-color: #FFFFFF;
+}
+
+.bg-eerie-black{
+    background-color: #191919;
+}
+
+/* Opactity */
+
+.opacity-90{
+    opacity: 0.9;
+}
+
+/* Border */
+.border-top-light-brown{
+    border-top: 2px solid #b1895a;
 }
 
 /* Bootstrap 5 Slider */
@@ -320,6 +358,32 @@ a {
     background-color: black;
     color: #FFFFFF;
 }
+
+/* Responsive Timeline */
+.timeline {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+  }
+
+  .timeline .timeline-item {
+    position: relative;
+  }
+
+  .timeline .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+  }
+
+  .timeline .timeline-item:after {
+    background-color: #b1895a;
+    left: -45px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    content: "";
+  }
 /* Media Query */
 
 @media screen and (max-width: 768px) {
@@ -340,20 +404,20 @@ a {
         margin-right: 20px;
     }
 
-    #form-elements {
+    /* #form-elements {
         flex-direction: column;
         height: 200px;
         margin-bottom: 100px;
-    }
+    } */
 
-    input[type="date"],
+    /* input[type="date"],
     input[type="text"] {
         width: 75%;
     }
 
     #search-btn {
         width: 75%;
-    }
+    } */
 
     .search-container {
         height: fit-content;

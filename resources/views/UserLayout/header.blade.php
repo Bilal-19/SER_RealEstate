@@ -21,9 +21,11 @@
         rel="stylesheet">
 
     {{-- Link Google Icons --}}
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     {{-- Swiper JS CDN --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -97,12 +99,26 @@
             @stack('CTA')
 
             <div class="row mb-5">
-                <div class="col-md-8 mx-auto rounded bg-light">
+                <div class="col-md-9 mx-auto rounded bg-white text-center">
                     <form action="" id="form-elements" class="form mt-3 mb-3">
-                        <input type="text" class="mx-2" placeholder="SEARCH BY AREA" required>
-                        <input type="date" placeholder="CHECK IN" class="mx-2" required>
-                        <input type="date" placeholder="CHECK OUT" class="mx-2" required>
-                        <button class="brand-btn" type="submit">SEARCH</button>
+                        <div class="row d-flex justify-content-between align-items-end">
+                            <div class="col-md-3">
+                                <label class="form-label mb-0">Search By Area:</label>
+                                <input type="text" placeholder="SEARCH BY AREA" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label mb-0">Check In:</label>
+                                <input type="date" placeholder="CHECK IN" required class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label mb-0">Check Out:</label>
+                                <input type="date" placeholder="CHECK OUT" required class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-dark" type="submit">SEARCH</button>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

@@ -37,7 +37,8 @@ class UserController extends Controller
 
     public function viewAbout()
     {
-        return view('User.About');
+        $blogRecords = DB::table('blogs')->limit(3)->get();
+        return view('User.About')->with(compact('blogRecords'));
     }
 
     public function viewBlogs()
