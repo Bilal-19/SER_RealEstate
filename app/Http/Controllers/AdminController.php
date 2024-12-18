@@ -24,6 +24,56 @@ class AdminController extends Controller
         return view('Admin.AddAppartments');
     }
 
+    public function createApartment(Request $request)
+    {
+
+        // Creating timestamp of featured image
+        $featuredImgTimeStamp = time() . '.' . $request->featuredImg->getClientOriginalExtension();
+
+        // Loop through multiple images
+        $image = array();
+        if($files = $request->file('apartmentMultImages')){
+            foreach ($files as $file) {
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name.'.'.$ext;
+                $upload_path = 'Apartment/Images';
+                $image_url = $upload_path.$image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        }
+
+        // Store featured image to public folder
+        $request->featuredImg->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
+        $res = DB::table('apartments')->insert([
+            'area_name' => $request->areaName,
+            'price' => $request->apartmentPrice,
+            'price_per_night' => $request->apartmentPricePerNight,
+            'street_address' => $request->streetAddress,
+            'map_location' => $request->apartmentMapLocation,
+            'total_bedrooms' => $request->totalBedrooms,
+            'total_bathrooms' => $request->totalBathrooms,
+            'description' => $request->apartmentDescription,
+            'availableFrom' => $request->availableFrom,
+            'availableTill' => $request->availableTill,
+            'featuredImage' => $featuredImgTimeStamp,
+            'multipleImages' => implode('|', $image),
+            'cleanlinessVal' => $request->cleanlinessVal,
+            'comfortVal' => $request->comfortVal,
+            'facilitiesVal' => $request->facilityVal,
+            'locationVal' => $request->locationVal,
+            'staffVal' => $request->staffVal,
+            'value_for_money' => $request->valueForMoney,
+            'free_wifi_val' => $request->internetQuality
+        ]);
+
+        if ($res) {
+            toastr()->success('New apartment added successfully');
+            return redirect()->back();
+        }
+    }
+
     // Fav Appartment Section
     public function favouriteApartments()
     {

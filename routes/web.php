@@ -49,3 +49,7 @@ Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name(
 Route::get("/admin/policy", [AdminController::class, 'Policy'])->name('Policy');
 Route::get("/admin/add/policy", [AdminController::class, 'AddPolicy'])->name('Add.Policy');
 Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->name('Create.Policy');
+
+
+// Apartment - Admin
+Route::post("/admin/create/apartment", [AdminController::class, 'createApartment'])->name('Create.Apartment');

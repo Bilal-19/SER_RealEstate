@@ -6,7 +6,8 @@
         </div>
 
         <div class="row">
-            <form action="" autocomplete="off" method="post" class="form mb-5">
+            <form action="{{route('Create.Apartment')}}" enctype="multipart/form-data" autocomplete="off" method="post" class="form mb-5">
+                @csrf
                 <div class="col-md-10 mx-auto">
                     <div class="row mt-3">
                         <h4>General Information</h4>
@@ -14,17 +15,17 @@
                     <div class="row">
                         <div class="col-md-4">
                             <label class="form-label mb-0">Enter Area Name:</label>
-                            <input class="form-control" placeholder="Enter area name" name="areaName">
+                            <input class="form-control" placeholder="Enter area name" name="areaName" value="{{old('areaName')}}">
                         </div>
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Enter Apartment Price:</label>
-                            <input class="form-control" type="number" placeholder="Enter apartment price" name="apartmentPrice">
+                            <input class="form-control" type="number" placeholder="Enter apartment price" name="apartmentPrice" value="{{old('apartmentPrice')}}">
                         </div>
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Enter Apartment Price (Per Night):</label>
-                            <input class="form-control" type="number" placeholder="Enter apartment price per night" name="apartmentPricePerNight">
+                            <input class="form-control" type="number" placeholder="Enter apartment price per night" name="apartmentPricePerNight" value="{{old('apartmentPricePerNight')}}">
                         </div>
 
                     </div>
@@ -32,7 +33,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="form-label mb-0">Enter Street Address:</label>
-                            <input class="form-control" placeholder="Enter street address" name="streetAddress">
+                            <input class="form-control" placeholder="Enter street address" name="streetAddress" value="{{old('streetAddress')}}">
                         </div>
                     </div>
 
@@ -41,7 +42,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="form-label mb-0">Enter Apartment Location URL:</label>
-                            <input class="form-control" placeholder="Enter apartment location URL" name="apartmentMapLocation">
+                            <input class="form-control" placeholder="Enter apartment location URL" name="apartmentMapLocation" value="{{old('apartmentMapLocation')}}">
                         </div>
                     </div>
 
@@ -49,7 +50,7 @@
                         <div class="col-md-6">
                             <label class="form-label mb-0">Select No of Bedrooms:</label>
                             <select name="totalBedrooms" id="" class="form-select">
-                                @for ($i = 1; $i < 10; $i++)
+                                @for ($i = 1; $i < 7; $i++)
                                     <option value={{$i}}>{{ $i }}</option>
                                 @endfor
                             </select>
@@ -58,7 +59,7 @@
                         <div class="col-md-6">
                             <label class="form-label mb-0">Select No of Bathrooms:</label>
                             <select name="totalBathrooms" class="form-select">
-                                @for ($i = 1; $i < 10; $i++)
+                                @for ($i = 1; $i < 4; $i++)
                                     <option value={{$i}}>{{ $i }}</option>
                                 @endfor
                             </select>
@@ -68,12 +69,14 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="form-label mb-0">Enter Apartment Description:</label>
-                            <textarea class="form-control" rows="5" placeholder="Enter apartment description" style="resize: none;" name="apartmentDescription"></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Enter apartment description" style="resize: none;" name="apartmentDescription">
+                                {{old('apartmentDescription')}}
+                            </textarea>
                         </div>
                     </div>
 
                     <div class="row mt-3">
-                        <h4>Enter Apartment Availability Date</h4>
+                        <h4>Select Availability Date</h4>
                     </div>
 
                     <div class="row">
@@ -116,7 +119,7 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Comfort Rating (Out of 10):</label>
-                            <input class="form-control" type="number" placeholder="Rate comfort level (1-10)" name="ratingVal">
+                            <input class="form-control" type="number" placeholder="Rate comfort level (1-10)" name="comfortVal">
                         </div>
 
                         <div class="col-md-4">
@@ -138,7 +141,7 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Value for Money (Out of 10):</label>
-                            <input class="form-control" type="number" placeholder="Rate value for money (1-10)" name="valueMoney">
+                            <input class="form-control" type="number" placeholder="Rate value for money (1-10)" name="valueForMoney">
                         </div>
                     </div>
 
@@ -149,7 +152,7 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3">
+                    {{-- <div class="row mt-3">
                         <h4>Property Amenities</h4>
                     </div>
 
@@ -253,7 +256,7 @@
                                 <option value="No">No</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="row mt-3">
                         <div class="col-md-3">

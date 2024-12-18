@@ -57,7 +57,7 @@
             <nav class="navbar navbar-expand-lg mb-5 bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        <img src="{{ asset('assets/images/company_logo.png') }}" alt="">
+                        {{-- <img src="{{ asset('assets/images/company_logo.png') }}" alt=""> --}}
                         STERLING EXECUTIVE RESIDENTIAL
                     </a>
                     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
