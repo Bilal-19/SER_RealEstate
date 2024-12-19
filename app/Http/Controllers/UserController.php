@@ -82,5 +82,46 @@ class UserController extends Controller
             'apartments'
         ));
     }
+
+    public function checkApartmentAvailability(Request $request, $id)
+    {
+        $firstFourAmenities = DB::table('benefits')->limit(4)->get();
+        $LastFourAmenities = DB::table('benefits')->take(4)->skip(4)->get();
+        $findApartment = DB::table('apartments')->where('id', $id)->first();
+        $images = explode('|', $findApartment->multipleImages);
+        $apartments = DB::table('apartments')->get();
+
+        $findApartment = DB::table('apartments')->find($id);
+
+        $checkInDate = $request->checkIn;
+        $checkOutDate = $request->checkOut;
+
+        if ($findApartment->availableFrom <= $checkInDate && $findApartment->availableTill >= $checkOutDate) {
+            $isAvailable = true;
+            return view('User.ViewApartmentDetail')->with(compact(
+                'isAvailable',
+                'images',
+                'findApartment',
+                'firstFourAmenities',
+                'LastFourAmenities',
+                'apartments',
+                'checkInDate',
+                'checkOutDate'
+            ));
+        } else {
+            $isAvailable = false;
+            return view('User.ViewApartmentDetail')->with(compact(
+                'isAvailable',
+                'images',
+                'findApartment',
+                'firstFourAmenities',
+                'LastFourAmenities',
+                'apartments',
+                'checkInDate',
+                'checkOutDate'
+            ));
+        }
+
+    }
 }
 

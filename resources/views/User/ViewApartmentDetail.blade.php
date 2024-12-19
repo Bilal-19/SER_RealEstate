@@ -60,6 +60,24 @@
             height: 100%;
             width: 100%;
         }
+
+        .availability-text-success{
+            background-color: #B3F9C6;
+            color: #197D29;
+            font-size: 15px;
+            border-radius: 27px;
+            padding: 4px 8px;
+            display: inline;
+        }
+
+        .availability-text-danger{
+            background-color: red;
+            color: white;
+            font-size: 15px;
+            border-radius: 27px;
+            padding: 4px 8px;
+            display: inline;
+        }
     </style>
 @endpush
 @section('user-main-section')
@@ -144,18 +162,29 @@
 
             <div class="col-md-5 border-radius-18 bg-pale-gray p-5 mt-3">
                 <h4 class="ff-inter fs-20 fw-medium">Check Availability & Book Now</h4>
-                <form action="">
-                    <div class="d-flex justify-content-between">
+                <form action="{{ route('Check.Apartment.Availability', ['id' => $findApartment->id]) }}" method="get">
+                    <div class="d-flex justify-content-between mb-4">
                         <div>
                             <label class="form-label mb-0 ff-inter">Check In Date: </label>
-                            <input type="date" class="form-control ff-inter">
+                            <input type="date" class="form-control ff-inter" name="checkIn" required value="{{$checkInDate}}">
                         </div>
                         <div>
                             <label class="form-label mb-0 ff-inter">Check Out Date: </label>
-                            <input type="date" class="form-control ff-inter">
+                            <input type="date" class="form-control ff-inter" name="checkOut" required value="{{$checkOutDate}}">
                         </div>
                     </div>
-                    <button class="btn btn-dark mt-3 w-100 ff-inter">Book Now</button>
+                    @isset($isAvailable)
+                        @if ($isAvailable == true)
+                            <p class="availability-text-success ff-inter">
+                                <img src="{{asset('assets/images/success_circle.png')}}" alt="">
+                                Apartment is Available
+                            </p>
+                            <button class="btn btn-light mt-5 w-100 ff-inter">Book Now</button>
+                        @else
+                            <p class="availability-text-danger ff-inter">Apartment is Not Available</p>
+                        @endif
+                    @endisset
+                    <button class="btn btn-dark mt-3 w-100 ff-inter">Check Availability</button>
                 </form>
             </div>
         </div>
