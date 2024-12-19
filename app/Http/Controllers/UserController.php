@@ -121,7 +121,10 @@ class UserController extends Controller
                 'checkOutDate'
             ));
         }
+    }
 
+    public function Booking(){
+        return view("User.Booking");
     }
 }
 

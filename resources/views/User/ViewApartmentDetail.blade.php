@@ -61,7 +61,7 @@
             width: 100%;
         }
 
-        .availability-text-success{
+        .availability-text-success {
             background-color: #B3F9C6;
             color: #197D29;
             font-size: 15px;
@@ -70,7 +70,7 @@
             display: inline;
         }
 
-        .availability-text-danger{
+        .availability-text-danger {
             background-color: red;
             color: white;
             font-size: 15px;
@@ -166,20 +166,23 @@
                     <div class="d-flex justify-content-between mb-4">
                         <div>
                             <label class="form-label mb-0 ff-inter">Check In Date: </label>
-                            <input type="date" class="form-control ff-inter" name="checkIn" required value="{{$checkInDate}}">
+                            <input type="date" class="form-control ff-inter" name="checkIn" required
+                                value="{{ $checkInDate ?? '' }}">
                         </div>
                         <div>
                             <label class="form-label mb-0 ff-inter">Check Out Date: </label>
-                            <input type="date" class="form-control ff-inter" name="checkOut" required value="{{$checkOutDate}}">
+                            <input type="date" class="form-control ff-inter" name="checkOut" required
+                                value="{{ $checkOutDate ?? '' }}">
+
                         </div>
                     </div>
                     @isset($isAvailable)
                         @if ($isAvailable == true)
                             <p class="availability-text-success ff-inter">
-                                <img src="{{asset('assets/images/success_circle.png')}}" alt="">
+                                <img src="{{ asset('assets/images/success_circle.png') }}" alt="">
                                 Apartment is Available
                             </p>
-                            <button class="btn btn-light mt-5 w-100 ff-inter">Book Now</button>
+                            <a class="btn btn-light mt-5 w-100 ff-inter" href="{{route('Booking')}}">Book Now</a>
                         @else
                             <p class="availability-text-danger ff-inter">Apartment is Not Available</p>
                         @endif

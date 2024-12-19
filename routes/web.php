@@ -55,3 +55,7 @@ Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->n
 Route::post("/admin/create/apartment", [AdminController::class, 'createApartment'])->name('Create.Apartment');
 Route::get("/user/view/detail/{id}", [UserController::class, 'viewApartmentDetail'])->name('Detail.View.Apartment');
 Route::get("/apartment/availablity/{id}",[UserController::class, 'checkApartmentAvailability'])->name('Check.Apartment.Availability');
+
+
+// Booking Page - User
+Route::get("/booking", [UserController::class, 'Booking'])->name('Booking');
