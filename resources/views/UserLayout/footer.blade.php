@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-2">
             <p>Follow us</p>
-            <a href="">
+            <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ==">
                 <i class="fa-brands fa-instagram fa-xl"></i>
             </a>
             <span>|</span>
@@ -41,8 +41,8 @@
                 <i class="fa-brands fa-tiktok fa-xl"></i>
             </a>
             <span>|</span>
-            <a href="">
-                <i class="fa-brands fa-facebook fa-xl"></i>
+            <a href="https://www.facebook.com/profile.php?id=61569866642277">
+                <img src="{{asset('assets/images/fbIcon.png')}}" alt="">
             </a>
         </div>
     </div>
@@ -58,7 +58,7 @@
             <p>&copy; Copyright 2024 Sterling Executive Residential. All rights reserved.</p>
         </div>
         <div class="col-md-2">
-            <p>Developed by <a href="https://zhtechsolutions.com/" class="text-light" target="_blank">ZH Tech</a></p>
+            {{-- <p>Developed by <a href="https://zhtechsolutions.com/" class="text-light" target="_blank">ZH Tech</a></p> --}}
         </div>
     </div>
 </div>

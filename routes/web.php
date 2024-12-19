@@ -53,3 +53,4 @@ Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->n
 
 // Apartment - Admin
 Route::post("/admin/create/apartment", [AdminController::class, 'createApartment'])->name('Create.Apartment');
+Route::get("/user/view/detail/{id}", [UserController::class, 'viewApartmentDetail'])->name('Detail.View.Apartment');

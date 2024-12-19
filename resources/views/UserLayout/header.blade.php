@@ -29,6 +29,8 @@
 
     {{-- Swiper JS CDN --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    @stack('style')
 </head>
 
 <body>
@@ -40,16 +42,17 @@
             </div>
             <div class="col-md-2 d-flex justify-content-around align-items-center">
                 <a href="" class="ff-inter">Follow</a>
-                <a href="" class="mx-2">
-                    <i class="fa-brands fa-instagram fa-xl"></i>
+                <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ=="
+                    target="_blank" class="mx-2">
+                    <img src="{{ asset('assets/images/instagramIcon.png') }}" alt="">
                 </a>
                 <span>|</span>
-                <a href="" class="mx-2">
-                    <i class="fa-brands fa-tiktok fa-xl"></i>
+                <a href="#" class="mx-2" target="_blank">
+                    <img src="{{ asset('assets/images/tiktokIcon.png') }}" alt="">
                 </a>
                 <span>|</span>
-                <a href="" class="mx-2">
-                    <i class="fa-brands fa-facebook fa-xl"></i>
+                <a href="https://www.facebook.com/profile.php?id=61569866642277" class="mx-2" target="_blank">
+                    <img src="{{ asset('assets/images/fbIcon.png') }}" alt="">
                 </a>
             </div>
         </div>
@@ -98,30 +101,6 @@
             </nav>
             @stack('CTA')
 
-            <div class="row mb-5">
-                <div class="col-md-9 mx-auto rounded bg-white">
-                    <form action="{{route('Get.Available.Apartment')}}" method="get" id="form-elements" class="form mt-3 mb-3">
-                        @csrf
-                        <div class="row d-flex justify-content-around align-items-end">
-                            <div class="col-md-4">
-                                <label class="form-label fw-bold mb-0">Search By Area:</label>
-                                <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location">
-                            </div>
-                            <div class="col-md-2">
-                                <label class="form-label fw-bold mb-0">Check In:</label>
-                                <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate">
-                            </div>
-                            <div class="col-md-2">
-                                <label class="form-label fw-bold mb-0">Check Out:</label>
-                                <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate">
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-dark" type="submit">SEARCH</button>
-                            </div>
-                        </div>
 
-                    </form>
-                </div>
-            </div>
         </div>
     </div>

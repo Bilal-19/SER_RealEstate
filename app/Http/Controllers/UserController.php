@@ -59,6 +59,28 @@ class UserController extends Controller
     public function viewAvailableAparment(Request $request)
     {
         print_r($request->all());
+        $availableApartments = DB::table('apartments')
+            ->where('area_name', 'LIKE', $request->location)
+            ->whereDate('availableFrom', '<=', $request->checkInDate)
+            ->whereDate('availableTill', '>=', $request->checkOutDate)
+            ->get();
+        return view('User.Appartments')->with(compact('availableApartments'));
+    }
+
+    public function viewApartmentDetail($id)
+    {
+        $firstFourAmenities = DB::table('benefits')->limit(4)->get();
+        $LastFourAmenities = DB::table('benefits')->take(4)->skip(4)->get();
+        $findApartment = DB::table('apartments')->where('id', $id)->first();
+        $images = explode('|', $findApartment->multipleImages);
+        $apartments = DB::table('apartments')->get();
+        return view('User.ViewApartmentDetail')->with(compact(
+            'images',
+            'findApartment',
+            'firstFourAmenities',
+            'LastFourAmenities',
+            'apartments'
+        ));
     }
 }
 

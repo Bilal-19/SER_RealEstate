@@ -1,23 +1,79 @@
 @extends('UserLayout.main')
+@push('CTA')
+    <div class="row mt-5">
+        <div class="col-md-9 mx-auto text-light search-container">
+            <p class="text-center ff-poppins">Available Apartments</p>
+            <h2 class="text-center ff-poppins fs-56">Experience Comfort and Flexibility in the Heart of London
+            </h2>
+        </div>
+    </div>
 
+    <div class="row mb-5">
+        <div class="col-md-9 mx-auto rounded bg-white">
+            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
+                @csrf
+                <div class="row d-flex justify-content-around align-items-end">
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold mb-0">Search By Area:</label>
+                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold mb-0">Check In:</label>
+                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold mb-0">Check Out:</label>
+                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-dark" type="submit">SEARCH</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+@endpush
 
 @section('user-main-section')
-    <div class="row mx-auto d-flex flex-row mt-3 mb-3 justify-content-around align-items-center bg-light">
-        <div class="col-md-4">
-            <img src="{{ asset('assets/images/favourites_4.webp') }}" alt="" class="img-fluid mt-2 mb-2 rounded">
-        </div>
-        <div class="col-md-4">
-            <h5>St Lukes</h5>
-            <p>Bastwick Street, Islington, London, EC1V 399, UK</p>
-            <p>Sterling Executive Residential are spacious with a superb value for the money as rates are up to 30% less
-                than a comparable hotel room and offer a giant increase in space. Our booking transactions are secure and
-                trusted.
-            </p>
-            <hr>
-            <div class="d-flex justify-content-between">
-                <a href="" class="btn btn-dark">VIEW APPARTMENT</a>
-                <button class="btn btn-light border border-secondary">8</button>
+    <div class="row">
+        <p>
+            {{ count($availableApartments) }} records found
+        </p>
+    </div>
+    <div class="row mx-auto  mt-3 mb-3">
+        @foreach ($availableApartments as $rec)
+            <div class="col-md-10 mx-auto">
+                <div class="row bg-white rounded d-flex flex-row justify-content-center align-items-center">
+                    <div class="col-md-5">
+                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                            class="img-fluid mt-2 mb-2 rounded">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="ff-inter fs-24">{{ $rec->area_name }}</h5>
+                                <p class="ff-inter">{{ $rec->street_address }}</p>
+                            </div>
+                            <div>
+                                <p class="ff-inter">from ${{ $rec->price }}</p>
+                            </div>
+                        </div>
+                        <p class="ff-inter">{{ $rec->description }}</p>
+                        <div class="d-flex flex-row justify-content-start">
+                            <p class="d-inline ff-inter">
+                                <img src="{{asset('assets/images/bedroom.png')}}" alt="">
+                                {{$rec->total_bedrooms}} Bedrooms
+                            </p>
+                            <p class="d-inline ff-inter mx-3">
+                                <img src="{{asset('assets/images/Bathroom.png')}}" alt="">
+                                {{$rec->total_bathrooms}} Bathrooms
+                            </p>
+                        </div>
+                        <a href="{{route('Detail.View.Apartment', ['id' => $rec->id])}}" class="btn btn-dark ff-inter">View Apartment</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
 @endsection

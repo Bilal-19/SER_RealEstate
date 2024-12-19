@@ -37,7 +37,7 @@ class AdminController extends Controller
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
                 $image_full_name = $image_name.'.'.$ext;
-                $upload_path = 'Apartment/Images';
+                $upload_path = 'Apartment/Images/';
                 $image_url = $upload_path.$image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $image[] = $image_url;

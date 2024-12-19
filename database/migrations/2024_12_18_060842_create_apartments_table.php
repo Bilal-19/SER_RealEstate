@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->integer('price');
             $table->integer('price_per_night');
             $table->string('street_address');
-            $table->string('map_location');
+            $table->text('map_location');
             $table->enum('total_bedrooms', [1, 2, 3, 4, 5, 6]);
             $table->enum('total_bathrooms', [1, 2, 3]);
             $table->string('description');
@@ -29,7 +29,7 @@ return new class extends Migration {
 
             // Property Images
             $table->string('featuredImage');
-            $table->string('multipleImages');
+            $table->text('multipleImages');
 
             // Property Reviews
             $table->integer('cleanlinessVal');

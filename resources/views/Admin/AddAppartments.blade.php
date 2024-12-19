@@ -6,7 +6,7 @@
         </div>
 
         <div class="row">
-            <form action="{{route('Create.Apartment')}}" enctype="multipart/form-data" autocomplete="off" method="post" class="form mb-5">
+            <form action="{{route('Create.Apartment')}}" enctype="multipart/form-data" method="post" class="form mb-5">
                 @csrf
                 <div class="col-md-10 mx-auto">
                     <div class="row mt-3">
@@ -70,7 +70,6 @@
                         <div class="col-md-12">
                             <label class="form-label mb-0">Enter Apartment Description:</label>
                             <textarea class="form-control" rows="5" placeholder="Enter apartment description" style="resize: none;" name="apartmentDescription">
-                                {{old('apartmentDescription')}}
                             </textarea>
                         </div>
                     </div>
