@@ -55,6 +55,11 @@
             width: 100%;
             border-bottom: 1px solid black;
         }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
     </style>
 @endpush
 @section('user-main-section')
@@ -88,13 +93,13 @@
                 <a href="#general-info" class="ff-inter text-dark active">General Information</a>
             </div>
             <div class="col-md-3">
-                <a href="" class="ff-inter text-dark active-hover">Property Details</a>
+                <a href="#property-details" class="ff-inter text-dark active-hover">Property Details</a>
             </div>
             <div class="col-md-3">
-                <a href="" class="ff-inter text-dark active-hover">Propery Surroundings</a>
+                <a href="#property-surroundings" class="ff-inter text-dark active-hover">Propery Surroundings</a>
             </div>
             <div class="col-md-3">
-                <a href="" class="ff-inter text-dark active-hover">Property Amenities</a>
+                <a href="#property-amenities" class="ff-inter text-dark active-hover">Property Amenities</a>
             </div>
         </div>
 
@@ -127,9 +132,9 @@
             <div class="col-md-5"></div>
         </div>
 
-        <div class="row d-flex justify-content-around">
+        <div class="row d-flex justify-content-around" id="general-info">
             <div class="col-md-5">
-                <div class="bg-white p-5 shadow mt-3 border-radius-18" id="general-info">
+                <div class="bg-white p-5 shadow mt-3 border-radius-18">
                     <h4 class="fs-20 ff-inter">General Information</h4>
                     <p class="ff-inter">
                         {{ $findApartment->description }}
@@ -150,12 +155,12 @@
                             <input type="date" class="form-control ff-inter">
                         </div>
                     </div>
-                    <button class="btn btn-dark mt-3 w-100 ff-inter">Check Availability</button>
+                    <button class="btn btn-dark mt-3 w-100 ff-inter">Book Now</button>
                 </form>
             </div>
         </div>
 
-        <div class="row d-flex justify-content-around">
+        <div class="row d-flex justify-content-around" id="property-details">
             <div class="col-md-5">
                 <div class="bg-white p-5 mt-3 shadow border-radius-18">
                     <h5 class="ff-inter">Details</h5>
@@ -177,7 +182,7 @@
             <div class="col-md-5"></div>
         </div>
 
-        <div class="row d-flex justify-content-around">
+        <div class="row d-flex justify-content-around" id="property-amenities">
             <div class="col-md-5">
                 <div class="bg-white mt-3 shadow border-radius-18 p-5">
                     <h5 class="fs-20 ff-inter">Amenities</h5>
@@ -316,15 +321,11 @@
             </div>
             <div class="col-md-5"></div>
         </div>
-
-        <div class="row">
-
-        </div>
     </div>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
+        <div class="row mb-5">
+            <div class="col-md-11 mx-auto">
                 @if (count($apartments) < 5)
                     <p class="ff-inter text-center">
                         Please add minimum five apartments to view the slider.
@@ -338,6 +339,24 @@
                                 <div class="swiper-slide">
                                     <img src="{{ asset('Apartment/Thubmbnail/' . $item->featuredImage) }}" alt=""
                                         class="img-fluid d-block">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="card-text ff-inter text-uppercase">{{ $item->area_name }}
+                                            </h6>
+                                            <p class="mb-0 ff-inter">{{ $item->area_name }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 ff-inter">from £{{ $item->price }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mt-0 ff-inter"><i class="fa-solid fa-bed"></i>
+                                            {{ $item->total_bedrooms }}
+                                            bedrooms</p>
+                                        <p class="mt-0 ff-inter"><i class="fa-solid fa-bath"></i>
+                                            {{ $item->total_bathrooms }}
+                                            bathrooms</p>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>

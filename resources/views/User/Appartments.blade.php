@@ -1,9 +1,39 @@
 @extends('UserLayout.main')
+@push('style')
+    <style>
+        .apartment-thumbnail-img {
+            height: 293px;
+            width: 412px;
+            object-fit: cover
+        }
+
+        body {
+            background-color: #F5F5F5;
+        }
+
+        .apartment-container {
+            background-color: #ffffff;
+            padding: 32px;
+            border-radius: 22px;
+        }
+
+        iframe{
+            height: 300px;
+            width: 250px;
+        }
+
+        .banner-img {
+            background-image: url('/assets/images/available_apartment_banner.png');
+            background-size: cover;
+        }
+    </style>
+@endpush
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto text-light search-container">
             <p class="text-center ff-poppins">Available Apartments</p>
-            <h2 class="text-center ff-poppins fs-56">Experience Comfort and Flexibility in the Heart of London
+            <h2 class="text-center ff-poppins fs-48">
+                Serviced Corporate Apartments
             </h2>
         </div>
     </div>
@@ -41,36 +71,43 @@
             {{ count($availableApartments) }} records found
         </p>
     </div>
-    <div class="row mx-auto  mt-3 mb-3">
+    <div class="row mx-auto mt-3 mb-3">
         @foreach ($availableApartments as $rec)
-            <div class="col-md-10 mx-auto">
-                <div class="row bg-white rounded d-flex flex-row justify-content-center align-items-center">
-                    <div class="col-md-5">
+            <div class="col-md-10 mx-auto mb-3 apartment-container">
+                <div class="row bg-white rounded d-flex flex-row justify-content-around align-items-center">
+                    <div class="col-md-4">
                         <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
-                            class="img-fluid mt-2 mb-2 rounded">
+                            class="img-fluid mt-2 mb-2 rounded apartment-thumbnail-img">
                     </div>
                     <div class="col-md-5">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="ff-inter fs-24">{{ $rec->area_name }}</h5>
-                                <p class="ff-inter">{{ $rec->street_address }}</p>
+                                <p class="ff-inter">
+                                    <img src="{{ asset('assets/images/locationIcon.png') }}" alt="">
+                                    {{ $rec->street_address }}
+                                </p>
                             </div>
                             <div>
-                                <p class="ff-inter">from ${{ $rec->price }}</p>
+                                <p class="ff-inter fw-medium">from ${{ $rec->price }}</p>
                             </div>
                         </div>
                         <p class="ff-inter">{{ $rec->description }}</p>
                         <div class="d-flex flex-row justify-content-start">
                             <p class="d-inline ff-inter">
-                                <img src="{{asset('assets/images/bedroom.png')}}" alt="">
-                                {{$rec->total_bedrooms}} Bedrooms
+                                <img src="{{ asset('assets/images/bedroom.png') }}" alt="">
+                                {{ $rec->total_bedrooms }} Bedrooms
                             </p>
                             <p class="d-inline ff-inter mx-3">
-                                <img src="{{asset('assets/images/Bathroom.png')}}" alt="">
-                                {{$rec->total_bathrooms}} Bathrooms
+                                <img src="{{ asset('assets/images/Bathroom.png') }}" alt="">
+                                {{ $rec->total_bathrooms }} Bathrooms
                             </p>
                         </div>
-                        <a href="{{route('Detail.View.Apartment', ['id' => $rec->id])}}" class="btn btn-dark ff-inter">View Apartment</a>
+                        <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}"
+                            class="btn btn-dark ff-inter fw-medium">View Apartment</a>
+                    </div>
+                    <div class="col-md-3">
+                        {!! $rec->map_location !!}
                     </div>
                 </div>
             </div>

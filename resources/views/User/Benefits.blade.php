@@ -1,4 +1,14 @@
 @extends('UserLayout.main')
+
+@push('style')
+    <style>
+        .banner-img {
+            background-image: url('/assets/images/benefit_banner.png');
+            background-size: cover;
+        }
+    </style>
+@endpush
+
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-6 mx-auto text-light search-container">

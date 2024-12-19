@@ -56,8 +56,8 @@
                 </a>
             </div>
         </div>
-        <div class="row" id="home-hero-banner-img">
-            <nav class="navbar navbar-expand-lg mb-5 bg-light">
+        <div class="row banner-img">
+            <nav class="navbar navbar-expand-lg mb-5 bg-light shadow">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
                         {{-- <img src="{{ asset('assets/images/company_logo.png') }}" alt=""> --}}

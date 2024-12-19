@@ -58,9 +58,9 @@ class UserController extends Controller
     // View Available Apartments
     public function viewAvailableAparment(Request $request)
     {
-        print_r($request->all());
+        $location = $request->location;
         $availableApartments = DB::table('apartments')
-            ->where('area_name', 'LIKE', $request->location)
+            ->where('street_address', 'LIKE', "%$location%")
             ->whereDate('availableFrom', '<=', $request->checkInDate)
             ->whereDate('availableTill', '>=', $request->checkOutDate)
             ->get();

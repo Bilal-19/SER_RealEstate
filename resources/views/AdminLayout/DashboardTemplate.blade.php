@@ -202,14 +202,14 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-1">
-                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="{{ route('Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="#">
                                     <i class="fa-solid fa-building"></i>
                                     Apartments
@@ -217,7 +217,7 @@
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="{{ route('Favourite.Apartment') }}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Favourite Apartments
@@ -225,7 +225,7 @@
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link text-dark text-sm-dark-green d-flex align-items-center gap-3"
+                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="{{ route('Benefits') }}">
                                     <i class="fa-solid fa-concierge-bell"></i>
                                     Benefits
@@ -233,13 +233,13 @@
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Blog')}}">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Blog')}}">
                                     <i class="fa-solid fa-newspaper"></i> Blogs
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark"
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark"
                                     href="#">
                                     <i class="fas fa-map-marker-alt"></i>
                                     Neighbourhood
@@ -247,14 +247,14 @@
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Policy')}}">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Policy')}}">
                                     <i class="fa-regular fa-file-alt"></i>Policy
 
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 mb-1 text-dark" href="#">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="#">
                                     <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
 
                                 </a>

@@ -2,7 +2,10 @@
 
 @push('style')
     <style>
-
+        .banner-img {
+            background-image: url('/assets/images/home_banner.png');
+            background-size: cover;
+        }
     </style>
 @endpush
 
