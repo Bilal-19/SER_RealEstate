@@ -27,18 +27,40 @@ class AdminController extends Controller
     public function createApartment(Request $request)
     {
 
+        // Form Validation
+        $request->validate([
+            'areaName' => 'required',
+            'apartmentPrice' => 'required',
+            'apartmentPricePerNight' => 'required',
+            'streetAddress' => 'required',
+            'apartmentMapLocation' => 'required',
+            'totalBedrooms' => 'required|integer|min:1|max:6',
+            'totalBathrooms' => 'required|integer|min:1|max:4',
+            'apartmentDescription' => 'required',
+            'availableFrom' => 'required',
+            'availableTill' => 'required',
+            'featuredImg' => 'required',
+            'apartmentMultImages' => 'required',
+            'cleanlinessVal' => 'required|integer|min:1|max:10',
+            'comfortVal' => 'required|integer|min:1|max:10',
+            'facilityVal' => 'required|integer|min:1|max:10',
+            'locationVal' => 'required|integer|min:1|max:10',
+            'staffVal' => 'required|integer|min:1|max:10',
+            'valueForMoney' => 'required|integer|min:1|max:10',
+            'internetQuality' => 'required|integer|min:1|max:10'
+        ]);
         // Creating timestamp of featured image
         $featuredImgTimeStamp = time() . '.' . $request->featuredImg->getClientOriginalExtension();
 
         // Loop through multiple images
         $image = array();
-        if($files = $request->file('apartmentMultImages')){
+        if ($files = $request->file('apartmentMultImages')) {
             foreach ($files as $file) {
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
-                $image_full_name = $image_name.'.'.$ext;
+                $image_full_name = $image_name . '.' . $ext;
                 $upload_path = 'Apartment/Images/';
-                $image_url = $upload_path.$image_full_name;
+                $image_url = $upload_path . $image_full_name;
                 $file->move($upload_path, $image_full_name);
                 $image[] = $image_url;
             }
