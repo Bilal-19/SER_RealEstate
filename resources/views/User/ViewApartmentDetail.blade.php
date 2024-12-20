@@ -182,7 +182,11 @@
                                 <img src="{{ asset('assets/images/success_circle.png') }}" alt="">
                                 Apartment is Available
                             </p>
-                            <a class="btn btn-light mt-5 w-100 ff-inter" href="{{route('Booking')}}">Book Now</a>
+                            <a class="btn btn-light mt-5 w-100 ff-inter" href="{{route('Booking', [
+                            'id'=>$findApartment->id,
+                            'checkIn' => request('checkIn'),
+                            'checkOut' => request('checkOut')
+                            ])}}">Book Now</a>
                         @else
                             <p class="availability-text-danger ff-inter">Apartment is Not Available</p>
                         @endif

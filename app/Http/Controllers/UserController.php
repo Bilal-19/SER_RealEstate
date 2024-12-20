@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 class UserController extends Controller
 {
     public function index()
@@ -123,8 +123,17 @@ class UserController extends Controller
         }
     }
 
-    public function Booking(){
-        return view("User.Booking");
+    public function Booking($id, $checkIn, $checkOut)
+    {
+        $checkIn = request('checkIn');
+        $checkOut = request('checkOut');
+
+        $checkInDate = Carbon::createFromFormat('Y-m-d', $checkIn);
+        $checkOutDate = Carbon::createFromFormat('Y-m-d', $checkOut);
+
+
+        $stayDate = $checkInDate->diffInDays($checkOutDate);
+        echo $stayDate;
     }
 }
 
