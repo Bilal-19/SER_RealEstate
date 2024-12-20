@@ -59,3 +59,7 @@ Route::get("/apartment/availablity/{id}",[UserController::class, 'checkApartment
 
 // Booking Page - User
 Route::get("/booking/{id}/{checkIn}/{checkOut}", [UserController::class, 'Booking'])->name('Booking');
+
+
+// Thank you page - User
+Route::get("/thankyou", [UserController::class, 'ThankYou']);

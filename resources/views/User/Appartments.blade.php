@@ -64,6 +64,22 @@
         </div>
     </div>
 @endpush
+@push('footer-cta')
+    <div class="container-fluid footer" id="footer_bg">
+        <div class="row d-flex justify-content-around align-items-center">
+            <div class="col-md-5">
+                <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>
+                <p class="ff-inter text-light">Feel like home at one of our modern apartments located in the heart of
+                    London.
+                    Make your own meals, order a
+                    take-away, enjoy the space and privacy, just like home.</p>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="footer-search-btn">Search</a>
+            </div>
+        </div>
+    </div>
+@endpush
 
 @section('user-main-section')
     <div class="row">

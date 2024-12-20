@@ -138,5 +138,10 @@ class UserController extends Controller
 
         return view('User.Booking')->with(compact('stayDays', 'findApartment','checkIn', 'checkOut'));
     }
+
+    // Thankyou page
+public function ThankYou(){
+    return view('User.Thankyou');
+}
 }
 
