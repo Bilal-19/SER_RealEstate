@@ -16,6 +16,14 @@
             padding: 32px;
         }
 
+        .booking-date {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 10px;
+            height: 48px;
+            width: 203px;
+        }
+
         .border-grey {
             border: 1px solid rgb(212, 212, 212);
         }
@@ -23,6 +31,17 @@
         ul>li {
             font-size: 14px;
             font-family: "inter";
+        }
+
+        .book-apartment-thumbnail {
+            height: 98px;
+            width: 120px;
+        }
+
+        .price-container {
+            height: 390px;
+            width: 441px;
+            padding: 24px;
         }
     </style>
 @endpush
@@ -45,16 +64,16 @@
                     <h4 class="ff-inter fs-20">Booking Details</h4>
                     <div class="d-flex mt-4">
                         <div>
-                            <label class="form-label mb-0 ff-inter fs-14">Check In Date:</label>
-                            <input type="date" name="" class="form-control">
+                            <p class="ff-inter mb-0">Check In Date:</p>
+                            <p class="booking-date">{{ date('d M Y', strtotime($checkIn)) }}</p>
                         </div>
                         <div class="mx-5">
-                            <label class="form-label mb-0 ff-inter fs-14">Check Out Date:</label>
-                            <input type="date" name="" class="form-control">
+                            <p class="ff-inter mb-0">Check Out Date:</p>
+                            <p class="booking-date">{{ date('d M Y', strtotime($checkOut)) }}</p>
                         </div>
                     </div>
 
-                    <p class="ff-inter mt-3">7 Night stay</p>
+                    <p class="ff-inter mt-3">{{ $stayDays }} Night stay</p>
                 </div>
 
                 <h4 class="ff-inter fs-24 mt-5">Personal Information</h4>
@@ -192,7 +211,42 @@
                     <button class="btn btn-dark mt-5 w-100 mb-5">Confirm & Payment</button>
                 </form>
             </div>
-            <div class="col-md-5"></div>
+            <div class="col-md-4 bg-white border-grey border-radius-16 price-container">
+                <div class="d-flex justify-content-around align-items-center">
+                    <div>
+                        <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featuredImage) }}" alt=""
+                            class="img-fluid book-apartment-thumbnail rounded">
+                    </div>
+                    <div>
+                        <h5 class="fs-18 ff-poppins fw-medium">{{ $findApartment->area_name }}</h5>
+                        <p>{{ $findApartment->street_address }}</p>
+                    </div>
+                </div>
+
+                @php
+                    $apartmentCost = $findApartment->price_per_night * $stayDays;
+                    $vat = 225;
+
+                    $totalCost = $apartmentCost + $vat;
+                @endphp
+
+                <div class="d-flex justify-content-between p-2 mt-4 align-items-center mb-0">
+                    <h6 class="fs-18 ff-inter">Net Cost (${{ $findApartment->price_per_night }} * {{ $stayDays }})</h6>
+                    <p class="ff-inter fs-18">${{ $apartmentCost }}</p>
+                </div>
+
+                <div class="d-flex justify-content-between p-2 align-items-center">
+                    <h6 class="fs-18 ff-inter">VAT</h6>
+                    <p class="ff-inter fs-18">${{ $vat }}</p>
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-between p-2 align-items-center">
+                    <h6 class="fs-18 ff-inter">Total Cost</h6>
+                    <p class="ff-inter fs-18 fw-bold">${{ $totalCost }}</p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -132,8 +132,11 @@ class UserController extends Controller
         $checkOutDate = Carbon::createFromFormat('Y-m-d', $checkOut);
 
 
-        $stayDate = $checkInDate->diffInDays($checkOutDate);
-        echo $stayDate;
+        $stayDays = $checkInDate->diffInDays($checkOutDate);
+
+        $findApartment = DB::table('apartments')->where('id', $id)->first();
+
+        return view('User.Booking')->with(compact('stayDays', 'findApartment','checkIn', 'checkOut'));
     }
 }
 

@@ -42,7 +42,7 @@
             </a>
             <span>|</span>
             <a href="https://www.facebook.com/profile.php?id=61569866642277">
-                <img src="{{asset('assets/images/fbIcon.png')}}" alt="">
+                <img src="{{ asset('assets/images/fbIcon.png') }}" alt="">
             </a>
         </div>
     </div>

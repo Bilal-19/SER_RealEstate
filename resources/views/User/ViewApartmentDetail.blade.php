@@ -78,6 +78,17 @@
             padding: 4px 8px;
             display: inline;
         }
+
+        .w-732 {
+            width: 732px;
+        }
+
+        .check-availability-container{
+            background-color: #ECECEC;
+            width: 400px;
+            height: fit-content;
+            padding: 24px;
+        }
     </style>
 @endpush
 @section('user-main-section')
@@ -122,7 +133,7 @@
         </div>
 
         <div class="row mt-5 d-flex justify-content-around">
-            <div class="col-md-5">
+            <div class="col-md-5 w-732">
                 <div class="d-flex justify-content-between">
                     <div>
                         <h4 class="fs-32 ff-inter fw-medium">{{ $findApartment->area_name }}</h4>
@@ -151,75 +162,36 @@
         </div>
 
         <div class="row d-flex justify-content-around" id="general-info">
-            <div class="col-md-5">
+            <div class="col-md-5 w-732">
+                {{-- General Information --}}
                 <div class="bg-white p-5 shadow mt-3 border-radius-18">
                     <h4 class="fs-20 ff-inter">General Information</h4>
                     <p class="ff-inter">
                         {{ $findApartment->description }}
                     </p>
                 </div>
-            </div>
 
-            <div class="col-md-5 border-radius-18 bg-pale-gray p-5 mt-3">
-                <h4 class="ff-inter fs-20 fw-medium">Check Availability & Book Now</h4>
-                <form action="{{ route('Check.Apartment.Availability', ['id' => $findApartment->id]) }}" method="get">
-                    <div class="d-flex justify-content-between mb-4">
-                        <div>
-                            <label class="form-label mb-0 ff-inter">Check In Date: </label>
-                            <input type="date" class="form-control ff-inter" name="checkIn" required
-                                value="{{ $checkInDate ?? '' }}">
-                        </div>
-                        <div>
-                            <label class="form-label mb-0 ff-inter">Check Out Date: </label>
-                            <input type="date" class="form-control ff-inter" name="checkOut" required
-                                value="{{ $checkOutDate ?? '' }}">
-
-                        </div>
-                    </div>
-                    @isset($isAvailable)
-                        @if ($isAvailable == true)
-                            <p class="availability-text-success ff-inter">
-                                <img src="{{ asset('assets/images/success_circle.png') }}" alt="">
-                                Apartment is Available
-                            </p>
-                            <a class="btn btn-light mt-5 w-100 ff-inter" href="{{route('Booking', [
-                            'id'=>$findApartment->id,
-                            'checkIn' => request('checkIn'),
-                            'checkOut' => request('checkOut')
-                            ])}}">Book Now</a>
-                        @else
-                            <p class="availability-text-danger ff-inter">Apartment is Not Available</p>
-                        @endif
-                    @endisset
-                    <button class="btn btn-dark mt-3 w-100 ff-inter">Check Availability</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="row d-flex justify-content-around" id="property-details">
-            <div class="col-md-5">
+                {{-- Details --}}
                 <div class="bg-white p-5 mt-3 shadow border-radius-18">
                     <h5 class="ff-inter">Details</h5>
-                    <div class="d-flex justify-content-between">
-                        <p class="ff-inter"><b>Bedrooms: </b>{{ $findApartment->total_bedrooms }}</p>
-                        <p class="ff-inter"><b>Bathrooms: </b>{{ $findApartment->total_bathrooms }}</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="ff-inter"><b>Price Per Night: </b>${{ $findApartment->price_per_night }}</p>
-                        <p class="ff-inter"><b>Location: </b>{{ $findApartment->street_address }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="">
+                            <p class="ff-inter"><b>Bedrooms: </b>{{ $findApartment->total_bedrooms }}</p>
+                            <p class="ff-inter"><b>Price Per Night: </b>${{ $findApartment->price_per_night }}</p>
+                        </div>
+                        <div class="">
+                            <p class="ff-inter"><b>Bathrooms: </b>{{ $findApartment->total_bathrooms }}</p>
+                            <p class="ff-inter"><b>Location: </b>{{ $findApartment->street_address }}</p>
+                        </div>
                     </div>
 
                     <div>
                         {!! $findApartment->map_location !!}
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-5"></div>
-        </div>
+                {{-- Amenities --}}
 
-        <div class="row d-flex justify-content-around" id="property-amenities">
-            <div class="col-md-5">
                 <div class="bg-white mt-3 shadow border-radius-18 p-5">
                     <h5 class="fs-20 ff-inter">Amenities</h5>
                     <div class="d-flex justify-content-between">
@@ -243,12 +215,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-5"></div>
-        </div>
 
-        <div class="row d-flex justify-content-around">
-            <div class="col-md-5">
+                {{-- Reviews --}}
                 <div class="bg-white border-radius-18 p-5 mt-3 shadow">
                     <h4 class="ff-inter fs-20 fw-medium">Reviews</h4>
                     <div class="reviews-style">
@@ -341,18 +309,57 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5"></div>
+
+            <div class="col-md-6 border-radius-18 bg-pale-gray p-5 mt-3 check-availability-container">
+                <h4 class="ff-inter fs-20 fw-medium">Check Availability & Book Now</h4>
+                <form action="{{ route('Check.Apartment.Availability', ['id' => $findApartment->id]) }}" method="get">
+                    <div class="d-flex justify-content-between mb-4">
+                        <div>
+                            <label class="form-label mb-0 ff-inter">Check In Date: </label>
+                            <input type="date" class="form-control ff-inter" name="checkIn" required
+                                value="{{ $checkInDate ?? '' }}">
+                        </div>
+                        <div class="mx-2">
+                            <label class="form-label mb-0 ff-inter">Check Out Date: </label>
+                            <input type="date" class="form-control ff-inter" name="checkOut" required
+                                value="{{ $checkOutDate ?? '' }}">
+
+                        </div>
+                    </div>
+                    @isset($isAvailable)
+                        @if ($isAvailable == true)
+                            <p class="availability-text-success ff-inter">
+                                <img src="{{ asset('assets/images/success_circle.png') }}" alt="">
+                                Apartment is Available
+                            </p>
+                            <a class="btn btn-light mt-5 w-100 ff-inter"
+                                href="{{ route('Booking', [
+                                    'id' => $findApartment->id,
+                                    'checkIn' => request('checkIn'),
+                                    'checkOut' => request('checkOut'),
+                                ]) }}">Book
+                                Now</a>
+                        @else
+                            <p class="availability-text-danger ff-inter">Apartment is Not Available</p>
+                        @endif
+                    @endisset
+                    <button class="btn btn-dark mt-3 w-100 ff-inter">Check Availability</button>
+                </form>
+            </div>
         </div>
 
+
+
+
         <div class="row mt-5 d-flex justify-content-around">
-            <div class="col-md-5">
+            <div class="col-md-5 w-732">
                 <h4 class="ff-poppins fs-32">Neighbourhood</h4>
             </div>
             <div class="col-md-5"></div>
         </div>
 
         <div class="row mt-5 d-flex justify-content-around">
-            <div class="col-md-5">
+            <div class="col-md-5 w-732">
                 <h4 class="ff-poppins fs-32">Explore Other Apartments</h4>
             </div>
             <div class="col-md-5"></div>
