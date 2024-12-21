@@ -1,18 +1,21 @@
 @stack('footer-cta')
-<div class="container-fluid text-light pb-2 footer-top-border" id="footer-color">
+<div class="container-fluid text-light pb-2 " id="footer-color">
     <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5">
         <div class="col-md-4">
-            <h5 class="ff-poppins">STERLING EXECUTIVE RESIDENTIAL</h5>
+            <h5 class="ff-poppins">
+                <img src="{{asset('assets/images/company_logo.png')}}" alt="" style="height: 80px; width: 80px;">
+                STERLING EXECUTIVE RESIDENTIAL
+            </h5>
             <p class="ff-inter">Design amazing digital experiences that create more happy in the world.</p>
         </div>
         <div class="col-md-2">
             <p class="ff-inter">Sitemap</p>
-            <a href="#" class="text-light d-block ff-inter">Home</a>
-            <a href="#" class="text-light d-block ff-inter">About Us</a>
-            <a href="#" class="text-light d-block ff-inter">Corporate</a>
-            <a href="#" class="text-light d-block ff-inter">Benefits</a>
-            <a href="#" class="text-light d-block ff-inter">Inquiry</a>
-            <a href="#" class="text-light d-block ff-inter">Blogs</a>
+            <a href="{{route('Landing.Page')}}" class="text-light d-block ff-inter">Home</a>
+            <a href="{{route('View.About')}}" class="text-light d-block ff-inter">About Us</a>
+            <a href="{{route('View.Corporate')}}" class="text-light d-block ff-inter">Corporate</a>
+            <a href="{{route('View.Benefits')}}" class="text-light d-block ff-inter">Benefits</a>
+            <a href="{{route('View.Enquiry.Form')}}" class="text-light d-block ff-inter">Inquiry</a>
+            <a href="{{route('View.Blogs')}}" class="text-light d-block ff-inter">Blogs</a>
         </div>
         <div class="col-md-3">
             <p>Contact Us</p>

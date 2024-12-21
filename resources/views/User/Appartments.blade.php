@@ -65,7 +65,7 @@
     </div>
 @endpush
 @push('footer-cta')
-    <div class="container-fluid footer" id="footer_bg">
+    <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-5">
                 <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>

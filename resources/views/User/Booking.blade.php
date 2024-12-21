@@ -114,9 +114,34 @@
                         </div>
                     </div>
 
-                    <div class="mb-5 mt-3">
+                    <div class="mb-3">
                         <label class="form-label fs-14 ff-inter">Country: </label>
                         <input type="text" class="form-control ff-inter fs-16">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Name on Card</label>
+                        <input class="form-control" type="text">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Card Number</label>
+                        <input autocomplete="off" class="form-control card-number" type="text">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">CVC</label>
+                            <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Expiration Month</label>
+                            <input class="form-control card-expiry-month" placeholder="MM" type="text">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Expiration Year</label>
+                            <input class="form-control card-expiry-year" placeholder="YYYY" type="text">
+                        </div>
                     </div>
 
                     <h5 class="ff-inter fs-20">The Fine Print</h5>
