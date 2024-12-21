@@ -17,7 +17,7 @@
             border-radius: 22px;
         }
 
-        iframe{
+        iframe {
             height: 300px;
             width: 250px;
         }
@@ -25,6 +25,12 @@
         .banner-img {
             background-image: url('/assets/images/available_apartment_banner.png');
             background-size: cover;
+        }
+
+        #map {
+            height: 200px;
+            width: 80%;
+            border: 1px solid black;
         }
     </style>
 @endpush
@@ -87,6 +93,12 @@
             {{ count($availableApartments) }} records found
         </p>
     </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto" id="map">
+
+        </div>
+    </div>
     <div class="row mx-auto mt-3 mb-3">
         @foreach ($availableApartments as $rec)
             <div class="col-md-10 mx-auto mb-3 apartment-container">
@@ -129,4 +141,24 @@
             </div>
         @endforeach
     </div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function showMap(lat, long) {
+            var coordinate = {
+                lat: lat,
+                lng: long
+            }
+
+            new google.maps.Maps(
+                document.getElementById("map"), {
+                    zoom: 10,
+                    center: coordinate
+                }
+            )
+        }
+
+        showMap(25.2048, 55.2708)
+    </script>
 @endsection
