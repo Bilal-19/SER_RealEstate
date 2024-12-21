@@ -14,6 +14,27 @@ class AdminController extends Controller
     }
 
     // Appartment Section
+    public function Apartments()
+    {
+        $fetchAllApartments = DB::table('apartments')->get();
+        return view('Admin.Apartments')->with(compact('fetchAllApartments'));
+    }
+
+    public function toggleFav($id)
+    {
+        $findApartment = DB::table('apartments')->find($id);
+        if ($findApartment->isFavourite == 0) {
+            $findApartment->isFavourite = 1;
+            toastr()->success('Selected apartment is added to favourite');
+
+        } else {
+            $findApartment->isFavourite = 0;
+            toastr()->success('Selected apartment is removed to favourite');
+        }
+
+
+        return redirect()->back();
+    }
     public function viewAppartment()
     {
         return view('Admin.ViewAppartments');

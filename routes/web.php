@@ -52,6 +52,7 @@ Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->n
 
 
 // Apartment - Admin
+Route::get("/admin/apartments", [AdminController::class, 'Apartments'])->name('Apartments');
 Route::post("/admin/create/apartment", [AdminController::class, 'createApartment'])->name('Create.Apartment');
 Route::get("/user/view/detail/{id}", [UserController::class, 'viewApartmentDetail'])->name('Detail.View.Apartment');
 Route::get("/apartment/availablity/{id}",[UserController::class, 'checkApartmentAvailability'])->name('Check.Apartment.Availability');
@@ -67,3 +68,6 @@ Route::get("/thankyou", [UserController::class, 'ThankYou']);
 
 // Testing purpose
 Route::get("/nearby", [UserController::class, 'getNeighbours']);
+
+
+Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->name('Toggle.Fav');

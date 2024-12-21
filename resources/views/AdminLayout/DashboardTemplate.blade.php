@@ -211,7 +211,7 @@
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
-                                    aria-current="page" href="#">
+                                    aria-current="page" href="{{route('Apartments')}}">
                                     <i class="fa-solid fa-building"></i>
                                     Apartments
                                 </a>
