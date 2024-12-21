@@ -119,7 +119,7 @@
     </div>
 
     <div class="row mt-3">
-        <p class="fs-3">THE NEIGHBOURHOODS:</p>
+        <p class="text-capitalize ff-poppins fs-40 mt-5">Neighbourhoods:</p>
     </div>
 
     <div class="row">
@@ -136,7 +136,7 @@
                                 class="img-fluid neighbourhood-img rounded shadow">
                             <p class="fs-5 text-uppercase mb-0">{{$rec->area_name}}</p>
                             <p class="mt-0">
-                                {{$rec->description}}
+                                {!! Str::limit($rec->description, 50) !!}
                             </p>
                         </div>
                     @endforeach
