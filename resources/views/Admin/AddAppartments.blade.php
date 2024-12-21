@@ -123,6 +123,29 @@
                     </div>
 
                     <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label mb-0">Enter latitude value:</label>
+                            <input class="form-control" type="text" name="latitudeVal">
+                            <small class="text-danger">
+                                @error('latitudeVal')
+                                    {{ 'Please enter latitude value' }}
+                                @enderror
+                            </small>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label mb-0">Enter longitude value:</label>
+                            <input class="form-control" type="text" name="longitudeVal">
+                            <small class="text-danger">
+                                @error('longitudeVal')
+                                    {{ 'Please enter longitude value' }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-3">
                         <h4>Select Availability Date</h4>
                     </div>
 

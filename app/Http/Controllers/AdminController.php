@@ -87,7 +87,9 @@ class AdminController extends Controller
             'locationVal' => $request->locationVal,
             'staffVal' => $request->staffVal,
             'value_for_money' => $request->valueForMoney,
-            'free_wifi_val' => $request->internetQuality
+            'free_wifi_val' => $request->internetQuality,
+            'longitude' => $request->longitudeVal,
+            'latitude' => $request->latitudeVal,
         ]);
 
         if ($res) {

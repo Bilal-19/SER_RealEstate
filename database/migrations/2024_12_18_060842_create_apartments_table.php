@@ -40,6 +40,10 @@ return new class extends Migration {
             $table->integer('value_for_money');
             $table->integer('free_wifi_val');
 
+            // Latitute and longitude
+            $table->float('latitude');
+            $table->float('longitude');
+
             // Property Amenities
             // $table->enum('haveInternet', ['Yes', 'No']);
             // $table->enum('haveKitchen', ['Yes', 'No']);

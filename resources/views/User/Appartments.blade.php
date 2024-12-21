@@ -87,6 +87,7 @@
     </div>
 @endpush
 
+
 @section('user-main-section')
     <div class="row">
         <p>
@@ -141,24 +142,5 @@
             </div>
         @endforeach
     </div>
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script>
-        function showMap(lat, long) {
-            var coordinate = {
-                lat: lat,
-                lng: long
-            }
-
-            new google.maps.Maps(
-                document.getElementById("map"), {
-                    zoom: 10,
-                    center: coordinate
-                }
-            )
-        }
-
-        showMap(25.2048, 55.2708)
-    </script>
 @endsection
+
