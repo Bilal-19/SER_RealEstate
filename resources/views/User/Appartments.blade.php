@@ -26,12 +26,6 @@
             background-image: url('/assets/images/available_apartment_banner.png');
             background-size: cover;
         }
-
-        #map {
-            height: 200px;
-            width: 80%;
-            border: 1px solid black;
-        }
     </style>
 @endpush
 @push('CTA')
@@ -95,11 +89,6 @@
         </p>
     </div>
 
-    <div class="row">
-        <div class="col-md-8 mx-auto" id="map">
-
-        </div>
-    </div>
     <div class="row mx-auto mt-3 mb-3">
         @foreach ($availableApartments as $rec)
             <div class="col-md-10 mx-auto mb-3 apartment-container">
@@ -121,7 +110,9 @@
                                 <p class="ff-inter fw-medium">from ${{ $rec->price }}</p>
                             </div>
                         </div>
-                        <p class="ff-inter">{{ $rec->description }}</p>
+                        <p class="ff-inter">
+                            {!! Str::limit($rec->description, 100) !!}
+                        </p>
                         <div class="d-flex flex-row justify-content-start">
                             <p class="d-inline ff-inter">
                                 <img src="{{ asset('assets/images/bedroom.png') }}" alt="">

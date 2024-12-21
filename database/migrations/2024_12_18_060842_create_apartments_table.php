@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->text('map_location');
             $table->enum('total_bedrooms', [1, 2, 3, 4, 5, 6]);
             $table->enum('total_bathrooms', [1, 2, 3]);
-            $table->string('description');
+            $table->text('description');
 
             // Set Available Date
             $table->date('availableFrom');
@@ -41,8 +41,11 @@ return new class extends Migration {
             $table->integer('free_wifi_val');
 
             // Latitute and longitude
-            $table->float('latitude');
-            $table->float('longitude');
+            $table->float('latitude',10,6);
+            $table->float('longitude',10,6);
+
+            // fav apartment
+            $table->boolean('isFavourite')->default(false);
 
             // Property Amenities
             // $table->enum('haveInternet', ['Yes', 'No']);

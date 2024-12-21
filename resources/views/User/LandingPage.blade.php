@@ -124,61 +124,22 @@
 
     <div class="row">
         <div class="col-md-11 mx-auto">
+            @if (count($fetchNearestApartment) > 4)
             <!-- Slider main container -->
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/regents_park.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Regent's Park</p>
-                        <p class="mt-0">Luxurious green spaces footsteps from Oxford Street</p>
-                    </div>
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/shoreditch.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Shoreditch</p>
-                        <p class="mt-0">Hipster central and full of edge</p>
-                    </div>
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/barbican.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Barbican</p>
-                        <p class="mt-0">Home to the Barbican Center of Performing Arts</p>
-                    </div>
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/farringdon.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Farringdon</p>
-                        <p class="mt-0">Footsteps away from the City of London</p>
-                    </div>
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/regents_park.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Regent's Park</p>
-                        <p class="mt-0">Luxurious green spaces footsteps from Oxford Street</p>
-                    </div>
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/regents_park.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Regent's Park</p>
-                        <p class="mt-0">Luxurious green spaces footsteps from Oxford Street</p>
-                    </div>
-
-                    <div class="col-md-3 swiper-slide">
-                        <img src="{{ asset('assets/images/regents_park.webp') }}" alt=""
-                            class="img-fluid neighbourhood-img rounded shadow">
-                        <p class="fs-5 text-uppercase mb-0">Regent's Park</p>
-                        <p class="mt-0">Luxurious green spaces footsteps from Oxford Street</p>
-                    </div>
-
+                    @foreach ($fetchNearestApartment as $rec)
+                        <div class="col-md-3 swiper-slide">
+                            <img src="{{ asset('Apartment/Thubmbnail/'.$rec->featuredImage) }}" alt=""
+                                class="img-fluid neighbourhood-img rounded shadow">
+                            <p class="fs-5 text-uppercase mb-0">{{$rec->area_name}}</p>
+                            <p class="mt-0">
+                                {{$rec->description}}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -189,6 +150,10 @@
 
                 <!-- If we need scrollbar -->
             </div>
+            @else
+            <p>Please add minimum five records to view the nearest apartments</p>
+            @endif
+
         </div>
     </div>
 
@@ -243,18 +208,11 @@
         </div>
     </div>
 
-    {{-- Format date --}}
-    @php
-        function getFormattedDate($date, $format)
-        {
-            return date($format, strtotime($date));
-        }
-    @endphp
     <div class="row bg-light-gray d-flex justify-content-around pb-5">
         @foreach ($blogRecords as $record)
             <div class="col-md-4 blog-card">
                 <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
-                <p class="ff-inter">{{ getFormattedDate($record->publish_date, 'd M Y') }}</p>
+                <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                 <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
                 <p class="ff-inter fs-18">{{ $record->blog_brief_description }}</p>
                 <a href="#" class="text-light-brown">Read More</a>

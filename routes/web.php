@@ -63,3 +63,7 @@ Route::get("/booking/{id}/{checkIn}/{checkOut}", [UserController::class, 'Bookin
 
 // Thank you page - User
 Route::get("/thankyou", [UserController::class, 'ThankYou']);
+
+
+// Testing purpose
+Route::get("/nearby", [UserController::class, 'getNeighbours']);

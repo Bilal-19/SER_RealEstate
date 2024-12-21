@@ -12,10 +12,12 @@ class UserController extends Controller
         $favApartmentRecords = DB::table('favourite_apartment')->get();
         $benefitsRecords = DB::table('benefits')->get();
         $blogRecords = DB::table('blogs')->limit(3)->get();
+        $fetchNearestApartment = $this->getNeighbours();
         return view('User.LandingPage')->with(compact(
             'favApartmentRecords',
             'benefitsRecords',
-            'blogRecords'
+            'blogRecords',
+            'fetchNearestApartment'
         ));
     }
 
@@ -61,11 +63,15 @@ class UserController extends Controller
         $location = $request->location;
         $availableApartments = DB::table('apartments')
             ->where('street_address', 'LIKE', "%$location%")
+            ->orWhere('area_name', 'LIKE', "%$location%")
             ->whereDate('availableFrom', '<=', $request->checkInDate)
             ->whereDate('availableTill', '>=', $request->checkOutDate)
             ->get();
+
         return view('User.Appartments')->with(compact('availableApartments'));
     }
+
+
 
     public function viewApartmentDetail($id)
     {
@@ -136,12 +142,52 @@ class UserController extends Controller
 
         $findApartment = DB::table('apartments')->where('id', $id)->first();
 
-        return view('User.Booking')->with(compact('stayDays', 'findApartment','checkIn', 'checkOut'));
+        return view('User.Booking')->with(compact('stayDays', 'findApartment', 'checkIn', 'checkOut'));
     }
 
     // Thankyou page
-public function ThankYou(){
-    return view('User.Thankyou');
-}
+    public function ThankYou()
+    {
+        return view('User.Thankyou');
+    }
+
+    public function calculateNearestDistance($latitudeValue, $longitudeValue)
+    {
+        // $latitudeValue = '24.882311053274144';
+        // $longitudeValue = '67.04475512231853';
+        $nearestDistance = DB::table('apartments')
+            ->select(
+                '*',
+                DB::raw(
+                    "6371 * acos(cos(radians(" . $latitudeValue . "))
+            * cos(radians(apartments.latitude))
+            * cos(radians(apartments.longitude) - radians(" . $longitudeValue . ") )
+            + sin(radians(" . $latitudeValue . "))
+            * sin(radians(apartments.latitude))) AS Distance"
+                )
+            )
+            ->orderBy('Distance')
+            ->limit(8)
+            ->get();
+
+        return $nearestDistance;
+    }
+    // Neighbors
+    public function getNeighbours()
+    {
+        // Find first apartment
+        $firstApt = DB::table('apartments')->first();
+        if ($firstApt){
+            $latitude = $firstApt->latitude;
+            $longitude = $firstApt->longitude;
+
+            $result = $this->calculateNearestDistance($latitude, $longitude);
+
+            return $result;
+        } else {
+            toastr()->error('No record found');
+        }
+
+    }
 }
 
