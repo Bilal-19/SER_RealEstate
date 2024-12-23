@@ -65,21 +65,21 @@
                     <!-- Slides -->
                     @foreach ($favApartmentRecords as $record)
                         <div class="col-md-3 swiper-slide">
-                            <img src="{{ asset('Apartment/Favourites/' . $record->featured_image) }}" alt=""
+                            <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}" alt=""
                                 class="img-fluid object-fit-cover">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h6 class="card-text ff-inter text-uppercase">{{ $record->apartment_name }}</h6>
-                                    <p class="mb-0 ff-inter">{{ $record->apartment_location }}</p>
+                                    <h6 class="card-text ff-inter text-uppercase">{{ $record->area_name }}</h6>
+                                    <p class="mb-0 ff-inter">{{ $record->street_address }}</p>
                                 </div>
                                 <div>
-                                    <p class="mb-0 ff-inter">from £{{ $record->apartment_price }}</p>
+                                    <p class="mb-0 ff-inter">from £{{ $record->price }}</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <p class="mt-0 ff-inter"><i class="fa-solid fa-bed"></i> {{ $record->totalBedrooms }}
+                                <p class="mt-0 ff-inter"><i class="fa-solid fa-bed"></i> {{ $record->total_bedrooms }}
                                     bedrooms</p>
-                                <p class="mt-0 ff-inter"><i class="fa-solid fa-bath"></i> {{ $record->totalBathrooms }}
+                                <p class="mt-0 ff-inter"><i class="fa-solid fa-bath"></i> {{ $record->total_bathrooms }}
                                     bathrooms</p>
                             </div>
                         </div>
@@ -125,33 +125,33 @@
     <div class="row">
         <div class="col-md-11 mx-auto">
             @if (count($fetchNearestApartment) > 4)
-            <!-- Slider main container -->
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    @foreach ($fetchNearestApartment as $rec)
-                        <div class="col-md-3 swiper-slide">
-                            <img src="{{ asset('Apartment/Thubmbnail/'.$rec->featuredImage) }}" alt=""
-                                class="img-fluid neighbourhood-img rounded shadow">
-                            <p class="fs-5 text-uppercase mb-0">{{$rec->area_name}}</p>
-                            <p class="mt-0">
-                                {!! Str::limit($rec->description, 50) !!}
-                            </p>
-                        </div>
-                    @endforeach
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        @foreach ($fetchNearestApartment as $rec)
+                            <div class="col-md-3 swiper-slide">
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                                    class="img-fluid neighbourhood-img rounded shadow">
+                                <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
+                                <p class="mt-0">
+                                    {!! Str::limit($rec->description, 50) !!}
+                                </p>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-slider-button swiper-button-prev"></div>
+                    <div class="swiper-slider-button swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-slider-button swiper-button-prev"></div>
-                <div class="swiper-slider-button swiper-button-next"></div>
-
-                <!-- If we need scrollbar -->
-            </div>
             @else
-            <p>Please add minimum five records to view the nearest apartments</p>
+                <p>Please add minimum five records to view the nearest apartments</p>
             @endif
 
         </div>

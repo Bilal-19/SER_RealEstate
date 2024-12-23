@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $favApartmentRecords = DB::table('favourite_apartment')->get();
+        $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
         $benefitsRecords = DB::table('benefits')->get();
         $blogRecords = DB::table('blogs')->limit(3)->get();
         $fetchNearestApartment = $this->getNeighbours();
@@ -40,7 +40,8 @@ class UserController extends Controller
 
     public function viewCorporate()
     {
-        return view('User.Corporate');
+        $fetchNeighboursData = $this->getNeighbours();
+        return view('User.Corporate')->with(compact('fetchNeighboursData'));
     }
 
     public function viewAbout()
@@ -152,7 +153,7 @@ class UserController extends Controller
     {
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create([
-            "amount" => $totalAmount,
+            "amount" => $totalAmount * 100,
             "currency" => "usd",
             "source" => $request->stripeToken,
             "description" => "Amount deducted from your account"
