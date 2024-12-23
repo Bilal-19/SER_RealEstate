@@ -23,12 +23,13 @@ class AdminController extends Controller
     public function toggleFav($id)
     {
         $findApartment = DB::table('apartments')->find($id);
+
         if ($findApartment->isFavourite == 0) {
-            $findApartment->isFavourite = 1;
+            DB::table('apartments')->where('id', $id)->update(['isFavourite' => 1]);
             toastr()->success('Selected apartment is added to favourite');
 
         } else {
-            $findApartment->isFavourite = 0;
+            DB::table('apartments')->where('id', $id)->update(['isFavourite' => 0]);
             toastr()->success('Selected apartment is removed to favourite');
         }
 

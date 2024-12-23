@@ -30,11 +30,11 @@
                             <td class="text-center">
                                 @if ($rec->isFavourite == 0)
 
-                                        <a href="{{route('Toggle.Fav', ['id' => $rec->id])}}" title="Add to favourites">
+                                        <a href="{{route('Toggle.Fav', ['id' => $rec->id])}}" title="Add to favourites" class="text-dark">
                                             <i class="fa-regular fa-star"></i>
                                         </a>
                                 @else
-                                        <a href="{{route('Toggle.Fav', ['id' => $rec->id])}}" title="Remove from favourites">
+                                        <a href="{{route('Toggle.Fav', ['id' => $rec->id])}}" title="Remove from favourites" class="text-dark">
                                             <i class="fa-solid fa-star"></i>
                                         </a>
                                 @endif
