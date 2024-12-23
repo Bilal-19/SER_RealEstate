@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Session;
+use Stripe;
 class UserController extends Controller
 {
     public function index()
@@ -145,6 +147,47 @@ class UserController extends Controller
         return view('User.Booking')->with(compact('stayDays', 'findApartment', 'checkIn', 'checkOut'));
     }
 
+    // Confirm Booking
+    public function stripePost(Request $request, $apartmentID, $checkIn, $checkOut, $totalDays, $totalAmount)
+    {
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Charge::create([
+            "amount" => $totalAmount,
+            "currency" => "usd",
+            "source" => $request->stripeToken,
+            "description" => "Amount deducted from your account"
+        ]);
+
+        // // Booking Table Object
+        $res = DB::table('booking')->insert([
+            'first_name' => $request->fname,
+            'last_name' => $request->lname,
+            'email' => $request->email,
+            'address' => $request->address,
+            'phone_number' => $request->phone,
+            'postal_code' => $request->postal_code,
+            'country' => $request->country,
+            'message' => $request->message,
+            'payment_status' => "Completed",
+            'is_agree_to_terms' => $request->isAgreeToTerms,
+            'is_agree_to_marketing' => $request->isAgreeToMarketing,
+            'check_in' => $checkIn,
+            'check_out' => $checkOut,
+            'total_days_to_stay' => $totalDays,
+            'total_amount' => $totalAmount,
+            'account_title' => $request->account_title,
+            'card_number' => $request->card_number,
+            'card_verification_code' => $request->cvc,
+            'expiration_month' => $request->expMonth,
+            'expiration_year' => $request->expYear,
+            'apartment_id' => $apartmentID,
+        ]);
+
+        if ($res) {
+            toastr()->success("We've received your information. Our team will contact you soon");
+            return view('User.Thankyou');
+        }
+    }
     // Thankyou page
     public function ThankYou()
     {
@@ -177,7 +220,7 @@ class UserController extends Controller
     {
         // Find first apartment
         $firstApt = DB::table('apartments')->first();
-        if ($firstApt){
+        if ($firstApt) {
             $latitude = $firstApt->latitude;
             $longitude = $firstApt->longitude;
 

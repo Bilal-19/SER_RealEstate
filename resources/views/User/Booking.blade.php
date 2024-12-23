@@ -45,6 +45,109 @@
         }
     </style>
 @endpush
+
+@push('scripts')
+    {{-- JavaScript --}}
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var $form = $(".require-validation");
+            $('form.require-validation').bind('submit', function(e) {
+                var $form = $(".require-validation"),
+                    inputSelector = ['input[type=email]', 'input[type=password]',
+                        'input[type=text]', 'input[type=file]',
+                        'textarea'
+                    ].join(', '),
+                    $inputs = $form.find('.required').find(inputSelector),
+                    $errorMessage = $form.find('div.error'),
+                    valid = true;
+                $errorMessage.addClass('hide');
+                $('.has-error').removeClass('has-error');
+                $inputs.each(function(i, el) {
+                    var $input = $(el);
+                    if ($input.val() === '') {
+                        $input.parent().addClass('has-error');
+                        $errorMessage.removeClass('hide');
+                        e.preventDefault();
+                    }
+
+                });
+
+
+
+                if (!$form.data('cc-on-file')) {
+
+                    e.preventDefault();
+
+                    Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+
+                    Stripe.createToken({
+
+                        number: $('.card-number').val(),
+
+                        cvc: $('.card-cvc').val(),
+
+                        exp_month: $('.card-expiry-month').val(),
+
+                        exp_year: $('.card-expiry-year').val()
+
+                    }, stripeResponseHandler);
+
+                }
+
+
+
+            });
+
+
+
+            /*------------------------------------------
+
+            --------------------------------------------
+
+            Stripe Response Handler
+
+            --------------------------------------------
+
+            --------------------------------------------*/
+
+            function stripeResponseHandler(status, response) {
+
+                if (response.error) {
+
+                    $('.error')
+
+                        .removeClass('hide')
+
+                        .find('.alert')
+
+                        .text(response.error.message);
+
+                } else {
+
+                    /* token contains id, last4, and card type */
+
+                    var token = response['id'];
+
+
+
+                    $form.find('input[type=text]').empty();
+
+                    $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+
+                    $form.get(0).submit();
+
+                }
+
+            }
+
+
+
+        });
+    </script>
+@endpush
+
 @push('CTA')
     <div class="row mt-5 mb-5">
         <div class="col-md-9 mx-auto text-light search-container">
@@ -56,7 +159,14 @@
     </div>
 @endpush
 
+
 @section('user-main-section')
+@php
+                    $apartmentCost = $findApartment->price_per_night * $stayDays;
+                    $vat = 225;
+
+                    $totalCost = $apartmentCost + $vat;
+                @endphp
     <div class="container-fluid mt-5 mb-5">
         <div class="row d-flex justify-content-around">
             <div class="col-md-5 bg-white border-grey border-radius-16">
@@ -77,70 +187,90 @@
                 </div>
 
                 <h4 class="ff-inter fs-24 mt-5">Personal Information</h4>
-                <form action="">
+
+
+                @if (Session::has('success'))
+                    <div class="alert alert-success text-center">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <p>{{ Session::get('success') }}</p>
+                    </div>
+                @endif
+
+                <form role="form"
+                    action="{{ route('stripe.post', [
+                        'apartmentID' => $findApartment->id,
+                        'checkIn' => $checkIn,
+                        'checkOut' => $checkOut,
+                        'totalDays' => $stayDays,
+                        'totalAmount' => $totalCost
+                    ]) }}"
+                    method="post" class="require-validation" data-cc-on-file="false"
+                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                    @csrf
                     <div class="d-flex justify-content-between">
                         <div>
                             <label class="form-label fs-14 ff-inter">First Name: </label>
-                            <input type="text" class="form-control ff-inter fs-16">
+                            <input type="text" class="form-control ff-inter fs-16" name="fname">
                         </div>
 
                         <div>
                             <label class="form-label fs-14 ff-inter">Last Name: </label>
-                            <input type="text" class="form-control ff-inter fs-16">
+                            <input type="text" class="form-control ff-inter fs-16" name="lname">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-between mt-3">
                         <div>
                             <label class="form-label fs-14 ff-inter">Email Address: </label>
-                            <input type="text" class="form-control ff-inter fs-16">
+                            <input type="email" class="form-control ff-inter fs-16" name="email">
                         </div>
 
                         <div>
                             <label class="form-label fs-14 ff-inter">Phone Number: </label>
-                            <input type="text" class="form-control ff-inter fs-16">
+                            <input type="text" class="form-control ff-inter fs-16" name="phone">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-between mt-3">
                         <div>
                             <label class="form-label fs-14 ff-inter">Address: </label>
-                            <input type="text" class="form-control ff-inter fs-16">
+                            <input type="text" class="form-control ff-inter fs-16" name="address">
                         </div>
 
                         <div>
                             <label class="form-label fs-14 ff-inter">Postal Code: </label>
-                            <input type="text" class="form-control ff-inter fs-16">
+                            <input type="text" class="form-control ff-inter fs-16" name="postal_code">
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label fs-14 ff-inter">Country: </label>
-                        <input type="text" class="form-control ff-inter fs-16">
+                        <input type="text" class="form-control ff-inter fs-16" name="country">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Name on Card</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" name="account_title">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Card Number</label>
-                        <input autocomplete="off" class="form-control card-number" type="text">
+                        <input autocomplete="off" class="form-control card-number" type="text" name="card_number">
                     </div>
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">CVC</label>
-                            <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text">
+                            <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text"
+                                name="cvc">
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Expiration Month</label>
-                            <input class="form-control card-expiry-month" placeholder="MM" type="text">
+                            <input class="form-control card-expiry-month" placeholder="MM" type="text" name="expMonth">
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Expiration Year</label>
-                            <input class="form-control card-expiry-year" placeholder="YYYY" type="text">
+                            <input class="form-control card-expiry-year" placeholder="YYYY" type="text" name="expYear">
                         </div>
                     </div>
 
@@ -217,19 +347,19 @@
                     </ul>
 
                     <p class="fw-medium ff-inter mb-0">Other Request</p>
-                    <textarea name="" cols="30" rows="10" class="form-control" style="resize: none;"></textarea>
+                    <textarea cols="30" rows="10" class="form-control" style="resize: none;" name="message"></textarea>
 
                     <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="isAgreeToTerms">
                         <label class="form-check-label fs-14" for="flexCheckDefault">
                             By clicking I conform I have read the above fine print and agree to bound by them.
                         </label>
                     </div>
 
                     <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="isAgreeToMarketing">
                         <label class="form-check-label fs-14" for="flexCheckDefault">
-                            I don’t want to receive any offer or marketing from the Citadel
+                            I don't want to receive any offer or marketing from the Citadel
                         </label>
                     </div>
 
@@ -248,15 +378,11 @@
                     </div>
                 </div>
 
-                @php
-                    $apartmentCost = $findApartment->price_per_night * $stayDays;
-                    $vat = 225;
 
-                    $totalCost = $apartmentCost + $vat;
-                @endphp
 
                 <div class="d-flex justify-content-between p-2 mt-4 align-items-center mb-0">
-                    <h6 class="fs-18 ff-inter">Net Cost (${{ $findApartment->price_per_night }} * {{ $stayDays }})</h6>
+                    <h6 class="fs-18 ff-inter">Net Cost (${{ $findApartment->price_per_night }} * {{ $stayDays }})
+                    </h6>
                     <p class="ff-inter fs-18">${{ $apartmentCost }}</p>
                 </div>
 

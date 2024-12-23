@@ -23,7 +23,7 @@ Route::get("/view/about", [UserController::class, 'viewAbout'])->name('View.Abou
 Route::get("/view/blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
 Route::get("/view/enquiry/form", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
 
-Route::get("/view/available/appartment", [UserController::class,'viewAvailableAparment'])->name('Get.Available.Apartment');
+Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
 Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Dashboard');
 Route::get("/admin/view/appartment", [AdminController::class, 'viewAppartment'])->name('View.Appartment');
@@ -55,7 +55,7 @@ Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->n
 Route::get("/admin/apartments", [AdminController::class, 'Apartments'])->name('Apartments');
 Route::post("/admin/create/apartment", [AdminController::class, 'createApartment'])->name('Create.Apartment');
 Route::get("/user/view/detail/{id}", [UserController::class, 'viewApartmentDetail'])->name('Detail.View.Apartment');
-Route::get("/apartment/availablity/{id}",[UserController::class, 'checkApartmentAvailability'])->name('Check.Apartment.Availability');
+Route::get("/apartment/availablity/{id}", [UserController::class, 'checkApartmentAvailability'])->name('Check.Apartment.Availability');
 
 
 // Booking Page - User
@@ -71,3 +71,7 @@ Route::get("/nearby", [UserController::class, 'getNeighbours']);
 
 
 Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->name('Toggle.Fav');
+
+
+// Payment Routes
+Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}", [UserController::class,'stripePost'])->name('stripe.post');
