@@ -229,7 +229,7 @@
                                 <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
                                     aria-current="page" href="{{ route('Benefits') }}">
                                     <i class="fa-solid fa-concierge-bell"></i>
-                                    Benefits
+                                    Amenities
                                 </a>
                             </li>
 
@@ -243,7 +243,7 @@
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark"
                                     href="#">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    Neighbourhood
+                                   Booking
                                 </a>
                             </li>
 
