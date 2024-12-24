@@ -161,12 +161,11 @@
 
 
 @section('user-main-section')
-@php
-                    $apartmentCost = $findApartment->price_per_night * $stayDays;
-                    $vat = 225;
-
-                    $totalCost = $apartmentCost + $vat;
-                @endphp
+    @php
+        $apartmentCost = $findApartment->price_per_night * $stayDays;
+        $vat = 225;
+        $totalCost = $apartmentCost + $vat;
+    @endphp
     <div class="container-fluid mt-5 mb-5">
         <div class="row d-flex justify-content-around">
             <div class="col-md-5 bg-white border-grey border-radius-16">
@@ -202,7 +201,7 @@
                         'checkIn' => $checkIn,
                         'checkOut' => $checkOut,
                         'totalDays' => $stayDays,
-                        'totalAmount' => $totalCost
+                        'totalAmount' => $totalCost,
                     ]) }}"
                     method="post" class="require-validation" data-cc-on-file="false"
                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
@@ -210,67 +209,138 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <label class="form-label fs-14 ff-inter">First Name: </label>
-                            <input type="text" class="form-control ff-inter fs-16" name="fname">
+                            <input type="text" class="form-control ff-inter fs-16" name="fname"
+                                value="{{ old('fname') }}">
+                            <small class="text-danger">
+                                @error('fname')
+                                    {{ 'The first name field is required' }}
+                                @enderror
+                            </small>
                         </div>
 
                         <div>
                             <label class="form-label fs-14 ff-inter">Last Name: </label>
-                            <input type="text" class="form-control ff-inter fs-16" name="lname">
+                            <input type="text" class="form-control ff-inter fs-16" name="lname"
+                                value="{{ old('lname') }}">
+                            <small class="text-danger">
+                                @error('lname')
+                                    {{ 'The last name field is required' }}
+                                @enderror
+                            </small>
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-between mt-3">
                         <div>
                             <label class="form-label fs-14 ff-inter">Email Address: </label>
-                            <input type="email" class="form-control ff-inter fs-16" name="email">
+                            <input type="email" class="form-control ff-inter fs-16" name="email"
+                                value="{{ old('email') }}">
+                            <small class="text-danger">
+                                @error('email')
+                                    {{ 'The email field is required' }}
+                                @enderror
+                            </small>
                         </div>
 
                         <div>
                             <label class="form-label fs-14 ff-inter">Phone Number: </label>
-                            <input type="text" class="form-control ff-inter fs-16" name="phone">
+                            <input type="text" class="form-control ff-inter fs-16" name="phone"
+                                value="{{ old('phone') }}">
+                            <small class="text-danger">
+                                @error('phone')
+                                    {{ 'The phone number field is required' }}
+                                @enderror
+                            </small>
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between mt-3">
+                    <div class="d-flex justify-content-between mt-3 mb-3">
                         <div>
                             <label class="form-label fs-14 ff-inter">Address: </label>
-                            <input type="text" class="form-control ff-inter fs-16" name="address">
+                            <input type="text" class="form-control ff-inter fs-16" name="address"
+                                value="{{ old('address') }}">
+                            <small class="text-danger">
+                                @error('address')
+                                    {{ 'The address field is required' }}
+                                @enderror
+                            </small>
+
                         </div>
 
                         <div>
                             <label class="form-label fs-14 ff-inter">Postal Code: </label>
-                            <input type="text" class="form-control ff-inter fs-16" name="postal_code">
+                            <input type="text" class="form-control ff-inter fs-16" name="postal_code"
+                                value="{{ old('postal_code') }}">
+                            <small class="text-danger">
+                                @error('postal_code')
+                                    {{ 'The postal code field is required' }}
+                                @enderror
+                            </small>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label fs-14 ff-inter">Country: </label>
-                        <input type="text" class="form-control ff-inter fs-16" name="country">
+                        <input type="text" class="form-control ff-inter fs-16" name="country"
+                            value="{{ old('country') }}">
+                        <small class="text-danger">
+                            @error('country')
+                                {{ 'The country field is required' }}
+                            @enderror
+                        </small>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Name on Card</label>
-                        <input class="form-control" type="text" name="account_title">
+                        <input class="form-control" type="text" name="account_title" value="{{ old('account_title') }}">
+                        <small class="text-danger">
+                            @error('account_title')
+                                {{ 'The name on card field is required' }}
+                            @enderror
+                        </small>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Card Number</label>
-                        <input autocomplete="off" class="form-control card-number" type="text" name="card_number">
+                        <input autocomplete="off" class="form-control card-number" type="text" name="card_number"
+                            value="{{ old('card_number') }}">
+                        <small class="text-danger">
+                            @error('card_number')
+                                {{ 'The card number field is required' }}
+                            @enderror
+                        </small>
                     </div>
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">CVC</label>
                             <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text"
-                                name="cvc">
+                                name="cvc" value="{{ old('cvc') }}">
+                                <small class="text-danger">
+                                    @error('cvc')
+                                        {{ 'The CVC field is required' }}
+                                    @enderror
+                                </small>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Expiration Month</label>
-                            <input class="form-control card-expiry-month" placeholder="MM" type="text" name="expMonth">
+                            <input class="form-control card-expiry-month" placeholder="MM" type="text"
+                                name="expMonth" value="{{ old('expMonth') }}">
+                                <small class="text-danger">
+                                    @error('expMonth')
+                                        {{ 'The expiration month field is required' }}
+                                    @enderror
+                                </small>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Expiration Year</label>
-                            <input class="form-control card-expiry-year" placeholder="YYYY" type="text" name="expYear">
+                            <input class="form-control card-expiry-year" placeholder="YYYY" type="text"
+                                name="expYear" value="{{ old('expYear') }}">
+                                <small class="text-danger">
+                                    @error('expYear')
+                                        {{ 'The expiraton year field is required' }}
+                                    @enderror
+                                </small>
                         </div>
                     </div>
 
@@ -348,6 +418,11 @@
 
                     <p class="fw-medium ff-inter mb-0">Other Request</p>
                     <textarea cols="30" rows="10" class="form-control" style="resize: none;" name="message"></textarea>
+                    <small class="text-danger">
+                        @error('message')
+                            {{ 'The message field is required' }}
+                        @enderror
+                    </small>
 
                     <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="isAgreeToTerms">

@@ -175,6 +175,22 @@ class UserController extends Controller
     // Confirm Booking
     public function stripePost(Request $request, $apartmentID, $checkIn, $checkOut, $totalDays, $totalAmount)
     {
+        // Form Validation
+        $request->validate([
+            'fname' => 'required',
+            'lname' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'phone' => 'required',
+            'postal_code' => 'required',
+            'country' => 'required',
+            'message' => 'required',
+            'account_title' => 'required',
+            'card_number' => 'required',
+            'cvc' => 'required',
+            'expMonth' => 'required',
+            'expYear' => 'required'
+        ]);
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create([
             "amount" => $totalAmount * 100,
@@ -194,8 +210,8 @@ class UserController extends Controller
             'country' => $request->country,
             'message' => $request->message,
             'payment_status' => "Completed",
-            'is_agree_to_terms' => $request->isAgreeToTerms,
-            'is_agree_to_marketing' => $request->isAgreeToMarketing,
+            'is_agree_to_terms' => $request->isAgreeToTerms ?? "off",
+            'is_agree_to_marketing' => $request->isAgreeToMarketing ?? "off",
             'check_in' => $checkIn,
             'check_out' => $checkOut,
             'total_days_to_stay' => $totalDays,
