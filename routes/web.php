@@ -85,3 +85,9 @@ Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{to
 
 // Inquiry
 Route::post("/create/inquiry", [UserController::class, 'createInquiry'])->name('Create.Inquiry');
+
+
+// Booking - Admin
+Route::get("admin/booking", [AdminController::class, 'Booking'])->name('Booking');
+
+Route::get("admin/booking/pdf/{id}", [AdminController::class, 'generatePDF'])->name('Generate.PDF');

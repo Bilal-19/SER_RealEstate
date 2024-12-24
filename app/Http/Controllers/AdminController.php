@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cities;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
@@ -369,5 +370,24 @@ class AdminController extends Controller
             toastr()->success('Policy Information Added Successfully');
             return redirect()->back();
         }
+    }
+
+
+    // Booking
+    public function Booking()
+    {
+        $fetchBookingRecords = DB::table('booking')->get();
+        return view('Admin.Booking')->with(compact('fetchBookingRecords'));
+    }
+
+    public function generatePDF($id)
+    {
+        $fetchBookingRecord = DB::table('booking')->find($id);
+        $fetchAll = DB::table('booking')
+            ->join('apartments', 'booking.apartment_id', '=', 'apartments.id')
+            ->select('booking.*','apartments.*')
+            ->get();
+        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact('fetchBookingRecord', 'fetchAll'));
+        return $pdfRecord->download('Customer.pdf');
     }
 }

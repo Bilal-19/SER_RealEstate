@@ -241,8 +241,8 @@
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="#">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    href="{{route('Booking')}}">
+                                    <i class="fa-solid fa-handshake"></i>
                                    Booking
                                 </a>
                             </li>
