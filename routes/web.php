@@ -75,3 +75,7 @@ Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->
 
 // Payment Routes
 Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}", [UserController::class,'stripePost'])->name('stripe.post');
+
+
+// Inquiry
+Route::post("/create/inquiry", [UserController::class, 'createInquiry'])->name('Create.Inquiry');

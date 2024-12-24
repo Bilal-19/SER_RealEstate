@@ -94,7 +94,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link ff-inter nav-link-transition"
-                                    href="{{ route('View.Enquiry.Form') }}">ENQUIRY</a>
+                                    href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>
                             </li>
                         </ul>
                         <a href="" class="brand-btn">Book Now</a>

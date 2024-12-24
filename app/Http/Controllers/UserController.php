@@ -60,6 +60,21 @@ class UserController extends Controller
         return view('User.Enquiry');
     }
 
+    public function createInquiry(Request $request)
+    {
+        $res = DB::table('inquiry')
+        ->insert([
+            'name' => $request->fullName,
+            'email' => $request->email,
+            'message' => $request->message
+        ]);
+
+        if ($res){
+            toastr()->success("We've reveived your query. Our team will contact you soon");
+            return redirect()->back();
+        }
+    }
+
     // View Available Apartments
     public function viewAvailableAparment(Request $request)
     {
