@@ -1,15 +1,27 @@
 @extends('AdminLayout.DashboardTemplate')
+<style>
+    .thumbnail{
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+</style>
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3>Favourite Apartments</h3>
+        <div class="row mt-3">
+            <h3 class="text-center">Favourite Apartments</h3>
         </div>
 
-        <div class="row mt-3">
-            <div class="col-md-4">
-                <a href="{{ route('Add.Favourite.Apartment') }}" class="brand-btn text-decoration-none">Add Favourite
-                    Apartment</a>
-            </div>
+        <div class="row">
+            @foreach ($fetchFavApartment as $rec)
+                <div class="col-md-4">
+                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="" class="img-fluid thumbnail rounded">
+                    <p class="mt-2 mb-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                        {{$rec->area_name}}
+                    </p>
+                </div>
+            @endforeach
         </div>
 
 

@@ -222,37 +222,10 @@ class AdminController extends Controller
     // Fav Appartment Section
     public function favouriteApartments()
     {
-        return view('Admin.FavouriteApartment');
+        $fetchFavApartment = DB::table('apartments')->where('isFavourite', '=', 1)->get();
+        return view('Admin.FavouriteApartment')->with(compact('fetchFavApartment'));
     }
 
-    public function addFavouriteApartment()
-    {
-        return view('Admin.AddFavouriteApartment');
-    }
-
-    public function createFavouriteApartment(Request $request)
-    {
-        $timeStampFeaturedImg = time() . '.' . $request->featuredImg->getClientOriginalExtension();
-
-        // Store Image to public folder
-        $request->featuredImg->move('Apartment/Favourites', $timeStampFeaturedImg);
-
-        $result = DB::table('favourite_apartment')->insert(
-            [
-                'featured_image' => $timeStampFeaturedImg,
-                'apartment_name' => $request->apartmentName,
-                'apartment_location' => $request->apartmentLocation,
-                'apartment_price' => $request->apartmentPrice,
-                'totalBedrooms' => $request->totalBedroom,
-                'totalBathrooms' => $request->totalBathroom,
-            ]
-        );
-
-        if ($result) {
-            toastr()->success('New Favourite Apartment Added Successfully');
-            return redirect()->back();
-        }
-    }
 
     public function Benefits()
     {
