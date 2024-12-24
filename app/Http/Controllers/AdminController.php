@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cities;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Carbon;
 class AdminController extends Controller
 {
     public function Dashboard()
@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         } else {
             DB::table('apartments')->where('id', $id)->update(['isFavourite' => 0]);
-            toastr()->success('Selected apartment is removed to favourite');
+            toastr()->success('Selected apartment is removed from favourite');
         }
 
 
@@ -120,6 +120,105 @@ class AdminController extends Controller
         }
     }
 
+    public function deleteApartment($id)
+    {
+        $findApartment = DB::table('apartments')->where('id', '=', $id);
+        if ($findApartment) {
+            $result = $findApartment->delete();
+            toastr()->success('Record deleted successfully');
+            return redirect()->back();
+        }
+    }
+
+    public function editApartment($id)
+    {
+        $findApartment = DB::table('apartments')->find($id);
+        $images = explode('|', $findApartment->multipleImages);
+        return view('Admin.EditApartment')->with(compact('findApartment', 'images'));
+    }
+
+    public function updateApartment($id, Request $request)
+    {
+        $findApartment = DB::table('apartments')->find($id);
+        // Form Validation
+        $request->validate([
+            'areaName' => 'required',
+            'apartmentPrice' => 'required',
+            'apartmentPricePerNight' => 'required',
+            'streetAddress' => 'required',
+            'apartmentMapLocation' => 'required',
+            'totalBedrooms' => 'required|integer|min:1|max:6',
+            'totalBathrooms' => 'required|integer|min:1|max:4',
+            'apartmentDescription' => 'required',
+            'availableFrom' => 'required',
+            'availableTill' => 'required',
+            // 'featuredImg' => 'required',
+            // 'apartmentMultImages' => 'required',
+            'cleanlinessVal' => 'required|integer|min:1|max:10',
+            'comfortVal' => 'required|integer|min:1|max:10',
+            'facilityVal' => 'required|integer|min:1|max:10',
+            'locationVal' => 'required|integer|min:1|max:10',
+            'staffVal' => 'required|integer|min:1|max:10',
+            'valueForMoney' => 'required|integer|min:1|max:10',
+            'internetQuality' => 'required|integer|min:1|max:10'
+        ]);
+
+
+        // Loop through multiple images
+        $image = array();
+        if ($files = $request->file('apartmentMultImages')) {
+            foreach ($files as $file) {
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name . '.' . $ext;
+                $upload_path = 'Apartment/Images/';
+                $image_url = $upload_path . $image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        } else {
+            $image = explode("|", $findApartment->multipleImages);
+        }
+
+        if ($request->file('featuredImg')) {
+            // Creating timestamp of featured image
+            $featuredImgTimeStamp = time() . '.' . $request->featuredImg->getClientOriginalExtension();
+
+            // Store featured image to public folder
+            $request->featuredImg->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
+        } else {
+            $featuredImgTimeStamp = $findApartment->featuredImage;
+        }
+
+        $res = DB::table('apartments')->where('id', '=', $id)->update([
+            'area_name' => $request->areaName,
+            'price' => $request->apartmentPrice,
+            'price_per_night' => $request->apartmentPricePerNight,
+            'street_address' => $request->streetAddress,
+            'map_location' => $request->apartmentMapLocation,
+            'total_bedrooms' => $request->totalBedrooms,
+            'total_bathrooms' => $request->totalBathrooms,
+            'description' => $request->apartmentDescription,
+            'availableFrom' => $request->availableFrom,
+            'availableTill' => $request->availableTill,
+            'featuredImage' => $featuredImgTimeStamp,
+            'multipleImages' => implode('|', $image),
+            'cleanlinessVal' => $request->cleanlinessVal,
+            'comfortVal' => $request->comfortVal,
+            'facilitiesVal' => $request->facilityVal,
+            'locationVal' => $request->locationVal,
+            'staffVal' => $request->staffVal,
+            'value_for_money' => $request->valueForMoney,
+            'free_wifi_val' => $request->internetQuality,
+            'longitude' => $request->longitudeVal,
+            'latitude' => $request->latitudeVal,
+        ]);
+
+        if ($res) {
+            toastr()->success('Apartment record updated successfully');
+            return redirect()->back();
+        }
+    }
     // Fav Appartment Section
     public function favouriteApartments()
     {

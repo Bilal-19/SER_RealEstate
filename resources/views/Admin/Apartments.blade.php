@@ -1,8 +1,23 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
+        <div class="row mt-3">
             <h3 class="text-center">Apartments</h3>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-11 mx-auto">
+                <a href="{{route('Add.Appartment')}}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New Apartment</a>
+            </div>
+        </div>
+
+        <div class="row">
+           <div class="col-md-11 mx-auto">
+            <div class="input-group">
+                <input type="search" name="search" class="form-control" placeholder="Search by area name">
+                <button class="btn btn-dark"><i class="fa-brands fa-searchengin"></i> Search</button>
+            </div>
+           </div>
         </div>
 
         <div class="row mt-3">
@@ -25,22 +40,31 @@
                                 <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
                                     class="img-fluid rounded" style="height: 200px; width: 200px; object-fit: cover;">
                             </td>
-                            <td>{{ $rec->availableFrom }}</td>
-                            <td>{{ $rec->availableTill }}</td>
+                            <td>{{ date('d-M-Y', strtotime($rec->availableFrom)) }}</td>
+                            <td>{{ date('d-M-Y', strtotime($rec->availableTill)) }}</td>
                             <td class="text-center">
                                 @if ($rec->isFavourite == 0)
-
-                                        <a href="{{route('Toggle.Fav', ['id' => $rec->id])}}" title="Add to favourites" class="text-dark">
-                                            <i class="fa-regular fa-star"></i>
-                                        </a>
+                                    <a href="{{ route('Toggle.Fav', ['id' => $rec->id]) }}" title="Add to favourites"
+                                        class="text-dark">
+                                        <i class="fa-regular fa-star"></i>
+                                    </a>
                                 @else
-                                        <a href="{{route('Toggle.Fav', ['id' => $rec->id])}}" title="Remove from favourites" class="text-dark">
-                                            <i class="fa-solid fa-star"></i>
-                                        </a>
+                                    <a href="{{ route('Toggle.Fav', ['id' => $rec->id]) }}" title="Remove from favourites"
+                                        class="text-dark">
+                                        <i class="fa-solid fa-star"></i>
+                                    </a>
                                 @endif
                             </td>
-                            <td></td>
-                            <td></td>
+                            <td class="text-center">
+                                <a href="{{route('Edit.Apartment', ['id' => $rec->id])}}" class="text-primary">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="{{route('Delete.Apartment', ['id' => $rec->id])}}" class="text-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </table>

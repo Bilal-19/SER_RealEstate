@@ -56,6 +56,9 @@ Route::get("/admin/apartments", [AdminController::class, 'Apartments'])->name('A
 Route::post("/admin/create/apartment", [AdminController::class, 'createApartment'])->name('Create.Apartment');
 Route::get("/user/view/detail/{id}", [UserController::class, 'viewApartmentDetail'])->name('Detail.View.Apartment');
 Route::get("/apartment/availablity/{id}", [UserController::class, 'checkApartmentAvailability'])->name('Check.Apartment.Availability');
+Route::get("/delete/apartment/{id}", [AdminController::class, 'deleteApartment'])->name('Delete.Apartment');
+Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->name('Edit.Apartment');
+Route::post("/update/apartment/{id}", [AdminController::class, 'updateApartment'])->name('Update.Apartment');
 
 
 // Booking Page - User
