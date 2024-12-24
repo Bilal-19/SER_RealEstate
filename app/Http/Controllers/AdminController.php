@@ -229,13 +229,16 @@ class AdminController extends Controller
 
     public function Benefits()
     {
-        return view('Admin.Benefits');
+        $fetchBenefits = DB::table('Benefits')->get();
+        return view('Admin.Benefits')->with(compact('fetchBenefits'));
     }
 
     public function AddBenefit()
     {
         return view('Admin.AddBenefits');
     }
+
+
 
     public function createBenefit(Request $request)
     {
@@ -254,6 +257,53 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+
+    public function editBenefit($id)
+    {
+        $fetchBenefit = DB::table('Benefits')->find($id);
+        return view('Admin.EditBenefit')->with(compact('fetchBenefit'));
+    }
+
+
+    public function updateBenefit($id, Request $request)
+    {
+        $iconImg = DB::table('benefits')->
+            where('id', '=', $id)
+            ->select('benefit_icon')
+            ->get();
+
+        if ($request->file('icon')) {
+            $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
+            $request->icon->move('Benefits', $timeStampImg);
+        } else {
+            $timeStampImg = $iconImg;
+        }
+
+
+        $result = DB::table('benefits')
+            ->where('id', '=', $id)
+            ->update([
+                'benefit_icon' => $timeStampImg,
+                'benefit_text' => $request->benefitName,
+                'benefit_description' => $request->benefitDescription
+            ]);
+
+        if ($result) {
+            toastr()->success('Benefit updated successfully');
+            return redirect()->back();
+        }
+    }
+
+    public function deleteBenefit($id)
+    {
+        $res = DB::table('Benefits')->where('id', '=', $id)->delete();
+
+        if ($res) {
+            toastr()->success('Record removed successfully');
+            return redirect()->back();
+        }
+    }
+
 
     // Blog
     public function Blog()

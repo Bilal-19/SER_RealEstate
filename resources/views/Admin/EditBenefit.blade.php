@@ -2,29 +2,36 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center">Add Benefits</h3>
+            <h3 class="text-center">Edit Benefits</h3>
         </div>
 
         <div class="row">
-            <form action="{{route('Create.Benefit')}}" method="post" autocomplete="off" enctype="multipart/form-data">
+            <form action="{{route('Update.Benefit', ['id' => $fetchBenefit->id])}}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-6 mx-auto">
+                    <p class="mb-0">Benefit Icon Preview Image: </p>
+                    <img src="{{asset('Benefits/'.$fetchBenefit->benefit_icon)}}" alt="">
+                </div>
+
+                <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Upload Benefit Icon Image: </label>
                     <input type="file" name="icon" class="form-control">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Enter Benefit Name: </label>
-                    <input type="text" name="benefitName" class="form-control" placeholder="Wi-Fi">
+                    <input type="text" name="benefitName" class="form-control" placeholder="Wi-Fi"
+                        value="{{ $fetchBenefit->benefit_text }}">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3 mb-0">
                     <label class="form-label">Enter Benefit Description: </label>
-                    <textarea type="text" name="benefitDescription" rows="5" style="resize: none;" placeholder="Enjoy high-speed internet connectivity...." class="form-control"></textarea>
+                    <textarea type="text" name="benefitDescription" rows="5" style="resize: none;"
+                         class="form-control">{{ $fetchBenefit->benefit_description }}</textarea>
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
-                    <button class="brand-btn">Submit</button>
+                    <button class="brand-btn">Update</button>
                 </div>
             </form>
         </div>
