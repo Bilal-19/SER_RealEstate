@@ -62,14 +62,23 @@ class UserController extends Controller
 
     public function createInquiry(Request $request)
     {
-        $res = DB::table('inquiry')
-        ->insert([
-            'name' => $request->fullName,
-            'email' => $request->email,
-            'message' => $request->message
-        ]);
+        // Form Validation
+        $request->validate(
+            [
+                'fullName' => 'required',
+                'email' => 'required',
+                'message' => 'required'
+            ]
 
-        if ($res){
+        );
+        $res = DB::table('inquiry')
+            ->insert([
+                'name' => $request->fullName,
+                'email' => $request->email,
+                'message' => $request->message
+            ]);
+
+        if ($res) {
             toastr()->success("We've reveived your query. Our team will contact you soon");
             return redirect()->back();
         }

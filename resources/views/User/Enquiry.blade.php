@@ -26,6 +26,7 @@
             border: 1px solid #6D6E76;
             font-family: "inter";
             color: #232536;
+            display: block;
         }
 
         input:focus,
@@ -37,7 +38,7 @@
             resize: none;
         }
 
-        button{
+        .submit-btn {
             height: 64px;
             width: 768px;
             border-radius: 8px;
@@ -52,7 +53,8 @@
         @media screen and (max-width: 768px) {
 
             input,
-            textarea, button {
+            textarea,
+            .submit-btn {
                 width: 400px;
             }
         }
@@ -72,22 +74,37 @@
 
 @section('user-main-section')
     <div class="row mx-auto mt-5">
-        <form action="{{route('Create.Inquiry')}}" method="POST">
+        <form action="{{ route('Create.Inquiry') }}" method="POST">
             @csrf
             <div class="col-md-8 mb-3">
                 <input type="text" name="fullName" placeholder="Full Name">
+                <small class="text-danger">
+                    @error('fullName')
+                        {{ 'Please enter your full name' }}
+                    @enderror
+                </small>
             </div>
 
             <div class="col-md-8 mb-3">
                 <input type="email" name="email" placeholder="Your Email">
+                <small class="text-danger">
+                    @error('email')
+                        {{ 'Please enter your email' }}
+                    @enderror
+                </small>
             </div>
 
             <div class="col-md-8 mb-3">
                 <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+                <small class="text-danger">
+                    @error('message')
+                        {{ 'Please enter your message' }}
+                    @enderror
+                </small>
             </div>
 
             <div class="col-md-8 mb-3">
-                <button>Send Message</button>
+                <button class="submit-btn">Send Message</button>
             </div>
         </form>
     </div>
