@@ -395,4 +395,9 @@ class AdminController extends Controller
         $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact( 'fetchBookingRecord', 'fetchRecord'));
         return $pdfRecord->download($fileName);
     }
+
+    public function readInquiries(){
+        $fetchQueries = DB::table('inquiry')->get();
+        return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
+    }
 }
