@@ -54,6 +54,7 @@ Route::get("/admin/add/policy", [AdminController::class, 'AddPolicy'])->name('Ad
 Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->name('Create.Policy');
 Route::get("/admin/edit/policy/{id}", [AdminController::class, 'editPolicy'])->name('Edit.Policy');
 Route::post("/admin/update/policy/{id}", [AdminController::class, 'updatePolicy'])->name('Update.Policy');
+Route::get("/admin/delete/policy/{id}", [AdminController::class, 'deletePolicy'])->name('Delete.Policy');
 
 
 // Apartment - Admin
@@ -64,6 +65,7 @@ Route::get("/apartment/availablity/{id}", [UserController::class, 'checkApartmen
 Route::get("/delete/apartment/{id}", [AdminController::class, 'deleteApartment'])->name('Delete.Apartment');
 Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->name('Edit.Apartment');
 Route::post("/update/apartment/{id}", [AdminController::class, 'updateApartment'])->name('Update.Apartment');
+Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->name('Edit.Apartment');
 
 
 // Booking Page - User

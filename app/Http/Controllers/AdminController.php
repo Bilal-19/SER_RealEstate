@@ -404,6 +404,16 @@ class AdminController extends Controller
         }
     }
 
+    public function deletePolicy($id)
+    {
+        $isDeleted = DB::table('Policy')->where('id','=',$id)->delete();
+
+        if ($isDeleted) {
+            toastr()->success('Policy record removed successfully');
+            return redirect()->back();
+        }
+    }
+
     // Booking
     public function Booking()
     {
