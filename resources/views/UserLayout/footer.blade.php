@@ -15,7 +15,7 @@
             <a href="{{route('View.Corporate')}}" class="text-light d-block ff-inter">Corporate</a>
             <a href="{{route('View.Benefits')}}" class="text-light d-block ff-inter">Benefits</a>
             <a href="{{route('View.Enquiry.Form')}}" class="text-light d-block ff-inter">Inquiry</a>
-            <a href="{{route('View.Blogs')}}" class="text-light d-block ff-inter">Blogs</a>
+            {{-- <a href="{{route('View.Blogs')}}" class="text-light d-block ff-inter">Blogs</a> --}}
         </div>
         <div class="col-md-3">
             <p>Contact Us</p>

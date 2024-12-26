@@ -88,10 +88,10 @@
                                 <a class="nav-link ff-inter nav-link-transition"
                                     href="{{ route('View.About') }}">ABOUT</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link ff-inter nav-link-transition"
                                     href="{{ route('View.Blogs') }}">BLOG</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link ff-inter nav-link-transition"
                                     href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>

@@ -7,7 +7,9 @@
 
         <div class="row mt-3">
             <div class="col-md-4">
-                <a href="{{ route('Add.Benefits') }}" class="brand-btn text-decoration-none">Add Benefits</a>
+                <a href="{{ route('Add.Benefits') }}" class="brand-btn text-decoration-none">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add Benefits</a>
             </div>
         </div>
 

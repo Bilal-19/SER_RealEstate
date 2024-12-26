@@ -347,7 +347,8 @@ class AdminController extends Controller
 
     public function Policy()
     {
-        return view('Admin.Policy');
+        $fetchAllPolicies = DB::table('policy')->get();
+        return view('Admin.Policy')->with(compact('fetchAllPolicies'));
     }
 
     public function AddPolicy()
