@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cities;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 class AdminController extends Controller
 {
     public function Dashboard()
@@ -59,6 +57,9 @@ class AdminController extends Controller
             'apartmentMapLocation' => 'required',
             'totalBedrooms' => 'required|integer|min:1|max:6',
             'totalBathrooms' => 'required|integer|min:1|max:4',
+            'apartmentAreaSqFt' => 'required',
+            'latitudeVal' => 'required',
+            'longitudeVal' => 'required',
             'apartmentDescription' => 'required',
             'availableFrom' => 'required',
             'availableTill' => 'required',
@@ -406,7 +407,7 @@ class AdminController extends Controller
 
     public function deletePolicy($id)
     {
-        $isDeleted = DB::table('Policy')->where('id','=',$id)->delete();
+        $isDeleted = DB::table('Policy')->where('id', '=', $id)->delete();
 
         if ($isDeleted) {
             toastr()->success('Policy record removed successfully');
@@ -432,8 +433,10 @@ class AdminController extends Controller
             ->first();
 
 
+        // Logo Image Path
+        $imgPath = public_path('images/company_logo.png');
         $fileName = "{$fetchRecord->first_name}_Booking_{$fetchRecord->id}.pdf";
-        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact('fetchBookingRecord', 'fetchRecord'));
+        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact('fetchBookingRecord', 'fetchRecord', 'imgPath'));
         return $pdfRecord->download($fileName);
     }
 

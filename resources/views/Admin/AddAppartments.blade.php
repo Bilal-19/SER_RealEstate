@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="row mt-3">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label class="form-label mb-0">Select No of Bedrooms:</label>
                             <select name="totalBedrooms" id="" class="form-select">
                                 <option value="">Select</option>
@@ -92,7 +92,7 @@
                             </small>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label class="form-label mb-0">Select No of Bathrooms:</label>
                             <select name="totalBathrooms" class="form-select">
                                 <option value="">Select</option>
@@ -103,6 +103,17 @@
                             <small class="text-danger">
                                 @error('totalBathrooms')
                                     {{ 'Please select total no of bathrooms' }}
+                                @enderror
+                            </small>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label mb-0">Enter Area (Square Feet):</label>
+                            <input class="form-control" type="number" placeholder="Enter apartment square feet area"
+                                name="apartmentAreaSqFt" value="{{ old('apartmentAreaSqFt') }}">
+                            <small class="text-danger">
+                                @error('apartmentAreaSqFt')
+                                    {{ 'Please enter apartment area in square feet' }}
                                 @enderror
                             </small>
                         </div>

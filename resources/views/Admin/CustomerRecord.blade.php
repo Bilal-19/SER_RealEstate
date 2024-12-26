@@ -42,12 +42,18 @@
             font-size: 30px;
             font-family: "poppins";
         }
+
+        img {
+            height: 100px;
+            width: 100px;
+        }
     </style>
 </head>
 
 <body>
 
-    <img src="/public/assets/images/company_logo.png" alt="sterling executive residential">
+    <img src="{{public_path('public/assets/images/company_logo.png')}}" alt="">
+
 
     <h4>Personal Information</h4>
     <table>
