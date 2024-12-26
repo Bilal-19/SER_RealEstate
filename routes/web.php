@@ -88,6 +88,6 @@ Route::post("/create/inquiry", [UserController::class, 'createInquiry'])->name('
 
 
 // Booking - Admin
-Route::get("admin/booking", [AdminController::class, 'Booking'])->name('Booking');
+Route::get("admin/booking", [AdminController::class, 'Booking'])->name('View.Booking');
 
 Route::get("admin/booking/pdf/{id}", [AdminController::class, 'generatePDF'])->name('Generate.PDF');

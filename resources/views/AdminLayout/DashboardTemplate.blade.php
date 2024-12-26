@@ -241,7 +241,7 @@
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark"
-                                    href="{{route('Booking')}}">
+                                    href="{{route('View.Booking')}}">
                                     <i class="fa-solid fa-handshake"></i>
                                    Booking
                                 </a>
