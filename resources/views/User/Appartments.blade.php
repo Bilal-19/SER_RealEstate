@@ -84,6 +84,7 @@
 
 @section('user-main-section')
     <div class="row">
+        {{-- <div id="map" style="height: 500px;"></div> --}}
         <p>
             {{ count($availableApartments) }} records found
         </p>
@@ -133,5 +134,28 @@
             </div>
         @endforeach
     </div>
-@endsection
 
+    {{-- <script src="https://cdn.gomaps.pro/js/gomaps.js"></script>
+
+
+    <script>
+        function initMap() {
+            var map = new GoMaps.Map("map", {
+                center: [51.5074, -0.1278],  // Example coordinates
+                zoom: 10,
+            });
+
+            var locations = @json($locations);  // Pass data from Laravel to JavaScript
+
+            locations.forEach(function(location) {
+                new GoMaps.Marker({
+                    position: [location.latitude, location.longitude],
+                    map: map,
+                    title: location.area_name
+                });
+            });
+        }
+
+        window.onload = initMap;
+    </script> --}}
+@endsection

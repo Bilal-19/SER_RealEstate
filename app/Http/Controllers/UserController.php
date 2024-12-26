@@ -94,8 +94,9 @@ class UserController extends Controller
             ->whereDate('availableFrom', '<=', $request->checkInDate)
             ->whereDate('availableTill', '>=', $request->checkOutDate)
             ->get();
+        $locations = DB::table('apartments')->select('latitude', 'longitude')->get();
 
-        return view('User.Appartments')->with(compact('availableApartments'));
+        return view('User.Appartments')->with(compact('availableApartments', 'locations'));
     }
 
 
