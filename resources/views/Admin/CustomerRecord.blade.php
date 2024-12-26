@@ -37,7 +37,8 @@
         th {
             padding: 5px;
         }
-        h4{
+
+        h4 {
             font-size: 30px;
             font-family: "poppins";
         }
@@ -52,37 +53,37 @@
     <table>
         <tr>
             <th>Customer Name: </th>
-            <td>{{ $fetchBookingRecord->first_name }} {{ $fetchBookingRecord->last_name }}</td>
+            <td>{{ $fetchRecord->first_name }} {{ $fetchRecord->last_name }}</td>
         </tr>
 
         <tr>
             <th>Email: </th>
-            <td>{{ $fetchBookingRecord->email }}</td>
+            <td>{{ $fetchRecord->email }}</td>
         </tr>
 
         <tr>
             <th>Phone Number: </th>
-            <td>{{ $fetchBookingRecord->phone_number }}</td>
+            <td>{{ $fetchRecord->phone_number }}</td>
         </tr>
 
         <tr>
             <th>Address: </th>
-            <td>{{ $fetchBookingRecord->address }}</td>
+            <td>{{ $fetchRecord->address }}</td>
         </tr>
 
         <tr>
             <th>Postal Code: </th>
-            <td>{{ $fetchBookingRecord->postal_code }}</td>
+            <td>{{ $fetchRecord->postal_code }}</td>
         </tr>
 
         <tr>
             <th>Country: </th>
-            <td>{{ $fetchBookingRecord->country }}</td>
+            <td>{{ $fetchRecord->country }}</td>
         </tr>
 
         <tr>
             <th>Message: </th>
-            <td>{{ $fetchBookingRecord->message }}</td>
+            <td>{{ $fetchRecord->message }}</td>
         </tr>
     </table>
 
@@ -90,40 +91,37 @@
     <table>
         <tr>
             <th>Check In Date: </th>
-            <td>{{ $fetchBookingRecord->check_in }}</td>
+            <td>{{ date('d M Y', strtotime($fetchRecord->check_in)) }}</td>
         </tr>
 
         <tr>
             <th>Check Out Date: </th>
-            <td>{{ $fetchBookingRecord->check_out }}</td>
+            <td>{{ date('d M Y', strtotime($fetchRecord->check_out)) }}</td>
         </tr>
 
         <tr>
             <th>Total Night Stay: </th>
-            <td>{{ $fetchBookingRecord->total_days_to_stay }}</td>
+            <td>{{ $fetchRecord->total_days_to_stay }}</td>
         </tr>
 
         <tr>
             <th>Payment Status: </th>
-            <td>{{ $fetchBookingRecord->payment_status }}</td>
+            <td>{{ $fetchRecord->payment_status }}</td>
         </tr>
 
+        <tr>
+            <th>Apartment Name: </th>
+            <td>
+                {{ $fetchBookingRecord->area_name }}
+            </td>
+        </tr>
 
-        @foreach ($fetchAll as $val)
-            <tr>
-                <th>Apartment Name: </th>
-                <td>
-                    {{ $val->area_name }}
-                </td>
-            </tr>
-
-            <tr>
-                <th>Street Address: </th>
-                <td>
-                    {{ $val->street_address }}
-                </td>
-            </tr>
-        @endforeach
+        <tr>
+            <th>Street Address: </th>
+            <td>
+                {{ $fetchBookingRecord->street_address }}
+            </td>
+        </tr>
 
     </table>
 </body>

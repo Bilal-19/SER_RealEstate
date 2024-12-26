@@ -382,12 +382,17 @@ class AdminController extends Controller
 
     public function generatePDF($id)
     {
-        $fetchBookingRecord = DB::table('booking')->find($id);
-        $fetchAll = DB::table('booking')
+        $fetchRecord= DB::table('booking')->find($id);
+        $fetchApartmentID = $fetchRecord->apartment_id;
+        $fetchBookingRecord = DB::table('booking')
             ->join('apartments', 'booking.apartment_id', '=', 'apartments.id')
-            ->select('booking.*','apartments.*')
-            ->get();
-        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact('fetchBookingRecord', 'fetchAll'));
-        return $pdfRecord->download('Customer.pdf');
+            ->select('booking.*', 'apartments.*')
+            ->where('booking.apartment_id', $fetchApartmentID)
+            ->first();
+
+
+            $fileName = "{$fetchRecord->first_name}_Booking_{$fetchRecord->id}.pdf";
+        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact( 'fetchBookingRecord', 'fetchRecord'));
+        return $pdfRecord->download($fileName);
     }
 }
