@@ -339,7 +339,7 @@
                                     'checkOut' => request('checkOut'),
                                 ]) }}">Book
                                 Now</a>
-                        @else
+                        @elseif ($isAvailable == false)
                             <p class="availability-text-danger ff-inter">Apartment is Not Available</p>
                         @endif
                     @endisset

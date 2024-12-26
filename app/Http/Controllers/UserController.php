@@ -124,36 +124,21 @@ class UserController extends Controller
         $images = explode('|', $findApartment->multipleImages);
         $apartments = DB::table('apartments')->get();
 
-        $findApartment = DB::table('apartments')->find($id);
-
         $checkInDate = $request->checkIn;
         $checkOutDate = $request->checkOut;
 
-        if ($findApartment->availableFrom <= $checkInDate && $findApartment->availableTill >= $checkOutDate) {
-            $isAvailable = true;
-            return view('User.ViewApartmentDetail')->with(compact(
-                'isAvailable',
-                'images',
-                'findApartment',
-                'firstFourAmenities',
-                'LastFourAmenities',
-                'apartments',
-                'checkInDate',
-                'checkOutDate'
-            ));
-        } else {
-            $isAvailable = false;
-            return view('User.ViewApartmentDetail')->with(compact(
-                'isAvailable',
-                'images',
-                'findApartment',
-                'firstFourAmenities',
-                'LastFourAmenities',
-                'apartments',
-                'checkInDate',
-                'checkOutDate'
-            ));
-        }
+        $isAvailable = $findApartment->availableFrom <= $checkInDate && $findApartment->availableTill >= $checkOutDate;
+        return view('User.ViewApartmentDetail')->with(compact(
+            'isAvailable',
+            'images',
+            'findApartment',
+            'firstFourAmenities',
+            'LastFourAmenities',
+            'apartments',
+            'checkInDate',
+            'checkOutDate'
+        ));
+
     }
 
     public function Booking($id, $checkIn, $checkOut)
