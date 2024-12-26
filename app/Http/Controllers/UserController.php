@@ -5,10 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-use Session;
+use App\Http\Controllers\AdminController;
 use Stripe;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendPaymentVoucher;
 class UserController extends Controller
 {
+    // Send Payment email
+    public function sendEmail($checkIn, $checkOut, $location, $senderEmail, $perNightPrice, $vatAmount, $totalStay)
+    {
+        // $recipientEmail = "bilal.zhtech@gmail.com";
+        $message = "Welcome User";
+        $subject = "Thanks User! Your Booking at London is Confirmed";
+
+        return Mail::to($senderEmail)->send(
+            new SendPaymentVoucher(
+                $message,
+                $subject,
+                $checkIn,
+                $checkOut,
+                $location,
+                $perNightPrice,
+                $vatAmount,
+                $totalStay,
+            )
+        );
+    }
     public function index()
     {
         $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
@@ -210,7 +232,17 @@ class UserController extends Controller
             'apartment_id' => $apartmentID,
         ]);
 
-        if ($res) {
+        $isEmailSent = $this->sendEmail(
+            $checkIn,
+            $checkOut,
+            "Karachi",
+            $request->email,
+            180,
+            2,
+            $totalDays
+        );
+
+        if ($res && $isEmailSent) {
             toastr()->success("We've received your information. Our team will contact you soon");
             return view('User.Thankyou');
         }
