@@ -373,6 +373,36 @@ class AdminController extends Controller
         }
     }
 
+    public function editPolicy($id)
+    {
+        $findPolicy = DB::table('Policy')->find($id);
+        return view('Admin.EditPolicy')->with(compact('findPolicy'));
+    }
+
+    public function updatePolicy($id, Request $request)
+    {
+
+        // Store Policy Icon to Public folder
+        if ($request->file('icon')) {
+            $timeStmpImg = time() . '.' . $request->icon->getClientOriginalExtension();
+            $request->icon->move('Policy/Icons', $timeStmpImg);
+        } else {
+            $timeStmpImg = DB::table('policy')->where('id', '=', $id)->value('policy_icon');
+        }
+
+
+        $result = DB::table('Policy')
+            ->where('id', '=', $id)
+            ->update([
+                'policy_icon' => $timeStmpImg,
+                'policy_name' => $request->policyName
+            ]);
+
+        if ($result) {
+            toastr()->success('Policy record updated successfully');
+            return redirect()->back();
+        }
+    }
 
     // Booking
     public function Booking()
@@ -383,7 +413,7 @@ class AdminController extends Controller
 
     public function generatePDF($id)
     {
-        $fetchRecord= DB::table('booking')->find($id);
+        $fetchRecord = DB::table('booking')->find($id);
         $fetchApartmentID = $fetchRecord->apartment_id;
         $fetchBookingRecord = DB::table('booking')
             ->join('apartments', 'booking.apartment_id', '=', 'apartments.id')
@@ -392,12 +422,13 @@ class AdminController extends Controller
             ->first();
 
 
-            $fileName = "{$fetchRecord->first_name}_Booking_{$fetchRecord->id}.pdf";
-        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact( 'fetchBookingRecord', 'fetchRecord'));
+        $fileName = "{$fetchRecord->first_name}_Booking_{$fetchRecord->id}.pdf";
+        $pdfRecord = Pdf::loadView('Admin.CustomerRecord', compact('fetchBookingRecord', 'fetchRecord'));
         return $pdfRecord->download($fileName);
     }
 
-    public function readInquiries(){
+    public function readInquiries()
+    {
         $fetchQueries = DB::table('inquiry')->get();
         return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
     }

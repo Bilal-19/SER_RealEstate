@@ -52,6 +52,8 @@ Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name(
 Route::get("/admin/policy", [AdminController::class, 'Policy'])->name('Policy');
 Route::get("/admin/add/policy", [AdminController::class, 'AddPolicy'])->name('Add.Policy');
 Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->name('Create.Policy');
+Route::get("/admin/edit/policy/{id}", [AdminController::class, 'editPolicy'])->name('Edit.Policy');
+Route::post("/admin/update/policy/{id}", [AdminController::class, 'updatePolicy'])->name('Update.Policy');
 
 
 // Apartment - Admin
@@ -80,12 +82,12 @@ Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->
 
 
 // Payment Routes
-Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}", [UserController::class,'stripePost'])->name('stripe.post');
+Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}", [UserController::class, 'stripePost'])->name('stripe.post');
 
 
 // Inquiry
 Route::post("/create/inquiry", [UserController::class, 'createInquiry'])->name('Create.Inquiry');
-Route::get("/admin/inquiry",[AdminController::class, 'readInquiries'])->name('Read.Queries');
+Route::get("/admin/inquiry", [AdminController::class, 'readInquiries'])->name('Read.Queries');
 
 // Booking - Admin
 Route::get("admin/booking", [AdminController::class, 'Booking'])->name('View.Booking');

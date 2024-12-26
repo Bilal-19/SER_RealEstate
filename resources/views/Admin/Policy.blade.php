@@ -31,7 +31,7 @@
                             </td>
                             <td>{{ $record->policy_name }}</td>
                             <td class="text-center">
-                                <a href="#" class="text-primary">
+                                <a href="{{route('Edit.Policy', ['id' => $record->id])}}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>
