@@ -7,25 +7,18 @@
 
         <div class="row d-flex justify-content-around">
             <div class="col-md-3 card bg-light-brown text-light text-center">
-                <h3>2000+</h3>
-                <p>Customers</p>
+                <h3>{{$totalInquiries}}</h3>
+                <p>Inquiries</p>
             </div>
 
             <div class="col-md-3 card bg-light-brown text-light text-center">
-                <h3>1500+</h3>
-                <p>Apartments</p>
+                <h3>{{$totalBookings}}</h3>
+                <p>Bookings</p>
             </div>
 
             <div class="col-md-3 card bg-light-brown text-light text-center">
-                <h3>20+</h3>
-                <p>Amenities</p>
-            </div>
-        </div>
-
-        <div class="row d-flex justify-content-around mt-3">
-            <div class="col-md-3 card bg-light-brown text-light text-center">
-                <h3>300+</h3>
-                <p>Blogs</p>
+                <h3>{{$totalRevenue}}</h3>
+                <p>Revenue</p>
             </div>
         </div>
     </div>

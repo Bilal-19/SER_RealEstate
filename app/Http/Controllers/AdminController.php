@@ -13,7 +13,18 @@ class AdminController extends Controller
 
     public function Dashboard()
     {
-        return view('Admin.Dashboard');
+        // Total Inquiries | Total Bookings | Revenue | Available Apartments
+        $totalInquiries = DB::table('inquiry')->count();
+        $totalBookings = DB::table('booking')->count();
+        $totalRevenue = DB::table('booking')->sum('total_amount');
+        // Bookings Trends | Revenue Trends
+
+        // Recent Inquiries | Upcoming Bookings
+        return view('Admin.Dashboard')->with(compact(
+            'totalInquiries',
+            'totalBookings',
+            'totalRevenue'
+        ));
     }
 
     // Appartment Section
