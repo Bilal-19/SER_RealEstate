@@ -244,6 +244,7 @@ class UserController extends Controller
         ]);
 
         $findApartment = DB::table('apartments')->find($apartmentID);
+        $findApartment->status = "Booked";
 
         $isEmailSent = $this->sendEmail(
             $checkIn,

@@ -421,7 +421,7 @@ a {
     padding: 10px;
 }
 
-.swiper-slide>img {
+.swiper-slide > a > img {
     height: 349px;
     width: 299px;
     object-fit: cover;

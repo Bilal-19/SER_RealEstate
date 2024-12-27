@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->enum('total_bathrooms', [1, 2, 3]);
             $table->text('description');
             $table->integer('sqfeet_area');
+            $table->string('status')->default('available');
 
             // Set Available Date
             $table->date('availableFrom');

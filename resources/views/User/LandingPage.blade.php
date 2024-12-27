@@ -65,8 +65,10 @@
                     <!-- Slides -->
                     @foreach ($favApartmentRecords as $record)
                         <div class="col-md-3 swiper-slide">
-                            <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}" alt=""
-                                class="img-fluid object-fit-cover">
+                            <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}" target="_blank">
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}" alt=""
+                                    class="img-fluid object-fit-cover">
+                            </a>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     <h6 class="card-text ff-inter text-uppercase">{{ $record->area_name }}</h6>
@@ -133,8 +135,10 @@
                             <!-- Slides -->
                             @foreach ($fetchNearestApartment as $rec)
                                 <div class="col-md-3 swiper-slide">
-                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                                    <a href="{{route('Detail.View.Apartment', ['id' => $rec->id])}}" target="_blank">
+                                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
                                         class="img-fluid neighbourhood-img rounded shadow">
+                                    </a>
                                     <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
                                     <p class="mt-0">
                                         {!! Str::limit($rec->description, 50) !!}
