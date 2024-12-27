@@ -118,6 +118,8 @@ class AdminController extends Controller
             'free_wifi_val' => $request->internetQuality,
             'longitude' => $request->longitudeVal,
             'latitude' => $request->latitudeVal,
+            'sqfeet_area' => $request->apartmentAreaSqFt,
+            'created_at' => now()
         ]);
 
         if ($res) {
