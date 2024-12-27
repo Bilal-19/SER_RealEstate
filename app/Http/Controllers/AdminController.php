@@ -257,7 +257,8 @@ class AdminController extends Controller
         $result = DB::table('benefits')->insert([
             'benefit_icon' => $timeStampImg,
             'benefit_text' => $request->benefitName,
-            'benefit_description' => $request->benefitDescription
+            'benefit_description' => $request->benefitDescription,
+            'created_at' => now()
         ]);
 
         if ($result) {
@@ -293,7 +294,8 @@ class AdminController extends Controller
             ->update([
                 'benefit_icon' => $timeStampImg,
                 'benefit_text' => $request->benefitName,
-                'benefit_description' => $request->benefitDescription
+                'benefit_description' => $request->benefitDescription,
+                'updated_at' => now()
             ]);
 
         if ($result) {
@@ -343,7 +345,8 @@ class AdminController extends Controller
             'blog_headline' => $request->blogHeadline,
             'blog_brief_description' => $request->blogBriefDesc,
             'blog_detailed_content' => $request->blogDetailContent,
-            'publish_date' => $request->blogPublishDate
+            'publish_date' => $request->blogPublishDate,
+            'created_at' => now()
         ]);
 
         if ($result) {
@@ -371,7 +374,8 @@ class AdminController extends Controller
         $request->icon->move('Policy/Icons', $timeStmpImg);
         $res = DB::table('policy')->insert([
             'policy_icon' => $timeStmpImg,
-            'policy_name' => $request->policyName
+            'policy_name' => $request->policyName,
+            'created_at' => now()
         ]);
 
         if ($res) {
@@ -402,7 +406,8 @@ class AdminController extends Controller
             ->where('id', '=', $id)
             ->update([
                 'policy_icon' => $timeStmpImg,
-                'policy_name' => $request->policyName
+                'policy_name' => $request->policyName,
+                'updated_at' => now()
             ]);
 
         if ($result) {
