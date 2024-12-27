@@ -156,6 +156,9 @@
                         <img src="{{ asset('assets/images/Bathroom.png') }}" alt="">
                         {{ $findApartment->total_bathrooms }} Bathrooms
                     </p>
+                    <p class="ff-inter mx-3">
+                        Area Sq.ft {{ $findApartment->sqfeet_area }}
+                    </p>
                 </div>
             </div>
             <div class="col-md-5"></div>
@@ -398,7 +401,8 @@
                                             bedrooms</p>
                                         <p class="mt-0 ff-inter"><i class="fa-solid fa-bath"></i>
                                             {{ $item->total_bathrooms }}
-                                            bathrooms</p>
+                                            bathrooms
+                                        </p>
                                     </div>
                                 </div>
                             @endforeach

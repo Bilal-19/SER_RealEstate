@@ -119,9 +119,12 @@
                                 <img src="{{ asset('assets/images/bedroom.png') }}" alt="">
                                 {{ $rec->total_bedrooms }} Bedrooms
                             </p>
-                            <p class="d-inline ff-inter mx-3">
+                            <p class="d-inline ff-inter mx-2">
                                 <img src="{{ asset('assets/images/Bathroom.png') }}" alt="">
                                 {{ $rec->total_bathrooms }} Bathrooms
+                            </p>
+                            <p class="d-inline ff-inter mx-2">
+                                Area Sq.ft {{ $rec->sqfeet_area }}
                             </p>
                         </div>
                         <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}"
@@ -133,6 +136,46 @@
                 </div>
             </div>
         @endforeach
+    </div>
+
+    <div class="row">
+        <h3 class="fs-36 ff-poppins">Neighbourhood</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11 mx-auto">
+            @isset($neighborhoodApartment)
+                @if (count($neighborhoodApartment) > 4)
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @foreach ($neighborhoodApartment as $rec)
+                                <div class="col-md-3 swiper-slide">
+                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                                        class="img-fluid neighbourhood-img rounded shadow">
+                                    <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
+                                    <p class="mt-0">
+                                        {!! Str::limit($rec->description, 50) !!}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-slider-button swiper-button-prev"></div>
+                        <div class="swiper-slider-button swiper-button-next"></div>
+
+                        <!-- If we need scrollbar -->
+                    </div>
+                @else
+                    <p>Please add minimum five records to view the nearest apartments</p>
+                @endif
+            @endisset
+        </div>
     </div>
 
     {{-- <script src="https://cdn.gomaps.pro/js/gomaps.js"></script>
