@@ -30,6 +30,8 @@ class SendPaymentVoucher extends Mailable
     public $name;
 
     public $areaName;
+    public $adults;
+    public $children;
     public function __construct(
         $message,
         $subject,
@@ -40,7 +42,9 @@ class SendPaymentVoucher extends Mailable
         $vatAmount,
         $totalStay,
         $username,
-        $areaname
+        $areaname,
+        $adults,
+        $children
     ) {
         $this->emailMessage = $message;
         $this->subject = $subject;
@@ -52,6 +56,8 @@ class SendPaymentVoucher extends Mailable
         $this->totalStay = $totalStay;
         $this->name = $username;
         $this->areaName = $areaname;
+        $this->adults = $adults;
+        $this->children = $children;
     }
 
     /**

@@ -12,7 +12,7 @@ use App\Mail\SendPaymentVoucher;
 class UserController extends Controller
 {
     // Send Payment email
-    public function sendEmail($checkIn, $checkOut, $location, $senderEmail, $perNightPrice, $vatAmount, $totalStay, $username, $areaname)
+    public function sendEmail($checkIn, $checkOut, $location, $senderEmail, $perNightPrice, $vatAmount, $totalStay, $username, $areaname, $adults, $childrens)
     {
         // $recipientEmail = "bilal.zhtech@gmail.com";
         $message = "Welcome User";
@@ -29,7 +29,9 @@ class UserController extends Controller
                 $vatAmount,
                 $totalStay,
                 $username,
-                $areaname
+                $areaname,
+                $adults,
+                $childrens
             )
         );
     }
@@ -128,7 +130,8 @@ class UserController extends Controller
         return view('User.Appartments')->with(compact(
             'availableApartments',
             'locations',
-        'neighborhoodApartment'));
+            'neighborhoodApartment'
+        ));
     }
 
 
@@ -239,6 +242,8 @@ class UserController extends Controller
             'card_verification_code' => $request->cvc,
             'expiration_month' => $request->expMonth,
             'expiration_year' => $request->expYear,
+            'totalAdults' => $request->adults,
+            'totalChildrens' => $request->childrens,
             'apartment_id' => $apartmentID,
             'created_at' => now()
         ]);
@@ -255,7 +260,9 @@ class UserController extends Controller
             2,
             $totalDays,
             $request->fname,
-            $findApartment->area_name
+            $findApartment->area_name,
+            $request->adults,
+            $request->childrens,
         );
 
         if ($res && $isEmailSent) {
