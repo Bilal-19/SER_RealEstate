@@ -24,6 +24,8 @@ return new class extends Migration {
             $table->string('payment_status')->default('Pending');
             $table->string('is_agree_to_terms');
             $table->string('is_agree_to_marketing');
+            $table->integer('totalAdults');
+            $table->integer('totalChildrens');
 
             // Booking Details
             $table->date('check_in');

@@ -170,7 +170,30 @@
     @php
         $apartmentCost = $findApartment->price_per_night * $stayDays;
         $vat = 2; //2% tax (0 - 100%)
-        $totalCost = $apartmentCost + ($apartmentCost * ($vat / 100));
+        $totalCost = $apartmentCost + $apartmentCost * ($vat / 100);
+
+        $countries = [
+            'United States',
+            'India',
+            'China',
+            'United Arab Emirates',
+            'Saudi Arabia',
+            'Australia',
+            'Canada',
+            'Germany',
+            'France',
+            'Italy',
+            'Spain',
+            'Brazil',
+            'Russia',
+            'Japan',
+            'South Africa',
+            'Ireland',
+            'Pakistan',
+            'Bangladesh',
+            'Nigeria',
+            'Turkey',
+        ];
     @endphp
     <div class="container-fluid mt-5 mb-5">
         <div class="row d-flex justify-content-around">
@@ -212,8 +235,8 @@
                     method="post" class="require-validation" data-cc-on-file="false"
                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                     @csrf
-                    <div class="d-flex justify-content-between">
-                        <div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-md-6">
                             <label class="form-label fs-14 ff-inter">First Name: </label>
                             <input type="text" class="form-control ff-inter fs-16" name="fname"
                                 value="{{ old('fname') }}">
@@ -224,7 +247,7 @@
                             </small>
                         </div>
 
-                        <div>
+                        <div class="col-md-6">
                             <label class="form-label fs-14 ff-inter">Last Name: </label>
                             <input type="text" class="form-control ff-inter fs-16" name="lname"
                                 value="{{ old('lname') }}">
@@ -236,8 +259,8 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between mt-3">
-                        <div>
+                    <div class="row d-flex justify-content-between mt-3">
+                        <div class="col-md-6">
                             <label class="form-label fs-14 ff-inter">Email Address: </label>
                             <input type="email" class="form-control ff-inter fs-16" name="email"
                                 value="{{ old('email') }}">
@@ -248,7 +271,7 @@
                             </small>
                         </div>
 
-                        <div>
+                        <div class="col-md-6">
                             <label class="form-label fs-14 ff-inter">Phone Number: </label>
                             <input type="text" class="form-control ff-inter fs-16" name="phone"
                                 value="{{ old('phone') }}">
@@ -260,20 +283,23 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between mt-3 mb-3">
-                        <div>
-                            <label class="form-label fs-14 ff-inter">Address: </label>
-                            <input type="text" class="form-control ff-inter fs-16" name="address"
-                                value="{{ old('address') }}">
+                    <div class="row d-flex justify-content-between mt-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label fs-14 ff-inter">Country: </label>
+                            <select name="country" id="" class="form-select ff-inter fs-16"
+                                value="{{ old('country') }}">
+                                @foreach ($countries as $val)
+                                    <option value="{{ $val }}">{{ $val }}</option>
+                                @endforeach
+                            </select>
                             <small class="text-danger">
-                                @error('address')
-                                    {{ 'The address field is required' }}
+                                @error('country')
+                                    {{ 'The country field is required' }}
                                 @enderror
                             </small>
-
                         </div>
 
-                        <div>
+                        <div class="col-md-6">
                             <label class="form-label fs-14 ff-inter">Postal Code: </label>
                             <input type="text" class="form-control ff-inter fs-16" name="postal_code"
                                 value="{{ old('postal_code') }}">
@@ -285,40 +311,84 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label fs-14 ff-inter">Country: </label>
-                        <input type="text" class="form-control ff-inter fs-16" name="country"
-                            value="{{ old('country') }}">
-                        <small class="text-danger">
-                            @error('country')
-                                {{ 'The country field is required' }}
-                            @enderror
-                        </small>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Name on Card</label>
-                        <input class="form-control" type="text" name="account_title" value="{{ old('account_title') }}">
-                        <small class="text-danger">
-                            @error('account_title')
-                                {{ 'The name on card field is required' }}
-                            @enderror
-                        </small>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Card Number</label>
-                        <input autocomplete="off" class="form-control card-number" type="text" name="card_number"
-                            value="{{ old('card_number') }}">
-                        <small class="text-danger">
-                            @error('card_number')
-                                {{ 'The card number field is required' }}
-                            @enderror
-                        </small>
+                    <div class="row mb-3">
+                        <div>
+                            <label class="form-label fs-14 ff-inter">Address: </label>
+                            <input type="text" class="form-control ff-inter fs-16" name="address"
+                                value="{{ old('address') }}">
+                            <small class="text-danger">
+                                @error('address')
+                                    {{ 'The address field is required' }}
+                                @enderror
+                            </small>
+                        </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label fs-14 ff-inter">Select No of Adults: </label>
+                            <select name="adults" id="" class="form-select ff-inter fs-16"
+                                value="{{ old('adults') }}">
+                                @for ($i = 1; $i < 4; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                            <small class="text-danger">
+                                @error('adults')
+                                    {{ 'The adults field is required' }}
+                                @enderror
+                            </small>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label class="form-label fs-14 ff-inter">Select No of Childrens: </label>
+                            <select name="childrens" id="" class="form-select ff-inter fs-16"
+                                value="{{ old('childrens') }}">
+                                @for ($i = 1; $i <= 4; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                            <small class="text-danger">
+                                @error('childrens')
+                                    {{ 'The childrens field is required' }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
+                    <h4 class="ff-inter fs-24 mt-5">Payment Information</h4>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Name on Card</label>
+                            <input class="form-control" type="text" name="account_title"
+                                value="{{ old('account_title') }}">
+                            <small class="text-danger">
+                                @error('account_title')
+                                    {{ 'The name on card field is required' }}
+                                @enderror
+                            </small>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Card Number</label>
+                                <input autocomplete="off" class="form-control card-number" type="text"
+                                    name="card_number" value="{{ old('card_number') }}">
+                                <small class="text-danger">
+                                    @error('card_number')
+                                        {{ 'The card number field is required' }}
+                                    @enderror
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mb-5">
+                        <div class="col-md-4">
                             <label class="form-label">CVC</label>
                             <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text"
                                 name="cvc" value="{{ old('cvc') }}">
@@ -328,7 +398,7 @@
                                 @enderror
                             </small>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-4">
                             <label class="form-label">Expiration Month</label>
                             <input class="form-control card-expiry-month" placeholder="MM" type="text"
                                 name="expMonth" value="{{ old('expMonth') }}">
@@ -338,7 +408,7 @@
                                 @enderror
                             </small>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-4">
                             <label class="form-label">Expiration Year</label>
                             <input class="form-control card-expiry-year" placeholder="YYYY" type="text"
                                 name="expYear" value="{{ old('expYear') }}">
