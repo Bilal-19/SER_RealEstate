@@ -12,11 +12,11 @@ use App\Mail\SendPaymentVoucher;
 class UserController extends Controller
 {
     // Send Payment email
-    public function sendEmail($checkIn, $checkOut, $location, $senderEmail, $perNightPrice, $vatAmount, $totalStay)
+    public function sendEmail($checkIn, $checkOut, $location, $senderEmail, $perNightPrice, $vatAmount, $totalStay, $username, $areaname)
     {
         // $recipientEmail = "bilal.zhtech@gmail.com";
         $message = "Welcome User";
-        $subject = "Thanks User! Your Booking at London is Confirmed";
+        $subject = "Thanks {$username}, Your Booking at {$areaname} is Confirmed";
 
         return Mail::to($senderEmail)->send(
             new SendPaymentVoucher(
@@ -28,6 +28,8 @@ class UserController extends Controller
                 $perNightPrice,
                 $vatAmount,
                 $totalStay,
+                $username,
+                $areaname
             )
         );
     }
@@ -232,14 +234,18 @@ class UserController extends Controller
             'apartment_id' => $apartmentID,
         ]);
 
+        $findApartment = DB::table('apartments')->find($apartmentID);
+
         $isEmailSent = $this->sendEmail(
             $checkIn,
             $checkOut,
-            "Karachi",
+            $findApartment->street_address,
             $request->email,
-            180,
+            $findApartment->price_per_night,
             2,
-            $totalDays
+            $totalDays,
+            $request->fname,
+            $findApartment->area_name
         );
 
         if ($res && $isEmailSent) {

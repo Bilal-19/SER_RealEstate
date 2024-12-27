@@ -202,7 +202,7 @@
     </div>
     <div class="row mt-3 bg-light-gray pt-5">
         <div class="col-md-12 text-center">
-            <h4 class="ff-inter">Resources to Get Some Information</h4>
+            <h4 class="ff-inter">Resources</h4>
             <p class="ff-inter">Discover premium apartments tailored to your lifestyle, with unbeatable locations and
                 amenities.</p>
         </div>

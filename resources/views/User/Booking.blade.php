@@ -43,6 +43,12 @@
             width: 441px;
             padding: 24px;
         }
+
+        @media screen and (max-width: 768px) {
+            .booking-date {
+                width: 150px;
+            }
+        }
     </style>
 @endpush
 
@@ -163,8 +169,8 @@
 @section('user-main-section')
     @php
         $apartmentCost = $findApartment->price_per_night * $stayDays;
-        $vat = 225;
-        $totalCost = $apartmentCost + $vat;
+        $vat = 2; //2% tax (0 - 100%)
+        $totalCost = $apartmentCost + ($apartmentCost * ($vat / 100));
     @endphp
     <div class="container-fluid mt-5 mb-5">
         <div class="row d-flex justify-content-around">
@@ -316,31 +322,31 @@
                             <label class="form-label">CVC</label>
                             <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text"
                                 name="cvc" value="{{ old('cvc') }}">
-                                <small class="text-danger">
-                                    @error('cvc')
-                                        {{ 'The CVC field is required' }}
-                                    @enderror
-                                </small>
+                            <small class="text-danger">
+                                @error('cvc')
+                                    {{ 'The CVC field is required' }}
+                                @enderror
+                            </small>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Expiration Month</label>
                             <input class="form-control card-expiry-month" placeholder="MM" type="text"
                                 name="expMonth" value="{{ old('expMonth') }}">
-                                <small class="text-danger">
-                                    @error('expMonth')
-                                        {{ 'The expiration month field is required' }}
-                                    @enderror
-                                </small>
+                            <small class="text-danger">
+                                @error('expMonth')
+                                    {{ 'The expiration month field is required' }}
+                                @enderror
+                            </small>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Expiration Year</label>
                             <input class="form-control card-expiry-year" placeholder="YYYY" type="text"
                                 name="expYear" value="{{ old('expYear') }}">
-                                <small class="text-danger">
-                                    @error('expYear')
-                                        {{ 'The expiraton year field is required' }}
-                                    @enderror
-                                </small>
+                            <small class="text-danger">
+                                @error('expYear')
+                                    {{ 'The expiraton year field is required' }}
+                                @enderror
+                            </small>
                         </div>
                     </div>
 

@@ -11,19 +11,21 @@
 </head>
 
 <body style="background-color: #f8f9fa; font-family: Arial, sans-serif; color: #343a40; padding: 20px;">
-    <div class="container" style="max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-        <h2 style="text-align: center; color: #007bff;">Payment Voucher</h2>
+    <div class="container"
+        style="max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+        <img src="{{asset('assets/images/company_logo.png')}}" alt="">
+        <h2 style="text-align: center; color: #0e1b29; font-size: 20px;">Sterling Executive Residential - Payment Voucher</h2>
         <hr>
-        <p><strong>Check In:</strong>{{ $checkIn }}</p>
-        <p><strong>Check Out:</strong> {{ $checkOut }}</p>
-        <p><strong>Location:</strong> {{ $location }}</p>
-        <p><strong>Per Night Price:</strong> {{ $perNightPrice }}</p>
-        <p><strong>Tax:</strong> {{ $vatAmount }}%</p>
-        <p><strong>Duration:</strong> {{ $totalStay }} nights</p>
-        <p><strong>Total Amount:</strong> ${{ $perNightPrice * $totalStay }}</p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Check In:</strong> <span style="float: right;">{{ $checkIn }}</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Check Out:</strong> <span style="float: right;"> {{ $checkOut }}</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Location:</strong> <span style="float: right;">{{ $location }}</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Per Night Price:</strong> <span style="float: right;">{{ $perNightPrice }}</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Tax:</strong> <span style="float: right;">{{ $vatAmount }}%</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Duration:</strong> <span style="float: right;">{{ $totalStay }} nights</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Total Amount:</strong> <span style="float: right;">${{ $perNightPrice * $totalStay }}</span></p>
         <hr>
         <footer style="text-align: center; color: #6c757d; font-size: 14px; margin-top: 20px;">
-            Thank you for your payment. If you have any questions, please contact us at support@example.com.
+            Thank you for your e-payment. If you have any questions, please contact us at support@example.com.
         </footer>
     </div>
 

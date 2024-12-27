@@ -27,8 +27,21 @@ class SendPaymentVoucher extends Mailable
     public $vatAmount;
 
     public $totalStay;
-    public function __construct($message, $subject, $checkIn, $checkOut, $location, $perNightPrice, $vatAmount, $totalStay)
-    {
+    public $name;
+
+    public $areaName;
+    public function __construct(
+        $message,
+        $subject,
+        $checkIn,
+        $checkOut,
+        $location,
+        $perNightPrice,
+        $vatAmount,
+        $totalStay,
+        $username,
+        $areaname
+    ) {
         $this->emailMessage = $message;
         $this->subject = $subject;
         $this->checkIn = $checkIn;
@@ -37,6 +50,8 @@ class SendPaymentVoucher extends Mailable
         $this->perNightPrice = $perNightPrice;
         $this->vatAmount = $vatAmount;
         $this->totalStay = $totalStay;
+        $this->name = $username;
+        $this->areaName = $areaname;
     }
 
     /**

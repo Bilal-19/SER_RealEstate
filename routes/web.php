@@ -98,4 +98,4 @@ Route::get("admin/booking/pdf/{id}", [AdminController::class, 'generatePDF'])->n
 
 
 // Send Payment Email
-Route::get("/admin/send/email", [AdminController::class, 'sendEmail']);
+Route::get("/admin/send/email", [UserController::class, 'sendEmail']);
