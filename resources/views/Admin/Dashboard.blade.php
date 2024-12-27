@@ -6,19 +6,19 @@
         </div>
 
         <div class="row d-flex justify-content-around">
-            <div class="col-md-3 card bg-light-brown text-light text-center">
+            <div class="col-md-3 card bg-light-brown text-light text-center pt-2 pb-2">
                 <h3 class="ff-poppins">{{$totalInquiries}}</h3>
-                <p class="ff-inter">Inquiries</p>
+                <p class="ff-inter">Total Inquiries</p>
             </div>
 
-            <div class="col-md-3 card bg-light-brown text-light text-center">
+            <div class="col-md-3 card bg-light-brown text-light text-center pt-2 pb-2">
                 <h3 class="ff-poppins">{{$totalBookings}}</h3>
-                <p class="ff-inter">Bookings</p>
+                <p class="ff-inter">Total Bookings</p>
             </div>
 
-            <div class="col-md-3 card bg-light-brown text-light text-center">
-                <h3 class="ff-poppins">{{$totalRevenue}}</h3>
-                <p class="ff-inter">Revenue</p>
+            <div class="col-md-3 card bg-light-brown text-light text-center pt-2 pb-2">
+                <h3 class="ff-poppins">${{$totalRevenue}}</h3>
+                <p class="ff-inter">Total Revenue</p>
             </div>
         </div>
     </div>

@@ -38,9 +38,9 @@
                 style="float: right;">{{ $location }}</span></p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Tax:</strong> <span
                 style="float: right;">{{ $vatAmount }}%</span></p>
-        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Your booked for:</strong> <span
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>You booked for:</strong> <span
                 style="float: right;">{{ $adults }} adults, {{ $children }} children</span></p>
-        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>You Booked for:</strong> <span
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Your reservation:</strong> <span
                 style="float: right;">{{ $totalStay }} nights</span></p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Total Received Amount:</strong> <span
                 style="float: right;">${{ $perNightPrice * $totalStay }}</span></p>
