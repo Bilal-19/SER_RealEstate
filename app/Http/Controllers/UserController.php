@@ -99,7 +99,8 @@ class UserController extends Controller
             ->insert([
                 'name' => $request->fullName,
                 'email' => $request->email,
-                'message' => $request->message
+                'message' => $request->message,
+                'created_at' => now()
             ]);
 
         if ($res) {
@@ -239,6 +240,7 @@ class UserController extends Controller
             'expiration_month' => $request->expMonth,
             'expiration_year' => $request->expYear,
             'apartment_id' => $apartmentID,
+            'created_at' => now()
         ]);
 
         $findApartment = DB::table('apartments')->find($apartmentID);
