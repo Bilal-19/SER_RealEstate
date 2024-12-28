@@ -47,6 +47,9 @@ Route::get("/admin/blog", [AdminController::class, 'Blog'])->name('Blog');
 Route::get("/admin/add/blog", [AdminController::class, 'AddBlog'])->name('Add.Blog');
 Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name('Create.Blog');
 Route::get("/admin/read/blog/{id}", [UserController::class, 'readBlog'])->name('Read.Blog');
+Route::get("/admin/edit/blog/{id}", [AdminController::class, 'editBlog'])->name('Edit.Blog');
+Route::post("/admin/update/blog/{id}", [AdminController::class, 'updateBlog'])->name('Update.Blog');
+Route::get("/admin/delete/blog/{id}", [AdminController::class, 'deleteBlog'])->name('Delete.Blog');
 
 
 // Policy - Admin

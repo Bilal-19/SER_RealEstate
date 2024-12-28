@@ -327,7 +327,8 @@ class AdminController extends Controller
     // Blog
     public function Blog()
     {
-        return view('Admin.Blog');
+        $fetchAllBlogs = DB::table('blogs')->get();
+        return view('Admin.Blog')->with(compact('fetchAllBlogs'));
     }
 
     public function AddBlog()
@@ -358,6 +359,45 @@ class AdminController extends Controller
 
         if ($result) {
             toastr()->success('New blog published successfully');
+            return redirect()->back();
+        }
+    }
+
+    public function editBlog($id)
+    {
+        $findBlog = DB::table('blogs')->find($id);
+        return view('Admin.EditBlog')->with(compact('findBlog'));
+    }
+
+    public function updateBlog($id, Request $request)
+    {
+        // Create image timestamp path
+        if ($request->file('thumbnailImage')) {
+            $timestampImg = time() . '.' . $request->thumbnailImage->getClientOriginalExtenstion();
+            $request->thumbnailImage->move('Blog', $timestampImg);
+        } else {
+            $blog = DB::table('Blogs')->find($id);
+            $timestampImg = $blog->thumbnail_image;
+        }
+        $isUpdated = DB::table('Blogs')
+            ->where('id', '=', $id)
+            ->update([
+                'thumbnail_image' => $timestampImg,
+                'publish_date' => $request->blogPublishDate,
+                'blog_headline' => $request->blogHeadline,
+                'blog_content' => $request->blogDetailContent
+            ]);
+
+            if ($isUpdated){
+                toastr()->success('Blog deleted successfully');
+                return redirect()->back();
+            }
+    }
+
+    public function deleteBlog($id){
+        $isDeleted = DB::table('Blogs')->where('id','=', $id)->delete();
+        if ($isDeleted){
+            toastr()->success('Blog deleted successfully');
             return redirect()->back();
         }
     }
