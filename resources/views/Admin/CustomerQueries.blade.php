@@ -1,11 +1,11 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3 class="text-center">Customer Enquiries</h3>
+        <div class="row mt-3">
+            <h3 class="text-center ff-poppins fw-bold">Customer Enquiries</h3>
         </div>
 
-        <div class="row">
+        <div class="row ff-inter">
             <div class="col-md-10">
                 <table class="table table-bordered table-striped">
                     <tr>

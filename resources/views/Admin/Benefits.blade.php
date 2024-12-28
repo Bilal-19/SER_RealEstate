@@ -2,14 +2,14 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center">Benefits</h3>
+            <h3 class="text-center ff-poppins fw-bold">Amenities</h3>
         </div>
 
         <div class="row mt-3">
             <div class="col-md-4">
                 <a href="{{ route('Add.Benefits') }}" class="brand-btn text-decoration-none">
                     <i class="fa-solid fa-circle-plus"></i>
-                    Add Benefits</a>
+                    Add Amenities</a>
             </div>
         </div>
 

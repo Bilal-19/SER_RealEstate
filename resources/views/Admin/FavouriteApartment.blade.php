@@ -9,10 +9,10 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center">Favourite Apartments</h3>
+            <h3 class="text-center ff-poppins fw-bold">Favourite Apartments</h3>
         </div>
 
-        <div class="row">
+        <div class="row ff-inter">
             @foreach ($fetchFavApartment as $rec)
                 <div class="col-md-4">
                     <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="" class="img-fluid thumbnail rounded">

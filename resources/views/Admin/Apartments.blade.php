@@ -2,25 +2,25 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center">Apartments</h3>
+            <h3 class="text-center ff-poppins fw-bold">Apartments</h3>
         </div>
 
         <div class="row mb-3">
-            <div class="col-md-11 mx-auto">
+            <div class="col-md-11 mx-auto ff-inter">
                 <a href="{{route('Add.Appartment')}}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New Apartment</a>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row ff-inter">
            <div class="col-md-11 mx-auto">
             <div class="input-group">
-                <input type="search" name="search" class="form-control" placeholder="Search by area name">
+                <input type="search" name="search" class="form-control" placeholder="Search by area name" autocomplete="off">
                 <button class="btn btn-dark"><i class="fa-brands fa-searchengin"></i> Search</button>
             </div>
            </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 ff-inter">
             <div class="col-md-11 mx-auto">
                 <table class="table table-striped table-bordered">
                     <tr>

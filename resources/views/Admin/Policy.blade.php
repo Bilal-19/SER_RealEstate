@@ -1,18 +1,18 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3>Policy</h3>
+        <div class="row mt-3">
+            <h3 class="fw-bold ff-poppins text-center">Policy</h3>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-3 ff-inter">
             <div class="col-md-4">
                 <a href="{{ route('Add.Policy') }}" class="brand-btn text-decoration-none"><i class="fa-solid fa-circle-plus"></i> Add Policy</a>
             </div>
         </div>
 
 
-        <div class="row mt-3">
+        <div class="row mt-3 ff-inter">
             <div class="col-md-10">
                 <table class="table table-bordered table-striped">
                     <tr>
