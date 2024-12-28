@@ -263,7 +263,7 @@ class AdminController extends Controller
 
         $request->icon->move('Amenity', $timeStampImg);
 
-        $result = DB::table('amenities')->insert([
+        $result = DB::table('amenity')->insert([
             'amenity_icon' => $timeStampImg,
             'amenity_text' => $request->amenityName,
             'amenity_description' => $request->amenityDescription,

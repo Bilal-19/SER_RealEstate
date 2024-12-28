@@ -29,10 +29,10 @@
                         <tr>
                             <td>{{ $rec->id }}</td>
                             <td>
-                                <img src="{{asset('Benefits/'.$rec->benefit_icon)}}" alt="{{$rec->benefit_text}}">
+                                <img src="{{asset('Amenity/'.$rec->amenity_icon)}}" alt="{{$rec->amenity_text}}">
                             </td>
-                            <td>{{$rec->benefit_text}}</td>
-                            <td>{{$rec->benefit_description}}</td>
+                            <td>{{$rec->amenity_text}}</td>
+                            <td>{{$rec->amenity_description}}</td>
                             <td class="text-center">
                                 <a href="{{route('Edit.Benefit', ['id' => $rec->id])}}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>

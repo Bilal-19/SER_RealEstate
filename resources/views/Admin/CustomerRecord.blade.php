@@ -52,7 +52,7 @@
 
 <body>
 
-    <img src="{{public_path('public/assets/images/company_logo.png')}}" alt="">
+    <img src="{{ asset('images/company_logo.png') }}" alt="Company Logo" height="100" width="100">
 
 
     <h4>Personal Information</h4>

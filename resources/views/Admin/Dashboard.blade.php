@@ -1,8 +1,8 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3 class="ff-poppins">Dashboard</h3>
+        <div class="row mt-3">
+            <h3 class="ff-poppins fw-bold text-center">Dashboard</h3>
         </div>
 
         <div class="row d-flex justify-content-around">

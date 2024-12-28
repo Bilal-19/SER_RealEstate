@@ -176,14 +176,14 @@
     <div class="row d-flex justify-content-around mt-5">
         @foreach ($benefitsRecords as $record)
             <div class="col-md-3 benefit-card rounded {{ $record->id % 2 == 0 ? 'bg-dark' : 'bg-light' }} shadow p-4">
-                <img src="{{ asset('Benefits/' . $record->benefit_icon) }}" alt="" class="img-fluid"
+                <img src="{{ asset('Amenity/' . $record->amenity_icon) }}" alt="" class="img-fluid"
                     style="height: 50px; width: 50px; border-radius: 50%;">
                 <hr style="width: 20%; border:1px solid grey;" class="mt-5">
                 <h5 class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-poppins">
-                    {{ $record->benefit_text }}
+                    {{ $record->amenity_text }}
                 </h5>
                 <p class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-inter">
-                    {{ $record->benefit_description }}</p>
+                    {{ $record->amenity_description }}</p>
             </div>
         @endforeach
     </div>

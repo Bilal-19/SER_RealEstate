@@ -205,8 +205,8 @@
                         <div>
                             @foreach ($firstFourAmenities as $val)
                                 <p class="ff-inter standard-amenity fs-15">
-                                    <img src="{{ asset('Benefits/' . $val->benefit_icon) }}" alt="">
-                                    <span class="mx-1 ff-inter">{{ $val->benefit_text }}</span>
+                                    <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
+                                    <span class="mx-1 ff-inter">{{ $val->amenity_text }}</span>
                                 </p>
                             @endforeach
                         </div>
@@ -214,8 +214,8 @@
                         <div class="mx-2">
                             @foreach ($LastFourAmenities as $val)
                                 <p class="ff-inter standard-amenity fs-15">
-                                    <img src="{{ asset('Benefits/' . $val->benefit_icon) }}" alt="">
-                                    <span class="mx-1 ff-inter">{{ $val->benefit_text }}</span>
+                                    <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
+                                    <span class="mx-1 ff-inter">{{ $val->amenity_text }}</span>
                                 </p>
                             @endforeach
 

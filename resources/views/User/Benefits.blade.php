@@ -122,8 +122,8 @@
                     <ul class="amenities-points">
                         <hr>
                         @foreach ($amenities as $val)
-                            <li><img src="{{ asset('Benefits/' . $val->benefit_icon) }}" alt="">
-                                <span class="mx-1 ff-inter">{{ $val->benefit_text }}</span>
+                            <li><img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
+                                <span class="mx-1 ff-inter">{{ $val->amenity_text }}</span>
                             </li>
                         @endforeach
                     </ul>

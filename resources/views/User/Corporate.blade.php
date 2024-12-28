@@ -173,20 +173,20 @@
         @foreach ($fetchBenefits as $rec)
             @if ($rec->id % 2 == 0)
                 <div class="col-md-2 benefit-card-odd mx-4">
-                    <img src="{{ asset('Benefits/' . $rec->benefit_icon) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="" class="img-fluid">
                     <hr>
-                    <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->benefit_text }}</p>
+                    <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
                     <p class="ff-inter">
-                        {{ $rec->benefit_description }}
+                        {{ $rec->amenity_description }}
                     </p>
                 </div>
             @else
                 <div class="col-md-2 benefit-card-even mx-4 ">
-                    <img src="{{ asset('Benefits/' . $rec->benefit_icon) }}" alt="">
+                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="" class="img-fluid">
                     <hr>
-                    <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->benefit_text }}</p>
+                    <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
                     <p class="ff-inter">
-                        {{ $rec->benefit_description }}
+                        {{ $rec->amenity_description }}
                     </p>
                 </div>
             @endif

@@ -82,7 +82,8 @@ class UserController extends Controller
         return view("User.Blog")->with(compact('fetchAllBlogs'));
     }
 
-    public function readBlog($id){
+    public function readBlog($id)
+    {
         // Fetch first three blog
         $fetchBlogs = DB::table('blogs')->limit(3)->get();
 
@@ -129,7 +130,7 @@ class UserController extends Controller
             ->orWhere('area_name', 'LIKE', "%$location%")
             ->whereDate('availableFrom', '<=', $request->checkInDate)
             ->whereDate('availableTill', '>=', $request->checkOutDate)
-            ->where('status','=','available')
+            ->where('status', '=', 'available')
             ->get();
         $locations = DB::table('apartments')->select('latitude', 'longitude')->get();
 
@@ -148,8 +149,8 @@ class UserController extends Controller
 
     public function viewApartmentDetail($id)
     {
-        $firstFourAmenities = DB::table('amenities')->limit(4)->get();
-        $LastFourAmenities = DB::table('amenities')->take(4)->skip(4)->get();
+        $firstFourAmenities = DB::table('amenity')->limit(4)->get();
+        $LastFourAmenities = DB::table('amenity')->take(4)->skip(4)->get();
         $findApartment = DB::table('apartments')->where('id', $id)->first();
         $images = explode('|', $findApartment->multipleImages);
         $apartments = DB::table('apartments')->get();
@@ -164,8 +165,8 @@ class UserController extends Controller
 
     public function checkApartmentAvailability(Request $request, $id)
     {
-        $firstFourAmenities = DB::table('amenities')->limit(4)->get();
-        $LastFourAmenities = DB::table('amenities')->take(4)->skip(4)->get();
+        $firstFourAmenities = DB::table('amenity')->limit(4)->get();
+        $LastFourAmenities = DB::table('amenity')->take(4)->skip(4)->get();
         $findApartment = DB::table('apartments')->where('id', $id)->first();
         $images = explode('|', $findApartment->multipleImages);
         $apartments = DB::table('apartments')->get();
@@ -173,7 +174,7 @@ class UserController extends Controller
         $checkInDate = $request->checkIn;
         $checkOutDate = $request->checkOut;
 
-        if ($findApartment->status == 'booked'){
+        if ($findApartment->status == 'booked') {
             $guestBooked = true;
         } else {
             $guestBooked = false;
@@ -263,6 +264,13 @@ class UserController extends Controller
             'apartment_id' => $apartmentID,
             'created_at' => now()
         ]);
+
+        // Update 'status' from 'available' to 'booked'
+        DB::table('apartments')
+            ->where('id', '=', $apartmentID)
+            ->update([
+                'status' => 'Booked'
+            ]);
 
         $findApartment = DB::table('apartments')->find($apartmentID);
         $findApartment->status = "Booked";
