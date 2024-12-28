@@ -10,6 +10,10 @@
         width: 100%;
         }
 
+        input[type="date"] {
+            width: 86%;
+        }
+
         .swiper-slide {
             /* width: 299px; */
             /* height: 269px; */
@@ -83,7 +87,7 @@
             width: 732px;
         }
 
-        .check-availability-container{
+        .check-availability-container {
             background-color: #ECECEC;
             width: 400px;
             height: fit-content;
@@ -164,8 +168,8 @@
             <div class="col-md-5"></div>
         </div>
 
-        <div class="row d-flex justify-content-around" id="general-info">
-            <div class="col-md-5 w-732">
+        <div class="row d-flex justify-content-between" id="general-info">
+            <div class="col-md-5 mx-2 w-732">
                 {{-- General Information --}}
                 <div class="bg-white p-5 shadow mt-3 border-radius-18">
                     <h4 class="fs-20 ff-inter">General Information</h4>
@@ -243,8 +247,7 @@
                             <div class="progress">
                                 <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic example"
                                     style="width: {{ $findApartment->comfortVal * 10 }}%"
-                                    aria-valuenow="{{ $findApartment->comfortVal }}" aria-valuemin="0"
-                                    aria-valuemax="100">
+                                    aria-valuenow="{{ $findApartment->comfortVal }}" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
 
@@ -313,7 +316,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 border-radius-18 bg-pale-gray p-5 mt-3 check-availability-container">
+            <div class="col-md-5 border-radius-18 bg-pale-gray p-5 mt-3 check-availability-container">
                 <h4 class="ff-inter fs-20 fw-medium">Check Availability & Book Now</h4>
                 <form action="{{ route('Check.Apartment.Availability', ['id' => $findApartment->id]) }}" method="get">
                     <div class="d-flex justify-content-between mb-4">
@@ -326,7 +329,6 @@
                             <label class="form-label mb-0 ff-inter">Check Out Date: </label>
                             <input type="date" class="form-control ff-inter" name="checkOut" required
                                 value="{{ $checkOutDate ?? '' }}">
-
                         </div>
                     </div>
                     @isset($isAvailable)

@@ -120,6 +120,7 @@ class UserController extends Controller
             ->orWhere('area_name', 'LIKE', "%$location%")
             ->whereDate('availableFrom', '<=', $request->checkInDate)
             ->whereDate('availableTill', '>=', $request->checkOutDate)
+            ->where('status','=','available')
             ->get();
         $locations = DB::table('apartments')->select('latitude', 'longitude')->get();
 
@@ -163,6 +164,11 @@ class UserController extends Controller
         $checkInDate = $request->checkIn;
         $checkOutDate = $request->checkOut;
 
+        if ($findApartment->status == 'booked'){
+            $guestBooked = true;
+        } else {
+            $guestBooked = false;
+        }
         $isAvailable = $findApartment->availableFrom <= $checkInDate && $findApartment->availableTill >= $checkOutDate;
         return view('User.ViewApartmentDetail')->with(compact(
             'isAvailable',
@@ -172,7 +178,8 @@ class UserController extends Controller
             'LastFourAmenities',
             'apartments',
             'checkInDate',
-            'checkOutDate'
+            'checkOutDate',
+            'guestBooked'
         ));
 
     }

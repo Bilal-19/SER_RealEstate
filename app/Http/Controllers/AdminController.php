@@ -171,8 +171,6 @@ class AdminController extends Controller
             'apartmentDescription' => 'required',
             'availableFrom' => 'required',
             'availableTill' => 'required',
-            // 'featuredImg' => 'required',
-            // 'apartmentMultImages' => 'required',
             'cleanlinessVal' => 'required|integer|min:1|max:10',
             'comfortVal' => 'required|integer|min:1|max:10',
             'facilityVal' => 'required|integer|min:1|max:10',
