@@ -3,11 +3,11 @@
 
 @push('style')
     <style>
-        .blog-content > img{
-            height: auto;
-            width: 500px;
+        .blog-content img {
+            height: 90% !important;
+            width: 90% !important;
+            border-radius: 6px;
         }
-
     </style>
 @endpush
 
@@ -31,13 +31,25 @@
                 <div class="col-md-6">
                     <h3>Latest blog posts</h3>
                     <p>
-                        Stay updated with the latest news, tips, and insights from Sterling Executive Residential to enhance your London
+                        Stay updated with the latest news, tips, and insights from Sterling Executive Residential to enhance
+                        your London
                         experience.
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <a href="{{route('View.Blogs')}}" class="btn btn-dark">View More</a>
+                    <a href="{{ route('View.Blogs') }}" class="btn btn-dark">View More</a>
                 </div>
+            </div>
+
+            <div class="row">
+                @foreach ($fetchBlogs as $record)
+                    <div class="col-md-4 blog-card">
+                        <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
+                        <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
+                        <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
+                        <a href="{{ route('Read.Blog', ['id' => $record->id]) }}" class="text-light-brown">Read More</a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

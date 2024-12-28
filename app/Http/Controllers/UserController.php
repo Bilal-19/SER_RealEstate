@@ -83,8 +83,11 @@ class UserController extends Controller
     }
 
     public function readBlog($id){
+        // Fetch first three blog
+        $fetchBlogs = DB::table('blogs')->limit(3)->get();
+
         $fetchBlog = DB::table('blogs')->find($id);
-        return view('User.BlogDetail')->with(compact('fetchBlog'));
+        return view('User.BlogDetail')->with(compact('fetchBlog', 'fetchBlogs'));
     }
 
     public function viewEnquiryForm()

@@ -159,7 +159,7 @@
     </div>
 
     @php
-        $fetchBenefits = DB::table('benefits')->limit(4)->get();
+        $fetchBenefits = DB::table('amenity')->limit(4)->get();
     @endphp
     <div class="row bg-eerie-black pb-5 pt-5">
         <div class="col-md-12 text-center">
