@@ -20,14 +20,14 @@
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Enter Benefit Name: </label>
-                    <input type="text" name="benefitName" class="form-control" placeholder="Wi-Fi"
-                        value="{{ $fetchBenefit->benefit_text }}">
+                    <input type="text" name="amenityName" class="form-control" placeholder="Wi-Fi"
+                        value="{{ $fetchBenefit->amenity_text }}">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3 mb-0">
                     <label class="form-label">Enter Benefit Description: </label>
-                    <textarea type="text" name="benefitDescription" rows="5" style="resize: none;"
-                         class="form-control">{{ $fetchBenefit->benefit_description }}</textarea>
+                    <textarea type="text" name="amenityDescription" rows="5" style="resize: none;"
+                         class="form-control">{{ $fetchBenefit->amenity_description }}</textarea>
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">

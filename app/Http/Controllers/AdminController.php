@@ -246,7 +246,7 @@ class AdminController extends Controller
 
     public function Benefits()
     {
-        $fetchBenefits = DB::table('Benefits')->get();
+        $fetchBenefits = DB::table('amenities')->get();
         return view('Admin.Benefits')->with(compact('fetchBenefits'));
     }
 
@@ -261,61 +261,61 @@ class AdminController extends Controller
     {
         $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
 
-        $request->icon->move('Benefits', $timeStampImg);
+        $request->icon->move('Amenity', $timeStampImg);
 
-        $result = DB::table('benefits')->insert([
-            'benefit_icon' => $timeStampImg,
-            'benefit_text' => $request->benefitName,
-            'benefit_description' => $request->benefitDescription,
+        $result = DB::table('amenities')->insert([
+            'amenity_icon' => $timeStampImg,
+            'amenity_text' => $request->amenityName,
+            'amenity_description' => $request->amenityDescription,
             'created_at' => now()
         ]);
 
         if ($result) {
-            toastr()->success('Benefit added successfully');
+            toastr()->success('Amenity added successfully');
             return redirect()->back();
         }
     }
 
     public function editBenefit($id)
     {
-        $fetchBenefit = DB::table('Benefits')->find($id);
+        $fetchBenefit = DB::table('amenities')->find($id);
         return view('Admin.EditBenefit')->with(compact('fetchBenefit'));
     }
 
 
     public function updateBenefit($id, Request $request)
     {
-        $iconImg = DB::table('benefits')->
+        $iconImg = DB::table('amenities')->
             where('id', '=', $id)
-            ->select('benefit_icon')
+            ->select('amenity_icon')
             ->get();
 
         if ($request->file('icon')) {
             $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
-            $request->icon->move('Benefits', $timeStampImg);
+            $request->icon->move('amenities', $timeStampImg);
         } else {
             $timeStampImg = $iconImg;
         }
 
 
-        $result = DB::table('benefits')
+        $result = DB::table('amenities')
             ->where('id', '=', $id)
             ->update([
-                'benefit_icon' => $timeStampImg,
-                'benefit_text' => $request->benefitName,
-                'benefit_description' => $request->benefitDescription,
+                'amenity_icon' => $timeStampImg,
+                'amenity_text' => $request->amenityName,
+                'amenity_description' => $request->amenityDescription,
                 'updated_at' => now()
             ]);
 
         if ($result) {
-            toastr()->success('Benefit updated successfully');
+            toastr()->success('Amenity updated successfully');
             return redirect()->back();
         }
     }
 
     public function deleteBenefit($id)
     {
-        $res = DB::table('Benefits')->where('id', '=', $id)->delete();
+        $res = DB::table('amenities')->where('id', '=', $id)->delete();
 
         if ($res) {
             toastr()->success('Record removed successfully');

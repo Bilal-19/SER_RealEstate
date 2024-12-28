@@ -38,7 +38,7 @@ class UserController extends Controller
     public function index()
     {
         $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
-        $benefitsRecords = DB::table('benefits')->get();
+        $benefitsRecords = DB::table('amenities')->get();
         $blogRecords = DB::table('blogs')->limit(3)->get();
         $fetchNearestApartment = $this->getNeighbours();
         return view('User.LandingPage')->with(compact(
@@ -56,7 +56,7 @@ class UserController extends Controller
 
     public function viewBenefits()
     {
-        $amenities = DB::table('benefits')->get();
+        $amenities = DB::table('amenities')->get();
         $policies = DB::table('policy')->get();
         return view('User.Benefits')->with(compact(
             'amenities',
@@ -139,8 +139,8 @@ class UserController extends Controller
 
     public function viewApartmentDetail($id)
     {
-        $firstFourAmenities = DB::table('benefits')->limit(4)->get();
-        $LastFourAmenities = DB::table('benefits')->take(4)->skip(4)->get();
+        $firstFourAmenities = DB::table('amenities')->limit(4)->get();
+        $LastFourAmenities = DB::table('amenities')->take(4)->skip(4)->get();
         $findApartment = DB::table('apartments')->where('id', $id)->first();
         $images = explode('|', $findApartment->multipleImages);
         $apartments = DB::table('apartments')->get();
@@ -155,8 +155,8 @@ class UserController extends Controller
 
     public function checkApartmentAvailability(Request $request, $id)
     {
-        $firstFourAmenities = DB::table('benefits')->limit(4)->get();
-        $LastFourAmenities = DB::table('benefits')->take(4)->skip(4)->get();
+        $firstFourAmenities = DB::table('amenities')->limit(4)->get();
+        $LastFourAmenities = DB::table('amenities')->take(4)->skip(4)->get();
         $findApartment = DB::table('apartments')->where('id', $id)->first();
         $images = explode('|', $findApartment->multipleImages);
         $apartments = DB::table('apartments')->get();
