@@ -38,7 +38,7 @@ class UserController extends Controller
     public function index()
     {
         $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
-        $benefitsRecords = DB::table('amenities')->get();
+        $benefitsRecords = DB::table('amenity')->get();
         $blogRecords = DB::table('blogs')->limit(3)->get();
         $fetchNearestApartment = $this->getNeighbours();
         return view('User.LandingPage')->with(compact(
@@ -56,7 +56,7 @@ class UserController extends Controller
 
     public function viewBenefits()
     {
-        $amenities = DB::table('amenities')->get();
+        $amenities = DB::table('amenity')->get();
         $policies = DB::table('policy')->get();
         return view('User.Benefits')->with(compact(
             'amenities',
@@ -78,7 +78,13 @@ class UserController extends Controller
 
     public function viewBlogs()
     {
-        return view("User.Blog");
+        $fetchAllBlogs = DB::table('Blogs')->get();
+        return view("User.Blog")->with(compact('fetchAllBlogs'));
+    }
+
+    public function readBlog($id){
+        $fetchBlog = DB::table('blogs')->find($id);
+        return view('User.BlogDetail')->with(compact('fetchBlog'));
     }
 
     public function viewEnquiryForm()

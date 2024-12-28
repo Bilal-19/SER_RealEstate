@@ -147,7 +147,7 @@
                         </p>
                     </div>
                     <div>
-                        <p class="fs-24 ff-inter fw-medium">from ${{ $findApartment->price }}</p>
+                        <p class="fs-24 ff-inter fw-medium">from ${{ number_format($findApartment->price, 2) }}</p>
                     </div>
                 </div>
                 <hr>

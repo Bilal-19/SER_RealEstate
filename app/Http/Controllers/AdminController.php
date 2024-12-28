@@ -246,7 +246,7 @@ class AdminController extends Controller
 
     public function Benefits()
     {
-        $fetchBenefits = DB::table('amenities')->get();
+        $fetchBenefits = DB::table('amenity')->get();
         return view('Admin.Benefits')->with(compact('fetchBenefits'));
     }
 
@@ -285,7 +285,7 @@ class AdminController extends Controller
 
     public function updateBenefit($id, Request $request)
     {
-        $iconImg = DB::table('amenities')->
+        $iconImg = DB::table('amenity')->
             where('id', '=', $id)
             ->select('amenity_icon')
             ->get();
@@ -298,7 +298,7 @@ class AdminController extends Controller
         }
 
 
-        $result = DB::table('amenities')
+        $result = DB::table('amenity')
             ->where('id', '=', $id)
             ->update([
                 'amenity_icon' => $timeStampImg,
@@ -315,7 +315,7 @@ class AdminController extends Controller
 
     public function deleteBenefit($id)
     {
-        $res = DB::table('amenities')->where('id', '=', $id)->delete();
+        $res = DB::table('amenity')->where('id', '=', $id)->delete();
 
         if ($res) {
             toastr()->success('Record removed successfully');
@@ -340,7 +340,6 @@ class AdminController extends Controller
         $request->validate([
             'thumbnailImage' => 'required',
             'blogHeadline' => 'required',
-            'blogBriefDesc' => 'required',
             'blogDetailContent' => 'required',
             'blogPublishDate' => 'required'
         ]);
@@ -352,8 +351,7 @@ class AdminController extends Controller
         $result = DB::table('blogs')->insert([
             'thumbnail_image' => $timeStampImg,
             'blog_headline' => $request->blogHeadline,
-            'blog_brief_description' => $request->blogBriefDesc,
-            'blog_detailed_content' => $request->blogDetailContent,
+            'blog_content' => $request->blogDetailContent,
             'publish_date' => $request->blogPublishDate,
             'created_at' => now()
         ]);

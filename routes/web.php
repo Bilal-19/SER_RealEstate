@@ -46,6 +46,7 @@ Route::post("/admin/update/benefit/{id}", [AdminController::class, 'updateBenefi
 Route::get("/admin/blog", [AdminController::class, 'Blog'])->name('Blog');
 Route::get("/admin/add/blog", [AdminController::class, 'AddBlog'])->name('Add.Blog');
 Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name('Create.Blog');
+Route::get("/admin/read/blog/{id}", [UserController::class, 'readBlog'])->name('Read.Blog');
 
 
 // Policy - Admin

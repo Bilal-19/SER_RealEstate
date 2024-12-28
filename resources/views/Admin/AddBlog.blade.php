@@ -19,11 +19,6 @@
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3 mb-0">
-                    <label class="form-label mb-0">Enter Blog Brief Description: </label>
-                    <input type="text" name="blogBriefDesc" placeholder="Enter Blog Brief Description...." class="form-control">
-                </div>
-
-                <div class="col-md-6 mx-auto mt-3 mb-0">
                     <label class="form-label mb-0">Enter Blog Detailed Content: </label>
                     <textarea type="text" name="blogDetailContent" rows="6" style="resize: none;" placeholder="Enter Blog Detailed Content...." class="form-control"></textarea>
                 </div>
@@ -39,4 +34,11 @@
             </form>
         </div>
     </div>
+
+    @push('script')
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('blogDetailContent');
+</script>
+@endpush
 @endsection

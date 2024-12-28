@@ -14,9 +14,8 @@ return new class extends Migration {
             $table->id();
             $table->string('thumbnail_image');
             $table->date('publish_date');
-            $table->string('blog_headline');
-            $table->string('blog_brief_description');
-            $table->string('blog_detailed_content');
+            $table->string('blog_headline'); //title
+            $table->text('blog_content');
             $table->timestamps();
         });
     }

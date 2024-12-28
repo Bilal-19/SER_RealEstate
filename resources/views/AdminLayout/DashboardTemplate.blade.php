@@ -233,11 +233,11 @@
                                 </a>
                             </li>
 
-                            {{-- <li class="nav-item mb-1">
+                            <li class="nav-item mb-1">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="{{route('Blog')}}">
                                     <i class="fa-solid fa-newspaper"></i> Blogs
                                 </a>
-                            </li> --}}
+                            </li>
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark"
@@ -318,6 +318,8 @@
         integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous">
     </script>
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+
+    @stack('script')
 </body>
 
 </html>
