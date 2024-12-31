@@ -134,10 +134,15 @@ class UserController extends Controller
             ->get();
         $locations = DB::table('apartments')->select('latitude', 'longitude')->get();
 
-        $latVal = $availableApartments->first()->latitude;
-        $longVal = $availableApartments->first()->longitude;
 
-        $neighborhoodApartment = $this->calculateNearestDistance($latVal, $longVal);
+        if (count($availableApartments) > 1) {
+            $latVal = $availableApartments->first()->latitude;
+            $longVal = $availableApartments->first()->longitude;
+            $neighborhoodApartment = $this->calculateNearestDistance($latVal, $longVal);
+        } else {
+            $neighborhoodApartment = [];
+        }
+
         return view('User.Appartments')->with(compact(
             'availableApartments',
             'locations',

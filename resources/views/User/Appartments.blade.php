@@ -83,11 +83,19 @@
 
 
 @section('user-main-section')
-    <div class="row">
+    <div class="row ff-inter mt-3">
         {{-- <div id="map" style="height: 500px;"></div> --}}
-        <p>
-            {{ count($availableApartments) }} records found
-        </p>
+        @if (count($availableApartments) == 0)
+            <p class="text-center">No apartments are available</p>
+        @elseif (count($availableApartments) == 1)
+            <p class="text-center">
+                {{ count($availableApartments) }} apartment is available
+            </p>
+        @else
+            <p class="text-center">
+                {{ count($availableApartments) }} apartments are available
+            </p>
+        @endif
     </div>
 
     <div class="row mx-auto mt-3 mb-3">

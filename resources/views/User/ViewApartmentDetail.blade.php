@@ -93,10 +93,60 @@
             height: fit-content;
             padding: 24px;
         }
+
+        .apartment-img-slides{
+            height: 500px;
+            width: 500px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon{
+            background-color: black;
+            padding: 15px;
+            border-radius: 6px;
+        }
     </style>
 @endpush
 @section('user-main-section')
-    <div class="container-fluid">
+    @php
+        $numericKeyImages = array_values($images);
+    @endphp
+    <div class="container-fluid mt-0">
+        <div class="row">
+           <div class="col-md-12 mx-auto">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    @foreach ($numericKeyImages as $index => $item)
+                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"
+                            aria-current="{{ $index === 0 ? 'true' : 'false' }}"
+                            aria-label="Slide {{ $index + 1 }}"></button>
+                    @endforeach
+                </div>
+                <div class="carousel-inner">
+                    @foreach ($numericKeyImages as $index => $item)
+                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                            <img src="{{ URL::to($item) }}" alt="" class="img-fluid d-block w-100 apartment-img-slides">
+                        </div>
+                    @endforeach
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    {{-- <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="swiper">
@@ -118,7 +168,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container-fluid mb-5">
         <div class="row">
@@ -199,7 +249,7 @@
 
                 {{-- Amenities --}}
 
-                <div class="bg-white mt-3 shadow border-radius-18 p-5">
+                <div class="bg-white mt-3 shadow border-radius-18 p-5" id="property-amenities">
                     <h5 class="fs-20 ff-inter">Amenities</h5>
                     <div class="d-flex justify-content-between">
                         <div>
@@ -227,7 +277,7 @@
                 <div class="bg-white border-radius-18 p-5 mt-3 shadow">
                     <h4 class="ff-inter fs-20 fw-medium">Reviews</h4>
                     <div class="reviews-style">
-                        <div class="col-md-5">
+                        <div class="col-md-5 col-12">
                             <p class="d-flex justify-content-between mb-0 fs-15 ff-inter fw-medium">
                                 <span>Cleanliness</span>
                                 <span>{{ $findApartment->cleanlinessVal }}</span>
@@ -247,7 +297,8 @@
                             <div class="progress">
                                 <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic example"
                                     style="width: {{ $findApartment->comfortVal * 10 }}%"
-                                    aria-valuenow="{{ $findApartment->comfortVal }}" aria-valuemin="0" aria-valuemax="100">
+                                    aria-valuenow="{{ $findApartment->comfortVal }}" aria-valuemin="0"
+                                    aria-valuemax="100">
                                 </div>
                             </div>
 
@@ -275,7 +326,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-5 col-12">
                             <p class="d-flex justify-content-between mb-0 mt-3 fs-15 ff-inter fw-medium">
                                 <span>Staff</span>
                                 <span>{{ $findApartment->staffVal }}</span>
@@ -356,7 +407,7 @@
 
 
 
-        <div class="row mt-5 d-flex justify-content-around">
+        <div class="row mt-5 d-flex justify-content-around" id="property-surroundings">
             <div class="col-md-5 w-732">
                 <h4 class="ff-poppins fs-32">Neighbourhood</h4>
             </div>
