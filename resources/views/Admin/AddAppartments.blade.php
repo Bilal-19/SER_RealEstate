@@ -1,8 +1,8 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row mt-3">
-            <h3 class="text-center">Add Apartments</h3>
+        <div class="row mt-3 ff-poppins">
+            <h3 class="text-center">Add New Apartment</h3>
         </div>
 
         <div class="row">

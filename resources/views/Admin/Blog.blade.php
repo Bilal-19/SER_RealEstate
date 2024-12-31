@@ -7,7 +7,7 @@
 
         <div class="row mt-3 ff-inter">
             <div class="col-md-4">
-                <a href="{{ route('Add.Blog') }}" class="brand-btn text-decoration-none">Publish New Blog</a>
+                <a href="{{ route('Add.Blog') }}" class="btn btn-dark Atext-decoration-none">Publish New Blog</a>
             </div>
         </div>
 

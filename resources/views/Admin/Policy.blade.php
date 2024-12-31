@@ -7,7 +7,7 @@
 
         <div class="row mt-3 ff-inter">
             <div class="col-md-4">
-                <a href="{{ route('Add.Policy') }}" class="brand-btn text-decoration-none"><i class="fa-solid fa-circle-plus"></i> Add Policy</a>
+                <a href="{{ route('Add.Policy') }}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add Policy</a>
             </div>
         </div>
 
