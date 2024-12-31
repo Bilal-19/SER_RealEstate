@@ -259,6 +259,12 @@ class AdminController extends Controller
 
     public function createBenefit(Request $request)
     {
+        // Form Validation
+        $request->validate([
+            'icon' => 'required|image',
+            'amenityName' => 'required',
+            'amenityDescription' => 'required'
+        ]);
         $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
 
         $request->icon->move('Amenity', $timeStampImg);
