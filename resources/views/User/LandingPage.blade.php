@@ -66,7 +66,7 @@
                     @foreach ($favApartmentRecords as $record)
                         <div class="col-md-3 swiper-slide">
                             <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}" target="_blank">
-                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}" alt=""
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}" alt="{{ $record->street_address }}"
                                     class="img-fluid object-fit-cover">
                             </a>
                             <div class="d-flex justify-content-between align-items-center">
@@ -136,7 +136,7 @@
                             @foreach ($fetchNearestApartment as $rec)
                                 <div class="col-md-3 swiper-slide">
                                     <a href="{{route('Detail.View.Apartment', ['id' => $rec->id])}}" target="_blank">
-                                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{ $rec->street_address }}"
                                         class="img-fluid neighbourhood-img rounded shadow">
                                     </a>
                                     <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
@@ -176,7 +176,7 @@
     <div class="row d-flex justify-content-around mt-5">
         @foreach ($benefitsRecords as $record)
             <div class="col-md-3 benefit-card rounded {{ $record->id % 2 == 0 ? 'bg-dark' : 'bg-light' }} shadow p-4">
-                <img src="{{ asset('Amenity/' . $record->amenity_icon) }}" alt="" class="img-fluid"
+                <img src="{{ asset('Amenity/' . $record->amenity_icon) }}" alt="{{ $record->amenity_text }}" class="img-fluid"
                     style="height: 50px; width: 50px; border-radius: 50%;">
                 <hr style="width: 20%; border:1px solid grey;" class="mt-5">
                 <h5 class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-poppins">
@@ -202,7 +202,7 @@
             <a href="https://maps.app.goo.gl/Ua2iYu6okFvQyTax8" target="_blank" class="brand-btn d-inline">Learn More</a>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/about_us_img.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('assets/images/about_us_img.png') }}" alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup" class="img-fluid">
         </div>
     </div>
     <div class="row mt-3 bg-light-gray pt-5">
@@ -216,7 +216,7 @@
     <div class="row bg-light-gray d-flex justify-content-around pb-5">
         @foreach ($blogRecords as $record)
             <div class="col-md-4 blog-card">
-                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $record->blog_headline }}" class="img-fluid rounded">
                 <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                 <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
                 <a href="{{route('Read.Blog', ['id'=>$record->id])}}" class="text-light-brown">Read More</a>

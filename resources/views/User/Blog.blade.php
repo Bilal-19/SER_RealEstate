@@ -24,7 +24,7 @@
     <div class="row mt-5">
         @foreach ($fetchAllBlogs as $record)
             <div class="col-md-4 blog-card">
-                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $record->blog_headline }}" class="img-fluid rounded">
                 <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                 <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
                 <a href="{{ route('Read.Blog', ['id' => $record->id]) }}" class="text-light-brown">Read More</a>

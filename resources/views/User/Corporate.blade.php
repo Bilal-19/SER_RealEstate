@@ -106,13 +106,13 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/team.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('assets/images/team.png') }}" alt="A group of six diverse individuals gathered around a table enjoying pizza, sharing laughter, and engaging in conversation in a cozy, modern office setting" class="img-fluid">
         </div>
     </div>
 
     <div class="row d-flex justify-content-around align-items-center mt-5 mb-5">
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/DiscussionTeam.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('assets/images/DiscussionTeam.png') }}" alt="Five people collaborating in a creative workspace, surrounded by books and plants, while reviewing documents and working on a laptop. A woman in a yellow sweater is smiling at the camera." class="img-fluid">
         </div>
         <div class="col-md-5">
             <h4 class="ff-inter fs-36">Tailored Relocation Services</h4>
@@ -174,7 +174,7 @@
         @foreach ($fetchBenefits as $rec)
             @if ($rec->id % 2 == 0)
                 <div class="col-md-2 benefit-card-odd mx-4">
-                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}" class="img-fluid">
                     <hr>
                     <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
                     <p class="ff-inter">
@@ -183,7 +183,7 @@
                 </div>
             @else
                 <div class="col-md-2 benefit-card-even mx-4 ">
-                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}" class="img-fluid">
                     <hr>
                     <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
                     <p class="ff-inter">
@@ -197,7 +197,7 @@
 
     <div class="row d-flex justify-content-around align-items-center pt-5 pb-5">
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/amenitiesFrame.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('assets/images/amenitiesFrame.png') }}" alt="A collage of four images showing different workspaces and office equipment, including minimalist desks with computers and a lamp, as well as fax and printer machines on wooden surfaces" class="img-fluid">
         </div>
         <div class="col-md-5">
             <h4 class="ff-inter fs-36">Business Amenities</h4>
@@ -218,19 +218,19 @@
         <div class="col-md-11 mx-auto">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-4 booking-card mx-3">
-                    <img src="{{ asset('assets/images/Icons/one.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/Icons/one.png') }}" alt="step 01" class="img-fluid">
                     <h6 class="ff-inter fs-18 mt-3">Browse Apartments</h6>
                     <p class="ff-inter">Browse our available apartments online.</p>
                 </div>
 
                 <div class="col-md-4 booking-card mx-3">
-                    <img src="{{ asset('assets/images/Icons/two.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/Icons/two.png') }}" alt="step 02" class="img-fluid">
                     <h6 class="ff-inter fs-18 mt-3">Book via Website</h6>
                     <p class="ff-inter">Book directly through our platform or contact our guest relations team for personalized assistance.</p>
                 </div>
 
                 <div class="col-md-4 booking-card mx-3">
-                    <img src="{{ asset('assets/images/Icons/three.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/Icons/three.png') }}" alt="step 03" class="img-fluid">
                     <h6 class="ff-inter fs-18 mt-3">Enjoy</h6>
                     <p class="ff-inter">Enjoy competitive rates with our price-match guarantee—find a better rate elsewhere, and we'll beat it by 10%.</p>
                 </div>
@@ -255,7 +255,7 @@
                     <!-- Slides -->
                     @foreach ($fetchNeighboursData as $rec)
                         <div class="col-md-3 swiper-slide">
-                            <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                            <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{$rec->area_name}}"
                                 class="img-fluid neighbourhood-img rounded shadow">
                             <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
                             <p class="mt-0">

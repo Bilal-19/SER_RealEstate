@@ -69,7 +69,7 @@
 @section('user-main-section')
     <div class="row mt-5 pt-2 pb-2 d-flex justify-content-evenly align-items-center">
         <div class="col-md-6">
-            <img src="{{ asset('assets/images/teamwork_benefit_pg.png') }}" alt="" class="img-fluid rounded">
+            <img src="{{ asset('assets/images/teamwork_benefit_pg.png') }}" alt="A group of diverse professionals collaborating around a laptop, showcasing teamwork and engagement in a modern workspace." class="img-fluid rounded">
         </div>
         <div class="col-md-5">
             <h4 class="text-capitalize pt-2 ff-inter fs-36 fw-medium">Why Service Apartments?</h4>
@@ -110,7 +110,7 @@
             </ul>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/benefit_point_img.jpg') }}" alt="" class="img-fluid rounded">
+            <img src="{{ asset('assets/images/benefit_point_img.jpg') }}" alt="A young man in a casual blue t-shirt working on a laptop outdoors, reflecting productivity and focus in a serene environment" class="img-fluid rounded">
         </div>
     </div>
 
@@ -122,7 +122,7 @@
                     <ul class="amenities-points">
                         <hr>
                         @foreach ($amenities as $val)
-                            <li><img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
+                            <li><img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="{{ $val->amenity_text }}">
                                 <span class="mx-1 ff-inter">{{ $val->amenity_text }}</span>
                             </li>
                         @endforeach
@@ -134,7 +134,7 @@
                         <hr>
                         @foreach ($policies as $val)
                             <li>
-                                <img src="{{ asset('Policy/Icons/' . $val->policy_icon) }}" alt="">
+                                <img src="{{ asset('Policy/Icons/' . $val->policy_icon) }}" alt="{{ $val->policy_name }}">
                                 <span class="mx-1 ff-inter">{{ $val->policy_name }}</span>
                             </li>
                         @endforeach
