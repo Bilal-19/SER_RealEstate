@@ -1,8 +1,8 @@
 @extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3 class="text-center">Add New <span class="text-light-brown">Policy</span></h3>
+        <div class="row mt-3">
+            <h3 class="text-center ff-poppins fw-bold">Add New Policy</h3>
         </div>
 
         <div class="row">
