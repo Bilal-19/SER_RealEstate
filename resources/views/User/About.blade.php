@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div class="row mb-5" id="book-apartment">
         <div class="col-md-9 mx-auto rounded bg-white">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
                 @csrf
@@ -57,7 +57,7 @@
                     take-away, enjoy the space and privacy, just like home.</p>
             </div>
             <div class="col-md-3">
-                <a href="" class="footer-search-btn">Search</a>
+                <a href="#book-apartment" class="footer-search-btn">Search</a>
             </div>
         </div>
     </div>

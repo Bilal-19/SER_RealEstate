@@ -97,7 +97,7 @@
                                     href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>
                             </li>
                         </ul>
-                        <a href="" class="brand-btn">Book Now</a>
+                        <a href="#book-apartment" class="brand-btn">Book Now</a>
                     </div>
                 </div>
             </nav>

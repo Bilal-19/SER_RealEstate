@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div class="row mb-5" id="book-apartment">
         <div class="col-md-9 mx-auto rounded bg-white">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
                 @csrf
@@ -76,6 +76,7 @@
         </div>
     </div>
 @endpush
+
 @push('footer-cta')
     <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
@@ -87,7 +88,7 @@
                     take-away, enjoy the space and privacy, just like home.</p>
             </div>
             <div class="col-md-3">
-                <a href="" class="footer-search-btn">Search</a>
+                <a href="#book-apartment" class="footer-search-btn">Search</a>
             </div>
         </div>
     </div>
@@ -130,7 +131,7 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <img src="{{ asset('assets/images/Icons/support.png') }}">
+                    <img src="{{ asset('assets/images/Icons/price.png') }}">
                 </div>
                 <div class="mx-3">
                     <h6 class="fs-18 ff-inter">
@@ -144,7 +145,7 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <img src="{{ asset('assets/images/Icons/support.png') }}">
+                    <img src="{{ asset('assets/images/Icons/assistance.png') }}">
                 </div>
                 <div class="mx-3">
                     <h6 class="fs-18 ff-inter">

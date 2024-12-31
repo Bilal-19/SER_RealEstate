@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div class="row mb-5" id="book-apartment">
         <div class="col-md-9 mx-auto rounded bg-white">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
                 @csrf
@@ -116,7 +116,7 @@
                 high-density built environment, high land values, an elevated daytime population and a concentration of
                 regionally, nationally and internationally significant organisations and facilities.
             </p>
-            <a href="" class="brand-btn">Explore Now</a>
+            <a href="https://maps.app.goo.gl/Ua2iYu6okFvQyTax8" class="brand-btn" target="_blank">Explore Now</a>
         </div>
     </div>
 
@@ -168,8 +168,8 @@
         </div>
 
         <div class="col-md-6 mx-auto">
-            <button class="brand-btn">Book Now</button>
-            <button class="brand-btn-invert">View All Benefits</button>
+            <a class="brand-btn" href="#book-apartment">Book Now</a>
+            <a class="brand-btn-invert" href="{{route('View.Benefits')}}">View All Benefits</a>
         </div>
     </div>
 
@@ -199,7 +199,7 @@
                 high-density built environment, high land values, an elevated daytime population and a concentration of
                 regionally, nationally and internationally significant organisations and facilities.
             </p>
-            <a href="" class="brand-btn d-inline">Learn More</a>
+            <a href="https://maps.app.goo.gl/Ua2iYu6okFvQyTax8" target="_blank" class="brand-btn d-inline">Learn More</a>
         </div>
         <div class="col-md-5">
             <img src="{{ asset('assets/images/about_us_img.png') }}" alt="" class="img-fluid">
