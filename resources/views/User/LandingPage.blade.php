@@ -125,7 +125,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-11 mx-auto">
+
+        <div class="col-md-10 mx-auto">
             @isset($fetchNearestApartment)
                 @if (count($fetchNearestApartment) > 4)
                     <!-- Slider main container -->
@@ -160,6 +161,7 @@
                 @endif
             @endisset
         </div>
+
     </div>
 
     <div class="row text-center mt-5">
