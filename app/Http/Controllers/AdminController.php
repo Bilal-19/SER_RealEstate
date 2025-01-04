@@ -284,7 +284,7 @@ class AdminController extends Controller
 
     public function editBenefit($id)
     {
-        $fetchBenefit = DB::table('amenities')->find($id);
+        $fetchBenefit = DB::table('amenity')->find($id);
         return view('Admin.EditBenefit')->with(compact('fetchBenefit'));
     }
 
@@ -298,7 +298,7 @@ class AdminController extends Controller
 
         if ($request->file('icon')) {
             $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
-            $request->icon->move('amenities', $timeStampImg);
+            $request->icon->move('Amenity', $timeStampImg);
         } else {
             $timeStampImg = $iconImg;
         }
@@ -421,6 +421,11 @@ class AdminController extends Controller
 
     public function createPolicy(Request $request)
     {
+        // Form Validation
+        $request->validate([
+            'icon' => 'required|file',
+            'policyName' => 'required'
+        ]);
         // Store Policy Icon to Public folder
         $timeStmpImg = time() . '.' . $request->icon->getClientOriginalExtension();
 

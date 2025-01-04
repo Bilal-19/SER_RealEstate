@@ -13,7 +13,7 @@
 
 
         <div class="row mt-3 ff-inter">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>ID</th>

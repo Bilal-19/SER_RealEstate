@@ -10,7 +10,7 @@
                 @csrf
                 <div class="col-md-6 mx-auto">
                     <p class="mb-0">Benefit Icon Preview Image: </p>
-                    <img src="{{asset('Benefits/'.$fetchBenefit->benefit_icon)}}" alt="">
+                    <img src="{{asset('Amenity/'.$fetchBenefit->amenity_icon)}}" alt="">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
