@@ -395,7 +395,7 @@ class AdminController extends Controller
             ]);
 
             if ($isUpdated){
-                toastr()->success('Blog deleted successfully');
+                toastr()->success('Blog updated successfully');
                 return redirect()->back();
             }
     }

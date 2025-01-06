@@ -26,6 +26,12 @@
             background-image: url('/assets/images/available_apartment_banner.png');
             background-size: cover;
         }
+
+        .neighbourhood-img {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+        }
     </style>
 @endpush
 @push('CTA')
@@ -150,7 +156,7 @@
         <h3 class="fs-36 ff-poppins">Neighbourhood</h3>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-md-11 mx-auto">
             @isset($neighborhoodApartment)
                 @if (count($neighborhoodApartment) > 4)
