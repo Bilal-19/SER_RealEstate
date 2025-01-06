@@ -407,12 +407,12 @@
 
 
 
-        <div class="row mt-5 d-flex justify-content-around" id="property-surroundings">
+        {{-- <div class="row mt-5 d-flex justify-content-around" id="property-surroundings">
             <div class="col-md-5 w-732">
                 <h4 class="ff-poppins fs-32">Neighbourhood</h4>
             </div>
             <div class="col-md-5"></div>
-        </div>
+        </div> --}}
 
         <div class="row mt-5 d-flex justify-content-around">
             <div class="col-md-5 w-732">
