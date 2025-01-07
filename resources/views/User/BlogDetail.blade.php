@@ -14,13 +14,13 @@
 @section('user-main-section')
     <div class="row mb-5">
         <div class="col-md-8 mx-auto">
-            <p class="text-light-brown ff-inter fw-600 text-center">Published
+            <p class="text-light-brown ff-poppins fw-600 text-center">Published
                 {{ date('d M Y', strtotime($fetchBlog->publish_date)) }}
             </p>
             <h2 class="ff-poppins fs-48 text-center mb-3">{{ $fetchBlog->blog_headline }}</h2>
             <img src="{{ asset('Blog/' . $fetchBlog->thumbnail_image) }}" alt="" class="rounded img-fluid mb-3">
         </div>
-        <div class="col-md-8 mx-auto ff-inter blog-content">
+        <div class="col-md-8 mx-auto ff-poppins blog-content">
             {!! $fetchBlog->blog_content !!}
         </div>
     </div>
@@ -45,8 +45,8 @@
                 @foreach ($fetchBlogs as $record)
                     <div class="col-md-4 blog-card">
                         <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
-                        <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
-                        <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
+                        <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
+                        <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
                         <a href="{{ route('Read.Blog', ['id' => $record->id]) }}" class="text-light-brown">Read More</a>
                     </div>
                 @endforeach

@@ -74,8 +74,8 @@
     <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-5">
-                <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>
-                <p class="ff-inter text-light">Feel like home at one of our modern apartments located in the heart of
+                <h4 class="ff-poppins text-light">Why rent a hotel when you enjoy an apartment?</h4>
+                <p class="ff-poppins text-light">Feel like home at one of our modern apartments located in the heart of
                     London.
                     Make your own meals, order a
                     take-away, enjoy the space and privacy, just like home.</p>
@@ -89,7 +89,7 @@
 
 
 @section('user-main-section')
-    <div class="row ff-inter mt-3">
+    <div class="row ff-poppins mt-3">
         {{-- <div id="map" style="height: 500px;"></div> --}}
         @if (count($availableApartments) == 0)
             <p class="text-center">No apartments are available</p>
@@ -115,34 +115,34 @@
                     <div class="col-md-5">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5 class="ff-inter fs-24">{{ $rec->area_name }}</h5>
-                                <p class="ff-inter">
+                                <h5 class="ff-poppins fs-24">{{ $rec->area_name }}</h5>
+                                <p class="ff-poppins">
                                     <img src="{{ asset('assets/images/locationIcon.png') }}" alt="">
                                     {{ $rec->street_address }}
                                 </p>
                             </div>
                             <div>
-                                <p class="ff-inter fw-medium">from €{{ $rec->price }}</p>
+                                <p class="ff-poppins fw-medium">from €{{ $rec->price }}</p>
                             </div>
                         </div>
-                        <p class="ff-inter">
+                        <p class="ff-poppins">
                             {!! Str::limit($rec->description, 100) !!}
                         </p>
                         <div class="d-flex flex-row justify-content-start">
-                            <p class="d-inline ff-inter">
+                            <p class="d-inline ff-poppins">
                                 <img src="{{ asset('assets/images/bedroom.png') }}" alt="">
                                 {{ $rec->total_bedrooms }} Bedrooms
                             </p>
-                            <p class="d-inline ff-inter mx-2">
+                            <p class="d-inline ff-poppins mx-2">
                                 <img src="{{ asset('assets/images/Bathroom.png') }}" alt="">
                                 {{ $rec->total_bathrooms }} Bathrooms
                             </p>
-                            <p class="d-inline ff-inter mx-2">
+                            <p class="d-inline ff-poppins mx-2">
                                 Area Sq.ft {{ $rec->sqfeet_area }}
                             </p>
                         </div>
                         <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}"
-                            class="btn btn-dark ff-inter fw-medium">View Apartment</a>
+                            class="btn btn-dark ff-poppins fw-medium">View Apartment</a>
                     </div>
                     <div class="col-md-3">
                         {!! $rec->map_location !!}

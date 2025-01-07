@@ -67,8 +67,8 @@
     <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-5">
-                <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>
-                <p class="ff-inter text-light">Feel like home at one of our modern apartments located in the heart of
+                <h4 class="ff-poppins text-light">Why rent a hotel when you enjoy an apartment?</h4>
+                <p class="ff-poppins text-light">Feel like home at one of our modern apartments located in the heart of
                     London.
                     Make your own meals, order a
                     take-away, enjoy the space and privacy, just like home.</p>
@@ -82,8 +82,8 @@
 @section('user-main-section')
     <div class="row d-flex justify-content-around align-items-center mt-5">
         <div class="col-md-5">
-            <h4 class="fs-36 ff-inter fw-medium">Corporate Housing Solutions in London</h4>
-            <p class="ff-inter mt-4">
+            <h4 class="fs-36 ff-poppins fw-medium">Corporate Housing Solutions in London</h4>
+            <p class="ff-poppins mt-4">
                 At Sterling Executive Residential, we understand that relocating employees or accommodating business
                 travelers
                 requires more than just a comfortable stay—it demands a seamless experience. Our fully serviced
@@ -105,8 +105,8 @@
                 class="img-fluid">
         </div>
         <div class="col-md-5">
-            <h4 class="ff-inter fs-36">Tailored Relocation Services</h4>
-            <p class="ff-inter">Relocating employees to a new city or country can be daunting, but with Citadel
+            <h4 class="ff-poppins fs-36">Tailored Relocation Services</h4>
+            <p class="ff-poppins">Relocating employees to a new city or country can be daunting, but with Citadel
                 Apartments, the process becomes stress-free.</p>
 
             <div class="d-flex justify-content-between">
@@ -114,8 +114,8 @@
                     <img src="{{ asset('assets/images/Icons/support.png') }}">
                 </div>
                 <div class="mx-3">
-                    <h6 class="fs-18 ff-inter">Orientation Support</h6>
-                    <p class="ff-inter">Provide your employees with resources to settle into London comfortably.</p>
+                    <h6 class="fs-18 ff-poppins">Orientation Support</h6>
+                    <p class="ff-poppins">Provide your employees with resources to settle into London comfortably.</p>
                 </div>
             </div>
 
@@ -124,10 +124,10 @@
                     <img src="{{ asset('assets/images/Icons/price.png') }}">
                 </div>
                 <div class="mx-3">
-                    <h6 class="fs-18 ff-inter">
+                    <h6 class="fs-18 ff-poppins">
                         Customizable Packages
                     </h6>
-                    <p class="ff-inter">
+                    <p class="ff-poppins">
                         Choose from a variety of accommodation options to suit your budget and needs.
                     </p>
                 </div>
@@ -138,10 +138,10 @@
                     <img src="{{ asset('assets/images/Icons/assistance.png') }}">
                 </div>
                 <div class="mx-3">
-                    <h6 class="fs-18 ff-inter">
+                    <h6 class="fs-18 ff-poppins">
                         Dedicated Assistance:
                     </h6>
-                    <p class="ff-inter">
+                    <p class="ff-poppins">
                         Our team works closely with your company to handle all aspects of corporate relocation.
                     </p>
                 </div>
@@ -156,7 +156,7 @@
         <div class="col-md-12 text-center">
             <p class="text-silver ff-poppins">Benefits</p>
             <h6 class="ff-poppins fs-36 text-light">More Space, More Comfort</h6>
-            <p class="ff-inter fs-18 text-center text-light">
+            <p class="ff-poppins fs-18 text-center text-light">
                 Enjoy spacious, fully furnished apartments—at least three times the size of a typical hotel room.
             </p>
         </div>
@@ -168,7 +168,7 @@
                         class="img-fluid">
                     <hr>
                     <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
-                    <p class="ff-inter">
+                    <p class="ff-poppins">
                         {{ $rec->amenity_description }}
                     </p>
                 </div>
@@ -178,7 +178,7 @@
                         class="img-fluid">
                     <hr>
                     <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
-                    <p class="ff-inter">
+                    <p class="ff-poppins">
                         {{ $rec->amenity_description }}
                     </p>
                 </div>
@@ -194,8 +194,8 @@
                 class="img-fluid">
         </div>
         <div class="col-md-5">
-            <h4 class="ff-inter fs-36">Business Amenities</h4>
-            <p class="ff-inter mt-3">
+            <h4 class="ff-poppins fs-36">Business Amenities</h4>
+            <p class="ff-poppins mt-3">
                 We provide special amenities for business travelers, such as complimentary printing, copy and fax machines,
                 larger work desk, a safe…etc upon request. Please contact one of our team members to discuss your
                 requirements.
@@ -205,29 +205,29 @@
 
     <div class="row bg-light-gray pb-5">
         <div class="col-md-10 pt-5 pb-5 mx-auto">
-            <h4 class="ff-inter fs-36 text-center">Simplified Booking Process</h4>
-            <p class="ff-inter text-center">We make corporate housing simple and straightforward:</p>
+            <h4 class="ff-poppins fs-36 text-center">Simplified Booking Process</h4>
+            <p class="ff-poppins text-center">We make corporate housing simple and straightforward:</p>
         </div>
 
         <div class="col-md-11 mx-auto">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-4 booking-card mx-3">
                     <img src="{{ asset('assets/images/Icons/one.png') }}" alt="step 01" class="img-fluid">
-                    <h6 class="ff-inter fs-18 mt-3">Browse Apartments</h6>
-                    <p class="ff-inter">Browse our available apartments online.</p>
+                    <h6 class="ff-poppins fs-18 mt-3">Browse Apartments</h6>
+                    <p class="ff-poppins">Browse our available apartments online.</p>
                 </div>
 
                 <div class="col-md-4 booking-card mx-3">
                     <img src="{{ asset('assets/images/Icons/two.png') }}" alt="step 02" class="img-fluid">
-                    <h6 class="ff-inter fs-18 mt-3">Book via Website</h6>
-                    <p class="ff-inter">Book directly through our platform or contact our guest relations team for
+                    <h6 class="ff-poppins fs-18 mt-3">Book via Website</h6>
+                    <p class="ff-poppins">Book directly through our platform or contact our guest relations team for
                         personalized assistance.</p>
                 </div>
 
                 <div class="col-md-4 booking-card mx-3">
                     <img src="{{ asset('assets/images/Icons/three.png') }}" alt="step 03" class="img-fluid">
-                    <h6 class="ff-inter fs-18 mt-3">Enjoy</h6>
-                    <p class="ff-inter">Enjoy competitive rates with our price-match guarantee—find a better rate elsewhere,
+                    <h6 class="ff-poppins fs-18 mt-3">Enjoy</h6>
+                    <p class="ff-poppins">Enjoy competitive rates with our price-match guarantee—find a better rate elsewhere,
                         and we'll beat it by 10%.</p>
                 </div>
             </div>

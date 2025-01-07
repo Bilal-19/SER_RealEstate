@@ -71,17 +71,17 @@
                             </a>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h6 class="card-text ff-inter text-uppercase">{{ $record->area_name }}</h6>
-                                    <p class="mb-0 ff-inter">{{ $record->street_address }}</p>
+                                    <h6 class="card-text ff-poppins text-uppercase">{{ $record->area_name }}</h6>
+                                    <p class="mb-0 ff-poppins">{{ $record->street_address }}</p>
                                 </div>
                                 <div>
-                                    <p class="mb-0 ff-inter">from £{{ $record->price }}</p>
+                                    <p class="mb-0 ff-poppins">from £{{ $record->price }}</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <p class="mt-0 ff-inter"><i class="fa-solid fa-bed"></i> {{ $record->total_bedrooms }}
+                                <p class="mt-0 ff-poppins"><i class="fa-solid fa-bed"></i> {{ $record->total_bedrooms }}
                                     bedrooms</p>
-                                <p class="mt-0 ff-inter"><i class="fa-solid fa-bath"></i> {{ $record->total_bathrooms }}
+                                <p class="mt-0 ff-poppins"><i class="fa-solid fa-bath"></i> {{ $record->total_bathrooms }}
                                     bathrooms</p>
                             </div>
                         </div>
@@ -108,8 +108,8 @@
         </div>
 
         <div class="col-md-4">
-            <h3 class="ff-inter">Central London Location</h3>
-            <p class="ff-inter">
+            <h3 class="ff-poppins">Central London Location</h3>
+            <p class="ff-poppins">
                 Central London is the innermost part of London, in England, spanning the City of London and several
                 boroughs. Over time, a number of definitions have been used to define the scope of Central London for
                 statistics, urban planning and local government. Its characteristics are understood to include a
@@ -184,7 +184,7 @@
                 <h5 class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-poppins">
                     {{ $record->amenity_text }}
                 </h5>
-                <p class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-inter">
+                <p class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-poppins">
                     {{ $record->amenity_description }}</p>
             </div>
         @endforeach
@@ -209,8 +209,8 @@
     </div>
     <div class="row mt-3 bg-light-gray pt-5">
         <div class="col-md-12 text-center">
-            <h4 class="ff-inter">Resources</h4>
-            <p class="ff-inter">Discover premium apartments tailored to your lifestyle, with unbeatable locations and
+            <h4 class="ff-poppins">Resources</h4>
+            <p class="ff-poppins">Discover premium apartments tailored to your lifestyle, with unbeatable locations and
                 amenities.</p>
         </div>
     </div>
@@ -219,8 +219,8 @@
         @foreach ($blogRecords as $record)
             <div class="col-md-4 blog-card">
                 <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $record->blog_headline }}" class="img-fluid rounded">
-                <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
-                <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
+                <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
+                <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
                 <a href="{{route('Read.Blog', ['id'=>$record->id])}}" class="text-dark">Read More</a>
             </div>
         @endforeach

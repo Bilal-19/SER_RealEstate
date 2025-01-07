@@ -13,8 +13,8 @@
     <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-5">
-                <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>
-                <p class="ff-inter text-light">Feel like home at one of our modern apartments located in the heart of
+                <h4 class="ff-poppins text-light">Why rent a hotel when you enjoy an apartment?</h4>
+                <p class="ff-poppins text-light">Feel like home at one of our modern apartments located in the heart of
                     London.
                     Make your own meals, order a
                     take-away, enjoy the space and privacy, just like home.</p>
@@ -43,8 +43,8 @@
             <img src="{{ asset('assets/images/teamwork_benefit_pg.png') }}" alt="A group of diverse professionals collaborating around a laptop, showcasing teamwork and engagement in a modern workspace." class="img-fluid rounded">
         </div>
         <div class="col-md-5">
-            <h4 class="text-capitalize pt-2 ff-inter fs-36 fw-medium">Why Service Apartments?</h4>
-            <p class="ff-inter">
+            <h4 class="text-capitalize pt-2 ff-poppins fs-36 fw-medium">Why Service Apartments?</h4>
+            <p class="ff-poppins">
                 Fully serviced apartments offer a home away from home for the reserved business traveller. <b>Sterling
                     Executive Residential</b> deliver this luxury from start to finish. Online bookings ensure the lowest
                 price point
@@ -56,15 +56,15 @@
                 avoid living in the crowded hotels.
             </p>
 
-            <b class="ff-inter">Book online or contact us for more information.</b>
-            <p class="ff-inter">Group rates are available.</p>
+            <b class="ff-poppins">Book online or contact us for more information.</b>
+            <p class="ff-poppins">Group rates are available.</p>
         </div>
     </div>
 
 
     <div class="row d-flex justify-content-evenly align-items-center mt-5">
         <div class="col-md-6">
-            <h4 class="ff-inter fs-36">Benefits</h4>
+            <h4 class="ff-poppins fs-36">Benefits</h4>
             <ul class="benefits-point">
                 <li>At least three times the space of an average hotel room</li>
                 <li>Personalised service with welcoming staff in our onsite receptions</li>
@@ -89,12 +89,12 @@
         <div class="col-md-11 mx-auto bg-light-gray rounded">
             <div class="row d-flex justify-content-around mt-5 mb-5">
                 <div class="col-md-5 bg-white rounded">
-                    <p class="fw-medium fs-24 pt-3 ff-inter">Amenities</p>
+                    <p class="fw-medium fs-24 pt-3 ff-poppins">Amenities</p>
                     <ul class="amenities-points">
                         <hr>
                         @foreach ($amenities as $val)
                             <li><img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="{{ $val->amenity_text }}">
-                                <span class="mx-1 ff-inter">{{ $val->amenity_text }}</span>
+                                <span class="mx-1 ff-poppins">{{ $val->amenity_text }}</span>
                             </li>
                         @endforeach
                     </ul>
@@ -106,7 +106,7 @@
                         @foreach ($policies as $val)
                             <li>
                                 <img src="{{ asset('Policy/Icons/' . $val->policy_icon) }}" alt="{{ $val->policy_name }}">
-                                <span class="mx-1 ff-inter">{{ $val->policy_name }}</span>
+                                <span class="mx-1 ff-poppins">{{ $val->policy_name }}</span>
                             </li>
                         @endforeach
                     </ul>

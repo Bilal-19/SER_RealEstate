@@ -25,8 +25,8 @@
     <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-5">
-                <h4 class="ff-inter text-light">Why rent a hotel when you enjoy an apartment?</h4>
-                <p class="ff-inter text-light">Feel like home at one of our modern apartments located in the heart of
+                <h4 class="ff-poppins text-light">Why rent a hotel when you enjoy an apartment?</h4>
+                <p class="ff-poppins text-light">Feel like home at one of our modern apartments located in the heart of
                     London.
                     Make your own meals, order a
                     take-away, enjoy the space and privacy, just like home.</p>
@@ -41,8 +41,8 @@
 @section('user-main-section')
     <div class="row d-flex justify-content-around align-items-center mt-5">
         <div class="col-md-5">
-            <p class="text-capitalize fw-medium ff-inter fs-36">Brand Story</p>
-            <p class="ff-inter">Sterling Executive Residential is a high quality serviced apartment operator in London,
+            <p class="text-capitalize fw-medium ff-poppins fs-36">Brand Story</p>
+            <p class="ff-poppins">Sterling Executive Residential is a high quality serviced apartment operator in London,
                 delivering a fresh
                 serviced apartment stay experiences in the city. Whether it's practical corporate housing or
                 relocation, executive class business traveller, or a small group for a business project, Citadel
@@ -66,7 +66,7 @@
             <img src="{{ asset('assets/images/about_pg_img2.jpg') }}" alt="" class="img-fluid rounded">
         </div>
         <div class="col-md-5">
-            <p class="ff-inter">
+            <p class="ff-poppins">
                 Sterling Executive Residential is relatively new to the corporate apartment sector having only begun its
                 operations in 2015.
                 <br>
@@ -114,8 +114,8 @@
                 <ul class="timeline">
                     <li class="timeline-item mb-5 d-flex flex-sm-column flex-md-row justify-content-between">
                         <div class="col-md-5">
-                            <h5 class="fw-bold ff-inter">Our Mission</h5>
-                            <p class="ff-inter">We exist to provide our customers with a wide range of high-quality serviced
+                            <h5 class="fw-bold ff-poppins">Our Mission</h5>
+                            <p class="ff-poppins">We exist to provide our customers with a wide range of high-quality serviced
                                 apartments
                                 across the capital London.
                             </p>
@@ -128,8 +128,8 @@
 
                     <li class="timeline-item mb-5 d-flex flex-sm-column flex-md-row justify-content-between">
                         <div class="col-md-5">
-                            <h5 class="fw-bold ff-inter">Our Vision</h5>
-                            <p class="ff-inter">
+                            <h5 class="fw-bold ff-poppins">Our Vision</h5>
+                            <p class="ff-poppins">
                                 Our long-term vision is to revolutionise the service apartments sector to make it accessible
                                 and
                                 affordable to both residents as well as business travellers.
@@ -146,44 +146,44 @@
 
                     <li class="timeline-item mb-5 d-flex flex-sm-column flex-md-row justify-content-between">
                         <div class="col-md-5">
-                            <h5 class="fw-bold ff-inter">Our Values</h5>
+                            <h5 class="fw-bold ff-poppins">Our Values</h5>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p class="fw-medium ff-inter fs-17">
+                                    <p class="fw-medium ff-poppins fs-17">
                                         <span class="border-top-light-brown">Excellence:</span>
                                     </p>
-                                    <p class="fw-normal ff-inter fs-15">We push ourselves to constantly look for ways to
+                                    <p class="fw-normal ff-poppins fs-15">We push ourselves to constantly look for ways to
                                         improve our operations.</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="fw-medium ff-inter fs-17">
+                                    <p class="fw-medium ff-poppins fs-17">
                                         <span class="border-top-light-brown">Customer-focus:</span>
                                     </p>
-                                    <p class="fw-normal ff-inter fs-15">
+                                    <p class="fw-normal ff-poppins fs-15">
                                         Customers always come first.
                                     </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="fw-medium ff-inter fs-17">
+                                    <p class="fw-medium ff-poppins fs-17">
                                         <span class="border-top-light-brown">People:</span>
                                     </p>
-                                    <p class="fw-normal ff-inter fs-15">
+                                    <p class="fw-normal ff-poppins fs-15">
                                         We invest in our greatest asset.
                                     </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="fw-medium ff-inter fs-17">
+                                    <p class="fw-medium ff-poppins fs-17">
                                         <span class="border-top-light-brown">Passion:</span>
                                     </p>
-                                    <p class="fw-normal ff-inter fs-15">
+                                    <p class="fw-normal ff-poppins fs-15">
                                         We love what we do!
                                     </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="fw-medium ff-inter fs-17">
+                                    <p class="fw-medium ff-poppins fs-17">
                                         <span class="border-top-light-brown w-50">Honesty:</span>
                                     </p>
-                                    <p class="fw-normal ff-inter fs-15">
+                                    <p class="fw-normal ff-poppins fs-15">
                                         We mean what we say, we say what we mean.
                                     </p>
                                 </div>
@@ -213,8 +213,8 @@
     <div class="row bg-light-gray pt-5">
         <div class="col-md-12 text-center">
             <p class="text-light-brown ff-poppins">Insights & Tips</p>
-            <h4 class="ff-inter">Stay Connected with Sterling Executive Residential</h4>
-            <p class="ff-inter">
+            <h4 class="ff-poppins">Stay Connected with Sterling Executive Residential</h4>
+            <p class="ff-poppins">
                 Stay updated with the latest news, tips, and insights from Citadel Apartments to enhance your London
                 experience.
             </p>
@@ -225,8 +225,8 @@
         @foreach ($blogRecords as $record)
             <div class="col-md-4 blog-card">
                 <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
-                <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
-                <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
+                <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
+                <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
                 <a href="{{route('Read.Blog', ['id' => $record->id])}}" class="text-light-brown">Read More</a>
             </div>
         @endforeach
