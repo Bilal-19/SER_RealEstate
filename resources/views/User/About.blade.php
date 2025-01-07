@@ -102,7 +102,7 @@
 
     <div class="row">
         <div class="col-md-1 mx-auto">
-            <hr style="background-color:#b1895a">
+            <hr style="background-color:#c0c0c0">
         </div>
     </div>
 
@@ -150,14 +150,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <p class="fw-medium ff-poppins fs-17">
-                                        <span class="border-top-light-brown">Excellence:</span>
+                                        <span class="border-top-light-grey">Excellence:</span>
                                     </p>
                                     <p class="fw-normal ff-poppins fs-15">We push ourselves to constantly look for ways to
                                         improve our operations.</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p class="fw-medium ff-poppins fs-17">
-                                        <span class="border-top-light-brown">Customer-focus:</span>
+                                        <span class="border-top-light-grey">Customer-focus:</span>
                                     </p>
                                     <p class="fw-normal ff-poppins fs-15">
                                         Customers always come first.
@@ -165,7 +165,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <p class="fw-medium ff-poppins fs-17">
-                                        <span class="border-top-light-brown">People:</span>
+                                        <span class="border-top-light-grey">People:</span>
                                     </p>
                                     <p class="fw-normal ff-poppins fs-15">
                                         We invest in our greatest asset.
@@ -173,7 +173,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <p class="fw-medium ff-poppins fs-17">
-                                        <span class="border-top-light-brown">Passion:</span>
+                                        <span class="border-top-light-grey">Passion:</span>
                                     </p>
                                     <p class="fw-normal ff-poppins fs-15">
                                         We love what we do!
@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <p class="fw-medium ff-poppins fs-17">
-                                        <span class="border-top-light-brown w-50">Honesty:</span>
+                                        <span class="border-top-light-grey w-50">Honesty:</span>
                                     </p>
                                     <p class="fw-normal ff-poppins fs-15">
                                         We mean what we say, we say what we mean.
@@ -193,17 +193,6 @@
                             <img src="{{ asset('assets/images/values.png') }}" alt="" class="img-fluid rounded">
                         </div>
                     </li>
-
-                    {{-- <li class="timeline-item mb-5">
-                        <h5 class="fw-bold">Earned the first million $!</h5>
-                        <p class="text-muted mb-2 fw-bold">15 October 2020</p>
-                        <p class="text-muted">
-                            Nulla ac tellus convallis, pulvinar nulla ac, fermentum diam. Sed
-                            et urna sit amet massa dapibus tristique non finibus ligula. Nam
-                            pharetra libero nibh, id feugiat tortor rhoncus vitae. Ut suscipit
-                            vulputate mattis.
-                        </p>
-                    </li> --}}
                 </ul>
             </section>
             <!-- Section: Timeline -->
@@ -212,7 +201,7 @@
 
     <div class="row bg-light-gray pt-5">
         <div class="col-md-12 text-center">
-            <p class="text-light-brown ff-poppins">Insights & Tips</p>
+            <p class="text-dark ff-poppins">Insights & Tips</p>
             <h4 class="ff-poppins">Stay Connected with Sterling Executive Residential</h4>
             <p class="ff-poppins">
                 Stay updated with the latest news, tips, and insights from Citadel Apartments to enhance your London
@@ -227,7 +216,7 @@
                 <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
                 <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                 <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
-                <a href="{{route('Read.Blog', ['id' => $record->id])}}" class="text-light-brown">Read More</a>
+                <a href="{{route('Read.Blog', ['id' => $record->id])}}" class="text-dark">Read More</a>
             </div>
         @endforeach
     </div>

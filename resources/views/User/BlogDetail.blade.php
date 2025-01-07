@@ -14,7 +14,7 @@
 @section('user-main-section')
     <div class="row mb-5">
         <div class="col-md-8 mx-auto">
-            <p class="text-light-brown ff-poppins fw-600 text-center">Published
+            <p class="text-dark ff-poppins fw-600 text-center">Published
                 {{ date('d M Y', strtotime($fetchBlog->publish_date)) }}
             </p>
             <h2 class="ff-poppins fs-48 text-center mb-3">{{ $fetchBlog->blog_headline }}</h2>

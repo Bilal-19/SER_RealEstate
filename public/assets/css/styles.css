@@ -307,8 +307,8 @@ a {
 }
 
 /* Border */
-.border-top-light-brown {
-    border-top: 2px solid #b1895a;
+.border-top-light-grey {
+    border-top: 2px solid #c0c0c0;
 }
 .border-radius-16{
     border-radius: 16px;
@@ -375,7 +375,7 @@ a {
 }
 
 .timeline .timeline-item:after {
-    background-color: #b1895a;
+    background-color: #c0c0c0;
     left: -45px;
     border-radius: 50%;
     height: 25px;
