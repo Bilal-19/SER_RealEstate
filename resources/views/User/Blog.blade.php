@@ -12,7 +12,7 @@
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ff-poppins">Blogs</p>
+            <p class="text-center ff-poppins">Blog</p>
             <h2 class="text-center ff-poppins fs-56">
                 Resources
             </h2>
