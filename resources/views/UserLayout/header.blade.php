@@ -37,13 +37,13 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row d-flex justify-content-between align-items-center pt-1 pb-1" id="top-header">
+        {{-- <div class="row d-flex justify-content-between align-items-center pt-1 pb-1" id="top-header">
             <div class="col-md-3 d-flex justify-content-between align-items-center">
-                <a href="" class="ff-inter">+44 7921919426</a>
-                <a href="" class="ff-inter">zain.rav@gmail.com</a>
+                <a href="" class="ff-poppins">+44 7921919426</a>
+                <a href="" class="ff-poppins">zain.rav@gmail.com</a>
             </div>
             <div class="col-md-2 d-flex justify-content-around align-items-center">
-                <a href="" class="ff-inter">Follow</a>
+                <a href="" class="ff-poppins">Follow</a>
                 <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ=="
                     target="_blank" class="mx-2">
                     <img src="{{ asset('assets/images/instagramIcon.png') }}" alt="">
@@ -57,12 +57,12 @@
                     <img src="{{ asset('assets/images/fbIcon.png') }}" alt="">
                 </a>
             </div>
-        </div>
+        </div> --}}
         <div class="row banner-img">
-            <nav class="navbar navbar-expand-lg mb-5 bg-light shadow">
+            <nav class="navbar navbar-expand-lg mb-5 bg-dark text-light shadow">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        {{-- <img src="{{ asset('assets/images/company_logo.png') }}" alt=""> --}}
+                    <a class="navbar-brand ff-poppins text-light" href="{{ route('Landing.Page') }}">
+                        <img src="{{ asset('assets/images/company_logo.png') }}" alt="">
                         STERLING EXECUTIVE RESIDENTIAL
                     </a>
                     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
@@ -72,32 +72,28 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            {{-- <li class="nav-item">
-                                <a class="nav-link ff-inter" aria-current="page"
-                                    href="{{ route('View.Appartments') }}">APPARTMENTS</a>
-                            </li> --}}
                             <li class="nav-item">
-                                <a class="nav-link ff-inter nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition"
                                     href="{{ route('View.Benefits') }}">BENEFITS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-inter nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition"
                                     href="{{ route('View.Corporate') }}">CORPORATE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-inter nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition"
                                     href="{{ route('View.About') }}">ABOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-inter nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition"
                                     href="{{ route('View.Blogs') }}">BLOG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-inter nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition"
                                     href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>
                             </li>
                         </ul>
-                        <a href="#book-apartment" class="brand-btn">Book Now</a>
+                        <a href="#book-apartment" class="btn btn-light">Book Now</a>
                     </div>
                 </div>
             </nav>

@@ -25,15 +25,15 @@
                 <div class="row d-flex justify-content-around align-items-end">
                     <div class="col-md-4">
                         <label class="form-label fw-bold mb-0">Search By Area:</label>
-                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location">
+                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location" value="{{old('location')}}">
                     </div>
                     <div class="col-md-2">
                         <label class="form-label fw-bold mb-0">Check In:</label>
-                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate">
+                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate" value="{{old("checkInDate")}}">
                     </div>
                     <div class="col-md-2">
                         <label class="form-label fw-bold mb-0">Check Out:</label>
-                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate">
+                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate" value="{{old("checkOutDate")}}">
                     </div>
                     <div class="col-md-3">
                         <button class="btn btn-dark" type="submit">SEARCH</button>
