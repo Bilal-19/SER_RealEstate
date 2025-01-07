@@ -97,22 +97,6 @@
     height: 200px;
 }
 
-/* #form-elements {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#form-elements > input[type="text"],
-#form-elements > input[type="date"] {
-    width: fit-content;
-    padding: 10px;
-}
-
-#form-elements > input[type="text"]:focus,
-#form-elements > input[type="date"]:focus {
-    outline: none;
-} */
 
 .favourite-card {
     width: 299px;
@@ -469,7 +453,7 @@ a {
     color: #191919;
 }
 .admin-active-link{
-    background-color: #191919;
+    background-color: #545253;
     color: #ECECEC;
     border-radius: 2px;
 }
