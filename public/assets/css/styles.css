@@ -63,6 +63,10 @@
     opacity: 1;
 }
 
+.user-active-link{
+    font-weight: bold;
+}
+
 .brand-btn {
     background-color: black;
     color: white;

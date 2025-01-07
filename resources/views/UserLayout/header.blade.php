@@ -73,23 +73,23 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Benefits') ? 'user-active-link text-light' : '' }}"
                                     href="{{ route('View.Benefits') }}">BENEFITS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Corporate') ? 'user-active-link text-light' : '' }}"
                                     href="{{ route('View.Corporate') }}">CORPORATE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.About') ? 'user-active-link text-light' : '' }}"
                                     href="{{ route('View.About') }}">ABOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Blogs') ? 'user-active-link text-light' : '' }}"
                                     href="{{ route('View.Blogs') }}">BLOG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition"
+                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Enquiry.Form') ? 'user-active-link text-light' : '' }}"
                                     href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>
                             </li>
                         </ul>
