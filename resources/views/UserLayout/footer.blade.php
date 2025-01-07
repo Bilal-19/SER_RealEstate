@@ -3,19 +3,19 @@
     <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5">
         <div class="col-md-4">
             <h5 class="ff-poppins">
-                <img src="{{asset('assets/images/company_logo.png')}}" alt="" style="height: 60px; width: 60px;">
+                <img src="{{ asset('assets/images/company_logo.png') }}" alt="" style="height: 60px; width: 60px;">
                 STERLING EXECUTIVE RESIDENTIAL
             </h5>
             <p class="ff-inter">Design amazing digital experiences that create more happy in the world.</p>
         </div>
         <div class="col-md-2">
             <p class="ff-inter">Sitemap</p>
-            <a href="{{route('Landing.Page')}}" class="text-light d-block ff-inter">Home</a>
-            <a href="{{route('View.About')}}" class="text-light d-block ff-inter">About Us</a>
-            <a href="{{route('View.Corporate')}}" class="text-light d-block ff-inter">Corporate</a>
-            <a href="{{route('View.Benefits')}}" class="text-light d-block ff-inter">Benefits</a>
-            <a href="{{route('View.Enquiry.Form')}}" class="text-light d-block ff-inter">Contact Us</a>
-            <a href="{{route('View.Blogs')}}" class="text-light d-block ff-inter">Blogs</a>
+            <a href="{{ route('Landing.Page') }}" class="text-light d-block ff-inter">Home</a>
+            <a href="{{ route('View.About') }}" class="text-light d-block ff-inter">About Us</a>
+            <a href="{{ route('View.Corporate') }}" class="text-light d-block ff-inter">Corporate</a>
+            <a href="{{ route('View.Benefits') }}" class="text-light d-block ff-inter">Benefits</a>
+            <a href="{{ route('View.Enquiry.Form') }}" class="text-light d-block ff-inter">Contact Us</a>
+            <a href="{{ route('View.Blogs') }}" class="text-light d-block ff-inter">Blogs</a>
         </div>
         <div class="col-md-3">
             <p>Contact Us</p>
@@ -24,17 +24,19 @@
         </div>
         <div class="col-md-2">
             <p>Follow us</p>
-            <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ==">
-                <i class="fa-brands fa-instagram fa-xl"></i>
-            </a>
-            <span>|</span>
-            <a href="">
-                <i class="fa-brands fa-tiktok fa-xl"></i>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin fa-xl"></i>
             </a>
             <span>|</span>
             <a href="https://www.facebook.com/profile.php?id=61569866642277">
-                <img src="{{ asset('assets/images/fbIcon.png') }}" alt="">
+                <i class="fa-brands fa-facebook fa-xl"></i>
             </a>
+            <span>|</span>
+            <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ==">
+                <i class="fa-brands fa-instagram fa-xl"></i>
+            </a>
+
         </div>
     </div>
 
