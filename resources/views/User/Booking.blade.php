@@ -48,6 +48,10 @@
             .booking-date {
                 width: 150px;
             }
+
+            .price-container{
+                margin-top: 10px;
+            }
         }
     </style>
 @endpush
@@ -168,9 +172,7 @@
 
 @section('user-main-section')
     @php
-        $apartmentCost = $findApartment->price_per_night * $stayDays;
-        $vat = 2; //2% tax (0 - 100%)
-        $totalCost = $apartmentCost + $apartmentCost * ($vat / 100);
+        $totalCost = $findApartment->price_per_night * $stayDays;
 
         $countries = [
             'United States',
@@ -420,7 +422,7 @@
                         </div>
                     </div>
 
-                    <h5 class="ff-inter fs-20">The Fine Print</h5>
+                    <h5 class="ff-inter fs-20">Terms & Conditions</h5>
                     <ul>
                         <li>
                             Citadel will contact you after booking with important arrival and access information.
@@ -530,23 +532,20 @@
                 </div>
 
 
-
-                <div class="d-flex justify-content-between p-2 mt-4 align-items-center mb-0">
-                    <h6 class="fs-18 ff-inter">Net Cost (${{ $findApartment->price_per_night }} * {{ $stayDays }})
-                    </h6>
-                    <p class="ff-inter fs-18">${{ $apartmentCost }}</p>
+                <div class="d-flex justify-content-between p-2 align-items-center mb-0">
+                    <h6 class="fs-18 ff-inter">Price Per Night</h6>
+                    <p class="ff-inter fs-18">€{{ $findApartment->price_per_night }}</p>
                 </div>
-
                 <div class="d-flex justify-content-between p-2 align-items-center">
-                    <h6 class="fs-18 ff-inter">VAT</h6>
-                    <p class="ff-inter fs-18">${{ $vat }}</p>
+                    <h6 class="fs-18 ff-inter">Total Night Stay</h6>
+                    <p class="ff-inter fs-18">{{ $stayDays }} days</p>
                 </div>
 
                 <hr>
 
                 <div class="d-flex justify-content-between p-2 align-items-center">
-                    <h6 class="fs-18 ff-inter">Total Cost</h6>
-                    <p class="ff-inter fs-18 fw-bold">${{ $totalCost }}</p>
+                    <h6 class="fs-18 ff-inter">Total Cost (€{{ $findApartment->price_per_night }} * {{$stayDays}})</h6>
+                    <p class="ff-inter fs-18 fw-bold">€{{ $totalCost }}</p>
                 </div>
             </div>
         </div>
