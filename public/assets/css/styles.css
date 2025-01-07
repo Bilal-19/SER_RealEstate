@@ -300,6 +300,10 @@ a {
     background-color: #ECECEC;
 }
 
+.bg-silver{
+    background-color: #c0c0c0;
+}
+
 /* Opactity */
 
 .opacity-90 {
@@ -455,6 +459,21 @@ a {
     align-items: start;
     border-radius: 7px;
 }
+
+/* Dashboard */
+.nav-item > .nav-link:hover {
+    color: #191919;
+}
+.admin-active-link{
+    background-color: #191919;
+    color: #ECECEC;
+    border-radius: 2px;
+}
+
+.admin-active-link:hover{
+    color: #ECECEC;
+}
+
 /* Media Query */
 
 @media screen and (max-width: 768px) {
