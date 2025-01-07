@@ -20,7 +20,7 @@
         <div class="col-md-3">
             <p>Contact Us</p>
             <a href="" class="text-light d-block">+44 7921919426</a>
-            <a href="" class="text-light d-block">zain.rav@gmail.com</a>
+            <a href="" class="text-light d-block">info@sterling-executive.com</a>
         </div>
         <div class="col-md-2">
             <p>Follow us</p>
