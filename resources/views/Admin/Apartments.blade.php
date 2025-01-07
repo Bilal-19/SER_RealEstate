@@ -6,13 +6,13 @@
         </div>
 
         <div class="row mb-3">
-            <div class="col-md-11 mx-auto ff-inter">
+            <div class="col-md-12 ff-inter">
                 <a href="{{route('Add.Appartment')}}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New Apartment</a>
             </div>
         </div>
 
         <div class="row ff-inter">
-           <div class="col-md-11 mx-auto">
+           <div class="col-md-12">
             <div class="input-group">
                 <input type="search" name="search" class="form-control" placeholder="Search by area name" autocomplete="off">
                 <button class="btn btn-dark"><i class="fa-brands fa-searchengin"></i> Search</button>
@@ -21,8 +21,8 @@
         </div>
 
         <div class="row mt-3 ff-inter">
-            <div class="col-md-11 mx-auto">
-                <table class="table table-striped table-bordered">
+            <div class="col-md-12" style="overflow-x:auto;">
+                <table class="table table-striped table-bordered table-responsive">
                     <tr>
                         <th>ID</th>
                         <th>Thumbnail Image</th>

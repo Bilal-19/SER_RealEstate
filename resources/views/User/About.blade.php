@@ -5,6 +5,7 @@
         .banner-img {
             background-image: url('/assets/images/about_banner.png');
             background-size: cover;
+            background-attachment: fixed;
         }
     </style>
 @endpush

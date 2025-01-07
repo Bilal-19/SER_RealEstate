@@ -25,6 +25,7 @@
         .banner-img {
             background-image: url('/assets/images/available_apartment_banner.png');
             background-size: cover;
+            background-attachment: fixed;
         }
 
         .neighbourhood-img {

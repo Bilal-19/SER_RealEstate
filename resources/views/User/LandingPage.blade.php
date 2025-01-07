@@ -5,6 +5,7 @@
         .banner-img {
             background-image: url('/assets/images/home_banner.png');
             background-size: cover;
+            background-attachment: fixed;
         }
     </style>
 @endpush
@@ -19,7 +20,7 @@
     </div>
 
     <div class="row mb-5" id="book-apartment">
-        <div class="col-md-9 mx-auto rounded bg-white">
+        <div class="col-10 col-sm-10 mx-auto rounded bg-white">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
                 @csrf
                 <div class="row d-flex justify-content-around align-items-end">
@@ -35,7 +36,7 @@
                         <label class="form-label fw-bold mb-0">Check Out:</label>
                         <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate" value="{{old("checkOutDate")}}">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 mt-sm-3 mt-0">
                         <button class="btn btn-dark" type="submit">SEARCH</button>
                     </div>
                 </div>

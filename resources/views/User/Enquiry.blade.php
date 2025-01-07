@@ -5,6 +5,7 @@
         .banner-img {
             background-image: url('/assets/images/enquiryBanner.png');
             background-size: cover;
+            background-attachment: fixed;
         }
 
         input {

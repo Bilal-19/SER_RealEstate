@@ -4,6 +4,7 @@
         .banner-img {
             background-image: url('/assets/images/corporate.png');
             background-size: cover;
+            background-attachment: fixed;
         }
 
         .benefit-card-odd,

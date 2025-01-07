@@ -159,9 +159,10 @@
 
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
         {{-- 'navbar-brand' --}}
-        <a class="text-decoration-none text-light col-md-3 col-lg-2 me-0 px-3 fs-6 d-flex align-items-center justify-content-between"
+        <a class="text-decoration-none text-light p-1 col-md-4 col-lg-2 me-0 d-flex align-items-center justify-content-between"
             href="#">
-            STERLING EXECUTIVE RESIDENTIAL
+            <img src="{{asset('company_logo.png')}}" alt="logo" style="height: 50px; width:50px;">
+            <span class="mx-1">STERLING EXECUTIVE RESIDENTIAL</span>
         </a>
         <ul class="navbar-nav flex-row d-md-none">
             <li class="nav-item text-nowrap">
