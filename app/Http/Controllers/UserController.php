@@ -341,7 +341,10 @@ class UserController extends Controller
         } else {
             toastr()->error('No record found');
         }
+    }
 
+    public function BookNow(){
+        return view('User.BookNow');
     }
 }
 

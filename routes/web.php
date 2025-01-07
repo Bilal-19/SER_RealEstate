@@ -98,6 +98,7 @@ Route::get("/thankyou", [UserController::class, 'ThankYou']);
 // Testing purpose
 Route::get("/nearby", [UserController::class, 'getNeighbours']);
 
+Route::get("/book/now", [UserController::class, 'BookNow'])->name('Book.Now');
 
 Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->name('Toggle.Fav');
 
