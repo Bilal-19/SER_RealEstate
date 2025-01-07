@@ -10,17 +10,18 @@
         .benefit-card-even {
             height: 365px;
             width: 283px;
-            color: white;
             border-radius: 8px;
             padding: 32px 22px;
         }
 
         .benefit-card-odd {
-            background-color: #B1895A;
+            background-color: #c0c0c0;
+            color: black;
         }
 
         .benefit-card-even {
             background-color: #3A3A3A;
+            color: white;
         }
 
         hr {
@@ -36,6 +37,17 @@
             background-color: #FFFFFF;
             border: 1px solid rgb(185, 185, 185);
         }
+
+        @media only screen and (max-width: 768px) {
+            .booking-card{
+                margin-top: 10px;
+            }
+
+            .benefit-card-odd,
+        .benefit-card-even{
+            margin-top: 20px;
+        }
+        }
     </style>
 @endpush
 
@@ -47,32 +59,6 @@
             <h2 class="text-center ff-poppins fs-48">
                 Corporate Housing Solutions in London
             </h2>
-        </div>
-    </div>
-
-    <div class="row mb-5" id="book-apartment">
-        <div class="col-md-9 mx-auto rounded bg-white">
-            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
-                @csrf
-                <div class="row d-flex justify-content-around align-items-end">
-                    <div class="col-md-4">
-                        <label class="form-label fw-bold mb-0">Search By Area:</label>
-                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label fw-bold mb-0">Check In:</label>
-                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label fw-bold mb-0">Check Out:</label>
-                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate">
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-dark" type="submit">SEARCH</button>
-                    </div>
-                </div>
-
-            </form>
         </div>
     </div>
 @endpush
@@ -106,13 +92,17 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/team.png') }}" alt="A group of six diverse individuals gathered around a table enjoying pizza, sharing laughter, and engaging in conversation in a cozy, modern office setting" class="img-fluid">
+            <img src="{{ asset('assets/images/team.png') }}"
+                alt="A group of six diverse individuals gathered around a table enjoying pizza, sharing laughter, and engaging in conversation in a cozy, modern office setting"
+                class="img-fluid">
         </div>
     </div>
 
     <div class="row d-flex justify-content-around align-items-center mt-5 mb-5">
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/DiscussionTeam.png') }}" alt="Five people collaborating in a creative workspace, surrounded by books and plants, while reviewing documents and working on a laptop. A woman in a yellow sweater is smiling at the camera." class="img-fluid">
+            <img src="{{ asset('assets/images/DiscussionTeam.png') }}"
+                alt="Five people collaborating in a creative workspace, surrounded by books and plants, while reviewing documents and working on a laptop. A woman in a yellow sweater is smiling at the camera."
+                class="img-fluid">
         </div>
         <div class="col-md-5">
             <h4 class="ff-inter fs-36">Tailored Relocation Services</h4>
@@ -164,7 +154,7 @@
     @endphp
     <div class="row bg-eerie-black pb-5 pt-5">
         <div class="col-md-12 text-center">
-            <p class="text-light-brown ff-poppins">Benefits</p>
+            <p class="text-silver ff-poppins">Benefits</p>
             <h6 class="ff-poppins fs-36 text-light">More Space, More Comfort</h6>
             <p class="ff-inter fs-18 text-center text-light">
                 Enjoy spacious, fully furnished apartments—at least three times the size of a typical hotel room.
@@ -174,7 +164,8 @@
         @foreach ($fetchBenefits as $rec)
             @if ($rec->id % 2 == 0)
                 <div class="col-md-2 benefit-card-odd mx-4">
-                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}" class="img-fluid">
+                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}"
+                        class="img-fluid">
                     <hr>
                     <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
                     <p class="ff-inter">
@@ -183,7 +174,8 @@
                 </div>
             @else
                 <div class="col-md-2 benefit-card-even mx-4 ">
-                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}" class="img-fluid">
+                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}"
+                        class="img-fluid">
                     <hr>
                     <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
                     <p class="ff-inter">
@@ -197,7 +189,9 @@
 
     <div class="row d-flex justify-content-around align-items-center pt-5 pb-5">
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/amenitiesFrame.png') }}" alt="A collage of four images showing different workspaces and office equipment, including minimalist desks with computers and a lamp, as well as fax and printer machines on wooden surfaces" class="img-fluid">
+            <img src="{{ asset('assets/images/amenitiesFrame.png') }}"
+                alt="A collage of four images showing different workspaces and office equipment, including minimalist desks with computers and a lamp, as well as fax and printer machines on wooden surfaces"
+                class="img-fluid">
         </div>
         <div class="col-md-5">
             <h4 class="ff-inter fs-36">Business Amenities</h4>
@@ -226,13 +220,15 @@
                 <div class="col-md-4 booking-card mx-3">
                     <img src="{{ asset('assets/images/Icons/two.png') }}" alt="step 02" class="img-fluid">
                     <h6 class="ff-inter fs-18 mt-3">Book via Website</h6>
-                    <p class="ff-inter">Book directly through our platform or contact our guest relations team for personalized assistance.</p>
+                    <p class="ff-inter">Book directly through our platform or contact our guest relations team for
+                        personalized assistance.</p>
                 </div>
 
                 <div class="col-md-4 booking-card mx-3">
                     <img src="{{ asset('assets/images/Icons/three.png') }}" alt="step 03" class="img-fluid">
                     <h6 class="ff-inter fs-18 mt-3">Enjoy</h6>
-                    <p class="ff-inter">Enjoy competitive rates with our price-match guarantee—find a better rate elsewhere, and we'll beat it by 10%.</p>
+                    <p class="ff-inter">Enjoy competitive rates with our price-match guarantee—find a better rate elsewhere,
+                        and we'll beat it by 10%.</p>
                 </div>
             </div>
         </div>
@@ -247,35 +243,35 @@
     <div class="row">
         <div class="col-md-11 mx-auto">
             @isset($fetchNeighboursData)
-            @if (count($fetchNeighboursData) > 4)
-            <!-- Slider main container -->
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    @foreach ($fetchNeighboursData as $rec)
-                        <div class="col-md-3 swiper-slide">
-                            <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{$rec->area_name}}"
-                                class="img-fluid neighbourhood-img rounded shadow">
-                            <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
-                            <p class="mt-0">
-                                {!! Str::limit($rec->description, 50) !!}
-                            </p>
+                @if (count($fetchNeighboursData) > 4)
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @foreach ($fetchNeighboursData as $rec)
+                                <div class="col-md-3 swiper-slide">
+                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}"
+                                        alt="{{ $rec->area_name }}" class="img-fluid neighbourhood-img rounded shadow">
+                                    <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
+                                    <p class="mt-0">
+                                        {!! Str::limit($rec->description, 50) !!}
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
 
-                <!-- If we need navigation buttons -->
-                <div class="swiper-slider-button swiper-button-prev"></div>
-                <div class="swiper-slider-button swiper-button-next"></div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-slider-button swiper-button-prev"></div>
+                        <div class="swiper-slider-button swiper-button-next"></div>
 
-                <!-- If we need scrollbar -->
-            </div>
-        @else
-            <p>Please add minimum five records to view the nearest apartments</p>
-        @endif
+                        <!-- If we need scrollbar -->
+                    </div>
+                @else
+                    <p>Please add minimum five records to view the nearest apartments</p>
+                @endif
             @endisset
         </div>
     </div>
