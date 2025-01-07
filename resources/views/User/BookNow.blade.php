@@ -14,14 +14,14 @@
     <div class="row mt-5">
         <div class="col-md-8 mx-auto text-light search-container">
             <p class="text-center ff-poppins">BOOK NOW</p>
-            <h2 class="text-center ff-poppins fs-48">
+            <h2 class="text-center ff-poppins fs-56">
                 Premium Corporate Accommodation in London
             </h2>
         </div>
     </div>
 
     <div class="row mb-5" id="book-apartment">
-        <div class="col-md-9 mx-auto rounded bg-white">
+        <div class="col-10 col-sm-10 mx-auto rounded bg-white">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
                 @csrf
                 <div class="row d-flex justify-content-around align-items-end">

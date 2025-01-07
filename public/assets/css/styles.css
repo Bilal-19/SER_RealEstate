@@ -479,21 +479,6 @@ a {
         margin-right: 20px;
     }
 
-    /* #form-elements {
-        flex-direction: column;
-        height: 200px;
-        margin-bottom: 100px;
-    } */
-
-    /* input[type="date"],
-    input[type="text"] {
-        width: 75%;
-    }
-
-    #search-btn {
-        width: 75%;
-    } */
-
     .search-container {
         height: fit-content;
     }
@@ -515,6 +500,10 @@ a {
         margin-top: 20px;
     }
 
+    .fs-48{
+        font-size: 40px;
+    }
+
     .fs-56 {
         font-size: 23px;
     }
@@ -532,5 +521,17 @@ a {
 
     .standard-amenity{
         font-size: 14px;
+    }
+
+
+    .swiper-slide {
+        padding: 10px;
+    }
+
+    .swiper-slide > a > img {
+        height: 349px;
+        width: fit-content;
+        object-fit: contain;
+        margin-bottom: 10px;
     }
 }
