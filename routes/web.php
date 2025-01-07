@@ -103,3 +103,14 @@ Route::get("admin/booking/pdf/{id}", [AdminController::class, 'generatePDF'])->n
 
 // Send Payment Email
 Route::get("/admin/send/email", [UserController::class, 'sendEmail']);
+
+
+// Email Test Route
+Route::get('/test-email', function () {
+    \Mail::raw('This is a test email', function ($message) {
+        $message->to('bilalmuhammadyousuf543@gmail.com')
+                ->subject('Test Email');
+    });
+
+    return 'Email sent successfully!';
+});

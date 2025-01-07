@@ -30,14 +30,15 @@
         </div>
 
         <hr>
-        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Check In:</strong> <span
-                style="float: right;">{{ day($checkIn) }} {{ date('d M Y', strtotime($checkIn)) }}</span></p>
+        <p style="width:600px; padding: 5px 0px; font-size: 18px;">
+            <strong>Check In:</strong>
+            <span style="float: right;">{{ day($checkIn) }}
+                {{ date('d M Y', strtotime($checkIn)) }}</span>
+        </p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Check Out:</strong> <span
                 style="float: right;">{{ day($checkOut) }} {{ date('d M Y', strtotime($checkOut)) }}</span></p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Location:</strong> <span
                 style="float: right;">{{ $location }}</span></p>
-        <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Tax:</strong> <span
-                style="float: right;">{{ $vatAmount }}%</span></p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>You booked for:</strong> <span
                 style="float: right;">{{ $adults }} adults, {{ $children }} children</span></p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Your reservation:</strong> <span
