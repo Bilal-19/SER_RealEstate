@@ -122,7 +122,7 @@
                                 </p>
                             </div>
                             <div>
-                                <p class="ff-inter fw-medium">from ${{ $rec->price }}</p>
+                                <p class="ff-inter fw-medium">from €{{ $rec->price }}</p>
                             </div>
                         </div>
                         <p class="ff-inter">

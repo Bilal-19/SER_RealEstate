@@ -23,7 +23,7 @@
         }
 
         .swiper .swiper-pagination-bullet {
-            background: #b1895a;
+            background: #c0c0c0;
             height: 10px;
             width: 10px;
             opacity: 0.8;
@@ -31,7 +31,7 @@
 
         .swiper .swiper-pagination-bullet-active {
             opacity: 1;
-            background: #b1895a;
+            background: #c0c0c0;
             height: 10px;
             width: 10px;
         }
@@ -40,7 +40,7 @@
             height: 50px;
             width: 50px;
             border-radius: 12px;
-            color: #b1895a;
+            color: #c0c0c0;
             border: none;
             background-color: black;
             padding: 10px;
@@ -53,12 +53,12 @@
             margin-bottom: 10px;
         }
 
-        .active,
+        /* .active,
         active-hover:hover {
             padding-bottom: 10px;
             width: 100%;
             border-bottom: 1px solid black;
-        }
+        } */
 
         iframe {
             height: 100%;
@@ -94,14 +94,15 @@
             padding: 24px;
         }
 
-        .apartment-img-slides{
+        .apartment-img-slides {
             height: 500px;
             width: 500px;
             object-fit: cover;
             border-radius: 6px;
         }
 
-        .carousel-control-prev-icon, .carousel-control-next-icon{
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
             background-color: black;
             padding: 15px;
             border-radius: 6px;
@@ -114,35 +115,36 @@
     @endphp
     <div class="container-fluid mt-0">
         <div class="row">
-           <div class="col-md-12 mx-auto">
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    @foreach ($numericKeyImages as $index => $item)
-                        <button type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"
-                            aria-current="{{ $index === 0 ? 'true' : 'false' }}"
-                            aria-label="Slide {{ $index + 1 }}"></button>
-                    @endforeach
+            <div class="col-md-12 mx-auto">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        @foreach ($numericKeyImages as $index => $item)
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"
+                                aria-current="{{ $index === 0 ? 'true' : 'false' }}"
+                                aria-label="Slide {{ $index + 1 }}"></button>
+                        @endforeach
+                    </div>
+                    <div class="carousel-inner">
+                        @foreach ($numericKeyImages as $index => $item)
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img src="{{ URL::to($item) }}" alt=""
+                                    class="img-fluid d-block w-100 apartment-img-slides">
+                            </div>
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-inner">
-                    @foreach ($numericKeyImages as $index => $item)
-                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                            <img src="{{ URL::to($item) }}" alt="" class="img-fluid d-block w-100 apartment-img-slides">
-                        </div>
-                    @endforeach
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-           </div>
         </div>
     </div>
 
@@ -170,7 +172,7 @@
         </div>
     </div> --}}
 
-    <div class="container-fluid mb-5">
+    <div class="container-fluid mb-5 mt-5">
         <div class="row">
             <div class="col-md-3">
                 <a href="#general-info" class="ff-inter text-dark active">General Information</a>
@@ -197,7 +199,7 @@
                         </p>
                     </div>
                     <div>
-                        <p class="fs-24 ff-inter fw-medium">from ${{ number_format($findApartment->price, 2) }}</p>
+                        <p class="fs-24 ff-inter fw-medium">from €{{ number_format($findApartment->price, 2) }}</p>
                     </div>
                 </div>
                 <hr>
@@ -445,7 +447,7 @@
                                             <p class="mb-0 ff-inter">{{ $item->area_name }}</p>
                                         </div>
                                         <div>
-                                            <p class="mb-0 ff-inter">from £{{ $item->price }}</p>
+                                            <p class="mb-0 ff-inter">£{{ $item->price }}</p>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between">
