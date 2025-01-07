@@ -25,7 +25,7 @@ class AdminController extends Controller
                 'totalRevenue'
             ));
         } else {
-            return route('login');
+            return view('auth.login');
         }
 
 
