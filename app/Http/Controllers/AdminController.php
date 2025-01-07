@@ -2,29 +2,34 @@
 
 namespace App\Http\Controllers;
 
-
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
 
-
     public function Dashboard()
     {
-        // Total Inquiries | Total Bookings | Revenue | Available Apartments
-        $totalInquiries = DB::table('inquiry')->count();
-        $totalBookings = DB::table('booking')->count();
-        $totalRevenue = DB::table('booking')->sum('total_amount');
-        // Bookings Trends | Revenue Trends
+        if (Auth::check()) {
+            // Total Inquiries | Total Bookings | Revenue | Available Apartments
+            $totalInquiries = DB::table('inquiry')->count();
+            $totalBookings = DB::table('booking')->count();
+            $totalRevenue = DB::table('booking')->sum('total_amount');
+            // Bookings Trends | Revenue Trends
 
-        // Recent Inquiries | Upcoming Bookings
-        return view('Admin.Dashboard')->with(compact(
-            'totalInquiries',
-            'totalBookings',
-            'totalRevenue'
-        ));
+            // Recent Inquiries | Upcoming Bookings
+            return view('Admin.Dashboard')->with(compact(
+                'totalInquiries',
+                'totalBookings',
+                'totalRevenue'
+            ));
+        } else {
+            return route('login');
+        }
+
+
+
     }
 
     // Appartment Section
@@ -394,15 +399,16 @@ class AdminController extends Controller
                 'blog_content' => $request->blogDetailContent
             ]);
 
-            if ($isUpdated){
-                toastr()->success('Blog updated successfully');
-                return redirect()->back();
-            }
+        if ($isUpdated) {
+            toastr()->success('Blog updated successfully');
+            return redirect()->back();
+        }
     }
 
-    public function deleteBlog($id){
-        $isDeleted = DB::table('Blogs')->where('id','=', $id)->delete();
-        if ($isDeleted){
+    public function deleteBlog($id)
+    {
+        $isDeleted = DB::table('Blogs')->where('id', '=', $id)->delete();
+        if ($isDeleted) {
             toastr()->success('Blog deleted successfully');
             return redirect()->back();
         }
@@ -514,4 +520,5 @@ class AdminController extends Controller
         $fetchQueries = DB::table('inquiry')->get();
         return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
     }
+
 }

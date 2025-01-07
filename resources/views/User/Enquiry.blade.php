@@ -64,7 +64,10 @@
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ff-poppins" style="letter-spacing: 3px;">CONTACT US</p>
+            {{-- <p class="text-center ff-poppins" style="letter-spacing: 3px;">CONTACT US</p> --}}
+            <h2 class="text-center ff-poppins fs-56">
+                CONTACT US
+            </h2>
         </div>
     </div>
 @endpush
