@@ -116,6 +116,11 @@
         </tr>
 
         <tr>
+            <th>Number of Occupants: </th>
+            <td>{{ $fetchBookingRecord->totalAdults }} Adults, {{ $fetchBookingRecord->totalChildrens }} Childrens</td>
+        </tr>
+
+        <tr>
             <th>Apartment Name: </th>
             <td>
                 {{ $fetchBookingRecord->area_name }}
