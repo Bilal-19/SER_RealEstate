@@ -166,7 +166,7 @@
 
     <div class="row text-center mt-5">
         <div class="col-md-12">
-            <p class="text-light-brown">Benefits</p>
+            <p class="text-dark">Benefits</p>
         </div>
 
         <div class="col-md-6 mx-auto">
@@ -192,7 +192,7 @@
 
     <div class="row mt-5 d-flex justify-content-around align-items-center">
         <div class="col-md-5">
-            <p class="text-light-brown">About Us</p>
+            <p class="text-dark">About Us</p>
             <h5>Central London Location</h5>
             <p>
                 Central London is the innermost part of London, in England, spanning the City of London and several
@@ -221,7 +221,7 @@
                 <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $record->blog_headline }}" class="img-fluid rounded">
                 <p class="ff-inter">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                 <h5 class="ff-inter fs-18">{{ $record->blog_headline }}</h5>
-                <a href="{{route('Read.Blog', ['id'=>$record->id])}}" class="text-light-brown">Read More</a>
+                <a href="{{route('Read.Blog', ['id'=>$record->id])}}" class="text-dark">Read More</a>
             </div>
         @endforeach
     </div>
