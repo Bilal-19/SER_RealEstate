@@ -107,6 +107,12 @@
             padding: 15px;
             border-radius: 6px;
         }
+
+        .border-dark-top{
+            border-top: 1px solid black;
+            width: 98%;
+            padding-bottom: 10px;
+        }
     </style>
 @endpush
 @section('user-main-section')
@@ -172,7 +178,7 @@
         </div>
     </div> --}}
 
-    <div class="container-fluid mb-5 mt-5">
+    <div class="container-fluid mb-5 mt-5 border-dark-top">
         <div class="row">
             <div class="col-md-3">
                 <a href="#general-info" class="ff-inter text-dark active">General Information</a>
@@ -220,10 +226,10 @@
             <div class="col-md-5"></div>
         </div>
 
-        <div class="row d-flex justify-content-between" id="general-info">
+        <div class="row d-flex justify-content-between">
             <div class="col-md-5 mx-2 w-732">
                 {{-- General Information --}}
-                <div class="bg-white p-5 shadow mt-3 border-radius-18">
+                <div class="bg-white p-5 shadow mt-3 border-radius-18" id="general-info">
                     <h4 class="fs-20 ff-inter">General Information</h4>
                     <p class="ff-inter">
                         {{ $findApartment->description }}
@@ -231,7 +237,7 @@
                 </div>
 
                 {{-- Details --}}
-                <div class="bg-white p-5 mt-3 shadow border-radius-18">
+                <div class="bg-white p-5 mt-3 shadow border-radius-18" id="property-details">
                     <h5 class="ff-inter">Details</h5>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="">
@@ -416,7 +422,7 @@
             <div class="col-md-5"></div>
         </div> --}}
 
-        <div class="row mt-5 d-flex justify-content-around">
+        <div class="row mt-5 d-flex justify-content-around" id="property-surroundings">
             <div class="col-md-5 w-732">
                 <h4 class="ff-poppins fs-32">Explore Other Apartments</h4>
             </div>
