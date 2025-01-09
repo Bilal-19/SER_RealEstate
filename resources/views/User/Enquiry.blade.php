@@ -56,7 +56,8 @@
             input,
             textarea,
             .submit-btn {
-                width: 90%;
+                width: 300px;
+                margin: auto;
             }
         }
     </style>
