@@ -56,7 +56,7 @@
             input,
             textarea,
             .submit-btn {
-                width: 400px;
+                width: 90%;
             }
         }
     </style>
