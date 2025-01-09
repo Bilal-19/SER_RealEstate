@@ -25,19 +25,19 @@
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
                 @csrf
                 <div class="row d-flex justify-content-around align-items-end">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-sm-10">
                         <label class="form-label fw-bold mb-0">Search By Area:</label>
                         <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location" value="{{old('location')}}">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 mb-sm-10">
                         <label class="form-label fw-bold mb-0">Check In:</label>
                         <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate" value="{{old("checkInDate")}}">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 mb-sm-10">
                         <label class="form-label fw-bold mb-0">Check Out:</label>
                         <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate" value="{{old("checkOutDate")}}">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2 mt-sm-3 mt-0">
                         <button class="btn btn-dark" type="submit">SEARCH</button>
                     </div>
                 </div>

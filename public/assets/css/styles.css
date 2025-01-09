@@ -479,6 +479,10 @@ a {
         margin-right: 20px;
     }
 
+    .mb-sm-10{
+        margin-bottom: 10px;
+    }
+
     .search-container {
         height: fit-content;
     }
