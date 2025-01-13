@@ -13,7 +13,7 @@
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ff-poppins">Your Home Away from Home with Citadel Apartments</p>
+            <p class="text-center ff-poppins">Your Home Away from Home with Sterling Executive Residential Apartments</p>
             <h2 class="text-center ff-poppins fs-56">Experience Comfort and Flexibility in the Heart of London
             </h2>
         </div>
