@@ -53,13 +53,6 @@
             margin-bottom: 10px;
         }
 
-        /* .active,
-        active-hover:hover {
-            padding-bottom: 10px;
-            width: 100%;
-            border-bottom: 1px solid black;
-        } */
-
         iframe {
             height: 100%;
             width: 100%;
@@ -112,6 +105,12 @@
             border-top: 1px solid black;
             width: 98%;
             padding-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px){
+            .check-availability-container{
+                margin: auto;
+            }
         }
     </style>
 @endpush
