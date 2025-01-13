@@ -203,14 +203,14 @@
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-3">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Dashboard') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-3">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Apartments') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{route('Apartments')}}">
                                     <i class="fa-solid fa-building"></i>
@@ -218,7 +218,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-3">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Favourite.Apartment') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Favourite.Apartment') }}">
                                     <i class="fa-solid fa-building-user"></i>
@@ -226,7 +226,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-3">
                                 <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Benefits') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Benefits') }}">
                                     <i class="fa-solid fa-concierge-bell"></i>
@@ -234,76 +234,40 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 {{ request()->routeIs('Blog') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Blog')}}">
+                            <li class="nav-item mb-3">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Blog') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Blog')}}">
                                     <i class="fa-solid fa-newspaper"></i> Blogs
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 {{ request()->routeIs('View.Booking') ? 'admin-active-link text-light' : 'text-dark' }}"
+                            <li class="nav-item mb-3">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('View.Booking') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     href="{{route('View.Booking')}}">
                                     <i class="fa-solid fa-handshake"></i>
                                    Booking
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 {{ request()->routeIs('Policy') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Policy')}}">
+                            <li class="nav-item mb-3">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Policy') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Policy')}}">
                                     <i class="fa-regular fa-file-alt"></i>Policy
 
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
+                            <li class="nav-item mb-3">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
                                     <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
-
                                 </a>
                             </li>
 
-
-
-                        </ul>
-
-                        <h6
-                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 text-uppercase">
-                            <span>Trash</span>
-                            <a class="link-dark" href="#" aria-label="Add a new report">
-                                <svg class="bi">
-                                    <use xlink:href="#plus-circle" />
-                                </svg>
-                            </a>
-                        </h6>
-                        <ul class="nav flex-column mb-auto">
-                            <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <i class="fa-solid fa-trash"></i>
-                                    View Trash
-                                </a>
-                            </li>
-
-                        </ul>
-
-                        <hr class="my-3">
-
-                        <ul class="nav flex-column mb-auto mt-2">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#gear-wide-connected" />
-                                    </svg>
-                                    Settings
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#door-closed" />
-                                    </svg>
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
+                                    <i class="fas fa-sign-out"></i>
                                     Sign out
                                 </a>
                             </li>
+
                         </ul>
                     </div>
                 </div>

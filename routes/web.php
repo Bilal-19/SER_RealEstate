@@ -115,6 +115,9 @@ Route::get("/admin/inquiry", [AdminController::class, 'readInquiries'])->name('R
 Route::get("admin/booking", [AdminController::class, 'Booking'])->name('View.Booking');
 
 Route::get("admin/booking/pdf/{id}", [AdminController::class, 'generatePDF'])->name('Generate.PDF');
+Route::get("admin/logout", [AdminController::class, 'signOut'])->name('Admin.Logout');
+
+// Admin - Logout
 
 
 // Send Payment Email

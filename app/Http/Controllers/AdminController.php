@@ -27,9 +27,6 @@ class AdminController extends Controller
         } else {
             return view('auth.login');
         }
-
-
-
     }
 
     // Appartment Section
@@ -521,6 +518,9 @@ class AdminController extends Controller
         return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
     }
 
-
-
+    public function signOut()
+    {
+        Auth::logout();
+        return redirect()->route('Landing.Page');
+    }
 }
