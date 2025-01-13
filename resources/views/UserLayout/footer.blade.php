@@ -3,8 +3,11 @@
     <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5">
         <div class="col-md-4">
             <h5 class="ff-poppins">
-                <img src="{{ asset('assets/images/company_logo.png') }}" alt="" style="height: 60px; width: 60px;">
-                STERLING EXECUTIVE RESIDENTIAL
+                <a href="{{route('Landing.Page')}}" class="text-light" id="footer-link">
+                    <img src="{{ asset('assets/images/company_logo.png') }}" alt=""
+                        style="height: 60px; width: 60px;">
+                    STERLING EXECUTIVE RESIDENTIAL
+                </a>
             </h5>
         </div>
         <div class="col-md-2">
