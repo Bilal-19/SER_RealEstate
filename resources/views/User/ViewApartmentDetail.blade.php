@@ -238,12 +238,12 @@
                 {{-- Details --}}
                 <div class="bg-white p-5 mt-3 shadow border-radius-18" id="property-details">
                     <h5 class="ff-poppins">Details</h5>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
                             <p class="ff-poppins"><b>Bedrooms: </b>{{ $findApartment->total_bedrooms }}</p>
                             <p class="ff-poppins"><b>Price Per Night: </b>${{ $findApartment->price_per_night }}</p>
                         </div>
-                        <div class="">
+                        <div class="col-12 col-md-6">
                             <p class="ff-poppins"><b>Bathrooms: </b>{{ $findApartment->total_bathrooms }}</p>
                             <p class="ff-poppins"><b>Location: </b>{{ $findApartment->street_address }}</p>
                         </div>
