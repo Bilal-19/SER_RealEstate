@@ -160,7 +160,7 @@
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
         {{-- 'navbar-brand' --}}
         <a class="text-decoration-none text-light p-1 col-md-4 col-lg-2 me-0 d-flex align-items-center justify-content-between"
-            href="#">
+            href="{{route('Dashboard')}}">
             <img src="{{asset('company_logo.png')}}" alt="logo" style="height: 50px; width:50px;">
             <span class="mx-1">STERLING EXECUTIVE RESIDENTIAL</span>
         </a>
