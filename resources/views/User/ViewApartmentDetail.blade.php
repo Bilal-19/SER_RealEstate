@@ -89,7 +89,7 @@
 
         .check-availability-container {
             background-color: #ECECEC;
-            width: 400px;
+            width: 420px;
             height: fit-content;
             padding: 24px;
         }
@@ -374,16 +374,16 @@
                 </div>
             </div>
 
-            <div class="col-md-5 border-radius-18 bg-pale-gray p-5 mt-3 check-availability-container">
+            <div class="col-md-6 border-radius-18 bg-pale-gray p-5 mt-3 check-availability-container">
                 <h4 class="ff-poppins fs-20 fw-medium">Check Availability & Book Now</h4>
                 <form action="{{ route('Check.Apartment.Availability', ['id' => $findApartment->id]) }}" method="get">
-                    <div class="d-flex justify-content-between mb-4">
-                        <div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-sm-10">
                             <label class="form-label mb-0 ff-poppins">Check In Date: </label>
                             <input type="date" class="form-control ff-poppins" name="checkIn" required
                                 value="{{ $checkInDate ?? '' }}">
                         </div>
-                        <div class="mx-2">
+                        <div class="col-12 col-md-6">
                             <label class="form-label mb-0 ff-poppins">Check Out Date: </label>
                             <input type="date" class="form-control ff-poppins" name="checkOut" required
                                 value="{{ $checkOutDate ?? '' }}">
