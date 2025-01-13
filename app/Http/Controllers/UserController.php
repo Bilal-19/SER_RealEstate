@@ -78,7 +78,7 @@ class UserController extends Controller
 
     public function viewBlogs()
     {
-        $fetchAllBlogs = DB::table('Blogs')->get();
+        $fetchAllBlogs = DB::table('blogs')->get();
         return view("User.Blog")->with(compact('fetchAllBlogs'));
     }
 
