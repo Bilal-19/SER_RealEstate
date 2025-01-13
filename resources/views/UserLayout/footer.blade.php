@@ -6,7 +6,6 @@
                 <img src="{{ asset('assets/images/company_logo.png') }}" alt="" style="height: 60px; width: 60px;">
                 STERLING EXECUTIVE RESIDENTIAL
             </h5>
-            <p class="ff-inter">Design amazing digital experiences that create more happy in the world.</p>
         </div>
         <div class="col-md-2">
             <p class="ff-inter">Sitemap</p>
