@@ -257,10 +257,10 @@
 
                 {{-- Amenities --}}
 
-                <div class="bg-white mt-3 shadow border-radius-18 p-5" id="property-amenities">
+                <div class="bg-white mt-3 shadow border-radius-18 p-5 col-md-10 col-sm-12" id="property-amenities">
                     <h5 class="fs-20 ff-poppins">Amenities</h5>
-                    <div class="d-flex justify-content-between">
-                        <div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
                             @foreach ($firstFourAmenities as $val)
                                 <p class="ff-poppins standard-amenity fs-15">
                                     <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
@@ -268,18 +268,17 @@
                                 </p>
                             @endforeach
                         </div>
-
-                        <div class="mx-2">
+                        <div class="col-12 col-md-6">
                             @foreach ($LastFourAmenities as $val)
                                 <p class="ff-poppins standard-amenity fs-15">
                                     <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
                                     <span class="mx-1 ff-poppins">{{ $val->amenity_text }}</span>
                                 </p>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
+
 
                 {{-- Reviews --}}
                 <div class="bg-white border-radius-18 p-5 mt-3 shadow">
