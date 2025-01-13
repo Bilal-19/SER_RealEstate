@@ -335,7 +335,7 @@ class AdminController extends Controller
     // Blog
     public function Blog()
     {
-        $fetchAllBlogs = DB::table('blogs')->get();
+        $fetchAllBlogs = DB::table('blog')->get();
         return view('Admin.Blog')->with(compact('fetchAllBlogs'));
     }
 
