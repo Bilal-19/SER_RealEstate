@@ -120,8 +120,9 @@ Route::get("admin/logout", [AdminController::class, 'signOut'])->name('Admin.Log
 // Admin - Logout
 
 
-// Booking - Admin
+// Users - Admin
 Route::get("admin/users", [AdminController::class, 'usersManagement'])->name('View.Users');
+Route::get("admin/reset/password/{id}", [AdminController::class, 'resetPassword'])->name('Users.ResetPassword');
 
 // Send Payment Email
 Route::get("/admin/send/email", [UserController::class, 'sendEmail']);

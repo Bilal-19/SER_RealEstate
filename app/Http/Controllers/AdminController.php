@@ -6,6 +6,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
 
@@ -522,9 +523,26 @@ class AdminController extends Controller
         return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
     }
 
-    public function usersManagement(){
+    public function usersManagement()
+    {
         $fetchAllUsers = DB::table('users')->get();
         return view('Admin.UsersManagement', with(compact('fetchAllUsers')));
+    }
+
+    public function resetPassword($id)
+    {
+        $isPasswordReset = DB::table('users')->
+            where('id', '=', $id)
+            ->update(
+                ['password' => Hash::make('123456789')]
+            );
+
+        if ($isPasswordReset) {
+            toastr()->success('Password reset successfully');
+        } else {
+            toastr()->info('Something went wrong. Please try again later');
+        }
+        return redirect()->back();
     }
 
     public function signOut()

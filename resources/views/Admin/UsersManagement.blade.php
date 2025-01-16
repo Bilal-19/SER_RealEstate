@@ -29,7 +29,7 @@
                             <td>{{ $record->email }}</td>
                             <td>{{ date('d M Y', strtotime($record->created_at)) }}</td>
                             <td class="d-flex justify-content-around">
-                                <a href="" class="text-primary" title="Reset Password"><i class="fas fa-key"></i></a>
+                                <a href="{{ route('Users.ResetPassword', ['id' => $record->id]) }}" class="text-primary" title="Reset Password"><i class="fas fa-key"></i></a>
                                 <a href="" class="text-danger" title="Delete Account"><i class="fas fa-user-slash"></i></a>
                                 <a href="" class="text-primary" title="Edit Account"><i class="fas fa-user-edit"></i></a>
                             </td>
