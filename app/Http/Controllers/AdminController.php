@@ -16,13 +16,17 @@ class AdminController extends Controller
             $totalInquiries = DB::table('inquiry')->count();
             $totalBookings = DB::table('booking')->count();
             $totalRevenue = DB::table('booking')->sum('total_amount');
+            $totalBlogs = DB::table('blogs')->count();
+            $totalApartments = DB::table('apartments')->count();
             // Bookings Trends | Revenue Trends
 
             // Recent Inquiries | Upcoming Bookings
             return view('Admin.Dashboard')->with(compact(
                 'totalInquiries',
                 'totalBookings',
-                'totalRevenue'
+                'totalRevenue',
+                'totalBlogs',
+                'totalApartments'
             ));
         } else {
             return view('auth.login');

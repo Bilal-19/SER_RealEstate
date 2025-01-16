@@ -40,12 +40,12 @@
             </div>
 
             <div class="col-md-2 analytic-card">
-                <h3 class="ff-poppins">10</h3>
+                <h3 class="ff-poppins">{{$totalBlogs}}</h3>
                 <p class="ff-inter"><i class="fas fa-file-alt"></i> Published Blogs</p>
             </div>
 
             <div class="col-md-2 analytic-card">
-                <h3 class="ff-poppins">150</h3>
+                <h3 class="ff-poppins">{{$totalApartments}}</h3>
                 <p class="ff-inter"><i class="fas fa-building"></i> Total Apartments</p>
             </div>
         </div>
