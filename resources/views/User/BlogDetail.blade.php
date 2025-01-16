@@ -18,7 +18,7 @@
                 {{ date('d M Y', strtotime($fetchBlog->publish_date)) }}
             </p>
             <h2 class="ff-poppins fs-48 text-center mb-3">{{ $fetchBlog->blog_headline }}</h2>
-            <img src="{{ asset('Blog/' . $fetchBlog->thumbnail_image) }}" alt="" class="rounded img-fluid mb-3">
+            <img src="{{ asset('Blog/' . $fetchBlog->thumbnail_image) }}" alt="{{ $fetchBlog->blog_headline }}" class="rounded img-fluid mb-3">
         </div>
         <div class="col-md-8 mx-auto ff-poppins blog-content">
             {!! $fetchBlog->blog_content !!}
@@ -44,7 +44,7 @@
             <div class="row">
                 @foreach ($fetchBlogs as $record)
                     <div class="col-md-4 blog-card">
-                        <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
+                        <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $fetchBlog->blog_headline }}" class="img-fluid rounded">
                         <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                         <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
                         <a href="{{ route('Read.Blog', ['id' => $record->id]) }}" class="text-light-brown">Read More</a>

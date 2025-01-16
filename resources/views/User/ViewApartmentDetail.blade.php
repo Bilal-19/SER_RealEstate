@@ -133,7 +133,7 @@
                     <div class="carousel-inner">
                         @foreach ($numericKeyImages as $index => $item)
                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img src="{{ URL::to($item) }}" alt=""
+                                <img src="{{ URL::to($item) }}" alt="apartments images"
                                     class="img-fluid d-block w-100 apartment-img-slides">
                             </div>
                         @endforeach
@@ -152,30 +152,6 @@
             </div>
         </div>
     </div>
-
-    {{-- <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="swiper">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        @foreach ($images as $item)
-                            <div class="swiper-slide">
-                                <img src="{{ URL::to($item) }}" alt="" class="img-fluid d-block">
-                            </div>
-                        @endforeach
-                    </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <button class="swiper-slider-button swiper-button-prev"></button>
-                    <div class="swiper-slider-button swiper-button-next"></div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     <div class="container-fluid mb-5 mt-5 border-dark-top">
         <div class="row">
@@ -199,7 +175,7 @@
                     <div>
                         <h4 class="fs-32 ff-poppins fw-medium">{{ $findApartment->area_name }}</h4>
                         <p class="fs-18 ff-poppins">
-                            <img src="{{ asset('assets/images/locationIcon.png') }}" alt="">
+                            <img src="{{ asset('assets/images/locationIcon.png') }}" alt="location icon">
                             {{ $findApartment->street_address }}
                         </p>
                     </div>
@@ -210,11 +186,11 @@
                 <hr>
                 <div class="d-flex">
                     <p class="ff-poppins">
-                        <img src="{{ asset('assets/images/bedroom.png') }}" alt="">
+                        <img src="{{ asset('assets/images/bedroom.png') }}" alt="bedrooms">
                         {{ $findApartment->total_bedrooms }} Bedrooms
                     </p>
                     <p class="ff-poppins mx-3">
-                        <img src="{{ asset('assets/images/Bathroom.png') }}" alt="">
+                        <img src="{{ asset('assets/images/Bathroom.png') }}" alt="bathrooms">
                         {{ $findApartment->total_bathrooms }} Bathrooms
                     </p>
                     <p class="ff-poppins mx-3">
@@ -262,7 +238,7 @@
                         <div class="col-12 col-md-6">
                             @foreach ($firstFourAmenities as $val)
                                 <p class="ff-poppins standard-amenity fs-15">
-                                    <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
+                                    <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="{{ $val->amenity_text }}</">
                                     <span class="mx-1 ff-poppins">{{ $val->amenity_text }}</span>
                                 </p>
                             @endforeach
@@ -270,7 +246,7 @@
                         <div class="col-12 col-md-6">
                             @foreach ($LastFourAmenities as $val)
                                 <p class="ff-poppins standard-amenity fs-15">
-                                    <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="">
+                                    <img src="{{ asset('Amenity/' . $val->amenity_icon) }}" alt="{{ $val->amenity_text }}</">
                                     <span class="mx-1 ff-poppins">{{ $val->amenity_text }}</span>
                                 </p>
                             @endforeach
@@ -391,7 +367,7 @@
                     @isset($isAvailable)
                         @if ($isAvailable == true)
                             <p class="availability-text-success ff-poppins">
-                                <img src="{{ asset('assets/images/success_circle.png') }}" alt="">
+                                <img src="{{ asset('assets/images/success_circle.png') }}" alt="availability check">
                                 Apartment is Available
                             </p>
                             <a class="btn btn-light mt-5 w-100 ff-poppins"
@@ -442,7 +418,7 @@
                             <!-- Slides -->
                             @foreach ($apartments as $item)
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('Apartment/Thubmbnail/' . $item->featuredImage) }}" alt=""
+                                    <img src="{{ asset('Apartment/Thubmbnail/' . $item->featuredImage) }}" alt="{{ $item->area_name }}"
                                         class="img-fluid d-block">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>

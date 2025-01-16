@@ -58,13 +58,13 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/about_pg_img1.jpg') }}" alt="" class="img-fluid rounded">
+            <img src="{{ asset('assets/images/about_pg_img1.jpg') }}" alt="Minimalist living room interior with a black sofa, a potted plant, a white dresser adorned with dried pampas grass in a vase, and a black floor lamp, set against a light gray wall" class="img-fluid rounded">
         </div>
     </div>
 
     <div class="row d-flex justify-content-around align-items-center mt-5">
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/about_pg_img2.jpg') }}" alt="" class="img-fluid rounded">
+            <img src="{{ asset('assets/images/about_pg_img2.jpg') }}" alt="Cozy living room featuring a light gray sofa with textured pillows and a patterned throw blanket, surrounded by indoor plants, wooden coffee tables, and framed minimalist wall art, with soft natural light coming through gray curtains." class="img-fluid rounded">
         </div>
         <div class="col-md-5">
             <p class="ff-poppins">
@@ -88,7 +88,7 @@
 
     <div class="row mt-5">
         <div class="col-md-2 mx-auto text-center">
-            <img src="{{ asset('assets/images/quote_comma.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('assets/images/quote_comma.png') }}" alt="Black quotation mark icon in a simple and minimalist design on a transparent background." class="img-fluid">
         </div>
     </div>
 
@@ -122,7 +122,7 @@
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <img src="{{ asset('assets/images/mission.png') }}" alt="" class="img-fluid rounded">
+                            <img src="{{ asset('assets/images/mission.png') }}" alt="mission" class="img-fluid rounded">
                         </div>
                     </li>
 
@@ -141,7 +141,7 @@
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <img src="{{ asset('assets/images/vision.png') }}" alt="" class="img-fluid rounded">
+                            <img src="{{ asset('assets/images/vision.png') }}" alt="vision" class="img-fluid rounded">
                         </div>
                     </li>
 
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <img src="{{ asset('assets/images/values.png') }}" alt="" class="img-fluid rounded">
+                            <img src="{{ asset('assets/images/values.png') }}" alt="values" class="img-fluid rounded">
                         </div>
                     </li>
                 </ul>
@@ -214,7 +214,7 @@
     <div class="row bg-light-gray d-flex justify-content-around pb-5">
         @foreach ($blogRecords as $record)
             <div class="col-md-4 blog-card">
-                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="" class="img-fluid rounded">
+                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $record->blog_headline }}" class="img-fluid rounded">
                 <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
                 <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
                 <a href="{{route('Read.Blog', ['id' => $record->id])}}" class="text-dark">Read More</a>

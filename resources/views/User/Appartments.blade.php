@@ -110,7 +110,7 @@
             <div class="col-md-10 mx-auto mb-3 apartment-container">
                 <div class="row bg-white rounded d-flex flex-row justify-content-around align-items-center">
                     <div class="col-md-4">
-                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{ $rec->area_name }}"
                             class="img-fluid mt-2 mb-2 rounded apartment-thumbnail-img">
                     </div>
                     <div class="col-md-5">
@@ -118,7 +118,7 @@
                             <div>
                                 <h5 class="ff-poppins fs-24">{{ $rec->area_name }}</h5>
                                 <p class="ff-poppins">
-                                    <img src="{{ asset('assets/images/locationIcon.png') }}" alt="">
+                                    <img src="{{ asset('assets/images/locationIcon.png') }}" alt="{{ $rec->area_name }}">
                                     {{ $rec->street_address }}
                                 </p>
                             </div>
@@ -131,11 +131,11 @@
                         </p>
                         <div class="d-flex flex-row justify-content-start">
                             <p class="d-inline ff-poppins">
-                                <img src="{{ asset('assets/images/bedroom.png') }}" alt="">
+                                <img src="{{ asset('assets/images/bedroom.png') }}" alt="bedrooms">
                                 {{ $rec->total_bedrooms }} Bedrooms
                             </p>
                             <p class="d-inline ff-poppins mx-2">
-                                <img src="{{ asset('assets/images/Bathroom.png') }}" alt="">
+                                <img src="{{ asset('assets/images/Bathroom.png') }}" alt="bathrooms">
                                 {{ $rec->total_bathrooms }} Bathrooms
                             </p>
                             <p class="d-inline ff-poppins mx-2">
@@ -168,7 +168,7 @@
                             <!-- Slides -->
                             @foreach ($neighborhoodApartment as $rec)
                                 <div class="col-md-3 swiper-slide">
-                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{ $rec->area_name }}"
                                         class="img-fluid neighbourhood-img rounded shadow">
                                     <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
                                     <p class="mt-0">

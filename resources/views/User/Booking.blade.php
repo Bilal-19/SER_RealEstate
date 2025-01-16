@@ -523,7 +523,7 @@
             <div class="col-md-4 bg-white border-grey border-radius-16 price-container">
                 <div class="d-flex justify-content-around align-items-center">
                     <div>
-                        <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featuredImage) }}" alt=""
+                        <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featuredImage) }}" alt="{{ $findApartment->area_name }}"
                             class="img-fluid book-apartment-thumbnail rounded">
                     </div>
                     <div>
