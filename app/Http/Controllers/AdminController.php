@@ -518,6 +518,11 @@ class AdminController extends Controller
         return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
     }
 
+    public function usersManagement(){
+        $fetchAllUsers = DB::table('users')->get();
+        return view('Admin.UsersManagement', with(compact('fetchAllUsers')));
+    }
+
     public function signOut()
     {
         Auth::logout();

@@ -263,7 +263,13 @@
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('View.Users') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('View.Users')}}">
+                                    <i class="fa-solid fa-users"></i>User Management
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link ff-poppins d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
                                     <i class="fas fa-sign-out"></i>
                                     Sign out
                                 </a>
