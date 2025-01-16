@@ -545,6 +545,28 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function editAccount($id)
+    {
+        $findUserAccount = DB::table('users')->find($id);
+        return view('Admin.EditUserAccount', with(compact('findUserAccount')));
+    }
+
+    public function updateUserAccount(Request $request, $id)
+    {
+        $isAccountUpdated = DB::table('users')
+            ->where('id', '=', $id)
+            ->update([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
+        if ($isAccountUpdated){
+            toastr()->success('Updated Successfully');
+        } else {
+            toastr()->info('Somethin went wong');
+        }
+        return redirect()->back();
+    }
+
     public function signOut()
     {
         Auth::logout();
