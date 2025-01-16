@@ -529,6 +529,35 @@ class AdminController extends Controller
         return view('Admin.UsersManagement', with(compact('fetchAllUsers')));
     }
 
+    public function AddUser()
+    {
+        return view('Admin.AddUser');
+    }
+
+    public function createUserAccount(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+
+        $isAccountCreated = DB::table("users")->insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make('123456789'),
+            'created_at' => now()
+        ]);
+
+        if ($isAccountCreated){
+            toastr()->success('New User Added Successfully.');
+            return redirect()->route('View.Users');
+        } else {
+            toastr()->info('Something went wrong.');
+            return redirect()->back();
+        }
+    }
+
     public function resetPassword($id)
     {
         $isPasswordReset = DB::table('users')->
@@ -559,7 +588,7 @@ class AdminController extends Controller
                 'name' => $request->name,
                 'email' => $request->email
             ]);
-        if ($isAccountUpdated){
+        if ($isAccountUpdated) {
             toastr()->success('Updated Successfully');
         } else {
             toastr()->info('Somethin went wong');

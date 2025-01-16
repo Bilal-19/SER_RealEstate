@@ -122,6 +122,8 @@ Route::get("admin/logout", [AdminController::class, 'signOut'])->name('Admin.Log
 
 // Users - Admin
 Route::get("admin/users", [AdminController::class, 'usersManagement'])->name('View.Users');
+Route::get("admin/add/user", [AdminController::class, 'AddUser'])->name('View.AddUser');
+Route::post("admin/create/user", [AdminController::class, 'createUserAccount'])->name('CreateUserAccount');
 Route::get("admin/reset/password/{id}", [AdminController::class, 'resetPassword'])->name('Users.ResetPassword');
 Route::get("admin/edit/user/{id}", [AdminController::class, 'editAccount'])->name('Users.EditAccount');
 Route::post("admin/update/user/{id}", [AdminController::class, 'updateUserAccount'])->name('Users.UpdateUserAccount');
