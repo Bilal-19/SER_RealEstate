@@ -9,6 +9,15 @@
             margin-right: 20px;
             padding: 8px 6px;
         }
+
+        @media (max-width: 768px) {
+            .analytic-card {
+                margin-bottom: 10px;
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     </style>
 @endpush
 @section('main-section')
@@ -40,12 +49,12 @@
             </div>
 
             <div class="col-md-2 analytic-card">
-                <h3 class="ff-poppins">{{$totalBlogs}}</h3>
+                <h3 class="ff-poppins">{{ $totalBlogs }}</h3>
                 <p class="ff-inter"><i class="fas fa-file-alt"></i> Published Blogs</p>
             </div>
 
             <div class="col-md-2 analytic-card">
-                <h3 class="ff-poppins">{{$totalApartments}}</h3>
+                <h3 class="ff-poppins">{{ $totalApartments }}</h3>
                 <p class="ff-inter"><i class="fas fa-building"></i> Total Apartments</p>
             </div>
         </div>
