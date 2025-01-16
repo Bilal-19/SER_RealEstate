@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <h5 class="ff-poppins">
                 <a href="{{route('Landing.Page')}}" class="text-light" id="footer-link">
-                    <img src="{{ asset('assets/images/company_logo.png') }}" alt=""
+                    <img src="{{ asset('assets/images/company_logo.png') }}" alt="Sterling Executive Residential Logo"
                         style="height: 60px; width: 60px;">
                     STERLING EXECUTIVE RESIDENTIAL
                 </a>
@@ -21,8 +21,8 @@
         </div>
         <div class="col-md-3">
             <p>Contact Us</p>
-            <a href="" class="text-light d-block">+44 7921919426</a>
-            <a href="" class="text-light d-block">info@sterling-executive.com</a>
+            <a href="tel:+44 7921919426" class="text-light d-block">+44 7921919426</a>
+            <a href="mailto:info@sterling-executive.com" class="text-light d-block">info@sterling-executive.com</a>
         </div>
         <div class="col-md-2">
             <p>Follow us</p>

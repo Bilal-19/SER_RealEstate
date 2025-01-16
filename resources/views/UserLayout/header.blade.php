@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Discover luxury living with Sterling Executive Residential. Explore our exclusive range of apartments across the UK, designed for comfort and convenience. Easily find your ideal stay by selecting your desired location, check-in, and check-out dates to view available options. Experience exceptional accommodations tailored to meet your needs, whether for business or leisure. Book your perfect apartment today and enjoy unparalleled service, prime locations, and modern amenities. Sterling Executive Residential redefining apartment living in the UK.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Sterling Executive Residential</title>
@@ -37,32 +39,11 @@
 
 <body>
     <div class="container-fluid">
-        {{-- <div class="row d-flex justify-content-between align-items-center pt-1 pb-1" id="top-header">
-            <div class="col-md-3 d-flex justify-content-between align-items-center">
-                <a href="" class="ff-poppins">+44 7921919426</a>
-                <a href="" class="ff-poppins">zain.rav@gmail.com</a>
-            </div>
-            <div class="col-md-2 d-flex justify-content-around align-items-center">
-                <a href="" class="ff-poppins">Follow</a>
-                <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ=="
-                    target="_blank" class="mx-2">
-                    <img src="{{ asset('assets/images/instagramIcon.png') }}" alt="">
-                </a>
-                <span>|</span>
-                <a href="#" class="mx-2" target="_blank">
-                    <img src="{{ asset('assets/images/tiktokIcon.png') }}" alt="">
-                </a>
-                <span>|</span>
-                <a href="https://www.facebook.com/profile.php?id=61569866642277" class="mx-2" target="_blank">
-                    <img src="{{ asset('assets/images/fbIcon.png') }}" alt="">
-                </a>
-            </div>
-        </div> --}}
         <div class="row banner-img">
             <nav class="navbar navbar-expand-lg mb-5 bg-dark text-light shadow">
                 <div class="container-fluid">
                     <a class="navbar-brand ff-poppins text-light" href="{{ route('Landing.Page') }}">
-                        <img src="{{ asset('assets/images/company_logo.png') }}" alt="">
+                        <img src="{{ asset('assets/images/company_logo.png') }}" alt="Sterling Executive Residential Logo">
                         STERLING EXECUTIVE RESIDENTIAL
                     </a>
                     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
@@ -93,7 +74,7 @@
                                     href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>
                             </li>
                         </ul>
-                        <a href="{{route('Book.Now')}}" class="btn btn-light">Book Now</a>
+                        <a href="{{ route('Book.Now') }}" class="btn btn-light">Book Now</a>
                     </div>
                 </div>
             </nav>
