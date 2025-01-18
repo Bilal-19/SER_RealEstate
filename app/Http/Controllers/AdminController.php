@@ -241,6 +241,9 @@ class AdminController extends Controller
         if ($res) {
             toastr()->success('Apartment record updated successfully');
             return redirect()->back();
+        } else {
+            toastr()->error('No changes detected');
+            return redirect()->back();
         }
     }
     // Fav Appartment Section
