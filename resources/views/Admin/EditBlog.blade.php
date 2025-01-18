@@ -2,7 +2,7 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row">
-            <h3 class="text-center">Edit <span class="text-light-brown">Blog</span></h3>
+            <h3 class="text-center">Edit Blog</h3>
         </div>
 
         <div class="row">

@@ -298,16 +298,13 @@ class AdminController extends Controller
 
     public function updateBenefit($id, Request $request)
     {
-        $iconImg = DB::table('amenity')->
-            where('id', '=', $id)
-            ->select('amenity_icon')
-            ->get();
+        $iconImg = DB::table('amenity')->find($id);
 
         if ($request->file('icon')) {
             $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
             $request->icon->move('Amenity', $timeStampImg);
         } else {
-            $timeStampImg = $iconImg;
+            $timeStampImg = $iconImg->amenity_icon;
         }
 
 
