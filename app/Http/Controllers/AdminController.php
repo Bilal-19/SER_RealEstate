@@ -386,10 +386,10 @@ class AdminController extends Controller
             $timestampImg = time() . '.' . $request->thumbnailImage->getClientOriginalExtenstion();
             $request->thumbnailImage->move('Blog', $timestampImg);
         } else {
-            $blog = DB::table('Blogs')->find($id);
+            $blog = DB::table('blogs')->find($id);
             $timestampImg = $blog->thumbnail_image;
         }
-        $isUpdated = DB::table('Blogs')
+        $isUpdated = DB::table('blogs')
             ->where('id', '=', $id)
             ->update([
                 'thumbnail_image' => $timestampImg,
@@ -401,12 +401,15 @@ class AdminController extends Controller
         if ($isUpdated) {
             toastr()->success('Blog updated successfully');
             return redirect()->back();
+        } else {
+            toastr()->error('No changes detected.');
+            return redirect()->back();
         }
     }
 
     public function deleteBlog($id)
     {
-        $isDeleted = DB::table('Blogs')->where('id', '=', $id)->delete();
+        $isDeleted = DB::table('blogs')->where('id', '=', $id)->delete();
         if ($isDeleted) {
             toastr()->success('Blog deleted successfully');
             return redirect()->back();
