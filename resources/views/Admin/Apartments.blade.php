@@ -7,17 +7,21 @@
 
         <div class="row mb-3">
             <div class="col-md-12 ff-inter">
-                <a href="{{route('Add.Appartment')}}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New Apartment</a>
+                <a href="{{ route('Add.Appartment') }}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New
+                    Apartment</a>
             </div>
         </div>
 
         <div class="row ff-inter">
-           <div class="col-md-12">
-            <div class="input-group">
-                <input type="search" name="search" class="form-control" placeholder="Search by area name" autocomplete="off">
-                <button class="btn btn-dark"><i class="fa-brands fa-searchengin"></i> Search</button>
+            <div class="col-md-12">
+                <form action="">
+                    <div class="input-group">
+                        <input type="search" name="search" class="form-control"
+                            placeholder="Search by area name, street address" autocomplete="off">
+                        <button class="btn btn-dark"><i class="fa-brands fa-searchengin"></i> Search</button>
+                    </div>
+                </form>
             </div>
-           </div>
         </div>
 
         <div class="row mt-3 ff-inter">
@@ -56,12 +60,12 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="{{route('Edit.Apartment', ['id' => $rec->id])}}" class="text-primary">
+                                <a href="{{ route('Edit.Apartment', ['id' => $rec->id]) }}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="{{route('Delete.Apartment', ['id' => $rec->id])}}" class="text-danger">
+                                <a href="{{ route('Delete.Apartment', ['id' => $rec->id]) }}" class="text-danger">
                                     <i class="fa-solid fa-trash"></i>
                                 </a>
                             </td>

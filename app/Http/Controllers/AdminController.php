@@ -35,10 +35,20 @@ class AdminController extends Controller
     }
 
     // Appartment Section
-    public function Apartments()
+    public function Apartments(Request $request)
     {
-        $fetchAllApartments = DB::table('apartments')->get();
-        return view('Admin.Apartments')->with(compact('fetchAllApartments'));
+        $search = $request->search ?? null;
+
+        if ($search !== null) {
+            $fetchAllApartments = DB::table('apartments')
+            ->where('area_name', 'LIKE', "%$search%")
+            ->orWhere('street_address', 'LIKE', "%$search%")
+            ->get();
+            return view('Admin.Apartments')->with(compact('fetchAllApartments'));
+        } else {
+            $fetchAllApartments = DB::table('apartments')->get();
+            return view('Admin.Apartments')->with(compact('fetchAllApartments'));
+        }
     }
 
     public function toggleFav($id)
@@ -552,7 +562,7 @@ class AdminController extends Controller
             'created_at' => now()
         ]);
 
-        if ($isAccountCreated){
+        if ($isAccountCreated) {
             toastr()->success('New User Added Successfully.');
             return redirect()->route('View.Users');
         } else {
@@ -599,12 +609,13 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function deleteUserAccount($id){
+    public function deleteUserAccount($id)
+    {
         $isAccountDeleted = DB::table('users')
-        ->where('id','=',$id)
-        ->delete();
+            ->where('id', '=', $id)
+            ->delete();
 
-        if ($isAccountDeleted){
+        if ($isAccountDeleted) {
             toastr()->success('Account Removed Successfully.');
         } else {
             toastr()->info('Somethin went wong');
