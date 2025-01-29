@@ -13,8 +13,8 @@
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ff-poppins">Your Home Away from Home with Sterling Executive Residential Apartments</p>
-            <h2 class="text-center ff-poppins fs-56">Experience Comfort and Flexibility in the Heart of London
+            <h2 class="text-center ff-poppins fs-56">
+                Search for your ideal home away from home in the heart of London
             </h2>
         </div>
     </div>
@@ -26,15 +26,18 @@
                 <div class="row d-flex justify-content-around align-items-end">
                     <div class="col-md-4 mb-sm-10">
                         <label class="form-label fw-bold mb-0">Search By Area:</label>
-                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location" value="{{old('location')}}">
+                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location"
+                            value="{{ old('location') }}">
                     </div>
                     <div class="col-md-2 mb-sm-10">
                         <label class="form-label fw-bold mb-0">Check In:</label>
-                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate" value="{{old("checkInDate")}}">
+                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate"
+                            value="{{ old('checkInDate') }}">
                     </div>
                     <div class="col-md-2 mb-sm-10">
                         <label class="form-label fw-bold mb-0">Check Out:</label>
-                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate" value="{{old("checkOutDate")}}">
+                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate"
+                            value="{{ old('checkOutDate') }}">
                     </div>
                     <div class="col-md-2 mt-sm-3 mt-0">
                         <button class="btn btn-dark" type="submit">SEARCH</button>
@@ -49,8 +52,7 @@
 @section('user-main-section')
     <div class="row">
         <div class="col-md-12">
-            <p class="text-capitalize ff-poppins fs-40 mt-5">Favourites:</p>
-
+            <h2 class="text-capitalize ff-poppins fs-40 mt-5">Top Rated:</h2>
         </div>
     </div>
 
@@ -67,8 +69,8 @@
                     @foreach ($favApartmentRecords as $record)
                         <div class="col-md-3 swiper-slide">
                             <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}" target="_blank">
-                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}" alt="{{ $record->street_address }}"
-                                    class="img-fluid object-fit-cover">
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}"
+                                    alt="{{ $record->street_address }}" class="img-fluid object-fit-cover">
                             </a>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
@@ -99,30 +101,8 @@
         </div>
     </div>
 
-
-    <div class="row mt-5 d-flex justify-content-center align-items-center bg-light-gray">
-        <div class="col-md-6 p-5">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9933.259719847401!2d-0.13748113914276847!3d51.507438004617406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ce37bbdb95%3A0x5120415568fd2d8b!2sCentral%20London%2C%20London%20WC2N%205DU%2C%20UK!5e0!3m2!1sen!2s!4v1732259214866!5m2!1sen!2s"
-                width="100%" height="450" style="border:0; filter: invert(90%);" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
-        </div>
-
-        <div class="col-md-4">
-            <h3 class="ff-poppins">Central London Location</h3>
-            <p class="ff-poppins">
-                Central London is the innermost part of London, in England, spanning the City of London and several
-                boroughs. Over time, a number of definitions have been used to define the scope of Central London for
-                statistics, urban planning and local government. Its characteristics are understood to include a
-                high-density built environment, high land values, an elevated daytime population and a concentration of
-                regionally, nationally and internationally significant organisations and facilities.
-            </p>
-            <a href="https://maps.app.goo.gl/Ua2iYu6okFvQyTax8" class="brand-btn" target="_blank">Explore Now</a>
-        </div>
-    </div>
-
     <div class="row mt-3">
-        <p class="text-capitalize ff-poppins fs-40 mt-5">Neighbourhoods:</p>
+        <h2 class="text-capitalize ff-poppins fs-40 mt-5">Neighbourhoods:</h2>
     </div>
 
     <div class="row">
@@ -137,9 +117,10 @@
                             <!-- Slides -->
                             @foreach ($fetchNearestApartment as $rec)
                                 <div class="col-md-3 swiper-slide">
-                                    <a href="{{route('Detail.View.Apartment', ['id' => $rec->id])}}" target="_blank">
-                                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{ $rec->street_address }}"
-                                        class="img-fluid neighbourhood-img rounded shadow">
+                                    <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}" target="_blank">
+                                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}"
+                                            alt="{{ $rec->street_address }}"
+                                            class="img-fluid neighbourhood-img rounded shadow">
                                     </a>
                                     <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
                                     <p class="mt-0">
@@ -167,20 +148,15 @@
 
     <div class="row text-center mt-5">
         <div class="col-md-12">
-            <p class="text-dark">Benefits</p>
-        </div>
-
-        <div class="col-md-6 mx-auto">
-            <a class="brand-btn" href="#book-apartment">Book Now</a>
-            <a class="brand-btn-invert" href="{{route('View.Benefits')}}">View All Benefits</a>
+            <h2 class="text-capitalize ff-poppins fs-40 mt-5">Benefits</h2>
         </div>
     </div>
 
     <div class="row d-flex justify-content-around mt-5">
         @foreach ($benefitsRecords as $record)
             <div class="col-md-3 benefit-card rounded {{ $record->id % 2 == 0 ? 'bg-dark' : 'bg-light' }} shadow p-4">
-                <img src="{{ asset('Amenity/' . $record->amenity_icon) }}" alt="{{ $record->amenity_text }}" class="img-fluid"
-                    style="height: 50px; width: 50px; border-radius: 50%;">
+                <img src="{{ asset('Amenity/' . $record->amenity_icon) }}" alt="{{ $record->amenity_text }}"
+                    class="img-fluid" style="height: 50px; width: 50px; border-radius: 50%;">
                 <hr style="width: 20%; border:1px solid grey;" class="mt-5">
                 <h5 class="{{ $record->id % 2 == 0 ? 'text-light' : 'text-dark' }} ff-poppins">
                     {{ $record->amenity_text }}
@@ -205,25 +181,10 @@
             <a href="https://maps.app.goo.gl/Ua2iYu6okFvQyTax8" target="_blank" class="brand-btn d-inline">Learn More</a>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('assets/images/about_us_img.png') }}" alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup" class="img-fluid">
-        </div>
-    </div>
-    <div class="row mt-3 bg-light-gray pt-5">
-        <div class="col-md-12 text-center">
-            <h4 class="ff-poppins">Resources</h4>
-            <p class="ff-poppins">Discover premium apartments tailored to your lifestyle, with unbeatable locations and
-                amenities.</p>
+            <img src="{{ asset('assets/images/about_us_img.png') }}"
+                alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
+                class="img-fluid">
         </div>
     </div>
 
-    <div class="row bg-light-gray d-flex justify-content-around pb-5">
-        @foreach ($blogRecords as $record)
-            <div class="col-md-4 blog-card">
-                <img src="{{ asset('Blog/' . $record->thumbnail_image) }}" alt="{{ $record->blog_headline }}" class="img-fluid rounded">
-                <p class="ff-poppins">{{ date('d M Y', strtotime($record->publish_date)) }}</p>
-                <h5 class="ff-poppins fs-18">{{ $record->blog_headline }}</h5>
-                <a href="{{route('Read.Blog', ['id'=>$record->id])}}" class="text-dark">Read More</a>
-            </div>
-        @endforeach
-    </div>
 @endsection
