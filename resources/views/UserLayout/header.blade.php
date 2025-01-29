@@ -40,9 +40,9 @@
 <body>
     <div class="container-fluid">
         <div class="row banner-img">
-            <nav class="navbar navbar-expand-lg mb-5 bg-dark text-light shadow">
+            <nav class="navbar navbar-expand-lg mb-5 bg-white text-silver shadow">
                 <div class="container-fluid">
-                    <a class="navbar-brand ff-poppins text-light" href="{{ route('Landing.Page') }}">
+                    <a class="navbar-brand ff-poppins text-silver" href="{{ route('Landing.Page') }}">
                         <img src="{{ asset('assets/images/company_logo.png') }}" alt="Sterling Executive Residential Logo">
                         STERLING EXECUTIVE RESIDENTIAL
                     </a>
@@ -54,27 +54,27 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Benefits') ? 'user-active-link text-light' : '' }}"
+                                <a class="nav-link nav-link-transition {{ request()->routeIs('View.Benefits') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.Benefits') }}">BENEFITS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Corporate') ? 'user-active-link text-light' : '' }}"
+                                <a class="nav-link nav-link-transition {{ request()->routeIs('View.Corporate') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.Corporate') }}">CORPORATE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.About') ? 'user-active-link text-light' : '' }}"
+                                <a class="nav-link nav-link-transition {{ request()->routeIs('View.About') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.About') }}">ABOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Blogs') ? 'user-active-link text-light' : '' }}"
+                                <a class="nav-link nav-link-transition {{ request()->routeIs('View.Blogs') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.Blogs') }}">BLOG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ff-poppins text-light nav-link-transition {{ request()->routeIs('View.Enquiry.Form') ? 'user-active-link text-light' : '' }}"
+                                <a class="nav-link nav-link-transition {{ request()->routeIs('View.Enquiry.Form') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.Enquiry.Form') }}">CONTACT US</a>
                             </li>
                         </ul>
-                        <a href="{{ route('Book.Now') }}" class="btn btn-light">Book Now</a>
+                        <a href="{{ route('Book.Now') }}" id="book-now-btn"><i class="fas fa-search"></i> Search a Location</a>
                     </div>
                 </div>
             </nav>

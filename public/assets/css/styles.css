@@ -12,15 +12,15 @@
     margin: 0;
     padding: 0;
 }
-#top-header {
+/* #top-header {
     background-color: #c0c0c0;
     color: white;
-}
+} */
 
-#top-header a {
+/* #top-header a {
     text-decoration: none;
     color: white;
-}
+} */
 
 .navbar-brand {
     /* color: #b1895a; */
@@ -38,8 +38,8 @@
 
 
 .nav-link {
-    color: black;
-    font-weight: normal;
+    color: #c0c0c0;
+    font-family: "Poppins", sans-serif;
 }
 
 .nav-link-transition {
@@ -65,6 +65,13 @@
 
 .user-active-link{
     font-weight: bold;
+}
+
+#book-now-btn{
+    background-color: #c0c0c0;
+    color: #ffffff;
+    padding: 6px 8px;
+    border-radius: 6px;
 }
 
 .brand-btn {
