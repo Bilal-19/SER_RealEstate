@@ -95,17 +95,23 @@ class UserController extends Controller
         // Form Validation
         $request->validate(
             [
-                'fullName' => 'required',
+                'fullname' => 'required',
                 'email' => 'required',
-                'message' => 'required'
+                'company_name' => 'required',
+                'phone_number' => 'required',
+                'duration_of_stay' => 'required',
+                'enquiry' => 'required'
             ]
 
         );
         $res = DB::table('inquiry')
             ->insert([
-                'name' => $request->fullName,
+                'name' => $request->fullname,
                 'email' => $request->email,
-                'message' => $request->message,
+                'company_name' => $request->company_name,
+                'phone_number' => $request->phone_number,
+                'duration_of_stay' => $request->duration_of_stay,
+                'enquiry_message' => $request->enquiry,
                 'created_at' => now()
             ]);
 

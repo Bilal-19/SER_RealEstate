@@ -2,9 +2,13 @@
 
 @push('style')
     <style>
-        .form-control {
+        .form-control, .form-select {
             background-color: #c0c0c0 !important;
             color: white !important;
+        }
+
+        .form-control::placeholder{
+            color: white;
         }
 
         button {
@@ -65,39 +69,75 @@
         <div class="col-md-8 mx-auto text-center">
             <h3>Looking for a corporate stay?</h3>
 
-            <form action="" autocomplete="off">
-                <div class="row d-flex justify-content-between mt-5">
+            <form action="{{ route('Create.Inquiry') }}" method="post" autocomplete="off">
+                @csrf
+                <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
                         <input type="text" name="fullname" class="form-control" placeholder="Full Name">
+                        <small class="text-danger">
+                            @error('fullname')
+                                {{ $message }}
+                            @enderror
+                        </small>
                     </div>
                     <div class="col-md-5">
                         <input type="email" name="email" class="form-control" placeholder="Email Address">
+                        <small class="text-danger">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </small>
                     </div>
                 </div>
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5">
                         <input type="text" name="company_name" class="form-control" placeholder="Company Name">
+                        <small class="text-danger">
+                            @error('company_name')
+                                {{ $message }}
+                            @enderror
+                        </small>
                     </div>
                     <div class="col-md-5">
                         <input type="text" name="phone_number" class="form-control" placeholder="Phone Number">
+                        <small class="text-danger">
+                            @error('phone_number')
+                                {{ $message }}
+                            @enderror
+                        </small>
                     </div>
                 </div>
 
                 <div class="row mt-5">
                     <div class="col-md-12">
-                        <input type="text" name="company_name" class="form-control" placeholder="Duration of Stay">
+                        <select name="duration_of_stay" class="form-select">
+                            <option value="">Duration of Stay</option>
+                            @for ($i = 1; $i <= 12; $i++)
+                            <option value="{{$i}}">{{$i}}</option>
+                            @endfor
+                        </select>
+                        <small class="text-danger">
+                            @error('duration_of_stay')
+                                {{ $message }}
+                            @enderror
+                        </small>
                     </div>
                 </div>
 
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5"></textarea>
+                        <small class="text-danger">
+                            @error('enquiry')
+                                {{ $message }}
+                            @enderror
+                        </small>
                     </div>
                 </div>
 
-                <div class="row mt-5">
-                    <div class="col-md-4 mx-auto">
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-3 mx-auto">
                         <button class="brand-btn">Submit</button>
                     </div>
                 </div>
