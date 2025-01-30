@@ -24,10 +24,10 @@
 @endpush
 
 @section('user-main-section')
-    <div class="row mt-5">
+    <div class="row mt-3">
         <div class="col-md-8 mx-auto">
             <form action="" autocomplete="off">
-                <div class="row d-flex justify-content-between mt-5">
+                <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
                         <input type="text" name="fullname" class="form-control" placeholder="Full Name">
                     </div>
