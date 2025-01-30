@@ -10,6 +10,10 @@
         button {
             border: none;
         }
+
+        body{
+            color: #303030;
+        }
     </style>
 @endpush
 

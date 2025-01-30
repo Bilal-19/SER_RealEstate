@@ -15,6 +15,7 @@
 
 body{
     font-family: "Montserrat", serif;
+    color: #303030;
 }
 /* #top-header {
     background-color: #c0c0c0;
@@ -29,11 +30,11 @@ body{
 .navbar-brand {
     font-weight: 700;
     font-family: "Cormorant Garamond", serif;
-    color: #c0c0c0;
+    color: #303030;
 }
 
 .navbar-brand:hover{
-    color: #c0c0c0;
+    color: #303030;
     font-weight: 800;
 }
 
@@ -71,9 +72,6 @@ body{
 
 /* Landing Page */
 
-.top-rated-apartment{
-    color: #c0c0c0;
-}
 
 .top-rated-apartment > img{
     width: 100%;
@@ -82,6 +80,7 @@ body{
 
 .user-active-link{
     text-decoration: underline;
+    color: #303030;
 }
 
 #book-now-btn{
@@ -299,6 +298,10 @@ a {
 
 .text-silver{
     color: #c0c0c0;
+}
+
+.text-charcoal-gray{
+    color: #545253;
 }
 
 /* Background */

@@ -64,7 +64,7 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     @foreach ($favApartmentRecords as $record)
-                        <div class="col-md-4 swiper-slide text-silver">
+                        <div class="col-md-4 swiper-slide ">
                             <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}" target="_blank">
                                 <img src="{{ asset('Apartment/Thubmbnail/' . $record->featuredImage) }}"
                                     alt="{{ $record->street_address }}" class="img-fluid object-fit-cover">
@@ -165,7 +165,7 @@
     </div> --}}
 
     <div class="row">
-        <div class="col-md-12 text-center text-silver top-rated-apartment">
+        <div class="col-md-12 text-center top-rated-apartment">
             <h3 class="fw-bold">Book your stay at {{ $topRatedApartment->area_name }}</h3>
             <p>{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
             <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featuredImage) }}" alt=""
@@ -252,14 +252,14 @@
 
 
     <div class="row">
-        <div class="col-md-12 text-silver text-center">
+        <div class="col-md-12  text-center">
             <h3>The Sterling Experience</h3>
             <p>
                 Sit back & relax, we've got everything covered. Here's why Portland should be your 1st choice when selecting a serviced apartment.
             </p>
         </div>
 
-        <div class="col-md-3 text-center text-silver">
+        <div class="col-md-3 text-center ">
             <img src="{{asset("assets/images/check-mark.png")}}" alt="" class="img-fluid mb-3">
             <h5>Simple Booking</h5>
             <p>
@@ -267,7 +267,7 @@
             </p>
         </div>
 
-        <div class="col-md-3 text-center text-silver">
+        <div class="col-md-3 text-center ">
             <img src="{{asset("assets/images/heart.png")}}" alt="" class="img-fluid mb-3">
             <h5>We Look After You</h5>
             <p>
@@ -275,7 +275,7 @@
             </p>
         </div>
 
-        <div class="col-md-3 text-center text-silver">
+        <div class="col-md-3 text-center ">
             <img src="{{asset("assets/images/sofa.png")}}" alt="" class="img-fluid mb-3">
             <h5>Feel At Home</h5>
             <p>
@@ -283,7 +283,7 @@
             </p>
         </div>
 
-        <div class="col-md-3 text-center text-silver">
+        <div class="col-md-3 text-center ">
             <img src="{{asset("assets/images/protecting_people.png")}}" alt="" class="img-fluid mb-3">
             <h5>Feel Secure</h5>
             <p>
