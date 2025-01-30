@@ -38,14 +38,9 @@ class UserController extends Controller
     public function index()
     {
         $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
-        $benefitsRecords = DB::table('amenity')->get();
-        $blogRecords = DB::table('blogs')->limit(3)->get();
-        $fetchNearestApartment = $this->getNeighbours();
+        $topRatedApartment = DB::table('apartments')->where('isFavourite', '=', 1)->first();
         return view('User.LandingPage')->with(compact(
-            'favApartmentRecords',
-            'benefitsRecords',
-            'blogRecords',
-            'fetchNearestApartment'
+            'favApartmentRecords', 'topRatedApartment'
         ));
     }
 
