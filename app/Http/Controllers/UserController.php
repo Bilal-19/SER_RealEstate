@@ -61,8 +61,7 @@ class UserController extends Controller
 
     public function viewCorporate()
     {
-        $fetchNeighboursData = $this->getNeighbours();
-        return view('User.Corporate')->with(compact('fetchNeighboursData'));
+        return view('User.Corporate');
     }
 
     public function viewAbout()

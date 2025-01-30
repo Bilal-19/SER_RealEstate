@@ -1,280 +1,103 @@
 @extends('UserLayout.main')
+
 @push('style')
     <style>
-        .banner-img {
-            background-image: url('/assets/images/corporate.png');
-            background-size: cover;
-            background-attachment: fixed;
+        .form-control {
+            background-color: #c0c0c0 !important;
+            color: white !important;
         }
 
-        .benefit-card-odd,
-        .benefit-card-even {
-            height: 365px;
-            width: 283px;
-            border-radius: 8px;
-            padding: 32px 22px;
-        }
-
-        .benefit-card-odd {
-            background-color: #c0c0c0;
-            color: black;
-        }
-
-        .benefit-card-even {
-            background-color: #3A3A3A;
-            color: white;
-        }
-
-        hr {
-            width: 35px;
-            border-top: 3px solid white;
-        }
-
-        .booking-card {
-            width: 300px;
-            height: 228px;
-            padding: 24px;
-            border-radius: 15px;
-            background-color: #FFFFFF;
-            border: 1px solid rgb(185, 185, 185);
-        }
-
-        @media only screen and (max-width: 768px) {
-            .booking-card{
-                margin-top: 10px;
-            }
-
-            .benefit-card-odd,
-        .benefit-card-even{
-            margin-top: 20px;
-        }
+        button {
+            border: none;
         }
     </style>
 @endpush
 
-
-@push('CTA')
-    <div class="row mt-5">
-        <div class="col-md-6 mx-auto text-light search-container">
-            <p class="text-center ff-poppins">Corporate</p>
-            <h2 class="text-center ff-poppins fs-48">
-                Corporate Housing Solutions in London
-            </h2>
-        </div>
-    </div>
-@endpush
-
-@push('footer-cta')
-    <div class="container-fluid footer footer-bottom-border" id="footer_bg">
-        <div class="row d-flex justify-content-around align-items-center">
-            <div class="col-md-5">
-                <h4 class="ff-poppins text-light">Why rent a hotel when you enjoy an apartment?</h4>
-                <p class="ff-poppins text-light">Feel like home at one of our modern apartments located in the heart of
-                    London.
-                    Make your own meals, order a
-                    take-away, enjoy the space and privacy, just like home.</p>
-            </div>
-            <div class="col-md-3">
-                <a href="#book-apartment" class="footer-search-btn">Search</a>
-            </div>
-        </div>
-    </div>
-@endpush
 @section('user-main-section')
-    <div class="row d-flex justify-content-around align-items-center mt-5">
-        <div class="col-md-5">
-            <h4 class="fs-36 ff-poppins fw-medium">Corporate Housing Solutions in London</h4>
-            <p class="ff-poppins mt-4">
-                At Sterling Executive Residential, we understand that relocating employees or accommodating business
-                travelers
-                requires more than just a comfortable stay—it demands a seamless experience. Our fully serviced
-                apartments are tailored to meet the needs of companies and their employees, offering a perfect blend of
-                convenience, flexibility, and comfort.
-            </p>
+    <div class="row d-flex justify-content-evenly align-items-center mt-5 mb-5">
+        <div class="col-md-6">
+            <img src="{{ asset('assets/images/dedicated-account-team.jpg') }}" alt="Dedicated account team"
+                class="img-fluid rounded">
         </div>
-        <div class="col-md-5">
-            <img src="{{ asset('assets/images/team.png') }}"
-                alt="A group of six diverse individuals gathered around a table enjoying pizza, sharing laughter, and engaging in conversation in a cozy, modern office setting"
-                class="img-fluid">
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-around align-items-center mt-5 mb-5">
-        <div class="col-md-5">
-            <img src="{{ asset('assets/images/DiscussionTeam.png') }}"
-                alt="Five people collaborating in a creative workspace, surrounded by books and plants, while reviewing documents and working on a laptop. A woman in a yellow sweater is smiling at the camera."
-                class="img-fluid">
-        </div>
-        <div class="col-md-5">
-            <h4 class="ff-poppins fs-36">Tailored Relocation Services</h4>
-            <p class="ff-poppins">Relocating employees to a new city or country can be daunting, but with Citadel
-                Apartments, the process becomes stress-free.</p>
-
-            <div class="d-flex justify-content-between">
-                <div>
-                    <img src="{{ asset('assets/images/Icons/support.png') }}">
-                </div>
-                <div class="mx-3">
-                    <h6 class="fs-18 ff-poppins">Orientation Support</h6>
-                    <p class="ff-poppins">Provide your employees with resources to settle into London comfortably.</p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <div>
-                    <img src="{{ asset('assets/images/Icons/price.png') }}">
-                </div>
-                <div class="mx-3">
-                    <h6 class="fs-18 ff-poppins">
-                        Customizable Packages
-                    </h6>
-                    <p class="ff-poppins">
-                        Choose from a variety of accommodation options to suit your budget and needs.
-                    </p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <div>
-                    <img src="{{ asset('assets/images/Icons/assistance.png') }}">
-                </div>
-                <div class="mx-3">
-                    <h6 class="fs-18 ff-poppins">
-                        Dedicated Assistance:
-                    </h6>
-                    <p class="ff-poppins">
-                        Our team works closely with your company to handle all aspects of corporate relocation.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    @php
-        $fetchBenefits = DB::table('amenity')->limit(4)->get();
-    @endphp
-    <div class="row bg-eerie-black pb-5 pt-5">
-        <div class="col-md-12 text-center">
-            <p class="text-silver ff-poppins">Benefits</p>
-            <h6 class="ff-poppins fs-36 text-light">More Space, More Comfort</h6>
-            <p class="ff-poppins fs-18 text-center text-light">
-                Enjoy spacious, fully furnished apartments—at least three times the size of a typical hotel room.
-            </p>
-        </div>
-
-        @foreach ($fetchBenefits as $rec)
-            @if ($rec->id % 2 == 0)
-                <div class="col-md-2 benefit-card-odd mx-4">
-                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}"
-                        class="img-fluid">
-                    <hr>
-                    <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
-                    <p class="ff-poppins">
-                        {{ $rec->amenity_description }}
-                    </p>
-                </div>
-            @else
-                <div class="col-md-2 benefit-card-even mx-4 ">
-                    <img src="{{ asset('Amenity/' . $rec->amenity_icon) }}" alt="{{ $rec->amenity_text }}"
-                        class="img-fluid">
-                    <hr>
-                    <p class="ff-poppins fs-22 fw-medium mt-4">{{ $rec->amenity_text }}</p>
-                    <p class="ff-poppins">
-                        {{ $rec->amenity_description }}
-                    </p>
-                </div>
-            @endif
-        @endforeach
-    </div>
-
-
-    <div class="row d-flex justify-content-around align-items-center pt-5 pb-5">
-        <div class="col-md-5">
-            <img src="{{ asset('assets/images/amenitiesFrame.png') }}"
-                alt="A collage of four images showing different workspaces and office equipment, including minimalist desks with computers and a lamp, as well as fax and printer machines on wooden surfaces"
-                class="img-fluid">
-        </div>
-        <div class="col-md-5">
-            <h4 class="ff-poppins fs-36">Business Amenities</h4>
-            <p class="ff-poppins mt-3">
-                We provide special amenities for business travelers, such as complimentary printing, copy and fax machines,
-                larger work desk, a safe…etc upon request. Please contact one of our team members to discuss your
-                requirements.
-            </p>
-        </div>
-    </div>
-
-    <div class="row bg-light-gray pb-5">
-        <div class="col-md-10 pt-5 pb-5 mx-auto">
-            <h4 class="ff-poppins fs-36 text-center">Simplified Booking Process</h4>
-            <p class="ff-poppins text-center">We make corporate housing simple and straightforward:</p>
-        </div>
-
-        <div class="col-md-11 mx-auto">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-4 booking-card mx-3">
-                    <img src="{{ asset('assets/images/Icons/one.png') }}" alt="step 01" class="img-fluid">
-                    <h6 class="ff-poppins fs-18 mt-3">Browse Apartments</h6>
-                    <p class="ff-poppins">Browse our available apartments online.</p>
-                </div>
-
-                <div class="col-md-4 booking-card mx-3">
-                    <img src="{{ asset('assets/images/Icons/two.png') }}" alt="step 02" class="img-fluid">
-                    <h6 class="ff-poppins fs-18 mt-3">Book via Website</h6>
-                    <p class="ff-poppins">Book directly through our platform or contact our guest relations team for
-                        personalized assistance.</p>
-                </div>
-
-                <div class="col-md-4 booking-card mx-3">
-                    <img src="{{ asset('assets/images/Icons/three.png') }}" alt="step 03" class="img-fluid">
-                    <h6 class="ff-poppins fs-18 mt-3">Enjoy</h6>
-                    <p class="ff-poppins">Enjoy competitive rates with our price-match guarantee—find a better rate elsewhere,
-                        and we'll beat it by 10%.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
         <div class="col-md-4">
-            <h4 class="fs-40 ff-poppins">Neighbourhood</h4>
+            <h3>Your Dedicated Account Team</h3>
+            <p>
+                Our booking process and rates are transparent and easy to understand, created to meet different budgets
+                based on the location, features and amenities that our clients want.
+
+                Your dedicated Account Management Team and our on-boarding process ensure we are fully briefed on all your
+                needs, making repeat bookings super easy.
+            </p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-11 mx-auto">
-            @isset($fetchNeighboursData)
-                @if (count($fetchNeighboursData) > 4)
-                    <!-- Slider main container -->
-                    <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            @foreach ($fetchNeighboursData as $rec)
-                                <div class="col-md-3 swiper-slide">
-                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}"
-                                        alt="{{ $rec->area_name }}" class="img-fluid neighbourhood-img rounded shadow">
-                                    <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
-                                    <p class="mt-0">
-                                        {!! Str::limit($rec->description, 50) !!}
-                                    </p>
-                                </div>
-                            @endforeach
-                        </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
 
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-slider-button swiper-button-prev"></div>
-                        <div class="swiper-slider-button swiper-button-next"></div>
+    <div class="row d-flex justify-content-evenly align-items-center mt-5 mb-5">
+        <div class="col-md-4">
+            <h3>Everything you Need</h3>
+            <p>
+                We work to simplify the customer journey, yet take the time to get to know our guests as we understand no
+                two are the same. We listen and don't shy away from the human touches that make your team feel supported and
+                cared for.
 
-                        <!-- If we need scrollbar -->
+                Our varied portfolio allows us to accommodate all the needs of your team, ensuring their stay is tailored to
+                them.
+            </p>
+            <a href="" class="brand-btn">Learn More</a>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ asset('assets/images/kitchen.jpg') }}" alt="Kitchen" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+        <div class="col-md-12 text-center">
+            <h3>The Sterling Standard</h3>
+            <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.</p>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+        <div class="col-md-8 mx-auto text-center">
+            <h3>Looking for a corporate stay?</h3>
+
+            <form action="" autocomplete="off">
+                <div class="row d-flex justify-content-between mt-5">
+                    <div class="col-md-5">
+                        <input type="text" name="fullname" class="form-control" placeholder="Full Name">
                     </div>
-                @else
-                    <p>Please add minimum five records to view the nearest apartments</p>
-                @endif
-            @endisset
+                    <div class="col-md-5">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address">
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-between mt-5">
+                    <div class="col-md-5">
+                        <input type="text" name="company_name" class="form-control" placeholder="Company Name">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number">
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <input type="text" name="company_name" class="form-control" placeholder="Duration of Stay">
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <button class="brand-btn">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    {{-- Display the Neighborhood data --}}
 @endsection
