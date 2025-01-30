@@ -32,4 +32,69 @@
             <h3>Booking FAQs</h3>
         </div>
     </div>
+
+
+    <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
+        <div class="col-md-11 mx-auto rounded">
+            <div id="feedback" class="carousel slide">
+                <div class="carousel-inner">
+                    <h5>Your go to service since 2025</h5>
+                    <div class="col-5 carousel-item active mt-5">
+                        <h5>Feedback 01</h5>
+                        <p class="col-8 col-md-10 mx-auto">“Thank you very much for excellent care throughout my stay,
+                            really very much appreciated and
+                            extremely helpful in making my first couple of weeks in London easier and comfortable.”</p>
+                        <p class="mb-0">Zain</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </p>
+                    </div>
+
+                    <div class="carousel-item mt-5">
+                        <h5>Feedback 02</h5>
+                        <p class="col-8 col-md-10 mx-auto">“Thank you very much for excellent care throughout my stay,
+                            really very much appreciated and
+                            extremely helpful in making my first couple of weeks in London easier and comfortable.”</p>
+                        <p class="mb-0">Bilal</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </p>
+                    </div>
+
+                    <div class="carousel-item mt-5">
+                        <h5>Feedback 03</h5>
+                        <p class="col-8 col-md-10 mx-auto">“Thank you very much for excellent care throughout my stay,
+                            really very much appreciated and
+                            extremely helpful in making my first couple of weeks in London easier and comfortable.”</p>
+                        <p class="mb-0">Zain</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </p>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev mr-5" type="button" data-bs-target="#feedback"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#feedback" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
 @endsection

@@ -24,7 +24,7 @@
 @section('user-main-section')
     <div class="row d-flex justify-content-evenly align-items-center mt-5 mb-5">
         <div class="col-md-6">
-            <img src="{{ asset('assets/images/dedicated-account-team.jpg') }}" alt="Dedicated account team"
+            <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
                 class="img-fluid rounded">
         </div>
         <div class="col-md-4">
@@ -54,7 +54,7 @@
             <a href="" class="brand-btn">Learn More</a>
         </div>
         <div class="col-md-6">
-            <img src="{{ asset('assets/images/kitchen.jpg') }}" alt="Kitchen" class="img-fluid rounded">
+            <img src="{{ asset('assets/images/kitchen.png') }}" alt="Kitchen" class="img-fluid rounded">
         </div>
     </div>
 
