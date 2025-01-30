@@ -20,8 +20,8 @@
     </div>
 
     <div class="row mb-5" id="book-apartment">
-        <div class="col-10 col-sm-10 mx-auto rounded bg-white">
-            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
+        <div class="col-10 col-sm-10 mx-auto rounded bg-silver text-white">
+            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3" autocomplete="off">
                 @csrf
                 <div class="row d-flex justify-content-around align-items-end">
                     <div class="col-md-4 mb-sm-10">

@@ -46,7 +46,6 @@ body{
 .nav-link {
     color: #c0c0c0;
     font-family: "Poppins", sans-serif;
-    font-size: 13px; /* 10pt */
 }
 
 .nav-link-transition {
@@ -78,8 +77,9 @@ body{
     width: 100%;
     border-radius: 10px;
 }
+
 .user-active-link{
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 #book-now-btn{
