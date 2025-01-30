@@ -37,6 +37,7 @@ Route::get("/view/corporate", [UserController::class, 'viewCorporate'])->name('V
 Route::get("/view/about", [UserController::class, 'viewAbout'])->name('View.About');
 Route::get("/view/blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
 Route::get("/view/enquiry/form", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
+Route::get("/experience", [UserController::class, 'viewExperience'])->name('view.Experience');
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard

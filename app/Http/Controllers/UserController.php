@@ -346,5 +346,9 @@ class UserController extends Controller
     public function BookNow(){
         return view('User.BookNow');
     }
+
+    public function viewExperience(){
+        return view('User.Experience');
+    }
 }
 
