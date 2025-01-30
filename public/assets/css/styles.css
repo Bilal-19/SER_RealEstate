@@ -69,6 +69,8 @@ body{
     opacity: 1;
 }
 
+/* Landing Page */
+
 .top-rated-apartment{
     color: #c0c0c0;
 }
@@ -87,6 +89,12 @@ body{
     color: #ffffff;
     padding: 6px 8px;
     border-radius: 6px;
+}
+
+.feedback-bg{
+    background-image: url('../images/grey-background.jpg');
+    background-size: cover;
+    background-attachment: scroll;
 }
 
 .brand-btn {

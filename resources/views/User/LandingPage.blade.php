@@ -190,7 +190,7 @@
         </div>
     </div>
 
-    <div class="row bg-light-gray mt-5 mb-5 p-5 text-center text-white">
+    <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
         <div class="col-md-12">
             <div id="feedback" class="carousel slide">
                 <div class="carousel-inner">
