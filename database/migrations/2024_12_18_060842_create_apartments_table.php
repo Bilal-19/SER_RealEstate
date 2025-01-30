@@ -24,6 +24,7 @@ return new class extends Migration {
             $table->text('description');
             $table->integer('sqfeet_area');
             $table->string('status')->default('available');
+            $table->string('apartment_type');
 
             // Set Available Date
             $table->date('availableFrom');
@@ -49,19 +50,6 @@ return new class extends Migration {
             // fav apartment
             $table->boolean('isFavourite')->default(false);
 
-            // Property Amenities
-            // $table->enum('haveInternet', ['Yes', 'No']);
-            // $table->enum('haveKitchen', ['Yes', 'No']);
-            // $table->enum('haveLivingArea', ['Yes', 'No']);
-            // $table->enum('haveBedroom', ['Yes', 'No']);
-            // $table->enum('haveRoomAmenities', ['Yes', 'No']);
-            // $table->enum('haveBuildingCharacteristics', ['Yes', 'No']);
-            // $table->enum('haveParking', ['Yes', 'No']);
-            // $table->enum('haveOutdoorView', ['Yes', 'No']);
-            // $table->enum('haveMediaAndTechnology', ['Yes', 'No']);
-            // $table->enum('haveBathroom', ['Yes', 'No']);
-            // $table->enum('havePets', ['Yes', 'No']);
-            // $table->enum('haveMiscellaneous', ['Yes', 'No']);
             $table->timestamps();
         });
     }
