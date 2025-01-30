@@ -164,6 +164,7 @@
         @endforeach
     </div> --}}
 
+    @isset($topRatedApartment)
     <div class="row">
         <div class="col-md-12 text-center top-rated-apartment">
             <h3 class="fw-bold">Book your stay at {{ $topRatedApartment->area_name }}</h3>
@@ -172,6 +173,8 @@
                 class="img-fluid">
         </div>
     </div>
+    @endisset
+
 
     <div class="row mt-5 d-flex justify-content-around">
         <div class="col-md-5">
