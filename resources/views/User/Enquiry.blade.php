@@ -21,7 +21,7 @@
     <div class="row mt-5">
         <div class="col-md-9 mx-auto">
             <h2 class="text-center">
-                Contact Us
+                Join Us
             </h2>
         </div>
     </div>
