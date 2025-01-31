@@ -14,9 +14,12 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <label class="form-label mb-0">Enter Area Name:</label>
-                            <input class="form-control" placeholder="Enter area name" name="areaName"
-                                value="{{ old('areaName') }}">
+                            <label class="form-label mb-0">Select Apartment Location:</label>
+                            <select name="areaName" class="form-select">
+                                @foreach ($fetchLocArr as $value)
+                                    <option value="{{ $value }}">{{ $value }}</option>
+                                @endforeach
+                            </select>
                             <small class="text-danger">
                                 @error('areaName')
                                     {{ 'Please enter the name of area' }}
@@ -122,7 +125,8 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="form-label mb-0">Enter Apartment Description:</label>
-                            <textarea class="form-control" rows="5" placeholder="Enter apartment description" style="resize: none;" name="apartmentDescription"></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Enter apartment description" style="resize: none;"
+                                name="apartmentDescription"></textarea>
                             <small class="text-danger">
                                 @error('apartmentDescription')
                                     {{ 'Please write brief description about this apartment' }}
@@ -132,7 +136,7 @@
                     </div>
 
                     <div class="row mt-3">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label class="form-label mb-0">Enter latitude value:</label>
                             <input class="form-control" type="number" step="any" name="latitudeVal">
                             <small class="text-danger">
@@ -142,12 +146,29 @@
                             </small>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label class="form-label mb-0">Enter longitude value:</label>
                             <input class="form-control" type="number" step="any" name="longitudeVal">
                             <small class="text-danger">
                                 @error('longitudeVal')
                                     {{ 'Please enter longitude value' }}
+                                @enderror
+                            </small>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label mb-0">Select Apartment Type:</label>
+                            <select name="apartmentType" id="" class="form-select">
+                                @php
+                                    $apartmentTypeArr = ['House', 'Apartment', 'Rooms'];
+                                @endphp
+                                @foreach ($apartmentTypeArr as $val)
+                                    <option value="{{ $val }}">{{ $val }}</option>
+                                @endforeach
+                            </select>
+                            <small class="text-danger">
+                                @error('apartmentType')
+                                    {{ 'Please select apartment type' }}
                                 @enderror
                             </small>
                         </div>
@@ -213,8 +234,8 @@
                     <div class="row">
                         <div class="col-md-4">
                             <label class="form-label mb-0">Cleanliness Rating (Out of 10):</label>
-                            <input class="form-control" type="number" step="any" placeholder="Rate cleanliness (1-10)"
-                                name="cleanlinessVal">
+                            <input class="form-control" type="number" step="any"
+                                placeholder="Rate cleanliness (1-10)" name="cleanlinessVal">
                             <small class="text-danger">
                                 @error('cleanlinessVal')
                                     {{ 'Please rate cleanliness out of 10' }}
@@ -224,8 +245,8 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Comfort Rating (Out of 10):</label>
-                            <input class="form-control" type="number" step="any" placeholder="Rate comfort level (1-10)"
-                                name="comfortVal">
+                            <input class="form-control" type="number" step="any"
+                                placeholder="Rate comfort level (1-10)" name="comfortVal">
                             <small class="text-danger">
                                 @error('comfortVal')
                                     {{ 'Please rate comfort level out of 10' }}
@@ -235,8 +256,8 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Facilities Rating (Out of 10):</label>
-                            <input class="form-control" type="number" step="any" placeholder="Rate facilities (1-10)"
-                                name="facilityVal">
+                            <input class="form-control" type="number" step="any"
+                                placeholder="Rate facilities (1-10)" name="facilityVal">
                             <small class="text-danger">
                                 @error('facilityVal')
                                     {{ 'Please rate provided facilities out of 10' }}
@@ -259,7 +280,8 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Staff Rating (Out of 10):</label>
-                            <input class="form-control" type="number" step="any" placeholder="Rate staff (1-10)" name="staffVal">
+                            <input class="form-control" type="number" step="any" placeholder="Rate staff (1-10)"
+                                name="staffVal">
                             <small class="text-danger">
                                 @error('staffVal')
                                     {{ 'Please rate staff out of 10' }}
@@ -269,8 +291,8 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Value for Money (Out of 10):</label>
-                            <input class="form-control" type="number" step="any" placeholder="Rate value for money (1-10)"
-                                name="valueForMoney">
+                            <input class="form-control" type="number" step="any"
+                                placeholder="Rate value for money (1-10)" name="valueForMoney">
                             <small class="text-danger">
                                 @error('valueForMoney')
                                     {{ 'Please rate out of 10 for the value for money' }}
@@ -282,8 +304,8 @@
                     <div class="row mt-3">
                         <div class="col-md-4">
                             <label class="form-label mb-0">WiFi Rating (Out of 10):</label>
-                            <input class="form-control" type="number" step="any" placeholder="Rate WiFi quality (1-10)"
-                                name="internetQuality">
+                            <input class="form-control" type="number" step="any"
+                                placeholder="Rate WiFi quality (1-10)" name="internetQuality">
                             <small class="text-danger">
                                 @error('facilityVal')
                                     {{ 'Please rate internet quality out of 10' }}

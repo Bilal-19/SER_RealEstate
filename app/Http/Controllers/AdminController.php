@@ -74,7 +74,8 @@ class AdminController extends Controller
 
     public function addAppartment()
     {
-        return view('Admin.AddAppartments');
+        $fetchLocArr = DB::table("locations")->pluck('location');
+        return view('Admin.AddAppartments', with(compact("fetchLocArr")));
     }
 
     public function createApartment(Request $request)
@@ -92,6 +93,7 @@ class AdminController extends Controller
             'apartmentAreaSqFt' => 'required',
             'latitudeVal' => 'required',
             'longitudeVal' => 'required',
+            'apartmentType' => 'required',
             'apartmentDescription' => 'required',
             'availableFrom' => 'required',
             'availableTill' => 'required',
@@ -146,6 +148,7 @@ class AdminController extends Controller
             'free_wifi_val' => $request->internetQuality,
             'longitude' => $request->longitudeVal,
             'latitude' => $request->latitudeVal,
+            'apartment_type' => $request->apartmentType,
             'sqfeet_area' => $request->apartmentAreaSqFt,
             'created_at' => now()
         ]);
