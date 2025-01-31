@@ -39,8 +39,9 @@ class UserController extends Controller
     {
         $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
         $topRatedApartment = DB::table('apartments')->where('isFavourite', '=', 1)->first();
+        $fetchAllTestimonials = DB::table('feedback')->get();
         return view('User.LandingPage')->with(compact(
-            'favApartmentRecords', 'topRatedApartment'
+            'favApartmentRecords', 'topRatedApartment', 'fetchAllTestimonials'
         ));
     }
 
