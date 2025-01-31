@@ -181,7 +181,7 @@
         </div>
 
         <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/check-mark.png') }}" alt="" class="img-fluid mb-3">
+            <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
             <h5>Simple Booking</h5>
             <p>
                 Our bespoke corporate client packages come with a designated account manager to tend to all requests
@@ -197,7 +197,7 @@
         </div>
 
         <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/sofa.png') }}" alt="" class="img-fluid mb-3">
+            <img src="{{ asset('assets/images/sofa.jpg') }}" alt="" class="img-fluid mb-3">
             <h5>Feel At Home</h5>
             <p>
                 You will have everything you need to feel right at home
@@ -205,7 +205,7 @@
         </div>
 
         <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/protecting_people.png') }}" alt="" class="img-fluid mb-3">
+            <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="" class="img-fluid mb-3">
             <h5>Feel Secure</h5>
             <p>
                 We provide safe, secure accommodation with 24-hour support
