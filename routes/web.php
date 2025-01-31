@@ -136,6 +136,7 @@ Route::get("admin/delete/user/{id}", [AdminController::class, 'deleteUserAccount
 Route::get("admin/locations", [AdminController::class, 'Locations'])->name('Admin.Locations');
 Route::get("admin/add/location", [AdminController::class, 'AddLocation'])->name('Admin.AddLocation');
 Route::post("admin/create/location", [AdminController::class, 'createLocation'])->name('Admin.CreateLocation');
+Route::get("admin/delete/location/{id}", [AdminController::class, 'deleteLocation'])->name('Admin.DeleteLocation');
 
 
 // Send Payment Email

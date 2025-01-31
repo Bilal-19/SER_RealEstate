@@ -663,4 +663,16 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+
+    public function deleteLocation($id)
+    {
+        $delLocation = DB::table('locations')->where("id",'=',$id)->delete();
+        if ($delLocation) {
+            toastr()->success("Selected location deleted successfully");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
 }
