@@ -30,7 +30,7 @@
 @section('user-main-section')
     <div class="row mt-3">
         <div class="col-md-8 mx-auto">
-            <form action="{{ route('Create.Inquiry') }}" method="post" autocomplete="off">
+            <form action="#" method="post" autocomplete="off">
                 @csrf
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
@@ -64,22 +64,6 @@
                         <input type="text" name="phone_number" class="form-control" placeholder="Phone Number">
                         <small class="text-danger">
                             @error('phone_number')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                </div>
-
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <select name="duration_of_stay" class="form-select">
-                            <option value="">Duration of Stay</option>
-                            @for ($i = 1; $i <= 12; $i++)
-                            <option value="{{$i}}">{{$i}}</option>
-                            @endfor
-                        </select>
-                        <small class="text-danger">
-                            @error('duration_of_stay')
                                 {{ $message }}
                             @enderror
                         </small>

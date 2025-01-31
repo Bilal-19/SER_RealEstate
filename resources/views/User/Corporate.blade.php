@@ -116,7 +116,7 @@
         <div class="col-md-8 mx-auto text-center">
             <h3>Looking for a corporate stay?</h3>
 
-            <form action="{{ route('Create.Inquiry') }}" method="post" autocomplete="off">
+            <form action="{{ route('Create.CorporateInquiry') }}" method="post" autocomplete="off">
                 @csrf
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">

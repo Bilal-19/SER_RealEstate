@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inquiry', function (Blueprint $table) {
+        Schema::create('join_sterling_inquiry', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('full_name');
             $table->string('email');
             $table->string('company_name');
             $table->string('phone_number');
-            $table->string('duration_of_stay');
             $table->text('enquiry_message');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inquiry');
+        Schema::dropIfExists('join_sterling_inquiry');
     }
 };

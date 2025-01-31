@@ -90,7 +90,7 @@ class UserController extends Controller
         return view('User.Enquiry');
     }
 
-    public function createInquiry(Request $request)
+    public function createcorporate_inquiry(Request $request)
     {
         // Form Validation
         $request->validate(
@@ -104,7 +104,7 @@ class UserController extends Controller
             ]
 
         );
-        $res = DB::table('inquiry')
+        $res = DB::table('corporate_inquiry')
             ->insert([
                 'name' => $request->fullname,
                 'email' => $request->email,

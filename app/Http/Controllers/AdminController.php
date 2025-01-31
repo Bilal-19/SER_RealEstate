@@ -14,7 +14,7 @@ class AdminController extends Controller
     {
         if (Auth::check()) {
             // Total Inquiries | Total Bookings | Revenue | Available Apartments
-            $totalInquiries = DB::table('inquiry')->count();
+            $totalInquiries = DB::table('corporate_inquiry')->count();
             $totalBookings = DB::table('booking')->count();
             $totalRevenue = DB::table('booking')->sum('total_amount');
             $totalBlogs = DB::table('blogs')->count();
@@ -535,7 +535,7 @@ class AdminController extends Controller
 
     public function readInquiries()
     {
-        $fetchQueries = DB::table('inquiry')->get();
+        $fetchQueries = DB::table('corporate_inquiry')->get();
         return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
     }
 
