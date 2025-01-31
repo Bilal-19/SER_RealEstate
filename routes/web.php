@@ -137,6 +137,8 @@ Route::get("admin/locations", [AdminController::class, 'Locations'])->name('Admi
 Route::get("admin/add/location", [AdminController::class, 'AddLocation'])->name('Admin.AddLocation');
 Route::post("admin/create/location", [AdminController::class, 'createLocation'])->name('Admin.CreateLocation');
 Route::get("admin/delete/location/{id}", [AdminController::class, 'deleteLocation'])->name('Admin.DeleteLocation');
+Route::get("admin/edit/location/{id}", [AdminController::class, 'editLocation'])->name('Admin.EditLocation');
+Route::post("admin/update/location/{id}", [AdminController::class, 'updateLocation'])->name('Admin.UpdateLocation');
 
 
 // Send Payment Email

@@ -41,7 +41,7 @@
                             </td>
                             <td>{{$record->location}}</td>
                             <td class="text-center">
-                                <a href="#" class="text-primary">
+                                <a href="{{route("Admin.EditLocation", ["id" => $record->id])}}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>

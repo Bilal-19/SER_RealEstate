@@ -664,9 +664,45 @@ class AdminController extends Controller
         }
     }
 
+    public function editLocation($id)
+    {
+        $findLocation = DB::table('locations')->find($id);
+        return view("Admin.EditLocation", with(compact("findLocation")));
+    }
+
+    public function updateLocation(Request $request, $id)
+    {
+        // Check If user upload new image
+        if ($request->file("thumbnail")) {
+            $thumbnailPath = time() . "." . $request->thumbnail->getClientOriginalExtension();
+            $request->thumbnail->move("Locations", $thumbnailPath);
+        } else {
+            $findImgPath = DB::table("locations")->
+                select('thumbnail_img')->
+                where('id', '=', $id)->
+                first();
+            $thumbnailPath = $findImgPath->thumbnail_img;
+        }
+
+        $isLocUpdated = DB::table('locations')->
+            where('id', '=', $id)->
+            update([
+                'thumbnail_img' => $thumbnailPath,
+                'location' => $request->location
+            ]);
+
+        if ($isLocUpdated){
+            toastr('Selected Location Updated Successfully');
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
     public function deleteLocation($id)
     {
-        $delLocation = DB::table('locations')->where("id",'=',$id)->delete();
+        $delLocation = DB::table('locations')->where("id", '=', $id)->delete();
         if ($delLocation) {
             toastr()->success("Selected location deleted successfully");
             return redirect()->back();
