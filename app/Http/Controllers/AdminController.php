@@ -41,9 +41,9 @@ class AdminController extends Controller
 
         if ($search !== null) {
             $fetchAllApartments = DB::table('apartments')
-            ->where('area_name', 'LIKE', "%$search%")
-            ->orWhere('street_address', 'LIKE', "%$search%")
-            ->get();
+                ->where('area_name', 'LIKE', "%$search%")
+                ->orWhere('street_address', 'LIKE', "%$search%")
+                ->get();
             return view('Admin.Apartments')->with(compact('fetchAllApartments'));
         } else {
             $fetchAllApartments = DB::table('apartments')->get();
@@ -629,7 +629,37 @@ class AdminController extends Controller
         return redirect()->route('Landing.Page');
     }
 
-    public function Locations(){
+    public function Locations()
+    {
         return view("Admin.Locations");
+    }
+
+    public function AddLocation()
+    {
+        return view("Admin.AddLocation");
+    }
+
+    public function createLocation(Request $request)
+    {
+        $request->validate([
+            'thumbnail' => 'required|file',
+            'location' => 'required'
+        ]);
+
+        $thumbnailPath = time() . "." . $request->thumbnail->getClientOriginalExtension();
+        $request->thumbnail->move("Locations", $thumbnailPath);
+
+        $isRecCreated = DB::table('locations')->insert([
+            'thumbnail_img' => $thumbnailPath,
+            'location' => $request->location
+        ]);
+
+        if ($isRecCreated) {
+            toastr('New Location Added Successfully');
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
     }
 }
