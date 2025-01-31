@@ -59,9 +59,56 @@
     </div>
 
     <div class="row mt-5 mb-5">
-        <div class="col-md-12 text-center">
+        <div class="col-md-10 mx-auto text-center">
             <h3>The Sterling Standard</h3>
             <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-around align-items-center">
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/all_bills.jpg")}}" alt="" class="img-fluid">
+            <p>All Bills Included</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/wifi.jpg")}}" alt="" class="img-fluid">
+            <p>Wi-Fi</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/hair-dryer.jpg")}}" alt="" class="img-fluid">
+            <p>Hairdryer</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/iron.jpg")}}" alt="" class="img-fluid">
+            <p>Iron & Ironing Board</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/house-keeping.jpg")}}" alt="" class="img-fluid">
+            <p>Housekeeping</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/smart-tv.jpg")}}" alt="" class="img-fluid">
+            <p>Smart TV</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/kitchen-facility.jpg")}}" alt="" class="img-fluid">
+            <p>Kitchen Facilities</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/laundary.jpg")}}" alt="" class="img-fluid">
+            <p>Laundry Facilities</p>
+        </div>
+
+        <div class="col-md-1 text-center">
+            <img src="{{asset("assets/images/fresh-towel.jpg")}}" alt="" class="img-fluid">
+            <p>Fresh Linens</p>
         </div>
     </div>
 
