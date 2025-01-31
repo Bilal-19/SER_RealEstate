@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('amenity_icon');
             $table->string('amenity_text');
-            $table->string('amenity_description');
             $table->timestamps();
         });
     }
