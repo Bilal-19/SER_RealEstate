@@ -230,7 +230,7 @@
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Favourite.Apartment') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Favourite.Apartment') }}">
                                     <i class="fa-solid fa-building-user"></i>
-                                    Favourite Apartments
+                                    Top Rated Apartments
                                 </a>
                             </li>
 
@@ -265,7 +265,7 @@
 
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
-                                    <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
+                                    <i class="fa-solid fa-user-circle"></i>Customer Enquiries
                                 </a>
                             </li>
 
@@ -281,6 +281,29 @@
                                 </a>
                             </li>
 
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-quote-left"></i>Testimonials
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-briefcase"></i>Corporate Enquiries
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-info-circle"></i>General Enquiries
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3">
+                                    <i class="fa-solid fa-calendar-check"></i>Booking Enquiries
+                                </a>
+                            </li>
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
                                     <i class="fas fa-sign-out"></i>
