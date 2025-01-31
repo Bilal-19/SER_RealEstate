@@ -5,7 +5,7 @@
         <div class="col-md-2">
             <p class="">Company</p>
             <a href="{{ route('View.About') }}" class="text-light d-block ">About Sterling</a>
-            <a href="#" class="text-light d-block ">Locations</a>
+            <a href="{{route("view.Locations")}}" class="text-light d-block ">Locations</a>
             <a href="#" class="text-light d-block ">FAQs</a>
             <a href="{{ route('View.Enquiry.Form') }}" class="text-light d-block ">Contact Us</a>
         </div>
