@@ -88,6 +88,12 @@ Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->n
 Route::post("/update/apartment/{id}", [AdminController::class, 'updateApartment'])->name('Update.Apartment');
 Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->name('Edit.Apartment');
 
+// Testimonials - Admin
+Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
+Route::get("/admin/add/testimonial", [AdminController::class, 'AddTestimonials'])->name('Admin.AddTestimonials');
+Route::post("/admin/create/testimonial", [AdminController::class, 'createTestimonials'])->name('Admin.CreateTestimonials');
+
+
 
 // Booking Page - User
 Route::get("/booking/{id}/{checkIn}/{checkOut}", [UserController::class, 'Booking'])->name('Booking');

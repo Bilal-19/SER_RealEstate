@@ -694,7 +694,7 @@ class AdminController extends Controller
                 'location' => $request->location
             ]);
 
-        if ($isLocUpdated){
+        if ($isLocUpdated) {
             toastr('Selected Location Updated Successfully');
             return redirect()->back();
         } else {
@@ -708,6 +708,36 @@ class AdminController extends Controller
         $delLocation = DB::table('locations')->where("id", '=', $id)->delete();
         if ($delLocation) {
             toastr()->success("Selected location deleted successfully");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    public function Testimonials()
+    {
+        $fetchAllTestimonials = DB::table("feedback")->get();
+        return view("Admin.Testimonials", with(compact("fetchAllTestimonials")));
+    }
+
+    public function AddTestimonials()
+    {
+        return view("Admin.AddFeedback");
+    }
+
+    public function createTestimonials(Request $request)
+    {
+        // Form Validation
+
+        $isFeedbackCreated = DB::table("feedback")->insert([
+            'name' => $request->client_name,
+            'message' => $request->client_message,
+            'rating' => $request->rating
+        ]);
+
+        if ($isFeedbackCreated){
+            toastr()->success("Client testimonial added successfully");
             return redirect()->back();
         } else {
             toastr()->info('Something went wrong. Please try again later.');

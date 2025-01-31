@@ -282,7 +282,7 @@
                             </li>
 
                             <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3" href="#">
+                                <a class="nav-link  d-flex align-items-center gap-3" href="{{route('Admin.Testimonials')}}">
                                     <i class="fa-solid fa-quote-left"></i>Testimonials
                                 </a>
                             </li>
