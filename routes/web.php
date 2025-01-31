@@ -31,13 +31,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get("/", [UserController::class, 'index'])->name(name: 'Landing.Page');
-Route::get("/view/appartments", [UserController::class, 'viewAppartments'])->name('View.Appartments');
-Route::get("/view/benefits", [UserController::class, 'viewBenefits'])->name('View.Benefits');
-Route::get("/view/corporate", [UserController::class, 'viewCorporate'])->name('View.Corporate');
-Route::get("/view/about", [UserController::class, 'viewAbout'])->name('View.About');
-Route::get("/view/blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
-Route::get("/view/enquiry/form", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
-Route::get("/experience", [UserController::class, 'viewExperience'])->name('view.Experience');
+Route::get("appartments", [UserController::class, 'viewAppartments'])->name('View.Appartments');
+Route::get("benefits", [UserController::class, 'viewBenefits'])->name('View.Benefits');
+Route::get("corporate", [UserController::class, 'viewCorporate'])->name('View.Corporate');
+Route::get("about", [UserController::class, 'viewAbout'])->name('View.About');
+Route::get("blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
+Route::get("join/sterling", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
+Route::get("experience", [UserController::class, 'viewExperience'])->name('view.Experience');
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
