@@ -2,7 +2,7 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="fw-bold ff-poppins text-center">Edit User Account</h3>
+            <h3 class="fw-bold  text-center">Edit User Account</h3>
         </div>
 
 

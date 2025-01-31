@@ -38,6 +38,7 @@ Route::get("about", [UserController::class, 'viewAbout'])->name('View.About');
 Route::get("blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
 Route::get("join/sterling", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
 Route::get("experience", [UserController::class, 'viewExperience'])->name('view.Experience');
+Route::get("locations", [UserController::class, 'Locations'])->name('view.Locations');
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
@@ -129,6 +130,11 @@ Route::get("admin/reset/password/{id}", [AdminController::class, 'resetPassword'
 Route::get("admin/edit/user/{id}", [AdminController::class, 'editAccount'])->name('EditAccount');
 Route::post("admin/update/user/{id}", [AdminController::class, 'updateUserAccount'])->name('Users.UpdateUserAccount');
 Route::get("admin/delete/user/{id}", [AdminController::class, 'deleteUserAccount'])->name('DeleteUserAccount');
+
+
+// Locations - Admin
+Route::get("admin/locations", [AdminController::class, 'Locations'])->name('Admin.Locations');
+
 
 // Send Payment Email
 Route::get("/admin/send/email", [UserController::class, 'sendEmail']);

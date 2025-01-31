@@ -228,12 +228,13 @@ a {
 }
 
 .ff-poppins {
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
 }
 
 .ff-playfair-display {
     font-family: "Playfair Display", serif;
 }
+
 
 /* Font Size */
 

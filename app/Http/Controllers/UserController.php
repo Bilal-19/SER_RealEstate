@@ -350,5 +350,9 @@ class UserController extends Controller
     public function viewExperience(){
         return view('User.Experience');
     }
+
+    public function Locations(){
+        return view("User.Locations");
+    }
 }
 

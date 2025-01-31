@@ -628,4 +628,8 @@ class AdminController extends Controller
         Auth::logout();
         return redirect()->route('Landing.Page');
     }
+
+    public function Locations(){
+        return view("Admin.Locations");
+    }
 }

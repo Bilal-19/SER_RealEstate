@@ -19,7 +19,14 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    {{-- Link Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset("assets/css/Admin.css")}}">
     @stack('style')
 </head>
 
@@ -204,72 +211,78 @@
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Dashboard') ? 'admin-active-link text-light' : 'text-dark' }}"
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Dashboard') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Apartments') ? 'admin-active-link text-light' : 'text-dark' }}"
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Apartments') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{route('Apartments')}}">
                                     <i class="fa-solid fa-building"></i>
                                     Apartments
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Favourite.Apartment') ? 'admin-active-link text-light' : 'text-dark' }}"
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Favourite.Apartment') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Favourite.Apartment') }}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Favourite Apartments
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Benefits') ? 'admin-active-link text-light' : 'text-dark' }}"
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Benefits') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     aria-current="page" href="{{ route('Benefits') }}">
                                     <i class="fa-solid fa-concierge-bell"></i>
                                     Amenities
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Blog') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Blog')}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Blog') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Blog')}}">
                                     <i class="fa-solid fa-newspaper"></i> Blogs
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('View.Booking') ? 'admin-active-link text-light' : 'text-dark' }}"
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('View.Booking') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     href="{{route('View.Booking')}}">
                                     <i class="fa-solid fa-handshake"></i>
                                    Booking
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Policy') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Policy')}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Policy') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Policy')}}">
                                     <i class="fa-regular fa-file-alt"></i>Policy
 
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
                                     <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 {{ request()->routeIs('View.Users') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('View.Users')}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('View.Users') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('View.Users')}}">
                                     <i class="fa-solid fa-users"></i>User Management
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Locations') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("Admin.Locations")}}">
+                                    <i class="fa-solid fa-location-dot"></i>Locations
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
                                     <i class="fas fa-sign-out"></i>
                                     Sign out
                                 </a>
