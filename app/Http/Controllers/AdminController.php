@@ -631,7 +631,8 @@ class AdminController extends Controller
 
     public function Locations()
     {
-        return view("Admin.Locations");
+        $fetchAllLocations = DB::table("locations")->get();
+        return view("Admin.Locations", with(compact("fetchAllLocations")));
     }
 
     public function AddLocation()
