@@ -37,7 +37,7 @@
                         <tr>
                             <td>{{ $record->id }}</td>
                             <td>
-                                <img src="{{ asset('Location/' . $record->thumbnail_img) }}" alt="{{$record->location}}" class="img-fluid thumbnail-img">
+                                <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{$record->location}}" class="img-fluid thumbnail-img">
                             </td>
                             <td>{{$record->location}}</td>
                             <td class="text-center">

@@ -352,7 +352,8 @@ class UserController extends Controller
     }
 
     public function Locations(){
-        return view("User.Locations");
+        $fetchAllLocations = DB::table('locations')->get();
+        return view("User.Locations", with(compact("fetchAllLocations")));
     }
 }
 
