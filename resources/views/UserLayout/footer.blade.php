@@ -7,7 +7,7 @@
             <a href="{{ route('View.About') }}" class="text-light d-block ">About Sterling</a>
             <a href="{{route("view.Locations")}}" class="text-light d-block ">Locations</a>
             <a href="#" class="text-light d-block ">FAQs</a>
-            <a href="{{ route('View.Enquiry.Form') }}" class="text-light d-block ">Contact Us</a>
+            <a href="{{ route("view.ContactUs") }}" class="text-light d-block ">Contact Us</a>
         </div>
 
         <div class="col-md-2">

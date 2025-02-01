@@ -393,5 +393,11 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    // Contact Us Page
+    public function ContactUs(){
+        $fetchAllTestimonials = DB::table("feedback")->get();
+        return view("User.ContactUs", with(compact("fetchAllTestimonials")));
+    }
 }
 
