@@ -93,6 +93,9 @@ body{
     background-image: url('../images/grey-background.jpg');
     background-size: cover;
     background-attachment: scroll;
+    width: 95%;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
 .brand-btn {
