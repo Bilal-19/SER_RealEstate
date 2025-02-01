@@ -76,8 +76,8 @@
     </div>
 
     <div class="row mt-5 mb-5">
-        <div class="col-md-8 mx-auto text-center">
-            <h3>Looking for a corporate stay?</h3>
+        <div class="col-md-8 mx-auto">
+            <h3 class="text-center">Looking for a corporate stay?</h3>
 
             <form action="{{ route('Create.CorporateInquiry') }}" method="post" autocomplete="off">
                 @csrf

@@ -116,7 +116,7 @@ Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{to
 
 
 // Inquiry
-Route::post("/create/inquiry", [UserController::class, 'createInquiry'])->name('Create.CorporateInquiry');
+Route::post("/create/inquiry", [UserController::class, 'createCorporateInquiry'])->name('Create.CorporateInquiry');
 Route::get("/admin/inquiry", [AdminController::class, 'readInquiries'])->name('Read.Queries');
 
 // Booking - Admin

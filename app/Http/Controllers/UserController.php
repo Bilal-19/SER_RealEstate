@@ -92,7 +92,7 @@ class UserController extends Controller
         return view('User.Enquiry');
     }
 
-    public function createcorporate_inquiry(Request $request)
+    public function createCorporateInquiry(Request $request)
     {
         // Form Validation
         $request->validate(
