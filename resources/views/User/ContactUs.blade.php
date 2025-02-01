@@ -7,7 +7,7 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-6 mx-auto d-flex justify-content-center">
+        <div class="col-md-3 mx-auto d-flex justify-content-around">
             <a href="">
                 <img src="{{ asset('assets/images/booking-enquiry.jpg') }}" alt="" class="img-fluid">
             </a>
@@ -44,7 +44,7 @@
 
                     @foreach ($fetchAllTestimonials as $record)
                         <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
-                            <h5 class="col-8 col-md-12 fw-bold">“{{ $record->message }}”</h5>
+                            <h5 class="col-md-12 col-12 fw-bold">“{{ $record->message }}”</h5>
                             <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
                             <p>{{ $record->name }}</p>
                         </div>
