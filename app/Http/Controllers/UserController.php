@@ -352,7 +352,8 @@ class UserController extends Controller
     public function viewExperience(){
         $fetchAllStandards = DB::table('standards')->get();
         $fetchAllFAQs = DB::table('faq')->limit(4)->get();
-        return view('User.Experience', with(compact("fetchAllStandards","fetchAllFAQs")));
+        $fetchAllTestimonials = DB::table('feedback')->get();
+        return view('User.Experience', with(compact("fetchAllStandards","fetchAllFAQs", "fetchAllTestimonials")));
     }
 
     public function Locations(){

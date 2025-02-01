@@ -107,12 +107,12 @@
     </div>
 
     @php
-    function calcStars($numFill, $numBlank)
-    {
-        return str_repeat('<i class="fa-solid fa-star"></i>', $numFill) .
-               str_repeat('<i class="fa-regular fa-star"></i>', $numBlank);
-    }
-@endphp
+        function calcStars($numFill, $numBlank)
+        {
+            return str_repeat('<i class="fa-solid fa-star"></i>', $numFill) .
+                str_repeat('<i class="fa-regular fa-star"></i>', $numBlank);
+        }
+    @endphp
 
 
     <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
