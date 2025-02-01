@@ -62,7 +62,8 @@ class UserController extends Controller
 
     public function viewCorporate()
     {
-        return view('User.Corporate');
+        $fetchAllStandards = DB::table('standards')->get();
+        return view('User.Corporate', with(compact("fetchAllStandards")));
     }
 
     public function viewAbout()
@@ -349,7 +350,8 @@ class UserController extends Controller
     }
 
     public function viewExperience(){
-        return view('User.Experience');
+        $fetchAllStandards = DB::table('standards')->get();
+        return view('User.Experience', with(compact("fetchAllStandards")));
     }
 
     public function Locations(){

@@ -28,50 +28,12 @@
     </div>
 
     <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/all_bills.jpg")}}" alt="" class="img-fluid">
-            <p>All Bills Included</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/wifi.jpg")}}" alt="" class="img-fluid">
-            <p>Wi-Fi</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/hair-dryer.jpg")}}" alt="" class="img-fluid">
-            <p>Hairdryer</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/iron.jpg")}}" alt="" class="img-fluid">
-            <p>Iron & Ironing Board</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/house-keeping.jpg")}}" alt="" class="img-fluid">
-            <p>Housekeeping</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/smart-tv.jpg")}}" alt="" class="img-fluid">
-            <p>Smart TV</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/kitchen-facility.jpg")}}" alt="" class="img-fluid">
-            <p>Kitchen Facilities</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/laundary.jpg")}}" alt="" class="img-fluid">
-            <p>Laundry Facilities</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/fresh-towel.jpg")}}" alt="" class="img-fluid">
-            <p>Fresh Linens</p>
-        </div>
+        @foreach ($fetchAllStandards as $record)
+            <div class="col-md-1 col-8 text-center">
+                <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
+                <p>{{ $record->standard_text }}</p>
+            </div>
+        @endforeach
     </div>
 
     <div class="row">

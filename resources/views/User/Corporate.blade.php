@@ -2,12 +2,13 @@
 
 @push('style')
     <style>
-        .form-control, .form-select {
+        .form-control,
+        .form-select {
             background-color: #c0c0c0 !important;
             color: white !important;
         }
 
-        .form-control::placeholder{
+        .form-control::placeholder {
             color: white;
         }
 
@@ -15,7 +16,7 @@
             border: none;
         }
 
-        body{
+        body {
             color: #303030;
         }
     </style>
@@ -66,50 +67,12 @@
     </div>
 
     <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/all_bills.jpg")}}" alt="" class="img-fluid">
-            <p>All Bills Included</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/wifi.jpg")}}" alt="" class="img-fluid">
-            <p>Wi-Fi</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/hair-dryer.jpg")}}" alt="" class="img-fluid">
-            <p>Hairdryer</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/iron.jpg")}}" alt="" class="img-fluid">
-            <p>Iron & Ironing Board</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/house-keeping.jpg")}}" alt="" class="img-fluid">
-            <p>Housekeeping</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/smart-tv.jpg")}}" alt="" class="img-fluid">
-            <p>Smart TV</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/kitchen-facility.jpg")}}" alt="" class="img-fluid">
-            <p>Kitchen Facilities</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/laundary.jpg")}}" alt="" class="img-fluid">
-            <p>Laundry Facilities</p>
-        </div>
-
-        <div class="col-md-1 text-center">
-            <img src="{{asset("assets/images/fresh-towel.jpg")}}" alt="" class="img-fluid">
-            <p>Fresh Linens</p>
-        </div>
+        @foreach ($fetchAllStandards as $record)
+            <div class="col-md-1 col-8 text-center">
+                <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
+                <p>{{ $record->standard_text }}</p>
+            </div>
+        @endforeach
     </div>
 
     <div class="row mt-5 mb-5">
@@ -161,7 +124,7 @@
                         <select name="duration_of_stay" class="form-select">
                             <option value="">Duration of Stay</option>
                             @for ($i = 1; $i <= 12; $i++)
-                            <option value="{{$i}}">{{$i}}</option>
+                                <option value="{{ $i }}">{{ $i }}</option>
                             @endfor
                         </select>
                         <small class="text-danger">
