@@ -146,6 +146,14 @@ Route::get("admin/delete/location/{id}", [AdminController::class, 'deleteLocatio
 Route::get("admin/edit/location/{id}", [AdminController::class, 'editLocation'])->name('Admin.EditLocation');
 Route::post("admin/update/location/{id}", [AdminController::class, 'updateLocation'])->name('Admin.UpdateLocation');
 
+// FAQs - Admin
+Route::get("admin/faqs", [AdminController::class, 'FAQs'])->name('Admin.FAQs');
+Route::get("admin/add/faq", [AdminController::class, 'AddFAQ'])->name('Admin.AddFAQ');
+Route::post("admin/create/faq", [AdminController::class, 'createFAQ'])->name('Admin.createFAQ');
+Route::get("admin/edit/faq/{id}", [AdminController::class, 'editFAQ'])->name('Admin.EditFAQ');
+Route::post("admin/update/faq/{id}", [AdminController::class, 'updateFAQ'])->name('Admin.updateFAQ');
+Route::get("admin/del/faq/{id}", [AdminController::class, 'deleteFAQ'])->name('Admin.deleteFAQ');
+
 
 // Send Payment Email
 Route::get("/admin/send/email", [UserController::class, 'sendEmail']);

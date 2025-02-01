@@ -733,8 +733,75 @@ class AdminController extends Controller
             'rating' => $request->rating
         ]);
 
-        if ($isFeedbackCreated){
+        if ($isFeedbackCreated) {
             toastr()->success("Client testimonial added successfully");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    // FAQ
+    public function FAQs()
+    {
+        $fetchAllFAQs = DB::table("faq")->get();
+        return view("Admin.FAQ", with(compact("fetchAllFAQs")));
+    }
+
+    public function AddFAQ()
+    {
+
+        return view("Admin.AddFAQ");
+    }
+
+    public function createFAQ(Request $request)
+    {
+        // form validation
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
+
+        $isFAQcreated = DB::table('faq')->insert([
+            'question' => $request->question,
+            'answer' => $request->answer
+        ]);
+
+        if ($isFAQcreated) {
+            toastr()->success('FAQ added successfully');
+            return redirect()->back();
+        }
+    }
+
+    public function editFAQ($id)
+    {
+        $findFAQ = DB::table("faq")->find($id);
+        return view("Admin.EditFAQ", with(compact("findFAQ")));
+    }
+
+    public function updateFAQ(Request $request, $id){
+        $isRecUpdated = DB::table('faq')->
+        where('id',"=",$id)->
+        update([
+            'question' => $request->question,
+            'answer' => $request->answer
+        ]);
+
+        if ($isRecUpdated){
+            toastr()->success("Selected FAQ updated successfully");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    public function deleteFAQ($id){
+        $isRecDeleted = DB::table("faq")->where('id','=',$id)->delete();
+
+        if ($isRecDeleted){
+            toastr()->success("Selected record deleted successfully");
             return redirect()->back();
         } else {
             toastr()->info('Something went wrong. Please try again later.');

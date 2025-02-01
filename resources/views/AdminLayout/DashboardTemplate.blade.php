@@ -304,6 +304,13 @@
                                     <i class="fa-solid fa-calendar-check"></i>Booking Enquiries
                                 </a>
                             </li>
+
+                            <li class="nav-item mb-2" >
+                                <a class="nav-link  d-flex align-items-center gap-3" href="{{route("Admin.FAQs")}}">
+                                    <i class="fa-solid fa-question"></i>FAQs
+                                </a>
+                            </li>
+
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
                                     <i class="fas fa-sign-out"></i>
