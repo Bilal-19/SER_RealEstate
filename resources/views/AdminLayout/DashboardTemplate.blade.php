@@ -235,10 +235,10 @@
                             </li>
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Benefits') ? 'admin-active-link text-light' : 'text-dark' }}"
-                                    aria-current="page" href="{{ route('Benefits') }}">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Standard') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    aria-current="page" href="{{ route('Standard') }}">
                                     <i class="fa-solid fa-concierge-bell"></i>
-                                    Amenities
+                                    Standards
                                 </a>
                             </li>
 

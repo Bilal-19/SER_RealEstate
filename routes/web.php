@@ -50,12 +50,12 @@ Route::get("/admin/add/favourite/appartment", [AdminController::class, 'addFavou
 Route::post("/admin/create/favourite/appartment", [AdminController::class, 'createFavouriteApartment'])->name('Create.Favourite.Apartment');
 
 // Benefits - Admin
-Route::get("/admin/benefits", [AdminController::class, 'Benefits'])->name('Benefits');
-Route::get("/admin/add/benefits", [AdminController::class, 'AddBenefit'])->name('Add.Benefits');
-Route::post("/admin/create/benefit", [AdminController::class, 'createBenefit'])->name('Create.Benefit');
-Route::get("/admin/edit/benefit/{id}", [AdminController::class, 'editBenefit'])->name('Edit.Benefit');
-Route::get("/admin/delete/benefit/{id}", [AdminController::class, 'deleteBenefit'])->name('Delete.Benefit');
-Route::post("/admin/update/benefit/{id}", [AdminController::class, 'updateBenefit'])->name('Update.Benefit');
+Route::get("/admin/standards", [AdminController::class, 'Benefits'])->name('Standard');
+Route::get("/admin/add/standard", [AdminController::class, 'AddBenefit'])->name('Add.Standard');
+Route::post("/admin/create/standard", [AdminController::class, 'createStandard'])->name('Create.Standard');
+Route::get("/admin/edit/standard/{id}", [AdminController::class, 'editStandard'])->name('Edit.Standard');
+Route::get("/admin/delete/standard/{id}", [AdminController::class, 'deleteStandard'])->name('Delete.Standard');
+Route::post("/admin/update/standard/{id}", [AdminController::class, 'updateStandard'])->name('Update.Standard');
 
 
 

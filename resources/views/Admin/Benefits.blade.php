@@ -2,14 +2,14 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center fw-bold">Amenities</h3>
+            <h3 class="text-center fw-bold">Standards</h3>
         </div>
 
         <div class="row mt-3">
             <div class="col-md-4">
-                <a href="{{ route('Add.Benefits') }}" class="btn btn-dark text-decoration-none">
+                <a href="{{ route('Add.Standard') }}" class="btn btn-dark text-decoration-none">
                     <i class="fa-solid fa-circle-plus"></i>
-                    Add Amenities</a>
+                    Add Standard</a>
             </div>
         </div>
 
@@ -20,7 +20,6 @@
                         <th>ID</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Description</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -29,17 +28,16 @@
                         <tr>
                             <td>{{ $rec->id }}</td>
                             <td>
-                                <img src="{{asset('Amenity/'.$rec->amenity_icon)}}" alt="{{$rec->amenity_text}}">
+                                <img src="{{asset('Standards/'.$rec->standard_icon)}}" alt="{{$rec->standard_text}}">
                             </td>
-                            <td>{{$rec->amenity_text}}</td>
-                            <td>{{$rec->amenity_description}}</td>
+                            <td>{{$rec->standard_text}}</td>
                             <td class="text-center">
-                                <a href="{{route('Edit.Benefit', ['id' => $rec->id])}}" class="text-primary">
+                                <a href="{{route('Edit.Standard', ['id' => $rec->id])}}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="{{route('Delete.Benefit', ['id' => $rec->id])}}" class="text-danger">
+                                <a href="{{route('Delete.Standard', ['id' => $rec->id])}}" class="text-danger">
                                     <i class="fa-solid fa-trash"></i>
                                 </a>
                             </td>

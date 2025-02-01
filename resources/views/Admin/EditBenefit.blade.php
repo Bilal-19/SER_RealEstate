@@ -6,28 +6,22 @@
         </div>
 
         <div class="row">
-            <form action="{{route('Update.Benefit', ['id' => $fetchBenefit->id])}}" method="post" autocomplete="off" enctype="multipart/form-data">
+            <form action="{{route('Update.Standard', ['id' => $fetchBenefit->id])}}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-6 mx-auto">
                     <p class="mb-0">Benefit Icon Preview Image: </p>
-                    <img src="{{asset('Amenity/'.$fetchBenefit->amenity_icon)}}" alt="">
+                    <img src="{{asset('Standards/'.$fetchBenefit->standard_icon)}}" alt="">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
-                    <label class="form-label mb-0">Upload Benefit Icon Image: </label>
-                    <input type="file" name="icon" class="form-control">
+                    <label class="form-label mb-0">Upload Standard Icon Image (Optional): </label>
+                    <input type="file" name="standard_icon" class="form-control">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Enter Benefit Name: </label>
-                    <input type="text" name="amenityName" class="form-control" placeholder="Wi-Fi"
-                        value="{{ $fetchBenefit->amenity_text }}">
-                </div>
-
-                <div class="col-md-6 mx-auto mt-3 mb-0">
-                    <label class="form-label">Enter Benefit Description: </label>
-                    <textarea type="text" name="amenityDescription" rows="5" style="resize: none;"
-                         class="form-control">{{ $fetchBenefit->amenity_description }}</textarea>
+                    <input type="text" name="standard_text" class="form-control" placeholder="Wi-Fi"
+                        value="{{ $fetchBenefit->standard_text }}">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">

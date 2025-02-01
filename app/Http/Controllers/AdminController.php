@@ -269,79 +269,76 @@ class AdminController extends Controller
 
     public function Benefits()
     {
-        $fetchBenefits = DB::table('amenity')->get();
+        $fetchBenefits = DB::table('standards')->get();
         return view('Admin.Benefits')->with(compact('fetchBenefits'));
     }
 
     public function AddBenefit()
     {
-        return view('Admin.AddBenefits');
+        return view("Admin.AddBenefits");
     }
 
 
 
-    public function createBenefit(Request $request)
+    public function createStandard(Request $request)
     {
         // Form Validation
         $request->validate([
-            'icon' => 'required|image',
-            'amenityName' => 'required',
-            'amenityDescription' => 'required'
+            'standard_icon' => 'required|image',
+            'standard_text' => 'required'
         ]);
-        $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
+        $timeStampImg = time() . '.' . $request->standard_icon->getClientOriginalExtension();
 
-        $request->icon->move('Amenity', $timeStampImg);
+        $request->standard_icon->move('Standards', $timeStampImg);
 
-        $result = DB::table('amenity')->insert([
-            'amenity_icon' => $timeStampImg,
-            'amenity_text' => $request->amenityName,
-            'amenity_description' => $request->amenityDescription,
+        $result = DB::table('standards')->insert([
+            'standard_icon' => $timeStampImg,
+            'standard_text' => $request->standard_text,
             'created_at' => now()
         ]);
 
         if ($result) {
-            toastr()->success('Amenity added successfully');
+            toastr()->success('New standard added successfully');
             return redirect()->back();
         }
     }
 
-    public function editBenefit($id)
+    public function editStandard($id)
     {
-        $fetchBenefit = DB::table('amenity')->find($id);
+        $fetchBenefit = DB::table('standards')->find($id);
         return view('Admin.EditBenefit')->with(compact('fetchBenefit'));
     }
 
 
-    public function updateBenefit($id, Request $request)
+    public function updateStandard($id, Request $request)
     {
-        $iconImg = DB::table('amenity')->find($id);
+        $iconImg = DB::table('standards')->find($id);
 
         if ($request->file('icon')) {
             $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
-            $request->icon->move('Amenity', $timeStampImg);
+            $request->icon->move('Standards', $timeStampImg);
         } else {
-            $timeStampImg = $iconImg->amenity_icon;
+            $timeStampImg = $iconImg->standard_icon;
         }
 
 
-        $result = DB::table('amenity')
+        $result = DB::table('standards')
             ->where('id', '=', $id)
             ->update([
-                'amenity_icon' => $timeStampImg,
-                'amenity_text' => $request->amenityName,
-                'amenity_description' => $request->amenityDescription,
+                'standard_icon' => $timeStampImg,
+                'standard_text' => $request->standard_text,
                 'updated_at' => now()
             ]);
 
         if ($result) {
-            toastr()->success('Amenity updated successfully');
+            toastr()->success('Standard updated successfully');
             return redirect()->back();
         }
     }
 
-    public function deleteBenefit($id)
+    public function deleteStandard($id)
     {
-        $res = DB::table('amenity')->where('id', '=', $id)->delete();
+        $res = DB::table('standards')->where('id', '=', $id)->delete();
 
         if ($res) {
             toastr()->success('Record removed successfully');
