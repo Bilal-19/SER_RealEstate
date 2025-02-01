@@ -41,7 +41,9 @@ class UserController extends Controller
         $topRatedApartment = DB::table('apartments')->where('isFavourite', '=', 1)->first();
         $fetchAllTestimonials = DB::table('feedback')->get();
         return view('User.LandingPage')->with(compact(
-            'favApartmentRecords', 'topRatedApartment', 'fetchAllTestimonials'
+            'favApartmentRecords',
+            'topRatedApartment',
+            'fetchAllTestimonials'
         ));
     }
 
@@ -89,7 +91,7 @@ class UserController extends Controller
 
     public function viewEnquiryForm()
     {
-        return view('User.Enquiry');
+        return view("User.JoinSterling");
     }
 
     public function createCorporateInquiry(Request $request)
@@ -345,20 +347,51 @@ class UserController extends Controller
         }
     }
 
-    public function BookNow(){
+    public function BookNow()
+    {
         return view('User.BookNow');
     }
 
-    public function viewExperience(){
+    public function viewExperience()
+    {
         $fetchAllStandards = DB::table('standards')->get();
         $fetchAllFAQs = DB::table('faq')->limit(4)->get();
         $fetchAllTestimonials = DB::table('feedback')->get();
-        return view('User.Experience', with(compact("fetchAllStandards","fetchAllFAQs", "fetchAllTestimonials")));
+        return view('User.Experience', with(compact("fetchAllStandards", "fetchAllFAQs", "fetchAllTestimonials")));
     }
 
-    public function Locations(){
+    public function Locations()
+    {
         $fetchAllLocations = DB::table('locations')->get();
         return view("User.Locations", with(compact("fetchAllLocations")));
+    }
+
+    // Create Inquiry - Join Sterling
+    public function JoinSterlingInquiry(Request $request)
+    {
+        $request->validate([
+            "fullname" => "required",
+            "email" => "required",
+            "company_name" => "required",
+            "phone_number" => "required",
+            "enquiry" => "required"
+        ]);
+
+        $isEnquiryCreated = DB::table("join_sterling_inquiry")->insert([
+            "full_name" => $request->fullname,
+            "email" => $request->email,
+            "company_name" => $request->company_name,
+            "phone_number" => $request->phone_number,
+            "enquiry_message" => $request->enquiry
+        ]);
+
+        if ($isEnquiryCreated) {
+            toastr()->success("We've received your infomation. Our team will contact you soon.");
+            return redirect()->back();
+        } else {
+            toastr()->info("Something went wrong. Please try again later.");
+            return redirect()->back();
+        }
     }
 }
 

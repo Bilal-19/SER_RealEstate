@@ -116,8 +116,8 @@ Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{to
 
 
 // Inquiry
-Route::post("/create/inquiry", [UserController::class, 'createCorporateInquiry'])->name('Create.CorporateInquiry');
-Route::get("/admin/inquiry", [AdminController::class, 'readInquiries'])->name('Read.Queries');
+Route::post("/corporate/inquiry", [UserController::class, 'createCorporateInquiry'])->name('Create.CorporateInquiry');
+Route::post("/join/sterling/inquiry", [UserController::class, 'JoinSterlingInquiry'])->name('JoinSterlingInquiry');
 
 // Booking - Admin
 Route::get("admin/booking", [AdminController::class, 'Booking'])->name('View.Booking');
@@ -158,6 +158,8 @@ Route::get("admin/del/faq/{id}", [AdminController::class, 'deleteFAQ'])->name('A
 // Send Payment Email
 Route::get("/admin/send/email", [UserController::class, 'sendEmail']);
 
+// Inquiry - Admin
+Route::get("/admin/inquiry", [AdminController::class, 'readInquiries'])->name('Read.Queries');
 
 // Email Test Route
 Route::get('/test-email', function () {

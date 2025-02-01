@@ -30,7 +30,7 @@
 @section('user-main-section')
     <div class="row mt-3">
         <div class="col-md-8 mx-auto">
-            <form action="#" method="post" autocomplete="off">
+            <form action="{{route("JoinSterlingInquiry")}}" method="post" autocomplete="off">
                 @csrf
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
