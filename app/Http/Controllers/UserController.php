@@ -399,5 +399,10 @@ class UserController extends Controller
         $fetchAllTestimonials = DB::table("feedback")->get();
         return view("User.ContactUs", with(compact("fetchAllTestimonials")));
     }
+
+    // Booking Enquiry Page
+    public function BookingEnquiry(){
+        return view("User.BookingEnquiry");
+    }
 }
 

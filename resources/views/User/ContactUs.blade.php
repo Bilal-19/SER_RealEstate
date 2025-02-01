@@ -8,7 +8,7 @@
 
     <div class="row mt-5">
         <div class="col-md-3 mx-auto d-flex justify-content-around">
-            <a href="">
+            <a href="{{route("Booking.Enquiry")}}">
                 <img src="{{ asset('assets/images/booking-enquiry.jpg') }}" alt="" class="img-fluid">
             </a>
             <a href="">

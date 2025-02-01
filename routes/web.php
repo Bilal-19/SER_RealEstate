@@ -40,6 +40,7 @@ Route::get("join/sterling", [UserController::class, 'viewEnquiryForm'])->name('V
 Route::get("experience", [UserController::class, 'viewExperience'])->name('view.Experience');
 Route::get("user/locations", [UserController::class, 'Locations'])->name('view.Locations');
 Route::get("contactus", [UserController::class, 'ContactUs'])->name('view.ContactUs');
+Route::get("booking/enquiry", [UserController::class, 'BookingEnquiry'])->name(name: 'Booking.Enquiry');
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
@@ -88,6 +89,7 @@ Route::get("/delete/apartment/{id}", [AdminController::class, 'deleteApartment']
 Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->name('Edit.Apartment');
 Route::post("/update/apartment/{id}", [AdminController::class, 'updateApartment'])->name('Update.Apartment');
 Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->name('Edit.Apartment');
+Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->name('Toggle.Fav');
 
 // Testimonials - Admin
 Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
@@ -109,7 +111,6 @@ Route::get("/nearby", [UserController::class, 'getNeighbours']);
 
 Route::get("/book/now", [UserController::class, 'BookNow'])->name('Book.Now');
 
-Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->name('Toggle.Fav');
 
 
 // Payment Routes
