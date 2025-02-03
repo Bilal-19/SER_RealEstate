@@ -85,7 +85,7 @@
                         </h2>
                         <div id="collapse{{ $record->id }}" class="accordion-collapse collapse"
                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">{{ $record->answer }}</div>
+                            <div class="accordion-body">{!! $record->answer !!}</div>
                         </div>
                     </div>
                 @endforeach

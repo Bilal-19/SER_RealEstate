@@ -765,7 +765,8 @@ class AdminController extends Controller
 
         $isFAQcreated = DB::table('faq')->insert([
             'question' => $request->question,
-            'answer' => $request->answer
+            'answer' => $request->answer,
+            'created_at' => now()
         ]);
 
         if ($isFAQcreated) {
