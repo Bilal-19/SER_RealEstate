@@ -395,14 +395,53 @@ class UserController extends Controller
     }
 
     // Contact Us Page
-    public function ContactUs(){
+    public function ContactUs()
+    {
         $fetchAllTestimonials = DB::table("feedback")->get();
         return view("User.ContactUs", with(compact("fetchAllTestimonials")));
     }
 
     // Booking Enquiry Page
-    public function BookingEnquiry(){
+    public function ViewBookingEnquiry()
+    {
         return view("User.BookingEnquiry");
+    }
+
+    public function SubmitBookingEnquiry(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            "company_name" => "required",
+            "fullname" => "required",
+            "email" => "required",
+            "phone_number" => "required",
+            "budget" => "required",
+            "propertySize" => "required",
+            "check_in" => "required",
+            "check_out" => "required",
+            "enquiry" => "required"
+        ]);
+
+        $isEnquiryCreated = DB::table("booking_inquiry")->insert([
+            "company_name" => $request->company_name,
+            "full_name" => $request->fullname,
+            "email_address" => $request->email,
+            "phone_number" => $request->phone_number,
+            "budget" => $request->budget,
+            "property_size" => $request->propertySize,
+            "check_in" => $request->check_in,
+            "check_out" => $request->check_out,
+            "enquiry_message" => $request->enquiry,
+            'created_at' => now()
+        ]);
+
+        if ($isEnquiryCreated){
+            toastr()->success("We have received your booking enquiry. Our team will contact you soon.");
+            return redirect()->back();
+        } else {
+            toastr()->info("Something went wrong. Please try again later.");
+            return redirect()->back();
+        }
     }
 }
 

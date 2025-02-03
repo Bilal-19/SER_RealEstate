@@ -31,7 +31,7 @@
 @section('user-main-section')
     <div class="row mt-3">
         <div class="col-md-8 mx-auto">
-            <form action="{{ route('JoinSterlingInquiry') }}" method="post" autocomplete="off">
+            <form action="{{route("SubmitBookingEnquiry")}}" method="post" autocomplete="off">
                 @csrf
 
                 <div class="row mt-2">

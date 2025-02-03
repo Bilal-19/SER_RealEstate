@@ -39,8 +39,9 @@ Route::get("blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
 Route::get("join/sterling", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
 Route::get("experience", [UserController::class, 'viewExperience'])->name('view.Experience');
 Route::get("user/locations", [UserController::class, 'Locations'])->name('view.Locations');
-Route::get("contactus", [UserController::class, 'ContactUs'])->name('view.ContactUs');
-Route::get("booking/enquiry", [UserController::class, 'BookingEnquiry'])->name(name: 'Booking.Enquiry');
+Route::get("contact/us", [UserController::class, 'ContactUs'])->name('view.ContactUs');
+Route::get("booking/enquiry", [UserController::class, 'ViewBookingEnquiry'])->name(name: 'Booking.Enquiry');
+Route::post("submit/booking/enquiry", [UserController::class, 'SubmitBookingEnquiry'])->name(name: 'SubmitBookingEnquiry');
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
