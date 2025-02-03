@@ -12,13 +12,13 @@
 
         <div class="col-md-2">
             <p class="">Book</p>
-            <a href="{{ route('View.Enquiry.Form') }}" class="text-light d-block ">Make an Enquiry</a>
-            <a href="#" class="text-light d-block ">Booking FAQs</a>
+            <a href="{{ route("Booking.Enquiry") }}" class="text-light d-block ">Make an Enquiry</a>
+            <a href="/experience/#booking-faq" class="text-light d-block ">Booking FAQs</a>
         </div>
         <div class="col-md-3 d-flex flex-column">
             <p>Support</p>
             <a href="mailto:info@sterling-executive.com" class="text-light">info@sterling-executive.com</a>
-            <a href="#" class="text-light ">Support FAQs</a>
+            <a href="" class="text-light ">Support FAQs</a>
         </div>
         <div class="col-md-4 d-flex flex-column">
             <a href="{{route('Landing.Page')}}" class="text-light" id="footer-link">

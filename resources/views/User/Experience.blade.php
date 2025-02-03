@@ -72,7 +72,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-11 mx-auto">
+        <div class="col-md-11 mx-auto" id="booking-faq">
             <div class="accordion" id="accordionExample">
                 @foreach ($fetchAllFAQs as $record)
                     <div class="accordion-item mb-3">
