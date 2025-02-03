@@ -507,5 +507,10 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    public function FAQs(){
+        $fetchAllFAQs = DB::table("faq")->get();
+        return view("User.FAQs", with(compact("fetchAllFAQs")));
+    }
 }
 

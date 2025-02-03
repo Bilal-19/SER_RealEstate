@@ -93,7 +93,7 @@
         </div>
 
         <div class="col-md-11 mx-auto text-center">
-            <a href="#" class="text-dark">Show more</a>
+            <a href="{{route("FAQs")}}" class="text-dark">Show more</a>
         </div>
     </div>
 
