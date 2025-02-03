@@ -131,9 +131,9 @@ class UserController extends Controller
         $location = $request->location;
         $availableApartments = DB::table('apartments')
             ->where('street_address', 'LIKE', "%$location%")
-            ->orWhere('area_name', 'LIKE', "%$location%")
-            ->whereDate('availableFrom', '<=', $request->checkInDate)
-            ->whereDate('availableTill', '>=', $request->checkOutDate)
+            ->orWhere('apartment_location', 'LIKE', "%$location%")
+            ->whereDate('available_from', '<=', $request->checkInDate)
+            ->whereDate('available_till', '>=', $request->checkOutDate)
             ->where('status', '=', 'available')
             ->get();
         $locations = DB::table('apartments')->select('latitude', 'longitude')->get();
