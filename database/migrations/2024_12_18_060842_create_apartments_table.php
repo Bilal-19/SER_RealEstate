@@ -14,38 +14,28 @@ return new class extends Migration {
             $table->id();
 
             // General Information
-            $table->string('area_name');
-            $table->integer('price');
-            $table->integer('price_per_night');
+            $table->string('apartment_name');
+            $table->string('apartment_location');
+            $table->integer('one_bedroom_price');
+            $table->integer('two_bedroom_price');
             $table->string('street_address');
             $table->text('map_location');
-            $table->enum('total_bedrooms', [1, 2, 3, 4, 5, 6]);
-            $table->enum('total_bathrooms', [1, 2, 3]);
-            $table->text('description');
             $table->integer('sqfeet_area');
+            $table->text('description');
             $table->string('status')->default('available');
             $table->string('apartment_type');
 
             // Set Available Date
-            $table->date('availableFrom');
-            $table->date('availableTill');
+            $table->date('available_from');
+            $table->date('available_till');
 
             // Property Images
-            $table->string('featuredImage');
-            $table->text('multipleImages');
-
-            // Property Reviews
-            $table->integer('cleanlinessVal');
-            $table->integer('comfortVal');
-            $table->integer('facilitiesVal');
-            $table->integer('locationVal');
-            $table->integer('staffVal');
-            $table->integer('value_for_money');
-            $table->integer('free_wifi_val');
+            $table->string('featured_image');
+            $table->text('multiple_images');
 
             // Latitute and longitude
-            $table->float('latitude',10,6);
-            $table->float('longitude',10,6);
+            $table->float('latitude',10,6)->nullable();
+            $table->float('longitude',10,6)->nullable();
 
             // fav apartment
             $table->boolean('isFavourite')->default(false);
