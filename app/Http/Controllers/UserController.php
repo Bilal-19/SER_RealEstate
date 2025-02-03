@@ -447,5 +447,34 @@ class UserController extends Controller
     public function ViewGeneralEnquiry(){
         return view("User.GeneralEnquiry");
     }
+
+    public function SubmitGeneralEnquiry(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            "company_name" => "required",
+            "fullname" => "required",
+            "email" => "required",
+            "phone_number" => "required",
+            "enquiry" => "required"
+        ]);
+
+        $isEnquiryCreated = DB::table("general_inquiry")->insert([
+            "company_name" => $request->company_name,
+            "full_name" => $request->fullname,
+            "email" => $request->email,
+            "phone_number" => $request->phone_number,
+            "enquiry" => $request->enquiry,
+            'created_at' => now()
+        ]);
+
+        if ($isEnquiryCreated){
+            toastr()->success("We have received your general enquiry. Our team will contact you soon.");
+            return redirect()->back();
+        } else {
+            toastr()->info("Something went wrong. Please try again later.");
+            return redirect()->back();
+        }
+    }
 }
 
