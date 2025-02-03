@@ -366,6 +366,37 @@ class UserController extends Controller
         return view("User.Locations", with(compact("fetchAllLocations")));
     }
 
+    public function SubmitLocationEnquiry(Request $request){
+        $request->validate([
+            "fullname" => "required",
+            "email" => "required",
+            "company_name" => "required",
+            "phone_number" => "required",
+            "arrival_date" => "required",
+            "departure_date" => "required",
+            "enquiry" => "required"
+        ]);
+
+        $isEnquiryCreated = DB::table("location_inquiry")->insert([
+            "full_name" => $request->fullname,
+            "email" => $request->email,
+            "company_name" => $request->company_name,
+            "phone_number" => $request->phone_number,
+            "arrival_date" => $request->arrival_date,
+            "departure_date" => $request->departure_date,
+            "enquiry" => $request->enquiry,
+            'created_at' => now()
+        ]);
+
+        if ($isEnquiryCreated){
+            toastr()->success("We have received your location enquiry. Our team will contact you soon.");
+            return redirect()->back();
+        } else {
+            toastr()->info("Something went wrong. Please try again later.");
+            return redirect()->back();
+        }
+    }
+
     // Create Inquiry - Join Sterling
     public function JoinSterlingInquiry(Request $request)
     {

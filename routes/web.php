@@ -44,6 +44,7 @@ Route::get("booking/enquiry", [UserController::class, 'ViewBookingEnquiry'])->na
 Route::post("submit/booking/enquiry", [UserController::class, 'SubmitBookingEnquiry'])->name(name: 'SubmitBookingEnquiry');
 Route::get("general/enquiry", [UserController::class, 'ViewGeneralEnquiry'])->name(name: 'General.Enquiry');
 Route::post("submit/general/enquiry", [UserController::class, 'SubmitGeneralEnquiry'])->name(name: 'SubmitGeneralEnquiry');
+Route::post("submit/location/enquiry", [UserController::class, 'SubmitLocationEnquiry'])->name(name: 'SubmitLocationEnquiry');
 
 
 

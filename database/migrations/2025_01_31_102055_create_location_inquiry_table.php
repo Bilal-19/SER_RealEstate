@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->date('arrival_date');
             $table->date('departure_date');
+            $table->string("enquiry");
             $table->timestamps();
         });
     }

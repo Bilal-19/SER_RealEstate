@@ -57,7 +57,7 @@
 
     <div class="row mt-3">
         <div class="col-md-8 mx-auto">
-            <form action="#" method="post" autocomplete="off">
+            <form action="{{route("SubmitLocationEnquiry")}}" method="post" autocomplete="off">
                 @csrf
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
@@ -99,7 +99,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5">
-                        <input type="date" name="arrival_date" class="form-control">
+                        <input type="text" name="arrival_date" class="form-control" onfocus="(this.type='date')" placeholder="Arrival Date">
                         <small class="text-danger">
                             @error('arrival_date')
                                 {{ $message }}
@@ -107,7 +107,7 @@
                         </small>
                     </div>
                     <div class="col-md-5">
-                        <input type="date" name="departure_date" class="form-control">
+                        <input type="text" name="departure_date" class="form-control" onfocus="(this.type='date')" placeholder="Departure Date">
                         <small class="text-danger">
                             @error('departure_date')
                                 {{ $message }}
