@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('general_inquiry', function (Blueprint $table) {
             $table->id();
+            $table->string("full_name");
+            $table->string("company_name");
+            $table->string("email");
+            $table->string("phone_number");
+            $table->string("enquiry");
             $table->timestamps();
         });
     }
