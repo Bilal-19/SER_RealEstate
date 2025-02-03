@@ -18,7 +18,7 @@
         <div class="col-md-3 d-flex flex-column">
             <p>Support</p>
             <a href="mailto:info@sterling-executive.com" class="text-light">info@sterling-executive.com</a>
-            <a href="" class="text-light ">Support FAQs</a>
+            <a href="#" class="text-light ">Support FAQs</a>
         </div>
         <div class="col-md-4 d-flex flex-column">
             <a href="{{route('Landing.Page')}}" class="text-light" id="footer-link">

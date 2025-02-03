@@ -242,11 +242,11 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2">
+                            {{-- <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Blog') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Blog')}}">
                                     <i class="fa-solid fa-newspaper"></i> Blogs
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('View.Booking') ? 'admin-active-link text-light' : 'text-dark' }}"
@@ -256,12 +256,12 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2">
+                            {{-- <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Policy') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Policy')}}">
                                     <i class="fa-regular fa-file-alt"></i>Policy
 
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
