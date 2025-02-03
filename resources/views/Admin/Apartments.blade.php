@@ -41,11 +41,11 @@
                         <tr>
                             <td>{{ $rec->id }}</td>
                             <td>
-                                <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt=""
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featured_image) }}" alt=""
                                     class="img-fluid rounded" style="height: 200px; width: 200px; object-fit: cover;">
                             </td>
-                            <td>{{ date('d-M-Y', strtotime($rec->availableFrom)) }}</td>
-                            <td>{{ date('d-M-Y', strtotime($rec->availableTill)) }}</td>
+                            <td>{{ date('d-M-Y', strtotime($rec->available_from)) }}</td>
+                            <td>{{ date('d-M-Y', strtotime($rec->available_till)) }}</td>
                             <td class="text-center">
                                 @if ($rec->isFavourite == 0)
                                     <a href="{{ route('Toggle.Fav', ['id' => $rec->id]) }}" title="Add to favourites"

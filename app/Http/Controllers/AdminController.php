@@ -98,7 +98,7 @@ class AdminController extends Controller
             'apartment_multi_images' => 'required',
         ]);
         // Creating timestamp of featured image
-        $featuredImgTimeStamp = time() . '.' . $request->featuredImg->getClientOriginalExtension();
+        $featuredImgTimeStamp = time() . '.' . $request->featured_img->getClientOriginalExtension();
 
         // Loop through multiple images
         $image = array();
@@ -115,7 +115,7 @@ class AdminController extends Controller
         }
 
         // Store featured image to public folder
-        $request->featuredImg->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
+        $request->featured_img->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
         $res = DB::table('apartments')->insert([
             "apartment_name" => $request->apartment_name,
             "apartment_location" => $request->apartment_location,
@@ -152,8 +152,9 @@ class AdminController extends Controller
     public function editApartment($id)
     {
         $findApartment = DB::table('apartments')->find($id);
-        $images = explode('|', $findApartment->multipleImages);
-        return view('Admin.EditApartment')->with(compact('findApartment', 'images'));
+        $images = explode('|', $findApartment->multiple_images);
+        $fetchLocArr = DB::table("locations")->pluck('location');
+        return view('Admin.EditApartment')->with(compact('findApartment', 'images', 'fetchLocArr'));
     }
 
     public function updateApartment($id, Request $request)
@@ -161,21 +162,23 @@ class AdminController extends Controller
         $findApartment = DB::table('apartments')->find($id);
         // Form Validation
         $request->validate([
-            'areaName' => 'required',
-            'apartmentPricePerNight' => 'required',
-            'streetAddress' => 'required',
-            'apartmentMapLocation' => 'required',
-            'totalBedrooms' => 'required|integer|min:1|max:6',
-            'totalBathrooms' => 'required|integer|min:1|max:4',
-            'apartmentDescription' => 'required',
-            'availableFrom' => 'required',
-            'availableTill' => 'required',
+            "apartment_name" => "required",
+            "apartment_location" => "required",
+            "street_address" => "required",
+            "one_bed_price" => "required",
+            "two_bed_price" => "required",
+            "apartment_map_location" => "required",
+            "sq_feet_area" => "required",
+            "apartment_description" => "required",
+            "apartment_type" => "required",
+            'available_from' => 'required',
+            'available_till' => 'required'
         ]);
 
 
         // Loop through multiple images
         $image = array();
-        if ($files = $request->file('apartmentMultImages')) {
+        if ($files = $request->file('apartment_multi_images')) {
             foreach ($files as $file) {
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
@@ -186,35 +189,36 @@ class AdminController extends Controller
                 $image[] = $image_url;
             }
         } else {
-            $image = explode("|", $findApartment->multipleImages);
+            $image = explode("|", $findApartment->multiple_images);
         }
 
         if ($request->file('featuredImg')) {
             // Creating timestamp of featured image
-            $featuredImgTimeStamp = time() . '.' . $request->featuredImg->getClientOriginalExtension();
+            $featuredImgTimeStamp = time() . '.' . $request->featured_img->getClientOriginalExtension();
 
             // Store featured image to public folder
             $request->featuredImg->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
         } else {
-            $featuredImgTimeStamp = $findApartment->featuredImage;
+            $featuredImgTimeStamp = $findApartment->featured_image;
         }
 
         $res = DB::table('apartments')->
             where('id', '=', $id)->
             update([
-                'area_name' => $request->areaName,
-                'price_per_night' => $request->apartmentPricePerNight,
-                'street_address' => $request->streetAddress,
-                'map_location' => $request->apartmentMapLocation,
-                'total_bedrooms' => $request->totalBedrooms,
-                'total_bathrooms' => $request->totalBathrooms,
-                'description' => $request->apartmentDescription,
-                'availableFrom' => $request->availableFrom,
-                'availableTill' => $request->availableTill,
-                'featuredImage' => $featuredImgTimeStamp,
-                'multipleImages' => implode('|', $image),
-                'longitude' => $request->longitudeVal,
-                'latitude' => $request->latitudeVal,
+                "apartment_name" => $request->apartment_name,
+                "apartment_location" => $request->apartment_location,
+                "one_bedroom_price" => $request->one_bed_price,
+                "two_bedroom_price" => $request->two_bed_price,
+                "street_address" => $request->street_address,
+                "map_location" => $request->apartment_map_location,
+                "sqfeet_area" => $request->sq_feet_area,
+                "description" => $request->apartment_description,
+                "apartment_type" => $request->apartment_type,
+                "available_from" => $request->available_from,
+                "available_till" => $request->available_till,
+                'featured_image' => $featuredImgTimeStamp,
+                'multiple_images' => implode('|', $image),
+                'updated_at' => now()
             ]);
 
         if ($res) {
