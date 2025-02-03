@@ -443,5 +443,9 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    public function ViewGeneralEnquiry(){
+        return view("User.GeneralEnquiry");
+    }
 }
 

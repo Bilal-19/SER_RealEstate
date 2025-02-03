@@ -11,7 +11,7 @@
             <a href="{{route("Booking.Enquiry")}}">
                 <img src="{{ asset('assets/images/booking-enquiry.jpg') }}" alt="" class="img-fluid">
             </a>
-            <a href="">
+            <a href="{{route("General.Enquiry")}}">
                 <img src="{{ asset('assets/images/general-enquiry.jpg') }}" alt="" class="img-fluid">
             </a>
         </div>

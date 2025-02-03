@@ -42,6 +42,9 @@ Route::get("user/locations", [UserController::class, 'Locations'])->name('view.L
 Route::get("contact/us", [UserController::class, 'ContactUs'])->name('view.ContactUs');
 Route::get("booking/enquiry", [UserController::class, 'ViewBookingEnquiry'])->name(name: 'Booking.Enquiry');
 Route::post("submit/booking/enquiry", [UserController::class, 'SubmitBookingEnquiry'])->name(name: 'SubmitBookingEnquiry');
+Route::get("general/enquiry", [UserController::class, 'ViewGeneralEnquiry'])->name(name: 'General.Enquiry');
+
+
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');
 // Admin Dashboard
