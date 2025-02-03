@@ -366,6 +366,16 @@ class UserController extends Controller
         return view("User.Locations", with(compact("fetchAllLocations")));
     }
 
+    public function LocationDetail($id){
+        $findLocation = DB::table('locations')->find($id);
+        $locationName = $findLocation->location;
+
+        // Filter Apartments
+        $filterApartments = DB::table('apartments')->where('apartment_location','=',$locationName)->get();
+
+        return view("User.LocationDetail", with(compact("filterApartments")));
+    }
+
     public function SubmitLocationEnquiry(Request $request){
         $request->validate([
             "fullname" => "required",

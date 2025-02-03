@@ -37,8 +37,10 @@
         <div class="row mx-auto">
             @foreach ($fetchAllLocations as $record)
                 <div class="col-md-4 mt-3 mb-5">
-                    <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
+                    <a href="{{route("LocationDetail", ["id"=>$record->id])}}">
+                        <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
                         class="img-fluid thumbnail-img">
+                    </a>
                     <h5 class="mt-2">{{ $record->location }}</h5>
                 </div>
             @endforeach

@@ -46,6 +46,7 @@ Route::get("general/enquiry", [UserController::class, 'ViewGeneralEnquiry'])->na
 Route::post("submit/general/enquiry", [UserController::class, 'SubmitGeneralEnquiry'])->name(name: 'SubmitGeneralEnquiry');
 Route::post("submit/location/enquiry", [UserController::class, 'SubmitLocationEnquiry'])->name(name: 'SubmitLocationEnquiry');
 Route::get("faqs", [UserController::class, 'FAQs'])->name(name: 'FAQs');
+Route::get("location/{id}", [UserController::class, 'LocationDetail'])->name(name: 'LocationDetail');
 
 
 
