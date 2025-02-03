@@ -7,6 +7,11 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
+        .cta-landing-pg-img{
+            height: 800px !important;
+            width: 800px
+        }
     </style>
 @endpush
 
@@ -77,11 +82,11 @@
 
     @isset($topRatedApartment)
         <div class="row">
-            <div class="col-md-12 text-center top-rated-apartment">
-                <h3 class="fw-bold">Book your stay at {{ $topRatedApartment->area_name }}</h3>
+            <div class="col-md-11 mx-auto text-center top-rated-apartment">
+                <h3 class="fw-bold">Book your stay at {{ $topRatedApartment->apartment_name }}</h3>
                 <p>{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
-                <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featuredImage) }}" alt=""
-                    class="img-fluid">
+                <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
+                    class="img-fluid cta-landing-pg-img">
             </div>
         </div>
     @endisset
@@ -106,32 +111,36 @@
         </div>
     </div>
 
-    @php
-        function calcStars($numFill, $numBlank)
-        {
-            return str_repeat('<i class="fa-solid fa-star"></i>', $numFill) .
-                str_repeat('<i class="fa-regular fa-star"></i>', $numBlank);
-        }
-    @endphp
 
 
-    <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
-        <div class="col-md-12 rounded">
-            <div id="feedback" class="carousel slide">
-                <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="10000">
-                    <h5 class="text-start">Your go to service since 2025</h5>
 
-                    @foreach ($fetchAllTestimonials as $record)
-                        <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
-                            <h5 class="col-8 col-md-12 fw-bold">“{{ $record->message }}”</h5>
-                            <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
-                            <p>{{ $record->name }}</p>
-                        </div>
-                    @endforeach
+    @isset($fetchAllTestimonials)
+        @php
+            function calcStars($numFill, $numBlank)
+            {
+                return str_repeat('<i class="fa-solid fa-star"></i>', $numFill) .
+                    str_repeat('<i class="fa-regular fa-star"></i>', $numBlank);
+            }
+        @endphp
+        <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
+            <div class="col-md-12 rounded">
+                <div id="feedback" class="carousel slide">
+                    <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="10000">
+                        <h5 class="text-start">Your go to service since 2025</h5>
+
+                        @foreach ($fetchAllTestimonials as $record)
+                            <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
+                                <h5 class="col-8 col-md-12 fw-bold">“{{ $record->message }}”</h5>
+                                <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
+                                <p>{{ $record->name }}</p>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endisset
+
 
 
     <div class="row">
