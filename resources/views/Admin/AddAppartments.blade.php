@@ -154,6 +154,18 @@
                         </div>
                     </div>
 
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <label class="form-label mb-0">Neighborhood Description:</label>
+                            <textarea class="form-control" rows="5" style="resize: none;" name="neighbourhood_description"></textarea>
+                            <small class="text-danger">
+                                @error('neighbourhood_description')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
 
                     <div class="row mt-3">
                         <h4>Select Availability Date</h4>

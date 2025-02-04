@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->text('map_location');
             $table->integer('sqfeet_area');
             $table->text('description');
+            $table->text('neighbourhood_description');
             $table->string('status')->default('available');
             $table->string('apartment_type');
 
