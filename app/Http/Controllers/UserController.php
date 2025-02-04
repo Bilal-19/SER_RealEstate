@@ -170,11 +170,10 @@ class UserController extends Controller
 
     public function checkApartmentAvailability(Request $request, $id)
     {
-        $firstFourAmenities = DB::table('amenity')->limit(4)->get();
-        $LastFourAmenities = DB::table('amenity')->take(4)->skip(4)->get();
         $findApartment = DB::table('apartments')->where('id', $id)->first();
-        $images = explode('|', $findApartment->multipleImages);
+        $images = explode('|', $findApartment->multiple_images);
         $apartments = DB::table('apartments')->get();
+        $fetchAllStandards = DB::table('standards')->get();
 
         $checkInDate = $request->checkIn;
         $checkOutDate = $request->checkOut;
@@ -184,17 +183,16 @@ class UserController extends Controller
         } else {
             $guestBooked = false;
         }
-        $isAvailable = $findApartment->availableFrom <= $checkInDate && $findApartment->availableTill >= $checkOutDate;
+        $isAvailable = $findApartment->available_from <= $checkInDate && $findApartment->available_till >= $checkOutDate;
         return view('User.ViewApartmentDetail')->with(compact(
             'isAvailable',
             'images',
             'findApartment',
-            'firstFourAmenities',
-            'LastFourAmenities',
             'apartments',
             'checkInDate',
             'checkOutDate',
-            'guestBooked'
+            'guestBooked',
+            'fetchAllStandards'
         ));
 
     }

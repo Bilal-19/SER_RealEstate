@@ -1,31 +1,20 @@
 @extends('UserLayout.main')
 @push('style')
     <style>
-        body {
-            background-color: #fafafa
+        .apartment-img-slides {
+            height: 500px;
+            width: 500px;
+            object-fit: cover;
+            border-radius: 6px;
         }
 
-
-        input[type="date"] {
-            width: 86%;
-        }
-
-        .availability-text-success {
-            background-color: #B3F9C6;
-            color: #197D29;
-            font-size: 15px;
-            border-radius: 27px;
-            padding: 4px 8px;
-            display: inline;
-        }
-
-        .availability-text-danger {
-            background-color: red;
-            color: white;
-            font-size: 15px;
-            border-radius: 27px;
-            padding: 4px 8px;
-            display: inline;
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black;
+            padding: 15px;
+            border-radius: 6px;
+            height: 50px;
+            width: 50px;
         }
 
         .check-availability-container {
@@ -37,6 +26,9 @@
         .check-availability-container input,
         .check-availability-container select {
             background-color: #c0c0c0;
+            width: fit-content;
+            box-sizing: border-box;
+            min-width: 250px;
         }
 
         .check-availability-container input::placeholder,
@@ -58,18 +50,23 @@
             border-radius: 5px;
         }
 
-        .apartment-img-slides {
-            height: 500px;
-            width: 500px;
-            object-fit: cover;
-            border-radius: 6px;
+        .availability-text-success {
+            background-color: #B3F9C6;
+            color: #197D29;
+            font-size: 15px;
+            border-radius: 27px;
+            padding: 4px 8px;
+            display: inline;
+            margin-top: 10px !important;
         }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: black;
-            padding: 15px;
-            border-radius: 6px;
+        .availability-text-danger {
+            background-color: red;
+            color: white;
+            font-size: 15px;
+            border-radius: 27px;
+            padding: 4px 8px;
+            display: inline;
         }
 
         .price-container {
@@ -77,6 +74,17 @@
             display: flex;
             justify-content: space-between;
         }
+
+        .book-now-btn {
+            color: white;
+            background-color: #c0c0c0;
+            display: block;
+            width: fit-content;
+            margin-top: 15px;
+            padding: 10px 12px;
+            border-radius: 5px;
+        }
+
 
         @media screen and (max-width: 768px) {
             .check-availability-container {
@@ -175,13 +183,14 @@
                         <option value="4">4</option>
                     </select>
                 </div>
+                <button class="ms-auto">Check Availability</button>
                 @isset($isAvailable)
                     @if ($isAvailable == true)
                         <p class="availability-text-success ff-poppins">
                             <img src="{{ asset('assets/images/success_circle.png') }}" alt="availability check">
                             Apartment is Available
                         </p>
-                        <a class="btn btn-light mt-5 w-100 ff-poppins"
+                        <a class="book-now-btn ms-auto"
                             href="{{ route('Booking', [
                                 'id' => $findApartment->id,
                                 'checkIn' => request('checkIn'),
@@ -192,7 +201,6 @@
                         <p class="availability-text-danger">Apartment is Not Available</p>
                     @endif
                 @endisset
-                <button class="ms-auto">Check Availability</button>
             </form>
         </div>
     </div>
