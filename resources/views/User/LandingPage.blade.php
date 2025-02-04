@@ -8,13 +8,30 @@
             background-attachment: fixed;
         }
 
-        .cta-landing-pg-img{
+        .cta-landing-pg-img {
             height: 800px !important;
             width: 800px
         }
 
-        #book-apartment{
+        #book-apartment {
             background-color: #c0c0c0;
+        }
+
+        .form-control {
+            background-color: #c0c0c0;
+            border: none;
+            width: 50%;
+        }
+
+        .form-control::placeholder {
+            color: white;
+            font-size: 20px;
+        }
+
+        #book-apartment-searchbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
         }
     </style>
 @endpush
@@ -29,28 +46,19 @@
     </div>
 
     <div class="row mb-5">
-        <div class="col-10 col-sm-10 mx-auto rounded" id="book-apartment">
+        <div class="col-10 col-md-8 mx-auto rounded" id="book-apartment">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                 autocomplete="off">
                 @csrf
-                <div class="row d-flex justify-content-center align-items-end">
-                    <div class="col-md-4 mb-sm-10">
-                        <input type="text" placeholder="Location" class="form-control" name="location"
-                            value="{{ old('location') }}">
-                    </div>
-                    <div class="col-md-2 mb-sm-10">
-                        <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
-                            value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
-                    </div>
-                    <div class="col-md-2 mb-sm-10">
-                        <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
-                            value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    </div>
-                    <div class="col-md-2 mt-sm-3 mt-0">
-                        <button class="btn btn-dark" type="submit">SEARCH</button>
-                    </div>
+                <div id="book-apartment-searchbar">
+                    <input type="text" placeholder="Location" class="form-control" name="location"
+                        value="{{ old('location') }}">
+                    <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
+                        value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
+                    <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
+                        value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
+                    <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
                 </div>
-
             </form>
         </div>
     </div>
@@ -100,7 +108,8 @@
                 clientele includes top banks, esteemed law firms, and leading technology companies.
             </p>
             <p>
-                We provide fully equipped properties ranging from studio apartments to large family homes and everything in
+                We provide fully equipped properties ranging from studio apartments to large family homes and everything
+                in
                 between. Putting the needs of our guests and clients first is at the forefront of everything we do.
             </p>
             <a href="{{ route('View.Corporate') }}" target="_blank" class="brand-btn d-inline">Learn More</a>
@@ -148,7 +157,8 @@
         <div class="col-md-12  text-center">
             <h3>The Sterling Experience</h3>
             <p>
-                Sit back & relax, we've got everything covered. Here's why Portland should be your 1st choice when selecting
+                Sit back & relax, we've got everything covered. Here's why Portland should be your 1st choice when
+                selecting
                 a serviced apartment.
             </p>
         </div>
