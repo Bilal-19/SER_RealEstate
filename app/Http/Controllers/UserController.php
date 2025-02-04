@@ -159,10 +159,12 @@ class UserController extends Controller
     public function viewApartmentDetail($id)
     {
         $findApartment = DB::table('apartments')->where('id', $id)->first();
+        $fetchAllStandards = DB::table('standards')->get();
         $images = explode('|', $findApartment->multiple_images);
         return view('User.ViewApartmentDetail')->with(compact(
             'images',
             'findApartment',
+            'fetchAllStandards'
         ));
     }
 
