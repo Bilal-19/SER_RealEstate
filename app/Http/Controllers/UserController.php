@@ -373,7 +373,7 @@ class UserController extends Controller
         // Filter Apartments
         $filterApartments = DB::table('apartments')->where('apartment_location','=',$locationName)->get();
 
-        return view("User.LocationDetail", with(compact("filterApartments")));
+        return view("User.LocationDetail", with(compact("filterApartments", "locationName")));
     }
 
     public function SubmitLocationEnquiry(Request $request){
