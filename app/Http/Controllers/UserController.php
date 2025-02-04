@@ -158,17 +158,11 @@ class UserController extends Controller
 
     public function viewApartmentDetail($id)
     {
-        $firstFourAmenities = DB::table('amenity')->limit(4)->get();
-        $LastFourAmenities = DB::table('amenity')->take(4)->skip(4)->get();
         $findApartment = DB::table('apartments')->where('id', $id)->first();
-        $images = explode('|', $findApartment->multipleImages);
-        $apartments = DB::table('apartments')->get();
+        $images = explode('|', $findApartment->multiple_images);
         return view('User.ViewApartmentDetail')->with(compact(
             'images',
             'findApartment',
-            'firstFourAmenities',
-            'LastFourAmenities',
-            'apartments'
         ));
     }
 

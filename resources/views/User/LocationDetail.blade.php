@@ -30,8 +30,10 @@
                 <div class="row">
                     @foreach ($filterApartments as $record)
                         <div class="col-md-6">
+                         <a href="{{route("Detail.View.Apartment",["id"=>$record->id])}}">
                             <img src="{{ asset('Apartment/Thubmbnail/' . $record->featured_image) }}" alt=""
-                                class="img-fluid rounded">
+                            class="img-fluid rounded">
+                         </a>
                             <p class="mb-0">{{ $record->street_address }}</p>
                             <p>From €{{ $record->one_bedroom_price }} per night</p>
                         </div>
