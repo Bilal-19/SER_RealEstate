@@ -179,8 +179,6 @@
                         <option value="">Bedrooms</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
                     </select>
                 </div>
                 <button class="ms-auto">Check Availability</button>
@@ -195,6 +193,7 @@
                                 'id' => $findApartment->id,
                                 'checkIn' => request('checkIn'),
                                 'checkOut' => request('checkOut'),
+                                'bedrooms' => request('bedrooms'),
                             ]) }}">Book
                             Now</a>
                     @elseif ($isAvailable == false)

@@ -50,7 +50,7 @@
                 width: 150px;
             }
 
-            .price-container{
+            .price-container {
                 margin-top: 10px;
             }
         }
@@ -173,7 +173,17 @@
 
 @section('user-main-section')
     @php
-        $totalCost = $findApartment->price_per_night * $stayDays;
+        if ($bedrooms == 1) {
+            $totalCost = $findApartment->one_bedroom_price * $stayDays;
+        } else {
+            $totalCost = $findApartment->two_bedroom_price * $stayDays;
+        }
+
+        if ($bedrooms == 1) {
+            $bedroomPrice = $findApartment->one_bedroom_price;
+        } else {
+            $bedroomPrice = $findApartment->two_bedroom_price;
+        }
 
         $countries = [
             'United States',
@@ -523,11 +533,12 @@
             <div class="col-md-4 bg-white border-grey border-radius-16 price-container">
                 <div class="d-flex justify-content-around align-items-center">
                     <div>
-                        <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featuredImage) }}" alt="{{ $findApartment->area_name }}"
+                        <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featured_image) }}"
+                            alt="{{ $findApartment->apartment_name }}"
                             class="img-fluid book-apartment-thumbnail rounded">
                     </div>
                     <div>
-                        <h5 class="fs-18 ff-poppins fw-medium">{{ $findApartment->area_name }}</h5>
+                        <h5 class="fs-18 ff-poppins fw-medium">{{ $findApartment->apartment_name }}</h5>
                         <p>{{ $findApartment->street_address }}</p>
                     </div>
                 </div>
@@ -535,7 +546,11 @@
 
                 <div class="d-flex justify-content-between p-2 align-items-center mb-0">
                     <h6 class="fs-18 ff-poppins">Price Per Night</h6>
-                    <p class="ff-poppins fs-18">€{{ $findApartment->price_per_night }}</p>
+                    <p class="ff-poppins fs-18">€{{ $bedroomPrice }}</p>
+                </div>
+                <div class="d-flex justify-content-between p-2 align-items-center mb-0">
+                    <h6 class="fs-18 ff-poppins">Total Bedrooms</h6>
+                    <p class="ff-poppins fs-18">{{ $bedrooms }}</p>
                 </div>
                 <div class="d-flex justify-content-between p-2 align-items-center">
                     <h6 class="fs-18 ff-poppins">Total Night Stay</h6>
@@ -545,7 +560,7 @@
                 <hr>
 
                 <div class="d-flex justify-content-between p-2 align-items-center">
-                    <h6 class="fs-18 ff-poppins">Total Cost (€{{ $findApartment->price_per_night }} * {{$stayDays}})</h6>
+                    <h6 class="fs-18 ff-poppins">Total Cost</h6>
                     <p class="ff-poppins fs-18 fw-bold">€{{ $totalCost }}</p>
                 </div>
             </div>

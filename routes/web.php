@@ -107,7 +107,7 @@ Route::post("/admin/create/testimonial", [AdminController::class, 'createTestimo
 
 
 // Booking Page - User
-Route::get("/booking/{id}/{checkIn}/{checkOut}", [UserController::class, 'Booking'])->name('Booking');
+Route::get("/booking/{id}/{checkIn}/{checkOut}/{bedrooms}", [UserController::class, 'Booking'])->name('Booking');
 
 
 // Thank you page - User

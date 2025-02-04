@@ -197,10 +197,11 @@ class UserController extends Controller
 
     }
 
-    public function Booking($id, $checkIn, $checkOut)
+    public function Booking($id, $checkIn, $checkOut, $bedrooms)
     {
         $checkIn = request('checkIn');
         $checkOut = request('checkOut');
+        $bedrooms = request('bedrooms');
 
         $checkInDate = Carbon::createFromFormat('Y-m-d', $checkIn);
         $checkOutDate = Carbon::createFromFormat('Y-m-d', $checkOut);
@@ -210,7 +211,13 @@ class UserController extends Controller
 
         $findApartment = DB::table('apartments')->where('id', $id)->first();
 
-        return view('User.Booking')->with(compact('stayDays', 'findApartment', 'checkIn', 'checkOut'));
+        return view('User.Booking')->with(compact(
+            'stayDays',
+             'findApartment',
+             'checkIn',
+              'checkOut',
+              'bedrooms'
+            ));
     }
 
     // Confirm Booking
