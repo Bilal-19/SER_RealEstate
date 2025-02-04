@@ -130,6 +130,8 @@ class AdminController extends Controller
             "available_till" => $request->available_till,
             'featured_image' => $featuredImgTimeStamp,
             'multiple_images' => implode('|', $image),
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
             'created_at' => now()
         ]);
 
