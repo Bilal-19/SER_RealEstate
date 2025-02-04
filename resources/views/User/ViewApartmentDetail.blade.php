@@ -70,73 +70,90 @@
     @php
         $numericKeyImages = array_values($images);
     @endphp
-        <div class="row">
-            <div class="col-md-12 mx-auto">
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                        @foreach ($numericKeyImages as $index => $item)
-                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"
-                                aria-current="{{ $index === 0 ? 'true' : 'false' }}"
-                                aria-label="Slide {{ $index + 1 }}"></button>
-                        @endforeach
-                    </div>
-                    <div class="carousel-inner">
-                        @foreach ($numericKeyImages as $index => $item)
-                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img src="{{ URL::to($item) }}" alt="apartments images"
-                                    class="img-fluid d-block w-100 apartment-img-slides">
-                            </div>
-                        @endforeach
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    @foreach ($numericKeyImages as $index => $item)
+                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"
+                            aria-current="{{ $index === 0 ? 'true' : 'false' }}"
+                            aria-label="Slide {{ $index + 1 }}"></button>
+                    @endforeach
                 </div>
+                <div class="carousel-inner">
+                    @foreach ($numericKeyImages as $index => $item)
+                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                            <img src="{{ URL::to($item) }}" alt="apartments images"
+                                class="img-fluid d-block w-100 apartment-img-slides">
+                        </div>
+                    @endforeach
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
+    </div>
 
 
-        <div class="row mt-5">
-            <div class="col-md-8">
-                <h4 class="mb-5">{{ $findApartment->apartment_name }}</h4>
-                <div class="row">
-                    <div class="col-md-6 price-container">
-                        <div>
-                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div>
-                            <p class="mb-0">One Bedroom Apartment</p>
-                            <p>from €{{ $findApartment->one_bedroom_price }} per night</p>
-                        </div>
-                        </p>
+    <div class="row mt-5">
+        <div class="col-md-8">
+            <h4 class="mb-5">{{ $findApartment->apartment_name }}</h4>
+            <div class="row">
+                <div class="col-md-6 price-container">
+                    <div>
+                        <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="" class="img-fluid">
                     </div>
-
-                    <div class="col-md-6 price-container">
-                        <div>
-                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div>
-                            <p class="mb-0">Two Bedroom Apartment</p>
-                            <p>from €{{ $findApartment->two_bedroom_price }} per night</p>
-                        </div>
-                        </p>
+                    <div>
+                        <p class="mb-0">One Bedroom Apartment</p>
+                        <p>from €{{ $findApartment->one_bedroom_price }} per night</p>
                     </div>
+                    </p>
                 </div>
 
-                <p>
-                    {{$findApartment->description}}
-                </p>
-                <div class="col-md-4">
-
+                <div class="col-md-6 price-container">
+                    <div>
+                        <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                    <div>
+                        <p class="mb-0">Two Bedroom Apartment</p>
+                        <p>from €{{ $findApartment->two_bedroom_price }} per night</p>
+                    </div>
+                    </p>
                 </div>
             </div>
+
+            <p>{{ $findApartment->description }}</p>
+
+            <h5>Property Features</h5>
+            <p>
+                @if ($findApartment->concierge == 'on')
+                    <span>
+                        <img src="" alt="">
+                        Concierge
+                    </span>
+                @endif
+            </p>
+
+            <p>
+                @if ($findApartment->parking == 'on')
+                    <span>
+                        <img src="{{asset("assets/images/parking.jpg")}}" alt="free parking">
+                        Parking
+                    </span>
+                @endif
+            </p>
+            <div class="col-md-4">
+
+            </div>
         </div>
-    @endsection
+    </div>
+@endsection

@@ -175,7 +175,7 @@
                             <input class="form-control" type="date" name="available_till">
                             <small class="text-danger">
                                 @error('available_till')
-                                {{ $message }}
+                                    {{ $message }}
                                 @enderror
                             </small>
                         </div>
@@ -191,7 +191,7 @@
                             <input class="form-control" type="file" name="featured_img">
                             <small class="text-danger">
                                 @error('featured_img')
-                                {{ $message }}
+                                    {{ $message }}
                                 @enderror
                             </small>
                         </div>
@@ -201,9 +201,71 @@
                             <input class="form-control" type="file" multiple name="apartment_multi_images[]">
                             <small class="text-danger">
                                 @error('apartment_multi_images')
-                                {{ $message }}
+                                    {{ $message }}
                                 @enderror
                             </small>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <h4>Select Property Features</h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="Concierge" name="concierge">
+                                <label class="form-check-label" for="Concierge">Concierge</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="Parking" name="parking">
+                                <label class="form-check-label" for="Parking">Free Parking</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="elevator" name="elevator">
+                                <label class="form-check-label" for="elevator">Elevator in Building</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="air_conditioning"
+                                    name="air_conditioning">
+                                <label class="form-check-label" for="air_conditioning">Air Conditioning</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="personal_safe" name="personal_safe">
+                                <label class="form-check-label" for="personal_safe">Personal Safe</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="private_balcony"
+                                    name="private_balcony">
+                                <label class="form-check-label" for="private_balcony">Private Balcony</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="kitchen" name="kitchen">
+                                <label class="form-check-label" for="kitchen">Fully Equipped Kitchen</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="washing" name="washing">
+                                <label class="form-check-label" for="washing">Washing/Dryer</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="dishwasher" name="dishwasher">
+                                <label class="form-check-label" for="dishwasher">Dishwasher</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="pet_friendly" name="pet_friendly">
+                                <label class="form-check-label" for="pet_friendly">Pet Friendly</label>
+                            </div>
                         </div>
                     </div>
 

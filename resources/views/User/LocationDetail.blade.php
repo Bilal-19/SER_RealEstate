@@ -30,10 +30,10 @@
                 <div class="row">
                     @foreach ($filterApartments as $record)
                         <div class="col-md-6">
-                         <a href="{{route("Detail.View.Apartment",["id"=>$record->id])}}">
-                            <img src="{{ asset('Apartment/Thubmbnail/' . $record->featured_image) }}" alt=""
-                            class="img-fluid rounded">
-                         </a>
+                            <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}">
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featured_image) }}" alt=""
+                                    class="img-fluid rounded">
+                            </a>
                             <p class="mb-0">{{ $record->street_address }}</p>
                             <p>From €{{ $record->one_bedroom_price }} per night</p>
                         </div>
@@ -57,15 +57,20 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Marker data from Laravel controller
-        var markers = @json($locations);
+        // Dummy marker data
+        var locations = [
+            { name: 'Location A', latitude: 25.276987, longitude: 55.296249 },
+            { name: 'Location B', latitude: 24.774265, longitude: 46.738586 }
+        ];
 
-        console.log(markers); // Check the data in the browser console
+        console.log(locations); // Check the data in the browser console
+
         // Loop through markers and add them to the map
-        markers.forEach(function(location) {
+        locations.forEach(function(location) {
             L.marker([location.latitude, location.longitude]).addTo(map)
                 .bindPopup(location.name);
         });
     </script>
     @endpush
+
 @endsection

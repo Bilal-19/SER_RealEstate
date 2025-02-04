@@ -40,6 +40,17 @@ return new class extends Migration {
             // fav apartment
             $table->boolean('isFavourite')->default(false);
 
+            // Property features
+            $table->string('concierge')->default('off');
+            $table->string('parking')->default('off');
+            $table->string('elevator')->default('off');
+            $table->string('air_conditioning')->default('off');
+            $table->string('personal_safe')->default('off');
+            $table->string('private_balcony')->default('off');
+            $table->string('kitchen')->default('off');
+            $table->string('washing')->default('off');
+            $table->string('dishwasher')->default('off');
+            $table->string('pet_friendly')->default('off');
             $table->timestamps();
         });
     }
