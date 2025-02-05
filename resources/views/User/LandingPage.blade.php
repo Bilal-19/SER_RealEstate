@@ -86,7 +86,7 @@
     </div>
 
     @isset($topRatedApartment)
-        <div class="row">
+        <div class="row mt-5 mb-5">
             <div class="col-md-11 mx-auto text-center top-rated-apartment">
                 <h3 class="fw-bold">Book your stay at {{ $topRatedApartment->apartment_name }}</h3>
                 <p>{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
@@ -97,8 +97,8 @@
     @endisset
 
 
-    <div class="row mt-5 d-flex justify-content-around">
-        <div class="col-md-5">
+    <div class="row mt-5 d-flex justify-content-around mb-5">
+        <div class="col-md-6">
             <p>
                 We have the privilege of being entrusted by the teams of some of London's largest organisations. Our
                 clientele includes top banks, esteemed law firms, and leading technology companies.
@@ -110,7 +110,7 @@
             </p>
             <a href="{{ route('View.Corporate') }}" target="_blank" class="brand-btn d-inline">Learn More</a>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
             <img src="{{ asset('assets/images/bed.png') }}"
                 alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
                 class="img-fluid rounded">
@@ -131,7 +131,7 @@
         <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
             <div class="col-md-12 rounded">
                 <div id="feedback" class="carousel slide">
-                    <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="10000">
+                    <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="3000">
                         <h5 class="text-start">Your go to service since 2025</h5>
 
                         @foreach ($fetchAllTestimonials as $record)

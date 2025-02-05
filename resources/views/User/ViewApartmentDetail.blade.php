@@ -101,7 +101,7 @@
     @php
         $numericKeyImages = array_values($images);
     @endphp
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-md-12 mx-auto">
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
@@ -162,10 +162,10 @@
                 </div>
             </div>
 
-            <h5>The Apartment</h5>
+            <h5 class="mt-5">The Apartment</h5>
             <p>{{ $findApartment->description }}</p>
 
-            <h5>The Neighbourhood</h5>
+            <h5 class="mt-5">The Neighbourhood</h5>
             <p>{{ $findApartment->neighbourhood_description }}</p>
         </div>
 
@@ -223,7 +223,7 @@
         ];
     @endphp
 
-    <div class="row">
+    <div class="row mt-5">
         <h5>Property Features</h5>
         @foreach ($features as $feature)
             @if ($findApartment->{$feature['key']} == 'on')

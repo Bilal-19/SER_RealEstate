@@ -47,30 +47,36 @@
     </div>
 
     @push('script')
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Map initialization
-        var map = L.map('map').setView([25.276987, 55.296249], 10);
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            // Map initialization
+            var map = L.map('map').setView([25.276987, 55.296249], 10);
 
-        // Add OpenStreetMap tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-        // Dummy marker data
-        var locations = [
-            { name: 'Location A', latitude: 25.276987, longitude: 55.296249 },
-            { name: 'Location B', latitude: 24.774265, longitude: 46.738586 }
-        ];
+            // Dummy marker data
+            var locations = [{
+                    name: 'Location A',
+                    latitude: 25.276987,
+                    longitude: 55.296249
+                },
+                {
+                    name: 'Location B',
+                    latitude: 24.774265,
+                    longitude: 46.738586
+                }
+            ];
 
-        console.log(locations); // Check the data in the browser console
+            console.log(locations); // Check the data in the browser console
 
-        // Loop through markers and add them to the map
-        locations.forEach(function(location) {
-            L.marker([location.latitude, location.longitude]).addTo(map)
-                .bindPopup(location.name);
-        });
-    </script>
+            // Loop through markers and add them to the map
+            locations.forEach(function(location) {
+                L.marker([location.latitude, location.longitude]).addTo(map)
+                    .bindPopup(location.name);
+            });
+        </script>
     @endpush
-
 @endsection
