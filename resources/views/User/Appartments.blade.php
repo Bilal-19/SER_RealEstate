@@ -43,8 +43,8 @@
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ff-poppins">Available Apartments</p>
-            <h2 class="text-center ff-poppins fs-48">
+            <p class="text-center ">Available Apartments</p>
+            <h2 class="text-center  fs-48">
                 Serviced Corporate Apartments
             </h2>
         </div>
@@ -62,7 +62,8 @@
                         value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
                     <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
                         value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
+                            style="color:white;"></i></button>
                 </div>
             </form>
         </div>
@@ -72,8 +73,8 @@
     <div class="container-fluid footer footer-bottom-border" id="footer_bg">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-5">
-                <h4 class="ff-poppins text-light">Why rent a hotel when you enjoy an apartment?</h4>
-                <p class="ff-poppins text-light">Feel like home at one of our modern apartments located in the heart of
+                <h4 class=" text-light">Why rent a hotel when you enjoy an apartment?</h4>
+                <p class=" text-light">Feel like home at one of our modern apartments located in the heart of
                     London.
                     Make your own meals, order a
                     take-away, enjoy the space and privacy, just like home.</p>
@@ -87,7 +88,7 @@
 
 
 @section('user-main-section')
-    <div class="row ff-poppins mt-3">
+    <div class="row  mt-3">
         {{-- <div id="map" style="height: 500px;"></div> --}}
         @if (count($availableApartments) == 0)
             <p class="text-center">No apartments are available</p>
@@ -106,41 +107,26 @@
         @foreach ($availableApartments as $rec)
             <div class="col-md-10 mx-auto mb-3 apartment-container">
                 <div class="row bg-white rounded d-flex flex-row justify-content-around align-items-center">
-                    <div class="col-md-4">
-                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{ $rec->area_name }}"
-                            class="img-fluid mt-2 mb-2 rounded apartment-thumbnail-img">
+                    <div class="col-md-3">
+                        <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featured_image) }}"
+                            alt="{{ $rec->apartment_name }}" class="img-fluid mt-2 mb-2 rounded apartment-thumbnail-img">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5 class="ff-poppins fs-24">{{ $rec->area_name }}</h5>
-                                <p class="ff-poppins">
-                                    <img src="{{ asset('assets/images/locationIcon.png') }}" alt="{{ $rec->area_name }}">
+                                <h5 class=" fs-24">{{ $rec->apartment_name }}</h5>
+                                <p class="">
+                                    <img src="{{ asset('assets/images/locationIcon.png') }}"
+                                        alt="{{ $rec->apartment_name }}">
                                     {{ $rec->street_address }}
                                 </p>
-                            </div>
-                            <div>
-                                <p class="ff-poppins fw-medium">from €{{ $rec->price }}</p>
+                                <p class="mb-0">One Bedroom Apartment from €{{ $rec->one_bedroom_price }}</p>
+                                <p>Two Bedroom Apartment from €{{ $rec->two_bedroom_price }}</p>
                             </div>
                         </div>
-                        <p class="ff-poppins">
-                            {!! Str::limit($rec->description, 100) !!}
-                        </p>
-                        <div class="d-flex flex-row justify-content-start">
-                            <p class="d-inline ff-poppins">
-                                <img src="{{ asset('assets/images/bedroom.png') }}" alt="bedrooms">
-                                {{ $rec->total_bedrooms }} Bedrooms
-                            </p>
-                            <p class="d-inline ff-poppins mx-2">
-                                <img src="{{ asset('assets/images/Bathroom.png') }}" alt="bathrooms">
-                                {{ $rec->total_bathrooms }} Bathrooms
-                            </p>
-                            <p class="d-inline ff-poppins mx-2">
-                                Area Sq.ft {{ $rec->sqfeet_area }}
-                            </p>
-                        </div>
+                        <p>{!! Str::limit($rec->description, 120) !!}</p>
                         <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}"
-                            class="btn btn-dark ff-poppins fw-medium">View Apartment</a>
+                            class="btn btn-dark  fw-medium">View Apartment</a>
                     </div>
                     <div class="col-md-3">
                         {!! $rec->map_location !!}
@@ -149,5 +135,4 @@
             </div>
         @endforeach
     </div>
-
 @endsection
