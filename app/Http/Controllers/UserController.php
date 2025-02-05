@@ -221,7 +221,7 @@ class UserController extends Controller
     }
 
     // Confirm Booking
-    public function stripePost(Request $request, $apartmentID, $checkIn, $checkOut, $totalDays, $totalAmount)
+    public function stripePost(Request $request, $apartmentID, $checkIn, $checkOut, $totalDays, $totalAmount, $apartment_price)
     {
         // Form Validation
         $request->validate([
@@ -290,11 +290,11 @@ class UserController extends Controller
             $checkOut,
             $findApartment->street_address,
             $request->email,
-            $findApartment->price_per_night,
+            $apartment_price,
             2,
             $totalDays,
             $request->fname,
-            $findApartment->area_name,
+            $findApartment->apartment_name,
             $request->adults,
             $request->childrens,
         );

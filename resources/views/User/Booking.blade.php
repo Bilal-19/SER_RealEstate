@@ -244,6 +244,7 @@
                         'checkOut' => $checkOut,
                         'totalDays' => $stayDays,
                         'totalAmount' => $totalCost,
+                        'apartment_price' => $bedroomPrice
                     ]) }}"
                     method="post" class="require-validation" data-cc-on-file="false"
                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">

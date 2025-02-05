@@ -122,7 +122,7 @@ Route::get("/book/now", [UserController::class, 'BookNow'])->name('Book.Now');
 
 
 // Payment Routes
-Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}", [UserController::class, 'stripePost'])->name('stripe.post');
+Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}/{apartment_price}", [UserController::class, 'stripePost'])->name('stripe.post');
 
 
 // Inquiry
