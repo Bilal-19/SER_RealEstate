@@ -5,7 +5,7 @@
         #map {
             height: 100%;
             width: 100%;
-            border: 1px solid black;
+            border-radius: 6px;
         }
     </style>
 @endpush
@@ -50,33 +50,39 @@
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <script>
             // Map initialization
-            var map = L.map('map').setView([25.276987, 55.296249], 10);
+            var map = L.map('map').setView([54.505, -3.0], 1);
+
 
             // Add OpenStreetMap tile layer
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 19
             }).addTo(map);
 
             // Dummy marker data
-            var locations = [{
-                    name: 'Location A',
-                    latitude: 25.276987,
-                    longitude: 55.296249
-                },
-                {
-                    name: 'Location B',
-                    latitude: 24.774265,
-                    longitude: 46.738586
-                }
-            ];
+            var markers = @json($locations);
 
-            console.log(locations); // Check the data in the browser console
+            var markerBounds = [];
 
             // Loop through markers and add them to the map
-            locations.forEach(function(location) {
-                L.marker([location.latitude, location.longitude]).addTo(map)
-                    .bindPopup(location.name);
+            markers.forEach(function(location) {
+                var blackIcon = L.icon({
+                    iconUrl: '{{asset("assets/images/location_pin.png")}}', // Black pointer icon URL
+                    iconSize: [25, 25],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                });
+
+                L.marker([location.latitude, location.longitude], {
+                        icon: blackIcon
+                    }).addTo(map)
+                    .bindPopup(location.apartment_name);
+
+                markerBounds.push([location.latitude, location.longitude]);
             });
+
+            map.fitBounds(markerBounds);
         </script>
     @endpush
 @endsection

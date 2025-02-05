@@ -69,6 +69,8 @@
 
 <script src="{{ asset('assets/js/swiperJS.js') }}"></script>
 
+@stack('script')
+
 </body>
 
 </html>
