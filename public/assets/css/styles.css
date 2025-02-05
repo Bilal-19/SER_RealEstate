@@ -118,14 +118,13 @@ body{
 .brand-btn {
     background-color: #c0c0c0;
     color: white;
-    padding: 10px 15px;
+    padding: 6px 8px;
     border-radius: 8px;
+    border: none;
 }
 
 .brand-btn:hover {
-    background-color: white;
-    color: #c0c0c0;
-    border: 1px solid #c0c0c0;
+    background-color: #303030;
 }
 
 .brand-btn-invert {

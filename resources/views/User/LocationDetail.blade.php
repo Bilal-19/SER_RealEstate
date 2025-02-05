@@ -3,7 +3,7 @@
 @push('style')
     <style>
         #map {
-            height: 100%;
+            height: 80%;
             width: 100%;
             border-radius: 6px;
         }
@@ -18,12 +18,35 @@
 
         <div class="row mb-5">
             <div class="col-md-6">
+                {{-- <div class="row" id="toggle-div">
+                    <div class="col-md-12">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-md-4">
+                                <p>Beds</p>
+                            </div>
+                            <div class="col-md-8">
+                                <button class="brand-btn">Studio</button>
+                                <button class="brand-btn">1 Bed</button>
+                                <button class="brand-btn">2 Bed</button>
+                                <button class="brand-btn">3 Bed</button>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-md-4">
+                                <label for="customRange2" class="form-label">Price Per Night</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="range" class="form-range" min="0" max="5000" id="customRange2">
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
                         <p>Showing {{ count($filterApartments) }} results</p>
                     </div>
                     <div class="col-md-5">
-                        <button>Show Filters</button>
+                        {{-- <button class="brand-btn" id="toggle" onclick="toggleBtn()">Show Filters</button> --}}
                     </div>
                 </div>
 
@@ -68,7 +91,7 @@
             // Loop through markers and add them to the map
             markers.forEach(function(location) {
                 var blackIcon = L.icon({
-                    iconUrl: '{{asset("assets/images/location_pin.png")}}', // Black pointer icon URL
+                    iconUrl: '{{ asset('assets/images/location_pin.png') }}', // Black pointer icon URL
                     iconSize: [25, 25],
                     iconAnchor: [12, 41],
                     popupAnchor: [1, -34],
@@ -83,6 +106,16 @@
             });
 
             map.fitBounds(markerBounds);
+
+            // const toggleDivEl = document.getElementById("toggle-div")
+
+            // function toggleBtn() {
+            //     if (toggleDivEl.style.display === "none") {
+            //         toggleDivEl.style.display = "block"
+            //     } else {
+            //         toggleDivEl.style.display = "none"
+            //     }
+            // }
         </script>
     @endpush
 @endsection
