@@ -232,6 +232,18 @@ class AdminController extends Controller
                 "available_till" => $request->available_till,
                 'featured_image' => $featuredImgTimeStamp,
                 'multiple_images' => implode('|', $image),
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
+                'concierge' => $request->concierge ?? "off",
+                'parking' => $request->parking ?? "off",
+                'elevator' => $request->elevator ?? "off",
+                'air_conditioning' => $request->air_conditioning ?? "off",
+                'personal_safe' => $request->personal_safe ?? "off",
+                'private_balcony' => $request->private_balcony ?? "off",
+                'kitchen' => $request->kitchen ?? "off",
+                'washing' => $request->washing ?? "off",
+                'dishwasher' => $request->dishwasher ?? "off",
+                'pet_friendly' => $request->pet_friendly ?? "off",
                 'updated_at' => now()
             ]);
 

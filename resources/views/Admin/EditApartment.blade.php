@@ -107,7 +107,7 @@
                 <div class="row mt-3">
                     <div class="col-md-3">
                         <label class="form-label mb-0">Latitude:</label>
-                        <input class="form-control" type="number" step="any" name="latitude" value="{{ $findApartment->apartment_name }}">
+                        <input class="form-control" type="number" step="any" name="latitude" value="{{ $findApartment->latitude }}">
                         <small class="text-danger">
                             @error('latitude')
                                 {{ $message }}
@@ -117,7 +117,7 @@
 
                     <div class="col-md-3">
                         <label class="form-label mb-0">Longitude:</label>
-                        <input class="form-control" type="number" step="any" name="longitude" value="{{ $findApartment->apartment_name }}">
+                        <input class="form-control" type="number" step="any" name="longitude" value="{{ $findApartment->longitude }}">
                         <small class="text-danger">
                             @error('longitude')
                                 {{ $message }}
@@ -162,6 +162,20 @@
                             style="resize: none;" name="apartment_description">{{$findApartment->description}}</textarea>
                         <small class="text-danger">
                             @error('apartment_description')
+                                {{ $message }}
+                            @enderror
+                        </small>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label class="form-label mb-0">Neighborhood Description:</label>
+                        <textarea class="form-control" rows="5"
+                            placeholder="Situated in London's most prestigious neighborhood, Mayfair, this penthouse offers unmatched luxury...."
+                            style="resize: none;" name="neighbourhood_description">{{$findApartment->neighbourhood_description}}</textarea>
+                        <small class="text-danger">
+                            @error('neighbourhood_description')
                                 {{ $message }}
                             @enderror
                         </small>
@@ -218,6 +232,68 @@
                             {{ $message }}
                             @enderror
                         </small>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <h4>Select Property Features</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="Concierge" name="concierge" {{$findApartment->concierge == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="Concierge">Concierge</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="Parking" name="parking" {{$findApartment->parking == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="Parking">Free Parking</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="elevator" name="elevator" {{$findApartment->elevator == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="elevator">Elevator in Building</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="air_conditioning"
+                                name="air_conditioning" {{$findApartment->air_conditioning == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="air_conditioning">Air Conditioning</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="personal_safe" name="personal_safe" {{$findApartment->personal_safe == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="personal_safe">Personal Safe</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="private_balcony"
+                                name="private_balcony" {{$findApartment->private_balcony == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="private_balcony">Private Balcony</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="kitchen" name="kitchen" {{$findApartment->kitchen == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="kitchen">Fully Equipped Kitchen</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="washing" name="washing" {{$findApartment->washing == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="washing">Washing/Dryer</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="dishwasher" name="dishwasher" {{$findApartment->dishwasher == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="dishwasher">Dishwasher</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="pet_friendly" name="pet_friendly" {{$findApartment->pet_friendly == "on" ? "checked" : ""}}>
+                            <label class="form-check-label" for="pet_friendly">Pet Friendly</label>
+                        </div>
                     </div>
                 </div>
 
