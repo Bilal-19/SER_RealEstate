@@ -12,7 +12,7 @@
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Thumbnail Image Preview: </label>
-                    <img src="{{asset("Location/".$findLocation->thumbnail_img)}}" alt="{{$findLocation->location}}" class="img-fluid rounded">
+                    <img src="{{asset("Locations/".$findLocation->thumbnail_img)}}" alt="{{$findLocation->location}}" class="img-fluid rounded">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
