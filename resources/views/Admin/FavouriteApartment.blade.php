@@ -15,10 +15,10 @@
         <div class="row ff-inter">
             @foreach ($fetchFavApartment as $rec)
                 <div class="col-md-4">
-                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="" class="img-fluid thumbnail rounded">
+                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featured_image) }}" alt="" class="img-fluid thumbnail rounded">
                     <p class="mt-2 mb-0">
                         <i class="fa-solid fa-location-dot"></i>
-                        {{$rec->area_name}}
+                        {{$rec->apartment_name}}
                     </p>
                 </div>
             @endforeach
