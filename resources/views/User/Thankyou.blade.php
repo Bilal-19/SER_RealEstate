@@ -39,7 +39,7 @@
             <div class="d-flex justify-content-around align-items-center mt-5 bg-pale-gray p-16">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <img src="{{ asset('assets/images/Icons/whatsapp.png') }}" alt="whatsApp Icon" class="img-fluid icon">
+                        <img src="{{ asset("assets/images/phone.png") }}" alt="whatsApp Icon" class="img-fluid icon">
                     </div>
                     <div class="mx-2">
                         <p class="mb-0 ff-poppins fw-semibold">Phone</p>
@@ -49,7 +49,7 @@
 
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <img src="{{ asset('assets/images/Icons/email.png') }}" alt="Email Icon" class="img-fluid icon">
+                        <img src="{{ asset("assets/images/email.png") }}" alt="Email Icon" class="img-fluid icon">
                     </div>
                     <div class="mx-2">
                         <p class="mb-0 ff-poppins fw-semibold">Email</p>
