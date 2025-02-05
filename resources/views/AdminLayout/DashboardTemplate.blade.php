@@ -265,7 +265,7 @@
 
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
-                                    <i class="fa-solid fa-user-circle"></i>Customer Enquiries
+                                    <i class="fa-solid fa-briefcase"></i>Corporate Enquiries
                                 </a>
                             </li>
 
@@ -289,12 +289,6 @@
 
                             <li class="nav-item mb-2" >
                                 <a class="nav-link  d-flex align-items-center gap-3" href="#">
-                                    <i class="fa-solid fa-briefcase"></i>Corporate Enquiries
-                                </a>
-                            </li>
-
-                            <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3" href="#">
                                     <i class="fa-solid fa-info-circle"></i>General Enquiries
                                 </a>
                             </li>
@@ -302,6 +296,12 @@
                             <li class="nav-item mb-2" >
                                 <a class="nav-link  d-flex align-items-center gap-3" href="#">
                                     <i class="fa-solid fa-calendar-check"></i>Booking Enquiries
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-2" >
+                                <a class="nav-link  d-flex align-items-center gap-3" href="#">
+                                    <i class="fa-solid fa-calendar-check"></i>Join Sterling Enquiries
                                 </a>
                             </li>
 
