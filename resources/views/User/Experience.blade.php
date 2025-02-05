@@ -110,7 +110,7 @@
     <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
         <div class="col-md-12 rounded">
             <div id="feedback" class="carousel slide">
-                <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="10000">
+                <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="3000">
                     <h5 class="text-start">Your go to service since 2025</h5>
 
                     @foreach ($fetchAllTestimonials as $record)
