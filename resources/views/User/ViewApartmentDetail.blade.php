@@ -162,7 +162,11 @@
                 </div>
             </div>
 
+            <h5>The Apartment</h5>
             <p>{{ $findApartment->description }}</p>
+
+            <h5>The Neighbourhood</h5>
+            <p>{{ $findApartment->neighbourhood_description }}</p>
         </div>
 
         <div class="col-md-2 mt-3 check-availability-container">
@@ -204,111 +208,36 @@
         </div>
     </div>
 
+    @php
+        $features = [
+            ['key' => 'concierge', 'label' => 'Concierge', 'image' => 'concierge.jpg'],
+            ['key' => 'parking', 'label' => 'Parking', 'image' => 'parking.jpg'],
+            ['key' => 'elevator', 'label' => 'Elevator in Building', 'image' => 'elevator.jpg'],
+            ['key' => 'air_conditioning', 'label' => 'Air Conditioning', 'image' => 'air_conditioning.jpg'],
+            ['key' => 'personal_safe', 'label' => 'Personal Safe', 'image' => 'personal_safe.jpg'],
+            ['key' => 'private_balcony', 'label' => 'Private Balcony', 'image' => 'private_balcony.jpg'],
+            ['key' => 'kitchen', 'label' => 'Fully Equipped Kitchen', 'image' => 'equiped_kitchen.png'],
+            ['key' => 'washing', 'label' => 'Washing/Dryer', 'image' => 'washing.jpg'],
+            ['key' => 'dishwasher', 'label' => 'Dishwasher', 'image' => 'dishwasher.jpg'],
+            ['key' => 'pet_friendly', 'label' => 'Pet Friendly', 'image' => 'pet_friendly.jpg'],
+        ];
+    @endphp
+
     <div class="row">
         <h5>Property Features</h5>
-        <div class="col-md-3">
-            <p>
-                @if ($findApartment->concierge == 'on')
+        @foreach ($features as $feature)
+            @if ($findApartment->{$feature['key']} == 'on')
+                <div class="col-md-3 mb-3">
                     <span>
-                        <img src="{{ asset('assets/images/concierge.jpg') }}" alt="concierge" class="img-fluid mr-2">
-                        <span>Concierge</span>
-                    </span>
-                @endif
-            </p>
-
-            <p>
-                @if ($findApartment->parking == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/parking.jpg') }}" alt="free parking" class="img-fluid mr-2">
-                        <span>Parking</span>
-                    </span>
-                @endif
-            </p>
-
-            <p>
-                @if ($findApartment->elevator == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/elevator.jpg') }}" alt="elevator" class="img-fluid mr-2">
-                        <span>Elevator in Building</span>
-                    </span>
-                @endif
-            </p>
-        </div>
-
-        <div class="col-md-3">
-            <p>
-                @if ($findApartment->air_conditioning == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/air_conditioning.jpg') }}" alt="air conditioner"
+                        <img src="{{ asset('assets/images/' . $feature['image']) }}" alt="{{ $feature['label'] }}"
                             class="img-fluid mr-2">
-                        <span>Air Conditioning</span>
+                        <span>{{ $feature['label'] }}</span>
                     </span>
-                @endif
-            </p>
-
-            <p>
-                @if ($findApartment->personal_safe == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/personal_safe.jpg') }}" alt="personal safe"
-                            class="img-fluid mr-2">
-                        <span>Personal Safe</span>
-                    </span>
-                @endif
-            </p>
-
-            <p>
-                @if ($findApartment->private_balcony == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/private_balcony.jpg') }}" alt="private balcony"
-                            class="img-fluid mr-2">
-                        <span>Private Balcony</span>
-                    </span>
-                @endif
-            </p>
-        </div>
-
-        <div class="col-md-3">
-            <p>
-                @if ($findApartment->kitchen == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/equiped_kitchen.png') }}" alt="Full equipped kitchen"
-                            class="img-fluid mr-2">
-                        <span>Fully Equipped Kitchen</span>
-                    </span>
-                @endif
-            </p>
-
-            <p>
-                @if ($findApartment->washing == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/washing.jpg') }}" alt="washing" class="img-fluid mr-2">
-                        <span>Washing/Dryer</span>
-                    </span>
-                @endif
-            </p>
-
-            <p>
-                @if ($findApartment->dishwasher == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/elevator.jpg') }}" alt="dishwasher" class="img-fluid mr-2">
-                        <span>Dishwasher</span>
-                    </span>
-                @endif
-            </p>
-        </div>
-
-        <div class="col-md-3">
-            <p>
-                @if ($findApartment->pet_friendly == 'on')
-                    <span>
-                        <img src="{{ asset('assets/images/pet_friendly.jpg') }}" alt="dishwasher"
-                            class="img-fluid mr-2">
-                        <span>Pet Friendly</span>
-                    </span>
-                @endif
-            </p>
-        </div>
+                </div>
+            @endif
+        @endforeach
     </div>
+
 
     <div class="row mt-5 mb-5">
         <div class="col-md-10 mx-auto text-center">
