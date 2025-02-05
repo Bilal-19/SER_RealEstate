@@ -28,10 +28,15 @@
             background-attachment: fixed;
         }
 
-        .neighbourhood-img {
-            height: 300px;
-            width: 300px;
-            object-fit: cover;
+        .form-control {
+            background-color: #c0c0c0;
+            border: none;
+            width: 50%;
+        }
+
+        .form-control::placeholder {
+            color: white;
+            font-size: 20px;
         }
     </style>
 @endpush
@@ -45,28 +50,20 @@
         </div>
     </div>
 
-    <div class="row mb-5" id="book-apartment">
-        <div class="col-10 col-sm-10 mx-auto rounded bg-white">
-            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3">
+    <div class="row mb-5">
+        <div class="col-10 col-md-8 mx-auto rounded" id="book-apartment">
+            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
+                autocomplete="off">
                 @csrf
-                <div class="row d-flex justify-content-around align-items-end">
-                    <div class="col-md-4 mb-sm-10">
-                        <label class="form-label fw-bold mb-0">Search By Area:</label>
-                        <input type="text" placeholder="SEARCH BY AREA" class="form-control" name="location" value="{{old('location')}}">
-                    </div>
-                    <div class="col-md-2 mb-sm-10">
-                        <label class="form-label fw-bold mb-0">Check In:</label>
-                        <input type="date" placeholder="CHECK IN" required class="form-control" name="checkInDate" value="{{old("checkInDate")}}">
-                    </div>
-                    <div class="col-md-2 mb-sm-10">
-                        <label class="form-label fw-bold mb-0">Check Out:</label>
-                        <input type="date" placeholder="CHECK OUT" required class="form-control" name="checkOutDate" value="{{old("checkOutDate")}}">
-                    </div>
-                    <div class="col-md-2 mt-sm-3 mt-0">
-                        <button class="btn btn-dark" type="submit">SEARCH</button>
-                    </div>
+                <div id="book-apartment-searchbar" class="input-group">
+                    <input type="text" placeholder="Location" class="form-control" name="location"
+                        value="{{ old('location') }}">
+                    <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
+                        value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
+                    <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
+                        value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
                 </div>
-
             </form>
         </div>
     </div>
@@ -153,67 +150,4 @@
         @endforeach
     </div>
 
-    <div class="row">
-        <h3 class="fs-36 ff-poppins">Neighbourhood</h3>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-md-11 mx-auto">
-            @isset($neighborhoodApartment)
-                @if (count($neighborhoodApartment) > 4)
-                    <!-- Slider main container -->
-                    <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            @foreach ($neighborhoodApartment as $rec)
-                                <div class="col-md-3 swiper-slide">
-                                    <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featuredImage) }}" alt="{{ $rec->area_name }}"
-                                        class="img-fluid neighbourhood-img rounded shadow">
-                                    <p class="fs-5 text-uppercase mb-0">{{ $rec->area_name }}</p>
-                                    <p class="mt-0">
-                                        {!! Str::limit($rec->description, 50) !!}
-                                    </p>
-                                </div>
-                            @endforeach
-                        </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-slider-button swiper-button-prev"></div>
-                        <div class="swiper-slider-button swiper-button-next"></div>
-
-                        <!-- If we need scrollbar -->
-                    </div>
-                @else
-                    <p>Please add minimum five records to view the nearest apartments</p>
-                @endif
-            @endisset
-        </div>
-    </div>
-
-    {{-- <script src="https://cdn.gomaps.pro/js/gomaps.js"></script>
-
-
-    <script>
-        function initMap() {
-            var map = new GoMaps.Map("map", {
-                center: [51.5074, -0.1278],  // Example coordinates
-                zoom: 10,
-            });
-
-            var locations = @json($locations);  // Pass data from Laravel to JavaScript
-
-            locations.forEach(function(location) {
-                new GoMaps.Marker({
-                    position: [location.latitude, location.longitude],
-                    map: map,
-                    title: location.area_name
-                });
-            });
-        }
-
-        window.onload = initMap;
-    </script> --}}
 @endsection

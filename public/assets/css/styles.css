@@ -71,7 +71,18 @@ body{
 
 /* Landing Page */
 
+#book-apartment-searchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
+.search-btn{
+    background-color: #c0c0c0;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+}
 .top-rated-apartment > img{
     width: 100%;
     border-radius: 10px;

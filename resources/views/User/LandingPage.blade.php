@@ -13,9 +13,9 @@
             width: 800px
         }
 
-        #book-apartment {
+        /* #book-apartment {
             background-color: #c0c0c0;
-        }
+        } */
 
         .form-control {
             background-color: #c0c0c0;
@@ -28,11 +28,7 @@
             font-size: 20px;
         }
 
-        #book-apartment-searchbar{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
+
     </style>
 @endpush
 
@@ -50,14 +46,14 @@
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                 autocomplete="off">
                 @csrf
-                <div id="book-apartment-searchbar">
+                <div id="book-apartment-searchbar" class="input-group">
                     <input type="text" placeholder="Location" class="form-control" name="location"
                         value="{{ old('location') }}">
                     <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
                         value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
                     <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
                         value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
                 </div>
             </form>
         </div>
