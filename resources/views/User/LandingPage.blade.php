@@ -9,8 +9,9 @@
         }
 
         .cta-landing-pg-img {
-            height: 800px !important;
-            width: 800px
+            height: 400px !important;
+            width: 400px;
+            object-fit: cover;
         }
 
         /* #book-apartment {
