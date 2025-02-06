@@ -65,21 +65,27 @@
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-md-4">
             <img src="{{ asset('assets/images/House.jpg') }}" alt="House" class="img-fluid rounded apartment-category-img">
-            <h4 class="mb-0 mt-5">Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+            <a href="{{route("Property.Houses")}}" class="text-dark">
+                <h4 class="mb-0 mt-5">Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+            </a>
             <p>
                 If you need the extra space, book an entire place for your team or family.
             </p>
         </div>
         <div class="col-md-4">
-            <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="House" class="img-fluid rounded apartment-category-img">
-            <h4 class="mb-0 mt-5">Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+            <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="Apartments" class="img-fluid rounded apartment-category-img">
+            <a href="{{route("Property.Apartments")}}" class="text-dark">
+                <h4 class="mb-0 mt-5">Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+            </a>
             <p>
                 Stay in some of the most iconic locations in London in shared buildings.
             </p>
         </div>
         <div class="col-md-4">
-            <img src="{{ asset('assets/images/Room.jpg') }}" alt="House" class="img-fluid rounded apartment-category-img">
-            <h4 class="mb-0 mt-5">Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+            <img src="{{ asset('assets/images/Room.jpg') }}" alt="Rooms" class="img-fluid rounded apartment-category-img">
+            <a href="{{route("Property.Rooms")}}" class="text-dark">
+                <h4 class="mb-0 mt-5">Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+            </a>
             <p>
                 Enjoy your own studio space with a common room to socialise with the rest of the team.
             </p>

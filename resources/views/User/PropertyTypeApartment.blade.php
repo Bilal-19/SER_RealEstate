@@ -18,46 +18,16 @@
 
 @section('user-main-section')
     <div class="container-fluid">
-        <div class="row">
-            <h3>Corporate Stays in {{ $locationName }}</h3>
-        </div>
-
         <div class="row mb-5">
             <div class="col-md-6">
-                {{-- <div class="row" id="toggle-div">
-                    <div class="col-md-12">
-                        <div class="row d-flex justify-content-between">
-                            <div class="col-md-4">
-                                <p>Beds</p>
-                            </div>
-                            <div class="col-md-8">
-                                <button class="brand-btn">Studio</button>
-                                <button class="brand-btn">1 Bed</button>
-                                <button class="brand-btn">2 Bed</button>
-                                <button class="brand-btn">3 Bed</button>
-                            </div>
-                        </div>
-                        <div class="row d-flex justify-content-between">
-                            <div class="col-md-4">
-                                <label for="customRange2" class="form-label">Price Per Night</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="range" class="form-range" min="0" max="5000" id="customRange2">
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
-                        <p>Showing {{ count($filterApartments) }} results</p>
-                    </div>
-                    <div class="col-md-5">
-                        {{-- <button class="brand-btn" id="toggle" onclick="toggleBtn()">Show Filters</button> --}}
+                        <p>Showing {{ count($fetchApartments) }} results</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    @foreach ($filterApartments as $record)
+                    @foreach ($fetchApartments as $record)
                         <div class="col-md-6">
                             <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}">
                                 <img src="{{ asset('Apartment/Thubmbnail/' . $record->featured_image) }}" alt=""
@@ -90,7 +60,7 @@
             }).addTo(map);
 
             // Dummy marker data
-            var markers = @json($locations);
+            var markers = @json($fetchApartments);
 
             var markerBounds = [];
 
@@ -112,16 +82,6 @@
             });
 
             map.fitBounds(markerBounds);
-
-            // const toggleDivEl = document.getElementById("toggle-div")
-
-            // function toggleBtn() {
-            //     if (toggleDivEl.style.display === "none") {
-            //         toggleDivEl.style.display = "block"
-            //     } else {
-            //         toggleDivEl.style.display = "none"
-            //     }
-            // }
         </script>
     @endpush
 @endsection

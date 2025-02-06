@@ -47,7 +47,9 @@ Route::post("submit/general/enquiry", [UserController::class, 'SubmitGeneralEnqu
 Route::post("submit/location/enquiry", [UserController::class, 'SubmitLocationEnquiry'])->name(name: 'SubmitLocationEnquiry');
 Route::get("faqs", [UserController::class, 'FAQs'])->name(name: 'FAQs');
 Route::get("location/{id}", [UserController::class, 'LocationDetail'])->name(name: 'LocationDetail');
-
+Route::get("properties/house", [UserController::class, 'propertyTypeHouse'])->name(name: 'Property.Houses');
+Route::get("properties/apartments", [UserController::class, 'propertyTypeApartment'])->name(name: 'Property.Apartments');
+Route::get("properties/rooms", [UserController::class, 'propertyTypeRooms'])->name(name: 'Property.Rooms');
 
 
 Route::get("/view/available/appartment", [UserController::class, 'viewAvailableAparment'])->name('Get.Available.Apartment');

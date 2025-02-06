@@ -213,11 +213,11 @@ class UserController extends Controller
 
         return view('User.Booking')->with(compact(
             'stayDays',
-             'findApartment',
-             'checkIn',
-              'checkOut',
-              'bedrooms'
-            ));
+            'findApartment',
+            'checkIn',
+            'checkOut',
+            'bedrooms'
+        ));
     }
 
     // Confirm Booking
@@ -367,21 +367,23 @@ class UserController extends Controller
         return view("User.Locations", with(compact("fetchAllLocations")));
     }
 
-    public function LocationDetail($id){
+    public function LocationDetail($id)
+    {
         $findLocation = DB::table('locations')->find($id);
         $locationName = $findLocation->location;
 
         // Filter Apartments
-        $filterApartments = DB::table('apartments')->where('apartment_location','=',$locationName)->get();
+        $filterApartments = DB::table('apartments')->where('apartment_location', '=', $locationName)->get();
 
         $locations = DB::table("apartments")
-        ->select(["apartment_name", "latitude", "longitude"])
-        ->where("apartment_location","=", $locationName)
-        ->get();
+            ->select(["apartment_name", "latitude", "longitude"])
+            ->where("apartment_location", "=", $locationName)
+            ->get();
         return view("User.LocationDetail", with(compact("filterApartments", "locationName", "locations")));
     }
 
-    public function SubmitLocationEnquiry(Request $request){
+    public function SubmitLocationEnquiry(Request $request)
+    {
         $request->validate([
             "fullname" => "required",
             "email" => "required",
@@ -403,7 +405,7 @@ class UserController extends Controller
             'created_at' => now()
         ]);
 
-        if ($isEnquiryCreated){
+        if ($isEnquiryCreated) {
             toastr()->success("We have received your location enquiry. Our team will contact you soon.");
             return redirect()->back();
         } else {
@@ -482,7 +484,7 @@ class UserController extends Controller
             'created_at' => now()
         ]);
 
-        if ($isEnquiryCreated){
+        if ($isEnquiryCreated) {
             toastr()->success("We have received your booking enquiry. Our team will contact you soon.");
             return redirect()->back();
         } else {
@@ -491,7 +493,8 @@ class UserController extends Controller
         }
     }
 
-    public function ViewGeneralEnquiry(){
+    public function ViewGeneralEnquiry()
+    {
         return view("User.GeneralEnquiry");
     }
 
@@ -515,7 +518,7 @@ class UserController extends Controller
             'created_at' => now()
         ]);
 
-        if ($isEnquiryCreated){
+        if ($isEnquiryCreated) {
             toastr()->success("We have received your general enquiry. Our team will contact you soon.");
             return redirect()->back();
         } else {
@@ -524,9 +527,37 @@ class UserController extends Controller
         }
     }
 
-    public function FAQs(){
+    public function FAQs()
+    {
         $fetchAllFAQs = DB::table("faq")->get();
         return view("User.FAQs", with(compact("fetchAllFAQs")));
+    }
+
+    public function propertyTypeHouse()
+    {
+        $fetchHouses = DB::table("apartments")
+            ->where('status', '=', 'available')
+            ->where('apartment_type', '=', 'House')
+            ->get();
+        return view("User.PropertyTypeHouse", with(compact("fetchHouses")));
+    }
+
+    public function propertyTypeApartment()
+    {
+        $fetchApartments = DB::table("apartments")
+            ->where('status', '=', 'available')
+            ->where('apartment_type', '=', 'Apartment')
+            ->get();
+        return view("User.PropertyTypeApartment", with(compact("fetchApartments")));
+    }
+
+    public function propertyTypeRooms()
+    {
+        $fetchRooms = DB::table("apartments")
+            ->where('status', '=', 'available')
+            ->where('apartment_type', '=', 'Rooms')
+            ->get();
+        return view("User.PropertyTypeRooms", with(compact("fetchRooms")));
     }
 }
 
