@@ -33,8 +33,6 @@
     {{-- Multiple Location Marker --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     @stack('style')
-
-    @stack('scripts')
 </head>
 
 <body>

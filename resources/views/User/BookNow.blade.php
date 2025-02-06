@@ -18,6 +18,12 @@
             color: white;
             font-size: 20px;
         }
+
+        @media screen and (max-width: 768px) {
+            .form-control::placeholder {
+                font-size: 14px;
+            }
+        }
     </style>
 @endpush
 

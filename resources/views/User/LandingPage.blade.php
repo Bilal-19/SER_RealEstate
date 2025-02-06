@@ -45,7 +45,6 @@
             .form-control::placeholder {
                 font-size: 14px;
             }
-
         }
     </style>
 @endpush

@@ -3,15 +3,32 @@
 @push('style')
     <style>
         #map {
-            height: 80%;
+            height: 50vh;
             width: 100%;
             border-radius: 6px;
         }
 
-        .apartment-thumbnail{
+        .apartment-thumbnail {
             height: 300px;
             width: 300px;
             object-fit: cover;
+        }
+
+        .flex-div{
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media screen and (max-width: 768px) {
+            #map {
+                height: 80%;
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            .flex-div{
+                flex-direction: column-reverse;
+            }
         }
     </style>
 @endpush
@@ -22,37 +39,11 @@
             <h3>Corporate Stays in {{ $locationName }}</h3>
         </div>
 
-        <div class="row mb-5">
+        <div class="row mb-5 flex-div">
             <div class="col-md-6">
-                {{-- <div class="row" id="toggle-div">
-                    <div class="col-md-12">
-                        <div class="row d-flex justify-content-between">
-                            <div class="col-md-4">
-                                <p>Beds</p>
-                            </div>
-                            <div class="col-md-8">
-                                <button class="brand-btn">Studio</button>
-                                <button class="brand-btn">1 Bed</button>
-                                <button class="brand-btn">2 Bed</button>
-                                <button class="brand-btn">3 Bed</button>
-                            </div>
-                        </div>
-                        <div class="row d-flex justify-content-between">
-                            <div class="col-md-4">
-                                <label for="customRange2" class="form-label">Price Per Night</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="range" class="form-range" min="0" max="5000" id="customRange2">
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
                         <p>Showing {{ count($filterApartments) }} results</p>
-                    </div>
-                    <div class="col-md-5">
-                        {{-- <button class="brand-btn" id="toggle" onclick="toggleBtn()">Show Filters</button> --}}
                     </div>
                 </div>
 
@@ -69,7 +60,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-12">
                 <div id="map"></div>
             </div>
         </div>
@@ -113,15 +104,6 @@
 
             map.fitBounds(markerBounds);
 
-            // const toggleDivEl = document.getElementById("toggle-div")
-
-            // function toggleBtn() {
-            //     if (toggleDivEl.style.display === "none") {
-            //         toggleDivEl.style.display = "block"
-            //     } else {
-            //         toggleDivEl.style.display = "none"
-            //     }
-            // }
         </script>
     @endpush
 @endsection
