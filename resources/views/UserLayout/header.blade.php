@@ -46,7 +46,7 @@
                         <img src="{{ asset('assets/images/ser_header_logo.png') }}" alt="Sterling Executive Residential Logo">
                         STERLING EXECUTIVE RESIDENTIAL
                     </a>
-                    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

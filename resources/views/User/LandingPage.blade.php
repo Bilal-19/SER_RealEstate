@@ -38,8 +38,12 @@
 
         @media screen and (max-width: 768px) {
             #explore-cta-apartment {
-                right: -150px;
+                right: -100px;
                 top: -60px;
+            }
+
+            .form-control::placeholder {
+                font-size: 14px;
             }
 
         }
@@ -56,7 +60,7 @@
     </div>
 
     <div class="row mb-5">
-        <div class="col-10 col-md-8 mx-auto rounded" id="book-apartment">
+        <div class="col-12 col-md-8 mx-auto rounded" id="book-apartment">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                 autocomplete="off">
                 @csrf
@@ -116,7 +120,8 @@
                 <p>{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
                 <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
                     class="img-fluid cta-landing-pg-img">
-                <a href="{{route("Detail.View.Apartment", ["id"=>$topRatedApartment->id])}}" id="explore-cta-apartment">Explore</a>
+                <a href="{{ route('Detail.View.Apartment', ['id' => $topRatedApartment->id]) }}"
+                    id="explore-cta-apartment">Explore</a>
             </div>
         </div>
     @endisset
