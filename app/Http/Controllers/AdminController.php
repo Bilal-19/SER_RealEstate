@@ -526,10 +526,10 @@ class AdminController extends Controller
         return $pdfRecord->download($fileName);
     }
 
-    public function readInquiries()
+    public function getCorporateEnquiries()
     {
         $fetchQueries = DB::table('corporate_inquiry')->get();
-        return view('Admin.CustomerQueries')->with(compact('fetchQueries'));
+        return view('Admin.CorporateEnquiries')->with(compact('fetchQueries'));
     }
 
     public function usersManagement()

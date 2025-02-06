@@ -264,7 +264,7 @@
                             </li> --}}
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Read.Queries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Read.Queries')}}">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Corporate.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Corporate.Enquiries')}}">
                                     <i class="fa-solid fa-briefcase"></i>Corporate Enquiries
                                 </a>
                             </li>
