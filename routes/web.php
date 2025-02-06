@@ -168,8 +168,9 @@ Route::get("admin/del/faq/{id}", [AdminController::class, 'deleteFAQ'])->name('A
 // Send Payment Email
 Route::get("/admin/send/email", [UserController::class, 'sendEmail']);
 
-// Inquiry - Admin
+// Enquiry - Admin
 Route::get("/admin/corporate/inquiry", [AdminController::class, 'getCorporateEnquiries'])->name('Corporate.Enquiries');
+Route::get("/admin/general/inquiry", [AdminController::class, 'getGeneralEnquiries'])->name('General.Enquiries');
 
 // Email Test Route
 Route::get('/test-email', function () {

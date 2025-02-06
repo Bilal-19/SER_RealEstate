@@ -282,13 +282,13 @@
                             </li>
 
                             <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3" href="{{route('Admin.Testimonials')}}">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Testimonials') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Admin.Testimonials')}}">
                                     <i class="fa-solid fa-quote-left"></i>Testimonials
                                 </a>
                             </li>
 
                             <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3" href="#">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('General.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("General.Enquiries")}}">
                                     <i class="fa-solid fa-info-circle"></i>General Enquiries
                                 </a>
                             </li>
