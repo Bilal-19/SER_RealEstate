@@ -413,7 +413,7 @@ class UserController extends Controller
     }
 
     // Create Inquiry - Join Sterling
-    public function JoinSterlingInquiry(Request $request)
+    public function submitJoinSterlingInquiry(Request $request)
     {
         $request->validate([
             "fullname" => "required",
@@ -428,7 +428,8 @@ class UserController extends Controller
             "email" => $request->email,
             "company_name" => $request->company_name,
             "phone_number" => $request->phone_number,
-            "enquiry_message" => $request->enquiry
+            "enquiry_message" => $request->enquiry,
+            'created_at' => now()
         ]);
 
         if ($isEnquiryCreated) {

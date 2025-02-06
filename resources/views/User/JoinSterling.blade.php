@@ -34,7 +34,7 @@
                 @csrf
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5">
-                        <input type="text" name="fullname" class="form-control" placeholder="Full Name">
+                        <input type="text" name="fullname" class="form-control" placeholder="Full Name" value="{{old("fullname")}}">
                         <small class="text-danger">
                             @error('fullname')
                                 {{ $message }}
@@ -42,7 +42,7 @@
                         </small>
                     </div>
                     <div class="col-md-5">
-                        <input type="email" name="email" class="form-control" placeholder="Email Address">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" value="{{old("email")}}">
                         <small class="text-danger">
                             @error('email')
                                 {{ $message }}
@@ -53,7 +53,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5">
-                        <input type="text" name="company_name" class="form-control" placeholder="Company Name">
+                        <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="{{old("company_name")}}">
                         <small class="text-danger">
                             @error('company_name')
                                 {{ $message }}
@@ -61,7 +61,7 @@
                         </small>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number">
+                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" value="{{old("phone_number")}}">
                         <small class="text-danger">
                             @error('phone_number')
                                 {{ $message }}
@@ -72,7 +72,7 @@
 
                 <div class="row mt-5">
                     <div class="col-md-12">
-                        <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5"></textarea>
+                        <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5">{{old("enquiry")}}</textarea>
                         <small class="text-danger">
                             @error('enquiry')
                                 {{ $message }}

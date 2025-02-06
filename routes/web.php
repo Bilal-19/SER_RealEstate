@@ -127,7 +127,7 @@ Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{to
 
 // Inquiry
 Route::post("/corporate/inquiry", [UserController::class, 'createCorporateInquiry'])->name('Create.CorporateInquiry');
-Route::post("/join/sterling/inquiry", [UserController::class, 'JoinSterlingInquiry'])->name('JoinSterlingInquiry');
+Route::post("/join/sterling/inquiry", [UserController::class, 'submitJoinSterlingInquiry'])->name('JoinSterlingInquiry');
 
 // Booking - Admin
 Route::get("admin/booking", [AdminController::class, 'Booking'])->name('View.Booking');
