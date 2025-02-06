@@ -25,7 +25,24 @@
             font-size: 18px;
         }
 
+        #explore-cta-apartment {
+            position: relative;
+            right: -500px;
+            top: -60px;
+            color: white;
+            background-color: #c0c0c0;
+            font-size: 18px;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
 
+        @media screen and (max-width: 768px) {
+            #explore-cta-apartment {
+                right: -150px;
+                top: -60px;
+            }
+
+        }
     </style>
 @endpush
 
@@ -50,7 +67,8 @@
                         value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
                     <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
                         value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
+                            style="color:white;"></i></button>
                 </div>
             </form>
         </div>
@@ -60,8 +78,9 @@
 @section('user-main-section')
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-md-4">
-            <img src="{{ asset('assets/images/House.jpg') }}" alt="House" class="img-fluid rounded apartment-category-img">
-            <a href="{{route("Property.Houses")}}" class="text-dark">
+            <img src="{{ asset('assets/images/House.jpg') }}" alt="House"
+                class="img-fluid rounded apartment-category-img">
+            <a href="{{ route('Property.Houses') }}" class="text-dark">
                 <h4 class="mb-0 mt-5">Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
             </a>
             <p>
@@ -69,8 +88,9 @@
             </p>
         </div>
         <div class="col-md-4">
-            <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="Apartments" class="img-fluid rounded apartment-category-img">
-            <a href="{{route("Property.Apartments")}}" class="text-dark">
+            <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="Apartments"
+                class="img-fluid rounded apartment-category-img">
+            <a href="{{ route('Property.Apartments') }}" class="text-dark">
                 <h4 class="mb-0 mt-5">Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
             </a>
             <p>
@@ -78,8 +98,9 @@
             </p>
         </div>
         <div class="col-md-4">
-            <img src="{{ asset('assets/images/Room.jpg') }}" alt="Rooms" class="img-fluid rounded apartment-category-img">
-            <a href="{{route("Property.Rooms")}}" class="text-dark">
+            <img src="{{ asset('assets/images/Room.jpg') }}" alt="Rooms"
+                class="img-fluid rounded apartment-category-img">
+            <a href="{{ route('Property.Rooms') }}" class="text-dark">
                 <h4 class="mb-0 mt-5">Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
             </a>
             <p>
@@ -95,6 +116,7 @@
                 <p>{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
                 <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
                     class="img-fluid cta-landing-pg-img">
+                <a href="{{route("Detail.View.Apartment", ["id"=>$topRatedApartment->id])}}" id="explore-cta-apartment">Explore</a>
             </div>
         </div>
     @endisset
