@@ -6,7 +6,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="overflow-x:auto;">
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>ID</th>

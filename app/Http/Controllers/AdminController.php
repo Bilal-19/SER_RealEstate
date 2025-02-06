@@ -537,6 +537,11 @@ class AdminController extends Controller
         return view("Admin.GeneralEnquiries")->with(compact('fetchQueries'));
     }
 
+    public function getBookingEnquiries(){
+        $fetchQueries = DB::table('booking_inquiry')->get();
+        return view("Admin.BookingEnquiries")->with(compact('fetchQueries'));
+    }
+
     public function usersManagement()
     {
         $fetchAllUsers = DB::table('users')->get();
