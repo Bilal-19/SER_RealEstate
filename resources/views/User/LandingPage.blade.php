@@ -58,8 +58,8 @@
         </div>
     </div>
 
-    <div class="row mb-5 mx-auto">
-        <div class="col-12 col-md-8 rounded" id="book-apartment">
+    <div class="row mb-5">
+        <div class="col-12 col-md-8 mx-auto rounded" id="book-apartment">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                 autocomplete="off">
                 @csrf
@@ -70,7 +70,8 @@
                         value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
                     <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
                         value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
+                            style="color:white;"></i></button>
                 </div>
             </form>
         </div>

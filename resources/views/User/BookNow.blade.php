@@ -37,8 +37,8 @@
         </div>
     </div>
 
-    <div class="row mb-5 mx-auto">
-        <div class="col-12 col-md-8 rounded" id="book-apartment">
+    <div class="row mb-5">
+        <div class="col-10 col-md-8 mx-auto rounded" id="book-apartment">
             <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                 autocomplete="off">
                 @csrf
