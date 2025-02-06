@@ -1,19 +1,18 @@
 @stack('footer-cta')
 <div class="container-fluid text-light pb-2 " id="footer-color">
-    <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5">
-
+    <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5 mb-5">
         <div class="col-md-2">
             <p class="">Company</p>
-            <a href="{{ route('View.About') }}" class="text-light d-block ">About Sterling</a>
-            <a href="{{route("view.Locations")}}" class="text-light d-block ">Locations</a>
+            <a href="{{ route('View.About') }}" class="text-light d-block">About Sterling</a>
+            <a href="{{route("view.Locations")}}" class="text-light d-block">Locations</a>
             <a href="{{route("FAQs")}}" class="text-light d-block ">FAQs</a>
-            <a href="{{ route("view.ContactUs") }}" class="text-light d-block ">Contact Us</a>
+            <a href="{{ route("view.ContactUs") }}" class="text-light d-block">Contact Us</a>
         </div>
 
         <div class="col-md-2">
             <p class="">Book</p>
-            <a href="{{ route("Booking.Enquiry") }}" class="text-light d-block ">Make an Enquiry</a>
-            <a href="/experience/#booking-faq" class="text-light d-block ">Booking FAQs</a>
+            <a href="{{ route("Booking.Enquiry") }}" class="text-light d-block">Make an Enquiry</a>
+            <a href="/experience/#booking-faq" class="text-light d-block">Booking FAQs</a>
         </div>
         <div class="col-md-3 d-flex flex-column">
             <p>Support</p>
@@ -40,21 +39,6 @@
                     <i class="fa-brands fa-instagram fa-xl"></i>
                 </a>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-11 mx-auto">
-            <hr>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-5">
-            <p>&copy; Copyright 2024 Sterling Executive Residential. All rights reserved.</p>
-        </div>
-        <div class="col-md-2">
-            {{-- <p>Developed by <a href="https://zhtechsolutions.com/" class="text-light" target="_blank">ZH Tech</a></p> --}}
         </div>
     </div>
 </div>

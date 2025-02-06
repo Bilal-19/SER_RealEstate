@@ -62,7 +62,7 @@
             <form action="{{route("SubmitLocationEnquiry")}}" method="post" autocomplete="off">
                 @csrf
                 <div class="row d-flex justify-content-between">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-40">
                         <input type="text" name="fullname" class="form-control" placeholder="Full Name">
                         <small class="text-danger">
                             @error('fullname')
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="row d-flex justify-content-between mt-5">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-40">
                         <input type="text" name="company_name" class="form-control" placeholder="Company Name">
                         <small class="text-danger">
                             @error('company_name')
@@ -100,7 +100,7 @@
                 </div>
 
                 <div class="row d-flex justify-content-between mt-5">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-40">
                         <input type="text" name="arrival_date" class="form-control" onfocus="(this.type='date')" placeholder="Arrival Date">
                         <small class="text-danger">
                             @error('arrival_date')

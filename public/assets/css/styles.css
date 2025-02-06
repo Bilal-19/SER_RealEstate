@@ -543,6 +543,10 @@ a {
         margin-bottom: 10px;
     }
 
+    .mb-sm-40{
+        margin-bottom: 40px;
+    }
+
     .search-container {
         height: fit-content;
     }

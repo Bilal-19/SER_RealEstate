@@ -115,7 +115,7 @@
 
                     @foreach ($fetchAllTestimonials as $record)
                         <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
-                            <h5 class="col-8 col-md-12 fw-bold">“{{ $record->message }}”</h5>
+                            <h5 class="col-12 col-md-12 fw-bold">“{{ $record->message }}”</h5>
                             <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
                             <p>{{ $record->name }}</p>
                         </div>

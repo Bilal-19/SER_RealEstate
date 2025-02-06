@@ -14,10 +14,6 @@
             object-fit: cover;
         }
 
-        /* #book-apartment {
-            background-color: #c0c0c0;
-        } */
-
         .form-control {
             background-color: #c0c0c0;
             border: none;
@@ -26,7 +22,7 @@
 
         .form-control::placeholder {
             color: white;
-            font-size: 20px;
+            font-size: 18px;
         }
 
 
@@ -115,9 +111,9 @@
                 in
                 between. Putting the needs of our guests and clients first is at the forefront of everything we do.
             </p>
-            <a href="{{ route('View.Corporate') }}" target="_blank" class="brand-btn d-inline">Learn More</a>
+            <a href="{{ route('View.Corporate') }}" target="_blank" class="brand-btn d-inline mb-5">Learn More</a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mt-2">
             <img src="{{ asset('assets/images/bed.png') }}"
                 alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
                 class="img-fluid rounded">
@@ -143,7 +139,7 @@
 
                         @foreach ($fetchAllTestimonials as $record)
                             <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
-                                <h5 class="col-8 col-md-12 fw-bold">“{{ $record->message }}”</h5>
+                                <h5 class="col-12 col-md-12 fw-bold">“{{ $record->message }}”</h5>
                                 <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
                                 <p>{{ $record->name }}</p>
                             </div>

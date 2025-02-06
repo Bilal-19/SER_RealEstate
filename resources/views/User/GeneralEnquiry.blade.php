@@ -59,7 +59,7 @@
 
 
                 <div class="row d-flex justify-content-between mt-5">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-40">
                         <input type="email" name="email" class="form-control" placeholder="Email Address" value="{{old("email")}}">
                         <small class="text-danger">
                             @error('email')
