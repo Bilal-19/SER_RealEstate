@@ -542,6 +542,11 @@ class AdminController extends Controller
         return view("Admin.BookingEnquiries")->with(compact('fetchQueries'));
     }
 
+    public function getJoinSterlingEnquiries(){
+        $fetchQueries = DB::table('join_sterling_inquiry')->get();
+        return view("Admin.JoinSterlingEnquiries")->with(compact('fetchQueries'));
+    }
+
     public function usersManagement()
     {
         $fetchAllUsers = DB::table('users')->get();

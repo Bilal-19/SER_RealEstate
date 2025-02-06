@@ -300,8 +300,8 @@
                             </li>
 
                             <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3" href="#">
-                                    <i class="fa-solid fa-calendar-check"></i>Join Sterling Enquiries
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Join.Sterling.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("Join.Sterling.Enquiries")}}">
+                                    <i class="fa-solid fa-handshake"></i>Join Sterling Enquiries
                                 </a>
                             </li>
 

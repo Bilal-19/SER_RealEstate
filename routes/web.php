@@ -172,6 +172,7 @@ Route::get("/admin/send/email", [UserController::class, 'sendEmail']);
 Route::get("/admin/corporate/enquiries", [AdminController::class, 'getCorporateEnquiries'])->name('Corporate.Enquiries');
 Route::get("/admin/general/enquiries", [AdminController::class, 'getGeneralEnquiries'])->name('General.Enquiries');
 Route::get("/admin/booking/enquiries", [AdminController::class, 'getBookingEnquiries'])->name('Booking.Enquiries');
+Route::get("/admin/join/sterling/enquiries", [AdminController::class, 'getJoinSterlingEnquiries'])->name('Join.Sterling.Enquiries');
 
 // Email Test Route
 Route::get('/test-email', function () {
