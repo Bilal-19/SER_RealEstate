@@ -3,7 +3,7 @@
 @push('style')
     <style>
         #map {
-            height: 50vh;
+            height: 100%;
             width: 100%;
             border-radius: 6px;
 
@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+
 
     @push('script')
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

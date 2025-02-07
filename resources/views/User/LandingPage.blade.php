@@ -2,16 +2,14 @@
 
 @push('style')
     <style>
-        .banner-img {
-            background-image: url('/assets/images/home_banner.png');
+        .home-bg-img {
+            background-image: url('/assets/images/home_banner.jpg');
             background-size: cover;
-            background-attachment: fixed;
-        }
-
-        .cta-landing-pg-img {
-            height: 400px !important;
-            width: 400px;
-            object-fit: cover;
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            height: 1000px;
+            border-radius: 15px;
+            width: 97%;
         }
 
         .form-control {
@@ -21,131 +19,187 @@
         }
 
         .form-control::placeholder {
-            color: white;
+            color: #ffffff;
+            font-family: "Montserrat", serif;
+            text-align: center;
+            font-weight: lighter;
             font-size: 18px;
+        }
+
+        .form-control:focus {
+            color: #303030;
         }
 
         #explore-cta-apartment {
             position: relative;
-            right: -500px;
-            top: -60px;
+            right: -1150px;
+            top: -90px;
             color: white;
             background-color: #c0c0c0;
-            font-size: 18px;
-            padding: 10px 12px;
+            padding: 18px 24px;
             border-radius: 6px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #book-apartment-searchbar .form-control {
+            /* padding-top: 10px; */
+            border-right: 2px solid #ddd;
+            /* border-radius: 0; */
+        }
+
+        #book-apartment-searchbar .form-control:last-of-type {
+            border-right: none;
+        }
+
+        .input-group {
+            border: 1px solid #c0c0c0;
+            height: fit-content;
+            width: fit-content;
+            border-radius: 12px !important;
+        }
+
+        .top-rated-apartment {
+            font-weight: 500;
+        }
+
+        .bedroom-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .learn-more-btn {
+            color: #ffffff;
+            background-color: #c0c0c0;
+            padding: 8px 25px;
+            font-weight: bold;
+            border-radius: 6px;
+            font-size: 20px;
         }
 
         @media screen and (max-width: 768px) {
             #explore-cta-apartment {
-                right: -100px;
+                right: -300px;
                 top: -60px;
             }
 
             .form-control::placeholder {
                 font-size: 14px;
             }
+
+            .home-bg-img {
+                height: 300px;
+            }
         }
     </style>
 @endpush
 
 @push('CTA')
-    <div class="row mt-5">
-        <div class="col-md-9 mx-auto text-light search-container">
-            <h2 class="text-center fs-56 fs-sm-40">
-                Find your perfect stay
-            </h2>
+    <div class="container-fluid home-bg-img mb-5">
+        <div class="row mt-5">
+            <div class="col-md-9 mx-auto text-light search-container">
+                <h2 class="text-center fs-56 fs-sm-28 mt-100 mt-sm-25">
+                    Find your perfect stay
+                </h2>
+            </div>
         </div>
-    </div>
 
-    <div class="row mb-5">
-        <div class="col-12 col-md-8 mx-auto rounded" id="book-apartment">
-            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
-                autocomplete="off">
-                @csrf
-                <div id="book-apartment-searchbar" class="input-group">
-                    <input type="text" placeholder="Location" class="form-control" name="location"
-                        value="{{ old('location') }}">
-                    <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
-                        value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
-                    <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
-                        value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
-                            style="color:white;"></i></button>
-                </div>
-            </form>
+        <div class="row mb-5">
+            <div class="col-md-5 col-10 mx-auto" id="book-apartment">
+                <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
+                    autocomplete="off">
+                    @csrf
+                    <div id="book-apartment-searchbar" class="input-group">
+                        <input type="text" placeholder="Location" class="form-control" name="location"
+                            value="{{ old('location') }}">
+                        <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
+                            value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
+                        <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
+                            value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
+                        <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
+                                style="color:white;"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endpush
 
 @section('user-main-section')
-    <div class="row mt-5 d-flex justify-content-center">
-        <div class="col-md-4">
-            <img src="{{ asset('assets/images/House.jpg') }}" alt="House"
-                class="img-fluid rounded apartment-category-img">
-            <a href="{{ route('Property.Houses') }}" class="text-dark">
-                <h4 class="mb-0 mt-5">Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
-            </a>
-            <p>
-                If you need the extra space, book an entire place for your team or family.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="Apartments"
-                class="img-fluid rounded apartment-category-img">
-            <a href="{{ route('Property.Apartments') }}" class="text-dark">
-                <h4 class="mb-0 mt-5">Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
-            </a>
-            <p>
-                Stay in some of the most iconic locations in London in shared buildings.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img src="{{ asset('assets/images/Room.jpg') }}" alt="Rooms"
-                class="img-fluid rounded apartment-category-img">
-            <a href="{{ route('Property.Rooms') }}" class="text-dark">
-                <h4 class="mb-0 mt-5">Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
-            </a>
-            <p>
-                Enjoy your own studio space with a common room to socialise with the rest of the team.
-            </p>
-        </div>
-    </div>
-
-    @isset($topRatedApartment)
-        <div class="row mt-5 mb-5">
-            <div class="col-md-11 mx-auto text-center top-rated-apartment">
-                <h3 class="fw-bold">Book your stay at {{ $topRatedApartment->apartment_name }}</h3>
-                <p>{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
-                <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
-                    class="img-fluid cta-landing-pg-img">
-                <a href="{{ route('Detail.View.Apartment', ['id' => $topRatedApartment->id]) }}"
-                    id="explore-cta-apartment">Explore</a>
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row mt-5 d-flex justify-content-center">
+            <div class="col-md-4 col-11">
+                <img src="{{ asset('assets/images/House.jpg') }}" alt="House" class="img-fluid apartment-category-img">
+                <a href="{{ route('Property.Houses') }}" class="text-dark">
+                    <h4>Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+                </a>
+                <p>
+                    If you need the extra space, book an entire place for your team or family.
+                </p>
+            </div>
+            <div class="col-md-4 col-11">
+                <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="Apartments"
+                    class="img-fluid apartment-category-img">
+                <a href="{{ route('Property.Apartments') }}" class="text-dark">
+                    <h4>Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+                </a>
+                <p>
+                    Stay in some of the most iconic locations in London in shared buildings.
+                </p>
+            </div>
+            <div class="col-md-4 col-11">
+                <img src="{{ asset('assets/images/Room.jpg') }}" alt="Rooms" class="img-fluid apartment-category-img">
+                <a href="{{ route('Property.Rooms') }}" class="text-dark">
+                    <h4>Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+                </a>
+                <p>
+                    Enjoy your own studio space with a common room to socialise with the rest of the team.
+                </p>
             </div>
         </div>
-    @endisset
-
-
-    <div class="row mt-5 d-flex justify-content-around mb-5">
-        <div class="col-md-6">
-            <p>
-                We have the privilege of being entrusted by the teams of some of London's largest organisations. Our
-                clientele includes top banks, esteemed law firms, and leading technology companies.
-            </p>
-            <p>
-                We provide fully equipped properties ranging from studio apartments to large family homes and everything
-                in
-                between. Putting the needs of our guests and clients first is at the forefront of everything we do.
-            </p>
-            <a href="{{ route('View.Corporate') }}" target="_blank" class="brand-btn d-inline mb-5">Learn More</a>
-        </div>
-        <div class="col-md-4 mt-2">
-            <img src="{{ asset('assets/images/bed.png') }}"
-                alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
-                class="img-fluid rounded">
-        </div>
     </div>
 
+    <div class="container-fluid mt-150 mt-sm-75">
+        @isset($topRatedApartment)
+            <div class="row mt-5 mb-5">
+                <div class="col-md-12 mx-auto top-rated-apartment">
+                    <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at *{{ $topRatedApartment->apartment_name }}*
+                    </h2>
+                    <p class="col-md-9 fs-18 fs-sm-16">{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
+                    <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
+                        class="img-fluid mt-3">
+                    <a href="{{ route('Detail.View.Apartment', ['id' => $topRatedApartment->id]) }}"
+                        id="explore-cta-apartment">Explore</a>
+                </div>
+            </div>
+        @endisset
+    </div>
+
+
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="fs-26">
+                    We have the privilege of being entrusted by the teams of some of London's largest organisations. Our
+                    clientele includes top banks, esteemed law firms, and leading technology companies.
+                </p>
+                <p class="fs-15">
+                    We provide fully equipped properties ranging from studio apartments to large family homes and everything
+                    in
+                    between. Putting the needs of our guests and clients first is at the forefront of everything we do.
+                </p>
+                <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn">Learn more</a>
+            </div>
+            <div class="col-md-6" style="height: 660px; width: 660px; object-fit: cover;">
+                <img src="{{ asset('assets/images/bed.jpg') }}"
+                    alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
+                    class="img-fluid bedroom-img">
+            </div>
+        </div>
+
+    </div>
 
 
 

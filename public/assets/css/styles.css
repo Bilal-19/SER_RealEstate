@@ -28,24 +28,37 @@ body{
 } */
 
 .navbar-brand {
-    font-weight: 700;
+    color: #c0c0c0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+#first{
     font-family: "Cormorant Garamond", serif;
-    color: #c0c0c0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
-.navbar-brand:hover{
-    color: #c0c0c0;
-    font-weight: 800;
+#second{
+    font-family: "Montserrat", serif;
+    letter-spacing: 3px;
+    display: block;
+    text-align: center;
 }
 
-.navbar-brand > img {
-    height: 45px;
-    width: 45px;
-    object-fit: cover;
+#sticky-header{
+    position: sticky;
+    top: 0;
 }
 
 .nav-link {
-    color: #303030;
+    color: #c0c0c0;
+    font-weight: 600;
 }
 
 .nav-link-transition {
@@ -66,7 +79,7 @@ body{
 }
 
 .nav-link-transition:hover::after {
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 /* Landing Page */
@@ -90,20 +103,25 @@ body{
 
 .user-active-link{
     text-decoration: underline;
-    color: #303030;
+    color: #c0c0c0;
+    font-weight: 600;
 }
 
 #book-now-btn{
     background-color: #c0c0c0;
-    color: #ffffff;
+    color: #303030;
     padding: 6px 8px;
     border-radius: 6px;
+    width: 250px;
+    font-weight: 250;
 }
 
 .apartment-category-img{
     height: 420px;
     width: 420px;
     object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 35px;
 }
 
 .feedback-bg{
@@ -139,11 +157,6 @@ body{
     color: white;
     border: 1px solid black;
 }
-
-.search-container {
-    height: 200px;
-}
-
 
 .favourite-card {
     width: 299px;
@@ -239,20 +252,23 @@ a {
     padding: 10px 12px;
 }
 
+/* Utility Classes */
+.mt-100{
+    margin-top: 100px;
+}
+
+.mt-150{
+    margin-top: 200px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
 /* Custom Style */
 /* Font Family - Google */
-
-.ff-inter {
-    font-family: "Inter", sans-serif;
-}
-
-.ff-poppins {
-    /* font-family: "Poppins", sans-serif; */
-}
-
-.ff-playfair-display {
-    font-family: "Playfair Display", serif;
-}
 
 
 /* Font Size */
@@ -581,11 +597,6 @@ a {
         font-size: 12px;
     }
 
-    .navbar-brand > img {
-        height: 40px;
-        width: 40px;
-        object-fit: cover;
-    }
 
     .reviews-style{
         flex-direction: column;
@@ -630,5 +641,23 @@ a {
 
     .fs-sm-40{
         font-size: 40px;
+    }
+
+    .mt-sm-25{
+        margin-top: 25px;
+    }
+
+    .mt-sm-75{
+        margin-top: 75px;
+    }
+
+    .mt-sm-0{
+        margin-top: 0px;
+    }
+
+    /* Landing Page */
+    .apartment-category-img{
+        margin-bottom: 10px;
+        margin-top: 20px;
     }
 }

@@ -20,10 +20,13 @@
             <a href="#" class="text-light ">Support FAQs</a>
         </div>
         <div class="col-md-4 d-flex flex-column">
-            <a href="{{route('Landing.Page')}}" class="text-light ms-auto navbar-brand mb-2" id="footer-link">
-                <img src="{{ asset('assets/images/ser_header_logo.png') }}" alt="Sterling Executive Residential Logo"
-                    style="height: 60px; width: 60px;" class="img-fluid">
-                STERLING EXECUTIVE RESIDENTIAL
+            <a class="navbar-brand" href="{{ route('Landing.Page') }}">
+                <img src="{{ asset('assets/images/ser_logo_footer.png') }}" alt="Sterling Executive Residential Logo">
+                {{-- <p>
+                    <span id="first">Sterling Executive</span>
+                    <br>
+                    <span id="second">residential</span>
+                </p> --}}
             </a>
 
             <div class="mt-2 ms-auto">
