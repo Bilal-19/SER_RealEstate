@@ -1,5 +1,5 @@
 @stack('footer-cta')
-<div class="container-fluid text-light pb-2 " id="footer-color">
+<div class="container-fluid text-light pb-2 mt-100 mt-sm-75" id="footer-color">
     <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5 mb-5">
         <div class="col-md-2">
             <p class="">Company</p>
@@ -17,19 +17,13 @@
         <div class="col-md-3 d-flex flex-column">
             <p>Support</p>
             <a href="mailto:info@sterling-executive.com" class="text-light">info@sterling-executive.com</a>
-            <a href="#" class="text-light ">Support FAQs</a>
         </div>
-        <div class="col-md-4 d-flex flex-column">
+        <div class="col-md-4 d-flex flex-column align-items-end">
             <a class="navbar-brand" href="{{ route('Landing.Page') }}">
                 <img src="{{ asset('assets/images/ser_logo_footer.png') }}" alt="Sterling Executive Residential Logo">
-                {{-- <p>
-                    <span id="first">Sterling Executive</span>
-                    <br>
-                    <span id="second">residential</span>
-                </p> --}}
             </a>
 
-            <div class="mt-2 ms-auto">
+            <div class="mt-2">
                 <a href="#">
                     <i class="fa-brands fa-linkedin fa-xl"></i>
                 </a>

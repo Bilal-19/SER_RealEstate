@@ -64,8 +64,8 @@
         }
 
         .bedroom-img {
-            width: 100%;
-            height: 100%;
+            height: 660px;
+            width: 660px;
             object-fit: cover;
             border-radius: 12px;
         }
@@ -91,6 +91,12 @@
 
             .home-bg-img {
                 height: 300px;
+            }
+
+            .bedroom-img{
+                height:440px;
+                width:440px;
+                object-fit: cover;
             }
         }
     </style>
@@ -192,7 +198,7 @@
                 </p>
                 <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn">Learn more</a>
             </div>
-            <div class="col-md-6" style="height: 660px; width: 660px; object-fit: cover;">
+            <div class="col-md-6 mt-sm-25">
                 <img src="{{ asset('assets/images/bed.jpg') }}"
                     alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
                     class="img-fluid bedroom-img">
@@ -201,29 +207,29 @@
 
     </div>
 
-
-
     @isset($fetchAllTestimonials)
-        @php
-            function calcStars($numFill, $numBlank)
-            {
-                return str_repeat('<i class="fa-solid fa-star"></i>', $numFill) .
-                    str_repeat('<i class="fa-regular fa-star"></i>', $numBlank);
-            }
-        @endphp
-        <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
-            <div class="col-md-12 rounded">
-                <div id="feedback" class="carousel slide">
-                    <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="3000">
-                        <h5 class="text-start">Your go to service since 2025</h5>
+        <div class="container-fluid mt-150 mt-sm-75">
+            @php
+                function calcStars($numFill, $numBlank)
+                {
+                    return str_repeat('<i class="fa-solid fa-star"></i>', $numFill) .
+                        str_repeat('<i class="fa-regular fa-star"></i>', $numBlank);
+                }
+            @endphp
+            <div class="row feedback-bg mt-5 mb-5 p-5 text-center text-white">
+                <div class="col-md-12 rounded">
+                    <div id="feedback" class="carousel slide">
+                        <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="3000">
+                            <h5 class="text-start">Your go to service since 2025</h5>
 
-                        @foreach ($fetchAllTestimonials as $record)
-                            <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
-                                <h5 class="col-12 col-md-12 fw-bold">“{{ $record->message }}”</h5>
-                                <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
-                                <p>{{ $record->name }}</p>
-                            </div>
-                        @endforeach
+                            @foreach ($fetchAllTestimonials as $record)
+                                <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
+                                    <h5 class="col-12 col-md-12 fw-bold">“{{ $record->message }}”</h5>
+                                    <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
+                                    <p>{{ $record->name }}</p>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -232,46 +238,49 @@
 
 
 
-    <div class="row">
-        <div class="col-md-12  text-center">
-            <h3>The Sterling Experience</h3>
-            <p>
-                Sit back & relax, we've got everything covered. Here's why Portland should be your 1st choice when
-                selecting
-                a serviced apartment.
-            </p>
-        </div>
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>The Sterling Experience</h3>
+                <p>
+                    Sit back & relax, we've got everything covered. Here's why Portland should be your 1st choice when
+                    selecting
+                    a serviced apartment.
+                </p>
+            </div>
 
-        <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
-            <h5>Simple Booking</h5>
-            <p>
-                Our bespoke corporate client packages come with a designated account manager to tend to all requests
-            </p>
-        </div>
+            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25">
+                <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
+                <h5>Simple Booking</h5>
+                <p class="mt-10 mt-sm-0">
+                    Our bespoke corporate client packages come with a designated account manager to tend to all requests
+                </p>
+            </div>
 
-        <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/heart.png') }}" alt="" class="img-fluid mb-3">
-            <h5>We Look After You</h5>
-            <p>
-                We will always be there to support you through the entirety of the booking process
-            </p>
-        </div>
+            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25">
+                <img src="{{ asset('assets/images/heart.png') }}" alt="" class="img-fluid mb-3">
+                <h5>We Look After You</h5>
+                <p class="mt-10 mt-sm-0">
+                    We will always be there to support you through the entirety of the booking process
+                </p>
+            </div>
 
-        <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/sofa.jpg') }}" alt="" class="img-fluid mb-3">
-            <h5>Feel At Home</h5>
-            <p>
-                You will have everything you need to feel right at home
-            </p>
-        </div>
+            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25">
+                <img src="{{ asset('assets/images/sofa.jpg') }}" alt="" class="img-fluid mb-3">
+                <h5>Feel At Home</h5>
+                <p class="mt-10 mt-sm-0">
+                    You will have everything you need to feel right at home
+                </p>
+            </div>
 
-        <div class="col-md-3 text-center ">
-            <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="" class="img-fluid mb-3">
-            <h5>Feel Secure</h5>
-            <p>
-                We provide safe, secure accommodation with 24-hour support
-            </p>
+            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25 ">
+                <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="" class="img-fluid mb-3">
+                <h5>Feel Secure</h5>
+                <p class="mt-10 mt-sm-0">
+                    We provide safe, secure accommodation with 24-hour support
+                </p>
+            </div>
         </div>
     </div>
+
 @endsection
