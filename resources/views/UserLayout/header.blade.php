@@ -57,15 +57,15 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
+                            <li class="nav-item mx-3">
                                 <a class="nav-link nav-link-transition {{ request()->routeIs('view.Experience') ? 'user-active-link' : '' }}"
                                     href="{{ route('view.Experience') }}">The Experience</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item mx-3">
                                 <a class="nav-link nav-link-transition {{ request()->routeIs('View.Corporate') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.Corporate') }}">Corporate</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item mx-3">
                                 <a class="nav-link nav-link-transition {{ request()->routeIs('View.Enquiry.Form') ? 'user-active-link' : '' }}"
                                     href="{{ route('View.Enquiry.Form') }}">Join Sterling</a>
                             </li>

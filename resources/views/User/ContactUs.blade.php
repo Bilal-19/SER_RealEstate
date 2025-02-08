@@ -2,18 +2,24 @@
 
 
 @section('user-main-section')
-    <div class="row">
-        <h3 class="text-center">Contact Us</h3>
+    <div class="row mt-50 mx-auto">
+        <div class="col-md-12 text-center">
+            <h3 class="fs-48 fs-sm-25">Contact Us</h3>
+        </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col-md-3 mx-auto d-flex justify-content-around">
+    <div class="row mt-5 text-center d-flex justify-content-center">
+        <div class="col-md-1">
             <a href="{{route("Booking.Enquiry")}}">
-                <img src="{{ asset('assets/images/booking-enquiry.jpg') }}" alt="" class="img-fluid">
+                <img src="{{ asset('assets/images/booking-enquiry.png') }}" alt="" class="img-fluid">
             </a>
+            <p>Booking Enquiries</p>
+        </div>
+        <div class="col-md-1">
             <a href="{{route("General.Enquiry")}}">
-                <img src="{{ asset('assets/images/general-enquiry.jpg') }}" alt="" class="img-fluid">
+                <img src="{{ asset('assets/images/general-enquiry.png') }}" alt="" class="img-fluid">
             </a>
+            <p>General Enquiries</p>
         </div>
     </div>
 
