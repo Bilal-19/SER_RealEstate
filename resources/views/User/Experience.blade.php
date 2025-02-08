@@ -47,6 +47,8 @@
         .style-experience-text{
             line-height: 1.2;
             letter-spacing: 0.8px;
+            text-align: justify;
+            font-weight: 500;
         }
     </style>
 @endpush
@@ -58,7 +60,7 @@
                 <img src="{{ asset('assets/images/sterling-experience.png') }}" alt=""
                     class="img-fluid sterling-experience-img">
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
                 <p class="mt-20 style-experience-text">
                     We understand when staying in one of our apartments, you're often far from home, so whether it's

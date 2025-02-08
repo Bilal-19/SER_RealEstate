@@ -6,152 +6,182 @@
         .form-select {
             background-color: #c0c0c0 !important;
             color: white !important;
+            border-radius: 12px !important;
+            /* padding: 8px 10px; */
         }
 
-        .form-control::placeholder {
+        .form-control::placeholder,
+        .form-select::placeholder {
             color: white;
+            font-size: 18px;
         }
 
-        button {
-            border: none;
+        .brand-btn {
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 12px 30px;
         }
 
         body {
             color: #303030;
         }
+
+        .style-corporate-text {
+            letter-spacing: 0.8px;
+            line-height: 1.2;
+            text-align: justify;
+            font-weight: 500;
+        }
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="row d-flex justify-content-evenly align-items-center mt-5 mb-5">
-        <div class="col-md-6">
-            <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
-                class="img-fluid rounded">
-        </div>
-        <div class="col-md-4">
-            <h3>Your Dedicated Account Team</h3>
-            <p>
-                Our booking process and rates are transparent and easy to understand, created to meet different budgets
-                based on the location, features and amenities that our clients want.
-
-                Your dedicated Account Management Team and our on-boarding process ensure we are fully briefed on all your
-                needs, making repeat bookings super easy.
-            </p>
-        </div>
-    </div>
-
-
-    <div class="row d-flex justify-content-evenly align-items-center mt-5 mb-5">
-        <div class="col-md-4">
-            <h3>Everything you Need</h3>
-            <p>
-                We work to simplify the customer journey, yet take the time to get to know our guests as we understand no
-                two are the same. We listen and don't shy away from the human touches that make your team feel supported and
-                cared for.
-
-                Our varied portfolio allows us to accommodate all the needs of your team, ensuring their stay is tailored to
-                them.
-            </p>
-            <a href="" class="brand-btn">Learn More</a>
-        </div>
-        <div class="col-md-6">
-            <img src="{{ asset('assets/images/kitchen.png') }}" alt="Kitchen" class="img-fluid rounded">
-        </div>
-    </div>
-
-    <div class="row mt-5 mb-5">
-        <div class="col-md-10 mx-auto text-center">
-            <h3>The Sterling Standard</h3>
-            <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.</p>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-around align-items-center">
-        @foreach ($fetchAllStandards as $record)
-            <div class="col-md-1 col-8 text-center">
-                <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
-                <p>{{ $record->standard_text }}</p>
+    <div class="container-fluid mt-100 mt-sm-75">
+        <div class="row d-flex justify-content-evenly align-items-center ">
+            <div class="col-md-6">
+                <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
+                    class="img-fluid rounded">
             </div>
-        @endforeach
+            <div class="col-md-4">
+                <h3 class="fs-48 fs-sm-25">Your Dedicated Account Team</h3>
+                <p class="style-corporate-text">
+                    Our booking process and rates are transparent and easy to understand, created to meet different budgets
+                    based on the location, features and amenities that our clients want.
+                </p>
+                <p class="style-corporate-text">
+                    Your dedicated Account Management Team and our on-boarding process ensure we are fully briefed on all
+                    your
+                    needs, making repeat bookings super easy.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="row mt-5 mb-5">
-        <div class="col-md-8 mx-auto">
-            <h3 class="text-center">Looking for a corporate stay?</h3>
 
-            <form action="{{ route('Create.CorporateInquiry') }}" method="post" autocomplete="off">
-                @csrf
-                <div class="row d-flex justify-content-between">
-                    <div class="col-md-5 mb-sm-40">
-                        <input type="text" name="fullname" class="form-control" placeholder="Full Name">
-                        <small class="text-danger">
-                            @error('fullname')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="email" name="email" class="form-control" placeholder="Email Address">
-                        <small class="text-danger">
-                            @error('email')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                </div>
 
-                <div class="row d-flex justify-content-between mt-5">
-                    <div class="col-md-5 mb-sm-40">
-                        <input type="text" name="company_name" class="form-control" placeholder="Company Name">
-                        <small class="text-danger">
-                            @error('company_name')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number">
-                        <small class="text-danger">
-                            @error('phone_number')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                </div>
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row d-flex justify-content-evenly align-items-center ">
+            <div class="col-md-4">
+                <h3 class="fs-48 fs-sm-25">Everything you Need</h3>
+                <p class="style-corporate-text">
+                    We work to simplify the customer journey, yet take the time to get to know our guests as we understand
+                    no
+                    two are the same. We listen and don't shy away from the human touches that make your team feel supported
+                    and
+                    cared for.
+                </p>
 
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <select name="duration_of_stay" class="form-select">
-                            <option value="">Duration of Stay</option>
-                            @for ($i = 1; $i <= 12; $i++)
-                                <option value="{{ $i }}">{{ $i }}</option>
-                            @endfor
-                        </select>
-                        <small class="text-danger">
-                            @error('duration_of_stay')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                </div>
+                <p class="style-corporate-text mb-5">
+                    Our varied portfolio allows us to accommodate all the needs of your team, ensuring their stay is
+                    tailored to
+                    them.
+                </p>
+                <a href="{{ route('view.Experience') }}" class="brand-btn">Learn More</a>
+            </div>
+            <div class="col-md-7">
+                <img src="{{ asset('assets/images/kitchen.png') }}" alt="Kitchen" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
 
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5"></textarea>
-                        <small class="text-danger">
-                            @error('enquiry')
-                                {{ $message }}
-                            @enderror
-                        </small>
-                    </div>
-                </div>
 
-                <div class="row mt-5 mb-5">
-                    <div class="col-md-3 mx-auto">
-                        <button class="brand-btn">Submit</button>
-                    </div>
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row mb-5">
+            <div class="col-md-10 mx-auto text-center">
+                <h3 class="fs-48 fs-sm-25">The Sterling Standard</h3>
+                <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-around align-items-center">
+            @foreach ($fetchAllStandards as $record)
+                <div class="col-md-1 col-8">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt=""
+                        class="img-fluid standard-img">
+                    <p class="text-center fw-medium text-charcoal-black">{{ $record->standard_text }}</p>
                 </div>
-            </form>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-7 mx-auto">
+                <h3 class="fs-50 fs-sm-25 text-center mb-5">Looking for a corporate stay?</h3>
+            </div>
+
+            <div class="col-md-7 mx-auto">
+                <form action="{{ route('Create.CorporateInquiry') }}" method="post" autocomplete="off">
+                    @csrf
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-md-5 mb-sm-40">
+                            <input type="text" name="fullname" class="form-control" placeholder="Full Name *">
+                            <small class="text-danger">
+                                @error('fullname')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="email" name="email" class="form-control" placeholder="Email Address  *">
+                            <small class="text-danger">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-between mt-5">
+                        <div class="col-md-5 mb-sm-40">
+                            <input type="text" name="company_name" class="form-control" placeholder="Company Name *">
+                            <small class="text-danger">
+                                @error('company_name')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" name="phone_number" class="form-control" placeholder="Phone Number *">
+                            <small class="text-danger">
+                                @error('phone_number')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <input type="text" name="duration_of_stay" class="form-control"
+                                placeholder="Duration of stay *">
+                            <small class="text-danger">
+                                @error('duration_of_stay')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <textarea name="enquiry" class="form-control" placeholder="Enquiry *" rows="5" style="resize: none;"></textarea>
+                            <small class="text-danger">
+                                @error('enquiry')
+                                    {{ $message }}
+                                @enderror
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 mb-5">
+                        <div class="col-md-12 mx-auto text-center">
+                            <button class="brand-btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection
