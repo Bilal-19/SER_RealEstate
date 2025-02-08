@@ -32,17 +32,17 @@
 @endpush
 
 @section('user-main-section')
-    <div class="row mt-3 mx-auto text-center">
+    <div class="row mx-auto text-center mt-50">
         <div class="col-md-12">
-            <h3>Our Locations</h3>
+            <h3 class="fs-48 fs-sm-25">Our Locations</h3>
             <p>We offer a diverse selection of properties throughout London.</p>
         </div>
     </div>
 
     @isset($fetchAllLocations)
-        <div class="row mx-auto">
+        <div class="row ">
             @foreach ($fetchAllLocations as $record)
-                <div class="col-md-4 mt-3 mb-5">
+                <div class="col-md-4 mt-3 mb-5 mx-auto text-center">
                     <a href="{{route("LocationDetail", ["id"=>$record->id])}}">
                         <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
                         class="img-fluid thumbnail-img">

@@ -3,26 +3,29 @@
 @push('style')
     <style>
         .about-bg {
-            background-image: url('/assets/images/about_banner.jpg');
-            background-size: contain;
+            background-image: linear-gradient(to right, rgba(0,0,0, 0.25) 0 100%), url('/assets/images/about_banner.jpg');
+            background-size: cover;
             background-attachment: scroll;
             background-repeat: no-repeat;
             background-position: center;
             height: 1000px;
-            border-radius: 15px;
+            border-radius: 12px;
+            margin: 25px auto;
+            width: 92%;
         }
 
-        .about-text{
+
+        .about-text {
             text-align: justify;
             font-weight: 500;
         }
 
-        @media screen and (max-width: 768px){
-.about-bg{
-    height: fit-content;
-    width: fit-content
-
-}
+        @media screen and (max-width: 768px) {
+            .about-bg {
+                height: 350px;
+                width: 350px;
+                object-fit: cover;
+            }
         }
     </style>
 @endpush
@@ -31,7 +34,7 @@
     <div class="container-fluid about-bg">
         <div class="row text-center">
             <div class="col-md-12 text-light">
-                <h2 class="fs-48 fs-sm-28 mt-150 mt-sm-25">
+                <h2 class="fs-48 fs-sm-28 mt-200 mt-sm-100">
                     About Sterling
                 </h2>
             </div>
@@ -42,7 +45,7 @@
 @section('user-main-section')
     <div class="container-fluid mt-50 mt-sm-25">
         <div class="row">
-            <div class="mx-auto col-md-9">
+            <div class="mx-auto col-md-11">
                 <p class="about-text">
                     Welcome to Sterling Executive, your premier destination for unparalleled corporate accommodation
                     solutions.
@@ -61,22 +64,24 @@
 
     <div class="container-fluid mt-100 mt-sm-75">
         <div class="row">
-            <div class="col-md-9 text-center mx-auto">
+            <div class="col-md-11 text-center mx-auto">
                 <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
                 <p>
-                    Sit back & relax, we've got everything covered. Here's why Sterling Executive should be your first choice when selecting a serviced apartment.
+                    Sit back & relax, we've got everything covered. Here's why Sterling Executive should be your first
+                    choice when selecting a serviced apartment.
                 </p>
             </div>
         </div>
 
         <div class="row mt-70">
-            <div class="col-md-10 mx-auto">
+            <div class="col-md-11 mx-auto">
                 <div class="row">
                     <div class="col-md-3 col-10 mx-auto text-center">
                         <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
                         <h5>Simple Booking</h5>
                         <p class="mt-5 mb-sm-0">
-                            Our bespoke corporate client packages come with a designated account manager to tend to all requests
+                            Our bespoke corporate client packages come with a designated account manager to tend to all
+                            requests
                         </p>
                     </div>
 
@@ -107,5 +112,4 @@
             </div>
         </div>
     </div>
-
 @endsection

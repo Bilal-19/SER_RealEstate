@@ -3,13 +3,14 @@
 @push('style')
     <style>
         .home-bg-img {
-            background-image: url('/assets/images/home_banner.jpg');
+            background-image: linear-gradient(to right, rgba(0,0,0, 0.25) 0 100%), url('/assets/images/home_banner.jpg');
             background-size: cover;
             background-attachment: scroll;
             background-repeat: no-repeat;
             height: 1000px;
             border-radius: 15px;
             width: 97%;
+            margin: 25px auto;
         }
 
         .form-control {

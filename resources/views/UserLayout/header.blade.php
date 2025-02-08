@@ -38,8 +38,8 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row banner-img">
+    <div class="container-fluid ">
+        <div class="row">
             <nav class="navbar navbar-expand-lg bg-white">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
@@ -75,8 +75,6 @@
                     </div>
                 </div>
             </nav>
-            @stack('CTA')
-
-
         </div>
+        @stack('CTA')
     </div>
