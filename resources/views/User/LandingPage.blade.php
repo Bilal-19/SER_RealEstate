@@ -104,9 +104,9 @@
 
 @push('CTA')
     <div class="container-fluid home-bg-img mb-5">
-        <div class="row mt-5">
+        <div class="row">
             <div class="col-md-9 mx-auto text-light search-container">
-                <h2 class="text-center fs-56 fs-sm-28 mt-100 mt-sm-25">
+                <h2 class="text-center fs-56 fs-sm-28 mt-150 mt-sm-25">
                     Find your perfect stay
                 </h2>
             </div>

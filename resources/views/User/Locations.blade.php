@@ -22,11 +22,17 @@
             border: none;
         }
 
+        .brand-btn {
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 12px 30px;
+        }
+
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="row mt-3 mx-auto">
+    <div class="row mt-3 mx-auto text-center">
         <div class="col-md-12">
             <h3>Our Locations</h3>
             <p>We offer a diverse selection of properties throughout London.</p>
@@ -41,14 +47,14 @@
                         <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
                         class="img-fluid thumbnail-img">
                     </a>
-                    <h5 class="mt-2">{{ $record->location }}</h5>
+                    <h5 class="mt-2 text-center">{{ $record->location }}</h5>
                 </div>
             @endforeach
         </div>
     @endisset
 
     <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="col-md-8 mx-auto text-center">
             <h2>Can't find your location?</h2>
             <p>
                 Not every one of our locations is featured on our website. Let us know about your enquiry and we will get
@@ -63,7 +69,7 @@
                 @csrf
                 <div class="row d-flex justify-content-between">
                     <div class="col-md-5 mb-sm-40">
-                        <input type="text" name="fullname" class="form-control" placeholder="Full Name">
+                        <input type="text" name="fullname" class="form-control" placeholder="Full Name *">
                         <small class="text-danger">
                             @error('fullname')
                                 {{ $message }}
@@ -71,7 +77,7 @@
                         </small>
                     </div>
                     <div class="col-md-5">
-                        <input type="email" name="email" class="form-control" placeholder="Email Address">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address *">
                         <small class="text-danger">
                             @error('email')
                                 {{ $message }}
@@ -82,7 +88,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5 mb-sm-40">
-                        <input type="text" name="company_name" class="form-control" placeholder="Company Name">
+                        <input type="text" name="company_name" class="form-control" placeholder="Company Name *">
                         <small class="text-danger">
                             @error('company_name')
                                 {{ $message }}
@@ -90,7 +96,7 @@
                         </small>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number">
+                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number *">
                         <small class="text-danger">
                             @error('phone_number')
                                 {{ $message }}
@@ -101,7 +107,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5 mb-sm-40">
-                        <input type="text" name="arrival_date" class="form-control" onfocus="(this.type='date')" placeholder="Arrival Date">
+                        <input type="text" name="arrival_date" class="form-control" onfocus="(this.type='date')" placeholder="Arrival Date *">
                         <small class="text-danger">
                             @error('arrival_date')
                                 {{ $message }}
@@ -109,7 +115,7 @@
                         </small>
                     </div>
                     <div class="col-md-5">
-                        <input type="text" name="departure_date" class="form-control" onfocus="(this.type='date')" placeholder="Departure Date">
+                        <input type="text" name="departure_date" class="form-control" onfocus="(this.type='date')" placeholder="Departure Date *">
                         <small class="text-danger">
                             @error('departure_date')
                                 {{ $message }}
@@ -120,7 +126,7 @@
 
                 <div class="row mt-5">
                     <div class="col-md-12">
-                        <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5"></textarea>
+                        <textarea name="enquiry" class="form-control" placeholder="Enquiry *" rows="5" style="resize: none;"></textarea>
                         <small class="text-danger">
                             @error('enquiry')
                                 {{ $message }}
@@ -130,7 +136,7 @@
                 </div>
 
                 <div class="row mt-5 mb-5">
-                    <div class="col-md-3 mx-auto">
+                    <div class="col-md-12 text-center mx-auto">
                         <button class="brand-btn">Submit</button>
                     </div>
                 </div>
