@@ -81,7 +81,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5 mb-sm-40">
-                       <input type="text" class="form-control" placeholder="Budget (£)*">
+                       <input type="text" class="form-control" placeholder="Budget (£) *">
                         <small class="text-danger">
                             @error('budget')
                                 {{ $message }}
@@ -90,15 +90,7 @@
                     </div>
 
                     <div class="col-md-5">
-                        <select name="propertySize" class="form-select">
-                            <option value="">Property Size</option>
-                            @php
-                                $areaArr = ["100 - 200", "200 - 300"];
-                            @endphp
-                            @foreach ($areaArr as $val)
-                                <option value="{{ $val }}">{{ $val }} Sq.Ft</option>
-                            @endforeach
-                        </select>
+                        <input type="text" name="propertySize" placeholder="Property Type *" class="form-control">
                         <small class="text-danger">
                             @error('propertySize')
                                 {{ $message }}

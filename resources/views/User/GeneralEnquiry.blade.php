@@ -12,8 +12,10 @@
             color: white;
         }
 
-        button {
-            border: none;
+        .brand-btn {
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 12px 30px;
         }
     </style>
 @endpush
@@ -21,7 +23,7 @@
 @push('CTA')
     <div class="row mt-5">
         <div class="col-md-9 mx-auto">
-            <h2 class="text-center">
+            <h2 class="text-center fs-48 fs-sm-25">
                 General Enquiries
             </h2>
         </div>
@@ -36,7 +38,7 @@
 
                 <div class="row mt-3">
                     <div class="col-md-12">
-                        <input type="text" name="fullname" class="form-control" placeholder="Full Name" value="{{old("fullname")}}">
+                        <input type="text" name="fullname" class="form-control" placeholder="Full Name *" value="{{old("fullname")}}">
                         <small class="text-danger">
                             @error('fullname')
                                 {{ $message }}
@@ -60,7 +62,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5 mb-sm-40">
-                        <input type="email" name="email" class="form-control" placeholder="Email Address" value="{{old("email")}}">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address *" value="{{old("email")}}">
                         <small class="text-danger">
                             @error('email')
                                 {{ $message }}
@@ -69,7 +71,7 @@
                     </div>
 
                     <div class="col-md-5">
-                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" value="{{old("phone_number")}}">
+                        <input type="text" name="phone_number" class="form-control" placeholder="Phone Number *" value="{{old("phone_number")}}">
                         <small class="text-danger">
                             @error('phone_number')
                                 {{ $message }}
@@ -80,7 +82,7 @@
 
                 <div class="row mt-5">
                     <div class="col-md-12">
-                        <textarea name="enquiry" class="form-control" placeholder="Enquiry" rows="5" style="resize: none;">{{old("enquiry")}}</textarea>
+                        <textarea name="enquiry" class="form-control" placeholder="Enquiry *" rows="5" style="resize: none;">{{old("enquiry")}}</textarea>
                         <small class="text-danger">
                             @error('enquiry')
                                 {{ $message }}
@@ -90,7 +92,7 @@
                 </div>
 
                 <div class="row mt-5 mb-5">
-                    <div class="col-md-3 mx-auto">
+                    <div class="col-md-12 text-center mx-auto">
                         <button class="brand-btn">Submit</button>
                     </div>
                 </div>
