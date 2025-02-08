@@ -310,9 +310,9 @@ class AdminController extends Controller
     {
         $iconImg = DB::table('standards')->find($id);
 
-        if ($request->file('icon')) {
-            $timeStampImg = time() . '.' . $request->icon->getClientOriginalExtension();
-            $request->icon->move('Standards', $timeStampImg);
+        if ($request->file('standard_icon')) {
+            $timeStampImg = time() . '.' . $request->standard_icon->getClientOriginalExtension();
+            $request->standard_icon->move('Standards', $timeStampImg);
         } else {
             $timeStampImg = $iconImg->standard_icon;
         }

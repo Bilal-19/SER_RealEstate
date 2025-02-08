@@ -27,73 +27,99 @@
         .accordion-button::after {
             display: none;
         }
+
+        .accordion-header > button{
+            color: #303030 !important;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .sterling-experience-img {
+            border-radius: 16px;
+        }
+
+        .standard-img{
+            height: fit-content;
+            width: fit-content;
+            object-fit: cover;
+        }
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="row d-flex justify-content-around align-items-center mt-5 mb-5">
-        <div class="col-md-6">
-            <img src="{{ asset('assets/images/sterling-experience.png') }}" alt="" class="img-fluid rounded">
-        </div>
-        <div class="col-md-5">
-            <h3>The Sterling Experience</h3>
-            <p>
-                We understand when staying in one of our apartments, you're often far from home, so whether it's offering
-                advice on your local area, or getting a special request delivered to your apartment, our 24/7 Guest
-                Relations Team is always on hand to help.
-            </p>
-            <p>
-                Planning to stay with us? Take a look at our guest journey below to understand how our team look after you
-                every step of the way.
-            </p>
-        </div>
-    </div>
-
-    <div class="row mt-5 mb-5">
-        <div class="col-md-10 mx-auto text-center">
-            <h3>The Sterling Standard</h3>
-            <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.</p>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-around align-items-center">
-        @foreach ($fetchAllStandards as $record)
-            <div class="col-md-1 col-8 text-center">
-                <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
-                <p>{{ $record->standard_text }}</p>
+    <div class="container-fluid mt-100 mt-sm-75">
+        <div class="row d-flex justify-content-around align-items-center">
+            <div class="col-md-6">
+                <img src="{{ asset('assets/images/sterling-experience.png') }}" alt=""
+                    class="img-fluid sterling-experience-img">
             </div>
-        @endforeach
-    </div>
-
-    <div class="row">
-        <div class="col-md-11 mx-auto">
-            <h3>Booking FAQs</h3>
+            <div class="col-md-5">
+                <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
+                <p class="mt-20">
+                    We understand when staying in one of our apartments, you're often far from home, so whether it's
+                    offering
+                    advice on your local area, or getting a special request delivered to your apartment, our 24/7 Guest
+                    Relations Team is always on hand to help.
+                </p>
+                <p>
+                    Planning to stay with us? Take a look at our guest journey below to understand how our team look after
+                    you
+                    every step of the way.
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-11 mx-auto" id="booking-faq">
-            <div class="accordion" id="accordionExample">
-                @foreach ($fetchAllFAQs as $record)
-                    <div class="accordion-item mb-3">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse{{ $record->id }}" aria-expanded="true"
-                                aria-controls="collapse{{ $record->id }}">
-                                {{ $record->question }}
-                            </button>
-                        </h2>
-                        <div id="collapse{{ $record->id }}" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">{!! $record->answer !!}</div>
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row mb-5">
+            <div class="col-md-10 mx-auto text-center">
+                <h3 class="fs-48 fs-sm-25">The Sterling Standard</h3>
+                <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-around align-items-center">
+            @foreach ($fetchAllStandards as $record)
+                <div class="col-md-1 col-8 border border-primary">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid standard-img">
+                    <p class="text-center fw-medium text-charcoal-black">{{ $record->standard_text }}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="container-fluid mt-150 mt-sm-75">
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+                <h3 class="fs-48 fs-sm-25">Booking FAQs</h3>
+            </div>
+        </div>
+
+        <div class="row mt-20">
+            <div class="col-md-11 mx-auto" id="booking-faq">
+                <div class="accordion" id="accordionExample">
+                    @foreach ($fetchAllFAQs as $record)
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{ $record->id }}" aria-expanded="true"
+                                    aria-controls="collapse{{ $record->id }}">
+                                    {{ $record->question }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{ $record->id }}" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">{!! $record->answer !!}</div>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
 
-        <div class="col-md-11 mx-auto text-center">
-            <a href="{{route("FAQs")}}" class="text-dark">Show more</a>
+            <div class="col-md-11 mx-auto text-center">
+                <a href="{{ route('FAQs') }}" class="text-dark">Show more</a>
+            </div>
         </div>
     </div>
 

@@ -241,42 +241,42 @@
     <div class="container-fluid mt-150 mt-sm-75">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>The Sterling Experience</h3>
+                <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
                 <p>
-                    Sit back & relax, we've got everything covered. Here's why Portland should be your 1st choice when
-                    selecting
-                    a serviced apartment.
+                    Sit back & relax, we've got everything covered. Here's why Sterling Executive should be your first choice when selecting a serviced apartment.
                 </p>
             </div>
+        </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25">
+        <div class="row mt-70">
+            <div class="col-md-3 col-10 mx-auto text-center">
                 <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
                 <h5>Simple Booking</h5>
-                <p class="mt-10 mt-sm-0">
+                <p class="mt-5 mb-sm-0">
                     Our bespoke corporate client packages come with a designated account manager to tend to all requests
                 </p>
             </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25">
+            <div class="col-md-3 col-10 mx-auto text-center ">
                 <img src="{{ asset('assets/images/heart.png') }}" alt="" class="img-fluid mb-3">
                 <h5>We Look After You</h5>
-                <p class="mt-10 mt-sm-0">
+                <p class="mt-5 mb-sm-0">
                     We will always be there to support you through the entirety of the booking process
                 </p>
             </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25">
+            <div class="col-md-3 col-10 mx-auto text-center ">
                 <img src="{{ asset('assets/images/sofa.jpg') }}" alt="" class="img-fluid mb-3">
                 <h5>Feel At Home</h5>
-                <p class="mt-10 mt-sm-0">
+                <p class="mt-5 mb-sm-0">
                     You will have everything you need to feel right at home
                 </p>
             </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center mt-sm-25 ">
+            <div class="col-md-3 col-10 mx-auto text-center  ">
                 <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="" class="img-fluid mb-3">
                 <h5>Feel Secure</h5>
-                <p class="mt-10 mt-sm-0">
+                <p class="mt-5 mb-sm-0">
                     We provide safe, secure accommodation with 24-hour support
                 </p>
             </div>

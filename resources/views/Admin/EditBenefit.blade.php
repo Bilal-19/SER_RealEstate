@@ -2,7 +2,7 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center">Edit Amenity</h3>
+            <h3 class="text-center">Edit Standard</h3>
         </div>
 
         <div class="row">
@@ -10,7 +10,7 @@
                 @csrf
                 <div class="col-md-6 mx-auto">
                     <p class="mb-0">Benefit Icon Preview Image: </p>
-                    <img src="{{asset('Standards/'.$fetchBenefit->standard_icon)}}" alt="">
+                    <img src="{{asset('Standards/'.$fetchBenefit->standard_icon)}}" alt="" name="standard_icon">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
