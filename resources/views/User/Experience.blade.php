@@ -43,6 +43,11 @@
             width: fit-content;
             object-fit: cover;
         }
+
+        .style-experience-text{
+            line-height: 1.2;
+            letter-spacing: 0.8px;
+        }
     </style>
 @endpush
 
@@ -55,13 +60,13 @@
             </div>
             <div class="col-md-5">
                 <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
-                <p class="mt-20">
+                <p class="mt-20 style-experience-text">
                     We understand when staying in one of our apartments, you're often far from home, so whether it's
                     offering
                     advice on your local area, or getting a special request delivered to your apartment, our 24/7 Guest
                     Relations Team is always on hand to help.
                 </p>
-                <p>
+                <p class="style-experience-text">
                     Planning to stay with us? Take a look at our guest journey below to understand how our team look after
                     you
                     every step of the way.
@@ -81,7 +86,7 @@
 
         <div class="row d-flex justify-content-around align-items-center">
             @foreach ($fetchAllStandards as $record)
-                <div class="col-md-1 col-8 border border-primary">
+                <div class="col-md-1 col-8">
                     <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid standard-img">
                     <p class="text-center fw-medium text-charcoal-black">{{ $record->standard_text }}</p>
                 </div>
