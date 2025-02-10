@@ -32,6 +32,23 @@
             text-align: justify;
             font-weight: 500;
         }
+
+        .standard-card{
+            height: 100px;
+            width: 100px;
+        }
+
+        .standard-card img{
+            display: block;
+            margin: 10px auto;
+        }
+        @media screen and (max-width: 768px){
+            .standard-card{
+                margin-top: 20px;
+                height: fit-content;
+                width: fit-content;
+            }
+        }
     </style>
 @endpush
 
@@ -94,18 +111,17 @@
             </div>
         </div>
 
-        <div class="row d-flex justify-content-around align-items-center">
+        <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
-                <div class="col-md-1 col-8">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt=""
-                        class="img-fluid standard-img">
-                    <p class="text-center fw-medium text-charcoal-black">{{ $record->standard_text }}</p>
+                <div class="col-md col-12 text-center standard-card">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
+                    <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-150">
         <div class="row mt-5 mb-5">
             <div class="col-md-7 mx-auto">
                 <h3 class="fs-50 fs-sm-25 text-center mb-5">Looking for a corporate stay?</h3>
@@ -135,12 +151,7 @@
 
                     <div class="row d-flex justify-content-between mt-5">
                         <div class="col-md-5 mb-sm-40">
-                            <input type="text" name="company_name" class="form-control" placeholder="Company Name *">
-                            <small class="text-danger">
-                                @error('company_name')
-                                    {{ $message }}
-                                @enderror
-                            </small>
+                            <input type="text" name="company_name" class="form-control" placeholder="Company Name ">
                         </div>
                         <div class="col-md-5">
                             <input type="text" name="phone_number" class="form-control" placeholder="Phone Number *">
