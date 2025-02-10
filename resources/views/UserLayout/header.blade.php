@@ -40,7 +40,7 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row sticky-header">
             <nav class="navbar navbar-expand-lg bg-white">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">

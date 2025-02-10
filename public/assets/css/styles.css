@@ -17,6 +17,11 @@ body{
     font-family: "Montserrat", serif;
     color: #303030;
 }
+
+.sticky-header{
+    position: fixed;
+    width: -webkit-fill-available;
+}
 /* #top-header {
     background-color: #c0c0c0;
     color: white;
