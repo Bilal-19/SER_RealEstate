@@ -419,7 +419,6 @@ class UserController extends Controller
         $request->validate([
             "fullname" => "required",
             "email" => "required",
-            "company_name" => "required",
             "phone_number" => "required",
             "enquiry" => "required"
         ]);
@@ -427,7 +426,7 @@ class UserController extends Controller
         $isEnquiryCreated = DB::table("join_sterling_inquiry")->insert([
             "full_name" => $request->fullname,
             "email" => $request->email,
-            "company_name" => $request->company_name,
+            "company_name" => $request->company_name ?? "Not Provided",
             "phone_number" => $request->phone_number,
             "enquiry_message" => $request->enquiry,
             'created_at' => now()
