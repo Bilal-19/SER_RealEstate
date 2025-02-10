@@ -1,5 +1,14 @@
 @extends('UserLayout.main')
 
+@push('style')
+    <style>
+        .enquiry-card img{
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+        }
+    </style>
+@endpush
 
 @section('user-main-section')
     <div class="row mt-50 mx-auto">
@@ -8,15 +17,15 @@
         </div>
     </div>
 
-    <div class="row mt-5 text-center d-flex justify-content-center">
-        <div class="col-md-1">
-            <a href="{{route("Booking.Enquiry")}}">
+    <div class="row mt-5 text-center d-flex justify-content-center align-items-center">
+        <div class="col-md-1 enquiry-card mx-3">
+            <a href="{{ route('Booking.Enquiry') }}">
                 <img src="{{ asset('assets/images/booking-enquiry.png') }}" alt="" class="img-fluid">
             </a>
             <p>Booking Enquiries</p>
         </div>
-        <div class="col-md-1">
-            <a href="{{route("General.Enquiry")}}">
+        <div class="col-md-1 enquiry-card mx-3">
+            <a href="{{ route('General.Enquiry') }}">
                 <img src="{{ asset('assets/images/general-enquiry.png') }}" alt="" class="img-fluid">
             </a>
             <p>General Enquiries</p>

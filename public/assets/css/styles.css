@@ -115,7 +115,7 @@ body{
 
 
 .feedback-bg{
-    background-image: url('../images/grey-background.png');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('../images/grey-background.png');
     background-size: cover;
     background-attachment: scroll;
     /* width: 95%; */
