@@ -222,11 +222,12 @@
                         onfocus="(this.type='date')" placeholder="Check Out">
                 </div>
                 <div class="mt-3">
-                    <select name="bedrooms" class="form-select ms-auto">
+                    <select name="bedrooms" class="form-select ms-auto" onchange="getRoomValue(this.value)">
                         <option value="">Bedrooms</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
+                    <p class="mt-3" id="price-tag"></p>
                 </div>
                 <button class="ms-auto">Check Availability</button>
                 @isset($isAvailable)
@@ -295,4 +296,19 @@
             </div>
         @endforeach
     </div>
+
+    @push('script')
+        <script>
+            var paraEl = document.getElementById("price-tag")
+            function getRoomValue(a){
+                if (a == 1){
+                    paraEl.innerHTML = `Price from ${{$findApartment->one_bedroom_price}} + VAT per night`
+                } else if (a == 2){
+                    paraEl.innerHTML = `Price from ${{$findApartment->two_bedroom_price}} + VAT per night`
+                } else {
+                    paraEl.innerHTML = `Please select no of bedrooms.`
+                }
+        }
+        </script>
+    @endpush
 @endsection
