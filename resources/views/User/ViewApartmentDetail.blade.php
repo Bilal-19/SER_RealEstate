@@ -168,7 +168,7 @@
     </div>
 
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-md-2 ms-auto">
             <a href="" class="brand-btn">
                 Add to favourites
@@ -176,7 +176,7 @@
                     style="mix-blend-mode: color-burn;">
             </a>
         </div>
-    </div>
+    </div> --}}
 
     <div class="row mt-5">
         <div class="col-md-7">
