@@ -1,16 +1,6 @@
 @extends('UserLayout.main')
 @push('style')
     <style>
-        body {
-            background-color: #fafafa;
-        }
-
-        .banner-img {
-            background-image: url('/assets/images/available_apartment_banner.png');
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
         .booking-container {
             background-color: #ececec;
             border-radius: 16px;
@@ -27,11 +17,6 @@
 
         .border-grey {
             border: 1px solid rgb(212, 212, 212);
-        }
-
-        ul>li {
-            font-size: 14px;
-            font-family: "inter";
         }
 
         .book-apartment-thumbnail {
@@ -159,18 +144,6 @@
     </script>
 @endpush
 
-@push('CTA')
-    <div class="row mt-5 mb-5">
-        <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ff-poppins">Apartment Name</p>
-            <h2 class="text-center ff-poppins fs-48">
-                Booking Page
-            </h2>
-        </div>
-    </div>
-@endpush
-
-
 @section('user-main-section')
     @php
         if ($bedrooms == 1) {
@@ -212,22 +185,22 @@
         <div class="row d-flex justify-content-around">
             <div class="col-md-5 bg-white border-grey border-radius-16">
                 <div class="booking-container mt-3">
-                    <h4 class="ff-poppins fs-20">Booking Details</h4>
+                    <h4 class=" fs-20">Booking Details</h4>
                     <div class="d-flex mt-4">
                         <div>
-                            <p class="ff-poppins mb-0">Check In Date:</p>
+                            <p class=" mb-0">Check In Date:</p>
                             <p class="booking-date">{{ date('d M Y', strtotime($checkIn)) }}</p>
                         </div>
                         <div class="mx-5">
-                            <p class="ff-poppins mb-0">Check Out Date:</p>
+                            <p class=" mb-0">Check Out Date:</p>
                             <p class="booking-date">{{ date('d M Y', strtotime($checkOut)) }}</p>
                         </div>
                     </div>
 
-                    <p class="ff-poppins mt-3">{{ $stayDays }} Night stay</p>
+                    <p class=" mt-3">{{ $stayDays }} Night stay</p>
                 </div>
 
-                <h4 class="ff-poppins fs-24 mt-5">Personal Information</h4>
+                <h4 class=" fs-24 mt-5">Personal Information</h4>
 
 
                 @if (Session::has('success'))
@@ -251,8 +224,8 @@
                     @csrf
                     <div class="row d-flex justify-content-between">
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">First Name: </label>
-                            <input type="text" class="form-control ff-poppins fs-16" name="fname"
+                            <label class="form-label fs-14 ">First Name: </label>
+                            <input type="text" class="form-control  fs-16" name="fname"
                                 value="{{ old('fname') }}">
                             <small class="text-danger">
                                 @error('fname')
@@ -262,8 +235,8 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Last Name: </label>
-                            <input type="text" class="form-control ff-poppins fs-16" name="lname"
+                            <label class="form-label fs-14 ">Last Name: </label>
+                            <input type="text" class="form-control  fs-16" name="lname"
                                 value="{{ old('lname') }}">
                             <small class="text-danger">
                                 @error('lname')
@@ -275,8 +248,8 @@
 
                     <div class="row d-flex justify-content-between mt-3">
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Email Address: </label>
-                            <input type="email" class="form-control ff-poppins fs-16" name="email"
+                            <label class="form-label fs-14 ">Email Address: </label>
+                            <input type="email" class="form-control  fs-16" name="email"
                                 value="{{ old('email') }}">
                             <small class="text-danger">
                                 @error('email')
@@ -286,8 +259,8 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Phone Number: </label>
-                            <input type="text" class="form-control ff-poppins fs-16" name="phone"
+                            <label class="form-label fs-14 ">Phone Number: </label>
+                            <input type="text" class="form-control  fs-16" name="phone"
                                 value="{{ old('phone') }}">
                             <small class="text-danger">
                                 @error('phone')
@@ -299,8 +272,8 @@
 
                     <div class="row d-flex justify-content-between mt-3 mb-3">
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Country: </label>
-                            <select name="country" id="" class="form-select ff-poppins fs-16"
+                            <label class="form-label fs-14 ">Country: </label>
+                            <select name="country" id="" class="form-select  fs-16"
                                 value="{{ old('country') }}">
                                 @foreach ($countries as $val)
                                     <option value="{{ $val }}">{{ $val }}</option>
@@ -314,8 +287,8 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Postal Code: </label>
-                            <input type="text" class="form-control ff-poppins fs-16" name="postal_code"
+                            <label class="form-label fs-14 ">Postal Code: </label>
+                            <input type="text" class="form-control  fs-16" name="postal_code"
                                 value="{{ old('postal_code') }}">
                             <small class="text-danger">
                                 @error('postal_code')
@@ -327,8 +300,8 @@
 
                     <div class="row mb-3">
                         <div>
-                            <label class="form-label fs-14 ff-poppins">Address: </label>
-                            <input type="text" class="form-control ff-poppins fs-16" name="address"
+                            <label class="form-label fs-14 ">Address: </label>
+                            <input type="text" class="form-control  fs-16" name="address"
                                 value="{{ old('address') }}">
                             <small class="text-danger">
                                 @error('address')
@@ -340,8 +313,8 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Select No of Adults: </label>
-                            <select name="adults" id="" class="form-select ff-poppins fs-16"
+                            <label class="form-label fs-14 ">Select No of Adults: </label>
+                            <select name="adults" id="" class="form-select  fs-16"
                                 value="{{ old('adults') }}">
                                 @for ($i = 1; $i < 4; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
@@ -356,8 +329,8 @@
 
 
                         <div class="col-md-6">
-                            <label class="form-label fs-14 ff-poppins">Select No of Childrens: </label>
-                            <select name="childrens" id="" class="form-select ff-poppins fs-16"
+                            <label class="form-label fs-14 ">Select No of Childrens: </label>
+                            <select name="childrens" id="" class="form-select  fs-16"
                                 value="{{ old('childrens') }}">
                                 @for ($i = 1; $i <= 4; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
@@ -371,7 +344,7 @@
                         </div>
                     </div>
 
-                    <h4 class="ff-poppins fs-24 mt-5">Payment Information</h4>
+                    <h4 class=" fs-24 mt-5">Payment Information</h4>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -434,10 +407,10 @@
                         </div>
                     </div>
 
-                    <h5 class="ff-poppins fs-20">Terms & Conditions</h5>
+                    <h5 class="fs-20">Terms & Conditions</h5>
                     <ul>
                         <li>
-                            Citadel will contact you after booking with important arrival and access information.
+                            Sterling Executive Residential will contact you after booking with important arrival and access information.
                         </li>
                         <li>
                             Please note that the maximum occupancy of each individual apartment varies between three to five
@@ -458,13 +431,11 @@
                         </li>
                         <li>
                             Late check-in between 20:00 and 21:00 is possible by prior arrangement and an additional fee of
-                            GBP
-                            30.
+                            £ 30 GBP.
                         </li>
                         <li>
                             Late check-in between 21:00 and 23:30 is possible by prior arrangement and an additional fee of
-                            GBP
-                            50.
+                            £ 50 GBP.
                         </li>
                         <li>
                             Guests are required to show a photo identification and credit card upon check-in.
@@ -474,7 +445,7 @@
                             apply.
                         </li>
                         <li>
-                            Please inform Citadel Apartments Aldgate in advance of your expected arrival time.
+                            Please inform Sterling Executive Residential Apartments Aldgate in advance of your expected arrival time.
                         </li>
                         <li>
                             You can use the Special Requests box when booking, or contact the property directly with the
@@ -506,7 +477,7 @@
                         </li>
                     </ul>
 
-                    <p class="fw-medium ff-poppins mb-0">Other Request</p>
+                    <p class="fw-medium  mb-0">Other Request</p>
                     <textarea cols="30" rows="10" class="form-control" style="resize: none;" name="message"></textarea>
                     <small class="text-danger">
                         @error('message')
@@ -524,7 +495,7 @@
                     <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="isAgreeToMarketing">
                         <label class="form-check-label fs-14" for="flexCheckDefault">
-                            I don't want to receive any offer or marketing from the Citadel
+                            I don't want to receive any offer or marketing from the Sterling Executive Residential
                         </label>
                     </div>
 
@@ -539,30 +510,30 @@
                             class="img-fluid book-apartment-thumbnail rounded">
                     </div>
                     <div>
-                        <h5 class="fs-18 ff-poppins fw-medium">{{ $findApartment->apartment_name }}</h5>
+                        <h5 class="fs-18  fw-medium">{{ $findApartment->apartment_name }}</h5>
                         <p>{{ $findApartment->street_address }}</p>
                     </div>
                 </div>
 
 
                 <div class="d-flex justify-content-between p-2 align-items-center mb-0">
-                    <h6 class="fs-18 ff-poppins">Price Per Night</h6>
-                    <p class="ff-poppins fs-18">€{{ $bedroomPrice }}</p>
+                    <h6 class="fs-18 ">Price Per Night</h6>
+                    <p class=" fs-18">£{{ $bedroomPrice }}</p>
                 </div>
                 <div class="d-flex justify-content-between p-2 align-items-center mb-0">
-                    <h6 class="fs-18 ff-poppins">Total Bedrooms</h6>
-                    <p class="ff-poppins fs-18">{{ $bedrooms }}</p>
+                    <h6 class="fs-18 ">Total Bedrooms</h6>
+                    <p class=" fs-18">{{ $bedrooms }}</p>
                 </div>
                 <div class="d-flex justify-content-between p-2 align-items-center">
-                    <h6 class="fs-18 ff-poppins">Total Night Stay</h6>
-                    <p class="ff-poppins fs-18">{{ $stayDays }} days</p>
+                    <h6 class="fs-18 ">Total Night Stay</h6>
+                    <p class=" fs-18">{{ $stayDays }} days</p>
                 </div>
 
                 <hr>
 
                 <div class="d-flex justify-content-between p-2 align-items-center">
-                    <h6 class="fs-18 ff-poppins">Total Cost</h6>
-                    <p class="ff-poppins fs-18 fw-bold">€{{ $totalCost }}</p>
+                    <h6 class="fs-18 ">Total Cost</h6>
+                    <p class=" fs-18 fw-bold">£{{ $totalCost }}</p>
                 </div>
             </div>
         </div>
