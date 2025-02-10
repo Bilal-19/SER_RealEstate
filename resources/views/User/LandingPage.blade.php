@@ -3,11 +3,11 @@
 @push('style')
     <style>
         .home-bg-img {
-            background-image: linear-gradient(to right, rgba(0,0,0, 0.25) 0 100%), url('/assets/images/home_banner.jpg');
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('/assets/images/home_banner.jpg');
             background-size: cover;
             background-attachment: scroll;
             background-repeat: no-repeat;
-            height: 1000px;
+            height: 800px;
             border-radius: 15px;
             width: 97%;
             margin: 25px auto;
@@ -80,9 +80,17 @@
             font-size: 20px;
         }
 
+        .apartment-category-img {
+            height: 420px;
+            width: 420px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 35px;
+        }
+
         @media screen and (max-width: 768px) {
             #explore-cta-apartment {
-                right: -300px;
+                right: -160px;
                 top: -60px;
             }
 
@@ -94,10 +102,20 @@
                 height: 300px;
             }
 
-            .bedroom-img{
-                height:440px;
-                width:440px;
+            .bedroom-img {
+                height: 350px;
+                width: 350px;
                 object-fit: cover;
+                margin: 10px auto;
+            }
+
+            .mt-sm-100 {
+                margin-top: 100px;
+            }
+
+            .apartment-category-img {
+                margin-bottom: 10px;
+                margin-top: 20px;
             }
         }
     </style>
@@ -106,15 +124,15 @@
 @push('CTA')
     <div class="container-fluid home-bg-img mb-5">
         <div class="row">
-            <div class="col-md-9 mx-auto text-light search-container">
-                <h2 class="text-center fs-56 fs-sm-28 mt-150 mt-sm-25">
+            <div class="col-md-9 mx-auto text-light search-container mt-300 mt-sm-100">
+                <h2 class="text-center fs-56 fs-sm-28">
                     Find your perfect stay
                 </h2>
             </div>
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-5 col-10 mx-auto" id="book-apartment">
+            <div class="col-md-5 col-12 mx-auto" id="book-apartment">
                 <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                     autocomplete="off">
                     @csrf
@@ -244,7 +262,8 @@
             <div class="col-md-12 text-center">
                 <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
                 <p>
-                    Sit back & relax, we've got everything covered. Here's why Sterling Executive should be your first choice when selecting a serviced apartment.
+                    Sit back & relax, we've got everything covered. Here's why Sterling Executive should be your first
+                    choice when selecting a serviced apartment.
                 </p>
             </div>
         </div>

@@ -78,10 +78,6 @@ body{
     pointer-events: none;
 }
 
-.nav-link-transition:hover::after {
-    /* opacity: 1; */
-}
-
 /* Landing Page */
 
 #book-apartment-searchbar{
@@ -116,13 +112,7 @@ body{
     font-weight: 250;
 }
 
-.apartment-category-img{
-    height: 420px;
-    width: 420px;
-    object-fit: cover;
-    border-radius: 16px;
-    margin-bottom: 35px;
-}
+
 
 .feedback-bg{
     background-image: url('../images/grey-background.png');
@@ -253,8 +243,24 @@ a {
 }
 
 /* Utility Classes */
-.mt-200{
-    margin-top: 400px;
+.mt-10{
+    margin-top: 10px;
+}
+
+.mt-15{
+    margin-top: 15px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
+.mt-70{
+    margin-top: 70px;
 }
 
 .mt-100{
@@ -262,28 +268,21 @@ a {
 }
 
 .mt-150{
+    margin-top: 150px;
+}
+
+.mt-200{
     margin-top: 200px;
 }
 
-.mt-10{
-    margin-top: 10px;
+.mt-300{
+    margin-top: 300px;
 }
 
-.mt-20{
-    margin-top: 20px;
+.mt-400{
+    margin-top: 400px;
 }
 
-.mt-70{
-    margin-top: 70px;
-}
-
-.mt-15{
-    margin-top: 15px;
-}
-
-.mt-50{
-    margin-top: 50px;
-}
 /* ---------------------------------------------------------------------------------------------------- */
 
 /* Custom Style */
@@ -678,17 +677,14 @@ a {
         margin-top: 75px;
     }
 
-    .mt-sm-0{
-        margin-top: 0px;
-    }
-
     .mt-sm-100{
         margin-top: 100px;
     }
 
-    /* Landing Page */
-    .apartment-category-img{
-        margin-bottom: 10px;
-        margin-top: 20px;
+    .mt-sm-150{
+        margin-top: 150px;
     }
+
+    /* Landing Page */
+
 }
