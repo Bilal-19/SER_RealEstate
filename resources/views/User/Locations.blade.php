@@ -40,16 +40,20 @@
     </div>
 
     @isset($fetchAllLocations)
-        <div class="row mx-auto">
-            @foreach ($fetchAllLocations as $record)
-                <div class="col-md-4 mt-3 mb-5">
-                    <a href="{{route("LocationDetail", ["id"=>$record->id])}}">
-                        <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
-                        class="img-fluid thumbnail-img">
-                    </a>
-                    <h5 class="mt-2">{{ $record->location }}</h5>
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+                <div class="row">
+                    @foreach ($fetchAllLocations as $record)
+                    <div class="col-md-4 mt-3 mb-5">
+                        <a href="{{route("LocationDetail", ["id"=>$record->id])}}">
+                            <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
+                            class="img-fluid thumbnail-img">
+                        </a>
+                        <h5 class="mt-2">{{ $record->location }}</h5>
+                    </div>
+                @endforeach
                 </div>
-            @endforeach
+            </div>
         </div>
     @endisset
 
