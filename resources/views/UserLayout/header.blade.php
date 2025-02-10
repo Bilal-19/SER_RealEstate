@@ -36,6 +36,15 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     @stack('style')
     <link rel="stylesheet" href="{{ asset("assets/css/styles.css") }}">
+
+    <style>
+        @media screen and (max-width: 768px){
+            .navbar-brand img {
+                height: 65px;
+                width: 343px;
+            }
+        }
+    </style>
 </head>
 
 <body>
