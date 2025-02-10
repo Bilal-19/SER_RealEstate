@@ -85,6 +85,32 @@
             border-radius: 5px;
         }
 
+        .standard-card {
+            height: 100px;
+            width: 100px;
+        }
+
+        .standard-card img {
+            display: block;
+            margin: 10px auto;
+        }
+
+        .feature-card{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .feature-card img {
+            height: 40px;
+            width: 40px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .feature-card p{
+            margin-top: 10px;
+        }
+
 
         @media screen and (max-width: 768px) {
             .check-availability-container {
@@ -94,6 +120,13 @@
             .price-container {
                 width: fit-content;
             }
+
+            .standard-card {
+                margin-top: 20px;
+                height: fit-content;
+                width: fit-content;
+            }
+
         }
     </style>
 @endpush
@@ -135,6 +168,16 @@
     </div>
 
 
+    <div class="row">
+        <div class="col-md-2 ms-auto">
+            <a href="" class="brand-btn">
+                Add to favourites
+                <img src="{{ asset('assets/images/star.png') }}" alt="" class="img-fluid"
+                    style="mix-blend-mode: color-burn;">
+            </a>
+        </div>
+    </div>
+
     <div class="row mt-5">
         <div class="col-md-7">
             <h4 class="mb-5">{{ $findApartment->apartment_name }}</h4>
@@ -145,7 +188,7 @@
                     </div>
                     <div class="mx-3">
                         <p class="mb-0">One Bedroom Apartment</p>
-                        <p>from €{{ $findApartment->one_bedroom_price }} per night</p>
+                        <p>from £{{ $findApartment->one_bedroom_price }} per night</p>
                     </div>
                     </p>
                 </div>
@@ -156,7 +199,7 @@
                     </div>
                     <div class="mx-3">
                         <p class="mb-0">Two Bedroom Apartment</p>
-                        <p>from €{{ $findApartment->two_bedroom_price }} per night</p>
+                        <p>from £{{ $findApartment->two_bedroom_price }} per night</p>
                     </div>
                     </p>
                 </div>
@@ -210,29 +253,27 @@
 
     @php
         $features = [
-            ['key' => 'concierge', 'label' => 'Concierge', 'image' => 'concierge.jpg'],
-            ['key' => 'parking', 'label' => 'Parking', 'image' => 'parking.jpg'],
-            ['key' => 'elevator', 'label' => 'Elevator in Building', 'image' => 'elevator.jpg'],
-            ['key' => 'air_conditioning', 'label' => 'Air Conditioning', 'image' => 'air_conditioning.jpg'],
-            ['key' => 'personal_safe', 'label' => 'Personal Safe', 'image' => 'personal_safe.jpg'],
-            ['key' => 'private_balcony', 'label' => 'Private Balcony', 'image' => 'private_balcony.jpg'],
+            ['key' => 'concierge', 'label' => 'Concierge', 'image' => 'concierge.png'],
+            ['key' => 'air_conditioning', 'label' => 'Air Conditioning', 'image' => 'air_conditioning.png'],
             ['key' => 'kitchen', 'label' => 'Fully Equipped Kitchen', 'image' => 'equiped_kitchen.png'],
-            ['key' => 'washing', 'label' => 'Washing/Dryer', 'image' => 'washing.jpg'],
-            ['key' => 'dishwasher', 'label' => 'Dishwasher', 'image' => 'dishwasher.jpg'],
-            ['key' => 'pet_friendly', 'label' => 'Pet Friendly', 'image' => 'pet_friendly.jpg'],
+            ['key' => 'pet_friendly', 'label' => 'Pet Friendly', 'image' => 'pet_friendly.png'],
+            ['key' => 'parking', 'label' => 'Parking', 'image' => 'parking.png'],
+            ['key' => 'personal_safe', 'label' => 'Personal Safe', 'image' => 'personal_safe.png'],
+            ['key' => 'washing', 'label' => 'Washing/Dryer', 'image' => 'dryer.png'],
+            ['key' => 'elevator', 'label' => 'Elevator in Building', 'image' => 'elevator.png'],
+            ['key' => 'private_balcony', 'label' => 'Private Balcony', 'image' => 'private-balcony.png'],
+            ['key' => 'dishwasher', 'label' => 'Dishwasher', 'image' => 'dishwasher.png'],
         ];
     @endphp
 
     <div class="row mt-5">
-        <h5>Property Features</h5>
+        <h5 class="mb-4">Property Features</h5>
         @foreach ($features as $feature)
             @if ($findApartment->{$feature['key']} == 'on')
-                <div class="col-md-3 mb-3">
-                    <span>
-                        <img src="{{ asset('assets/images/' . $feature['image']) }}" alt="{{ $feature['label'] }}"
-                            class="img-fluid mr-2">
-                        <span>{{ $feature['label'] }}</span>
-                    </span>
+                <div class="col-md-3 mb-3 feature-card">
+                    <img src="{{ asset('assets/images/' . $feature['image']) }}" alt="{{ $feature['label'] }}"
+                        class="img-fluid">
+                        <p>{{ $feature['label'] }}</p>
                 </div>
             @endif
         @endforeach
@@ -241,16 +282,16 @@
 
     <div class="row mt-5 mb-5">
         <div class="col-md-10 mx-auto text-center">
-            <h3>The Sterling Standard</h3>
+            <h3 class="fs-48 fs-sm-25">The Sterling Standard</h3>
             <p>Working, relaxing, and living. Our apartments have everything you need to feel at home during your stay.</p>
         </div>
     </div>
 
-    <div class="row d-flex justify-content-around align-items-center">
+    <div class="row d-flex justify-content-around align-items-center mx-auto">
         @foreach ($fetchAllStandards as $record)
-            <div class="col-md-1 col-8 text-center">
+            <div class="col-md col-12 text-center standard-card mb-100">
                 <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
-                <p>{{ $record->standard_text }}</p>
+                <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
             </div>
         @endforeach
     </div>
