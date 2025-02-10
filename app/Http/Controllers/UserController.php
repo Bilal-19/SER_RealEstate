@@ -457,24 +457,23 @@ class UserController extends Controller
     {
         // Form Validation
         $request->validate([
-            "company_name" => "required",
             "fullname" => "required",
             "email" => "required",
             "phone_number" => "required",
             "budget" => "required",
-            "propertySize" => "required",
+            "propertyType" => "required",
             "check_in" => "required",
             "check_out" => "required",
             "enquiry" => "required"
         ]);
 
         $isEnquiryCreated = DB::table("booking_inquiry")->insert([
-            "company_name" => $request->company_name,
+            "company_name" => $request->company_name ?? "Not Provided",
             "full_name" => $request->fullname,
             "email_address" => $request->email,
             "phone_number" => $request->phone_number,
             "budget" => $request->budget,
-            "property_size" => $request->propertySize,
+            "property_size" => $request->propertyType,
             "check_in" => $request->check_in,
             "check_out" => $request->check_out,
             "enquiry_message" => $request->enquiry,
