@@ -30,7 +30,7 @@
             letter-spacing: 0.8px;
             line-height: 1.2;
             text-align: justify;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .standard-card{
