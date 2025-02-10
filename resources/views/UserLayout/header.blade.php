@@ -35,7 +35,7 @@
     {{-- Multiple Location Marker --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     @stack('style')
-    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/styles.css") }}">
 
     <style>
         .sticky-header {
@@ -48,6 +48,14 @@
             .navbar-brand img {
                 height: 65px;
                 width: 343px;
+            }
+
+            .mt-sm-25{
+                margin-top: 25px;
+            }
+
+            .mt-sm-30{
+                margin-top: 30px;
             }
         }
     </style>

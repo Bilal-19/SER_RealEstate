@@ -2,23 +2,23 @@
 <div class="container-fluid text-light pb-2 mt-100 mt-sm-75" id="footer-color">
     <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5 mb-5">
         <div class="col-md-2">
-            <p class="">Company</p>
+            <p style="font-weight: 600">Company</p>
             <a href="{{ route('View.About') }}" class="text-light d-block">About Sterling</a>
             <a href="{{route("view.Locations")}}" class="text-light d-block">Locations</a>
             <a href="{{route("FAQs")}}" class="text-light d-block ">FAQs</a>
             <a href="{{ route("view.ContactUs") }}" class="text-light d-block">Contact Us</a>
         </div>
 
-        <div class="col-md-2">
-            <p class="">Book</p>
+        <div class="col-md-2 mt-sm-25">
+            <p style="font-weight: 600">Book</p>
             <a href="{{ route("Booking.Enquiry") }}" class="text-light d-block">Make an Enquiry</a>
             <a href="/experience/#booking-faq" class="text-light d-block">Booking FAQs</a>
         </div>
-        <div class="col-md-3 d-flex flex-column">
-            <p>Support</p>
+        <div class="col-md-3 d-flex flex-column mt-sm-25">
+            <p style="font-weight: 600">Support</p>
             <a href="mailto:info@sterling-executive.com" class="text-light">info@sterling-executive.com</a>
         </div>
-        <div class="col-md-4 d-flex flex-column align-items-end">
+        <div class="col-md-4 d-flex flex-column align-items-end mt-sm-30">
             <a class="navbar-brand" href="{{ route('Landing.Page') }}">
                 <img src="{{ asset('assets/images/ser_logo_footer.png') }}" alt="Sterling Executive Residential Logo">
             </a>

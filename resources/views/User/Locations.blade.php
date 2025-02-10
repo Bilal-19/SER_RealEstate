@@ -28,11 +28,17 @@
             padding: 12px 30px;
         }
 
+        @media screen and (max-width: 768px){
+            .mt-sm-150{
+                margin-top: 150px;
+            }
+        }
+
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="row mx-auto mt-50">
+    <div class="row mx-auto mt-100 mt-sm-150">
         <div class="col-md-12">
             <h3 class="fs-48 fs-sm-25">Our Locations</h3>
             <p>We offer a diverse selection of properties throughout London.</p>

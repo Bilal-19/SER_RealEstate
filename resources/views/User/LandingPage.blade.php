@@ -117,12 +117,16 @@
                 margin-bottom: 10px;
                 margin-top: 20px;
             }
+
+            .mt-sm-150{
+                margin-top: 150px;
+            }
         }
     </style>
 @endpush
 
 @push('CTA')
-    <div class="container-fluid home-bg-img mb-5">
+    <div class="container-fluid home-bg-img mb-5 mt-100 mt-sm-150">
         <div class="row">
             <div class="col-md-9 mx-auto text-light search-container mt-300 mt-sm-100">
                 <h2 class="text-center fs-56 fs-sm-28">
@@ -190,8 +194,7 @@
         @isset($topRatedApartment)
             <div class="row mt-5 mb-5">
                 <div class="col-md-12 mx-auto top-rated-apartment">
-                    <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at *{{ $topRatedApartment->apartment_name }}*
-                    </h2>
+                    <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}</h2>
                     <p class="col-md-9 fs-18 fs-sm-16">{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
                     <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
                         class="img-fluid mt-3">

@@ -20,6 +20,10 @@
             flex-direction: row;
         }
 
+        .mt-100{
+            margin-top: 100px;
+        }
+
         @media screen and (max-width: 768px) {
             #map {
                 height: 80%;
@@ -31,12 +35,16 @@
             .flex-div {
                 flex-direction: column-reverse;
             }
+
+            .mt-sm-150{
+                margin-top: 150px;
+            }
         }
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid">
+    <div class="container-fluid mt-100 mt-sm-150">
         <div class="row">
             <h3>Corporate Stays in {{ $locationName }}</h3>
         </div>

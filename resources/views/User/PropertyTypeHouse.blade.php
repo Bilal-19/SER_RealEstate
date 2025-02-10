@@ -17,7 +17,7 @@
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid">
+    <div class="container-fluid mt-100">
         <div class="row mb-5">
             <div class="col-md-6">
                 <div class="row d-flex justify-content-between">
@@ -34,7 +34,7 @@
                                     class="img-fluid rounded apartment-thumbnail">
                             </a>
                             <p class="mb-0">{{ $record->street_address }}</p>
-                            <p>From €{{ $record->one_bedroom_price }} per night</p>
+                            <p>From £{{ $record->one_bedroom_price }} per night</p>
                         </div>
                     @endforeach
                 </div>

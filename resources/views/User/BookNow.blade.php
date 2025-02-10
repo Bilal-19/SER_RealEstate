@@ -23,12 +23,16 @@
             .form-control::placeholder {
                 font-size: 14px;
             }
+
+            .mt-sm-150{
+                margin-top: 150px;
+            }
         }
     </style>
 @endpush
 
 @push('CTA')
-    <div class="container-fluid">
+    <div class="container-fluid mt-sm-150">
         <div class="row mt-5">
             <div class="col-md-8 mx-auto search-container">
                 <p class="text-center ">BOOK NOW</p>

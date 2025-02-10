@@ -1,6 +1,31 @@
 @extends('UserLayout.main')
 @push('style')
     <style>
+        .form-control {
+            background-color: #c0c0c0;
+            border: none;
+            width: 50%;
+        }
+
+        .form-control::placeholder {
+            color: #ffffff;
+            font-family: "Montserrat", serif;
+            text-align: center;
+            font-weight: lighter;
+            font-size: 18px;
+        }
+
+        .form-control:focus {
+            color: #303030;
+        }
+
+        .input-group {
+            border: 1px solid #c0c0c0;
+            height: fit-content;
+            width: fit-content;
+            border-radius: 12px !important;
+        }
+
         .apartment-thumbnail-img {
             height: 293px;
             width: 412px;
@@ -38,34 +63,47 @@
             color: white;
             font-size: 20px;
         }
+
+
+        #book-apartment-searchbar .form-control {
+            /* padding-top: 10px; */
+            border-right: 2px solid #ddd;
+            /* border-radius: 0; */
+        }
+
+        #book-apartment-searchbar .form-control:last-of-type {
+            border-right: none;
+        }
     </style>
 @endpush
 @push('CTA')
-    <div class="row mt-5">
-        <div class="col-md-9 mx-auto text-light search-container">
-            <p class="text-center ">Available Apartments</p>
-            <h2 class="text-center  fs-48">
-                Serviced Corporate Apartments
-            </h2>
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-md-9 mx-auto text-light search-container">
+                <p class="text-center ">Available Apartments</p>
+                <h2 class="text-center  fs-48">
+                    Serviced Corporate Apartments
+                </h2>
+            </div>
         </div>
-    </div>
 
-    <div class="row mb-5">
-        <div class="col-10 col-md-8 mx-auto rounded" id="book-apartment">
-            <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
-                autocomplete="off">
-                @csrf
-                <div id="book-apartment-searchbar" class="input-group">
-                    <input type="text" placeholder="Location" class="form-control" name="location"
-                        value="{{ old('location') }}">
-                    <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
-                        value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
-                    <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
-                        value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
-                            style="color:white;"></i></button>
-                </div>
-            </form>
+        <div class="row mb-5">
+            <div class="col-md-5 col-12 mx-auto" id="book-apartment">
+                <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
+                    autocomplete="off">
+                    @csrf
+                    <div id="book-apartment-searchbar" class="input-group">
+                        <input type="text" placeholder="Location" class="form-control" name="location"
+                            value="{{ old('location') }}">
+                        <input type="text" placeholder="Arrival" required class="form-control" name="checkInDate"
+                            value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
+                        <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
+                            value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
+                        <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
+                                style="color:white;"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endpush

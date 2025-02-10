@@ -20,6 +20,10 @@
             font-weight: 500;
         }
 
+        .mt-100{
+            margin-top:100px;
+        }
+
         @media screen and (max-width: 768px) {
             .about-bg {
                 height: 350px;
@@ -30,12 +34,16 @@
             .mt-sm-300{
                 margin-top: 180px;
             }
+
+            .mt-sm-150{
+                margin-top: 150px;
+            }
         }
     </style>
 @endpush
 
 @push('CTA')
-    <div class="container-fluid about-bg">
+    <div class="container-fluid about-bg mt-100 mt-sm-150">
         <div class="row text-center">
             <div class="col-md-12 text-light mt-200 mt-sm-300">
                 <h2 class="fs-48 fs-sm-28">

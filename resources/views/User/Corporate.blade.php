@@ -48,12 +48,16 @@
                 height: fit-content;
                 width: fit-content;
             }
+
+            .mt-sm-150{
+                margin-top: 150px;
+            }
         }
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-100 mt-sm-75">
+    <div class="container-fluid mt-100 mt-sm-150">
         <div class="row d-flex justify-content-evenly align-items-center ">
             <div class="col-md-6">
                 <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
