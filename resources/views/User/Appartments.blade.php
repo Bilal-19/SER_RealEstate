@@ -74,14 +74,28 @@
         #book-apartment-searchbar .form-control:last-of-type {
             border-right: none;
         }
+
+        .fs-14{
+            font-size: 14px;
+        }
+
+        .mt-150{
+            margin-top: 150px;
+        }
+
+        @media screen and (max-width: 768px){
+            .mt-sm-150{
+                margin-top: 150px;
+            }
+        }
     </style>
 @endpush
 @push('CTA')
-    <div class="container-fluid">
+    <div class="container-fluid mt-150 mt-sm-150">
         <div class="row mt-5">
-            <div class="col-md-9 mx-auto text-light search-container">
-                <p class="text-center ">Available Apartments</p>
-                <h2 class="text-center  fs-48">
+            <div class="col-md-9 mx-auto search-container">
+                <p class="text-center">Available Apartments</p>
+                <h2 class="text-center fs-48 fs-25">
                     Serviced Corporate Apartments
                 </h2>
             </div>
@@ -153,20 +167,20 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class=" fs-24">{{ $rec->apartment_name }}</h5>
-                                <p class="">
+                                <p>
                                     <img src="{{ asset('assets/images/locationIcon.png') }}"
                                         alt="{{ $rec->apartment_name }}">
                                     {{ $rec->street_address }}
                                 </p>
-                                <p class="mb-0">One Bedroom Apartment from €{{ $rec->one_bedroom_price }}</p>
-                                <p>Two Bedroom Apartment from €{{ $rec->two_bedroom_price }}</p>
+                                <p class="mb-0 fs-14">One Bedroom Apartment from £{{ $rec->one_bedroom_price }}</p>
+                                <p class="fs-14">Two Bedroom Apartment from £{{ $rec->two_bedroom_price }}</p>
                             </div>
                         </div>
                         <p>{!! Str::limit($rec->description, 120) !!}</p>
                         <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}"
-                            class="btn btn-dark  fw-medium">View Apartment</a>
+                            class="btn btn-dark fw-medium">View Apartment</a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 mt-sm-25">
                         {!! $rec->map_location !!}
                     </div>
                 </div>

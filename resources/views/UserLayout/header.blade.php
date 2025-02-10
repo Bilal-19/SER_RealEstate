@@ -46,8 +46,9 @@
 
         @media screen and (max-width: 768px) {
             .navbar-brand img {
-                height: 65px;
-                width: 343px;
+                height: 70px;
+                width: 320px;*/;
+                object-fit: contain;
             }
 
             .mt-sm-25{
