@@ -27,6 +27,13 @@
         .accordion-button::after {
             display: none;
         }
+
+        .accordion-header > button{
+            color: #303030 !important;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
     </style>
 @endpush
 
