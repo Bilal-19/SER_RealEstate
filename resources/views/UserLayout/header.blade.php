@@ -44,12 +44,7 @@
             <nav class="navbar navbar-expand-lg bg-white">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        <img src="{{ asset('assets/images/ser_logo.png') }}" alt="Sterling Executive Residential Logo">
-                        {{-- <p>
-                            <span id="first">Sterling Executive</span>
-                            <br>
-                            <span id="second">residential</span>
-                        </p> --}}
+                        <img src="{{ asset('assets/images/ser_logo.png') }}" alt="Sterling Executive Residential Logo" class="img-fluid">
                     </a>
                     <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

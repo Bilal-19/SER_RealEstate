@@ -3,7 +3,7 @@
 @push('style')
     <style>
         .home-bg-img {
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('/assets/images/home_banner.jpg');
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('/assets/images/home_banner.png');
             background-size: cover;
             background-attachment: scroll;
             background-repeat: no-repeat;
