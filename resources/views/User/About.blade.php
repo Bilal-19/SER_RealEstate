@@ -10,7 +10,7 @@
             background-position: center;
             height: 1000px;
             border-radius: 12px;
-            margin: 25px auto;
+            margin: 50px auto;
             width: 92%;
         }
 
@@ -26,6 +26,10 @@
                 width: 350px;
                 object-fit: cover;
             }
+
+            .mt-sm-300{
+                margin-top: 180px;
+            }
         }
     </style>
 @endpush
@@ -33,8 +37,8 @@
 @push('CTA')
     <div class="container-fluid about-bg">
         <div class="row text-center">
-            <div class="col-md-12 text-light">
-                <h2 class="fs-48 fs-sm-28 mt-200 mt-sm-100">
+            <div class="col-md-12 text-light mt-200 mt-sm-300">
+                <h2 class="fs-48 fs-sm-28">
                     About Sterling
                 </h2>
             </div>
