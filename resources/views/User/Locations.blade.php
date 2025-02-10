@@ -32,7 +32,7 @@
 @endpush
 
 @section('user-main-section')
-    <div class="row mx-auto text-center mt-50">
+    <div class="row mx-auto mt-50">
         <div class="col-md-12">
             <h3 class="fs-48 fs-sm-25">Our Locations</h3>
             <p>We offer a diverse selection of properties throughout London.</p>
@@ -40,14 +40,14 @@
     </div>
 
     @isset($fetchAllLocations)
-        <div class="row ">
+        <div class="row mx-auto">
             @foreach ($fetchAllLocations as $record)
-                <div class="col-md-4 mt-3 mb-5 mx-auto text-center">
+                <div class="col-md-4 mt-3 mb-5">
                     <a href="{{route("LocationDetail", ["id"=>$record->id])}}">
                         <img src="{{ asset('Locations/' . $record->thumbnail_img) }}" alt="{{ $record->location }}"
                         class="img-fluid thumbnail-img">
                     </a>
-                    <h5 class="mt-2 text-center">{{ $record->location }}</h5>
+                    <h5 class="mt-2">{{ $record->location }}</h5>
                 </div>
             @endforeach
         </div>
@@ -88,12 +88,7 @@
 
                 <div class="row d-flex justify-content-between mt-5">
                     <div class="col-md-5 mb-sm-40">
-                        <input type="text" name="company_name" class="form-control" placeholder="Company Name *">
-                        <small class="text-danger">
-                            @error('company_name')
-                                {{ $message }}
-                            @enderror
-                        </small>
+                        <input type="text" name="company_name" class="form-control" placeholder="Company Name ">
                     </div>
                     <div class="col-md-5">
                         <input type="text" name="phone_number" class="form-control" placeholder="Phone Number *">

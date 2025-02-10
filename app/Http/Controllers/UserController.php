@@ -386,7 +386,6 @@ class UserController extends Controller
         $request->validate([
             "fullname" => "required",
             "email" => "required",
-            "company_name" => "required",
             "phone_number" => "required",
             "arrival_date" => "required",
             "departure_date" => "required",
@@ -396,7 +395,7 @@ class UserController extends Controller
         $isEnquiryCreated = DB::table("location_inquiry")->insert([
             "full_name" => $request->fullname,
             "email" => $request->email,
-            "company_name" => $request->company_name,
+            "company_name" => $request->company_name ?? "Not Provided",
             "phone_number" => $request->phone_number,
             "arrival_date" => $request->arrival_date,
             "departure_date" => $request->departure_date,
