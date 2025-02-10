@@ -21,6 +21,7 @@
 @endpush
 
 @push('CTA')
+   <div class="container-fluid">
     <div class="row mt-5">
         <div class="col-md-9 mx-auto">
             <h2 class="text-center fs-48 fs-sm-25">
@@ -28,6 +29,7 @@
             </h2>
         </div>
     </div>
+   </div>
 @endpush
 
 @section('user-main-section')
@@ -50,11 +52,6 @@
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="{{old("company_name")}}">
-                        <small class="text-danger">
-                            @error('company_name')
-                                {{ $message }}
-                            @enderror
-                        </small>
                     </div>
                 </div>
 

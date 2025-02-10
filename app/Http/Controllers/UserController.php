@@ -498,7 +498,6 @@ class UserController extends Controller
     {
         // Form Validation
         $request->validate([
-            "company_name" => "required",
             "fullname" => "required",
             "email" => "required",
             "phone_number" => "required",
@@ -506,7 +505,7 @@ class UserController extends Controller
         ]);
 
         $isEnquiryCreated = DB::table("general_inquiry")->insert([
-            "company_name" => $request->company_name,
+            "company_name" => $request->company_name ?? "Not Provided",
             "full_name" => $request->fullname,
             "email" => $request->email,
             "phone_number" => $request->phone_number,
