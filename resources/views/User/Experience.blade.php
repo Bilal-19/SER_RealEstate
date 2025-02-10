@@ -38,17 +38,29 @@
             border-radius: 16px;
         }
 
-        .standard-img{
-            height: fit-content;
-            width: fit-content;
-            object-fit: cover;
+        .standard-card{
+            height: 100px;
+            width: 100px;
+        }
+
+        .standard-card img{
+            display: block;
+            margin: 10px auto;
         }
 
         .style-experience-text{
             line-height: 1.2;
             letter-spacing: 0.8px;
             text-align: justify;
-            font-weight: 500;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width: 768px){
+            .standard-card{
+                margin-top: 20px;
+                height: fit-content;
+                width: fit-content;
+            }
         }
     </style>
 @endpush
@@ -63,15 +75,16 @@
             <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
                 <p class="mt-20 style-experience-text">
-                    We understand when staying in one of our apartments, you're often far from home, so whether it's
-                    offering
-                    advice on your local area, or getting a special request delivered to your apartment, our 24/7 Guest
-                    Relations Team is always on hand to help.
-                </p>
-                <p class="style-experience-text">
-                    Planning to stay with us? Take a look at our guest journey below to understand how our team look after
-                    you
-                    every step of the way.
+                    We strive to make your stay as seamless and enjoyable as
+                    possible. From the moment you arrive, you can expect a warm welcome and
+                    attentive service tailored to your needs. Our team is dedicated to ensuring that
+                    every detail is taken care of, allowing you to focus on what truly matters—
+                    whether it's a successful business trip or a relaxing getaway. With our extensive
+                    knowledge of the local area, we can recommend the best dining experiences,
+                    cultural attractions, and leisure activities to enhance your stay. At Sterling
+                    Executive, we believe in going the extra mile to create memorable experiences
+                    for our guests, making you feel right at home, no matter how far you've
+                    traveled.
                 </p>
             </div>
         </div>
@@ -86,11 +99,11 @@
             </div>
         </div>
 
-        <div class="row d-flex justify-content-around align-items-center">
+        <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
-                <div class="col-md-1 col-8">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid standard-img">
-                    <p class="text-center fw-medium text-charcoal-black">{{ $record->standard_text }}</p>
+                <div class="col-md col-12 text-center standard-card">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
+                    <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach
         </div>
