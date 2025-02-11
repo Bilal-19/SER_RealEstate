@@ -44,7 +44,7 @@
 @endpush
 
 @section('user-main-section')
-<div class="container-fluid mt-sm-150">
+<div class="container-fluid mt-sm-150 mt-150">
     <div class="row mt-100">
         <div class="col-md-11 mx-auto">
             <h3>FAQs</h3>

@@ -17,7 +17,7 @@
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-sm-150">
+    <div class="container-fluid mt-sm-150 mt-150">
         <div class="row mt-50 mx-auto mt-100">
             <div class="col-md-12 text-center">
                 <h3 class="fs-48 fs-sm-25">Contact Us</h3>

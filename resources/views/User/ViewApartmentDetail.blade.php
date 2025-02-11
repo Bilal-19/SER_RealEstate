@@ -135,7 +135,7 @@
     </style>
 @endpush
 @section('user-main-section')
-    <div class="container-fluid mt-sm-150 mt-100">
+    <div class="container-fluid mt-sm-150 mt-150">
         @php
             $numericKeyImages = array_values($images);
         @endphp

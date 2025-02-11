@@ -32,10 +32,10 @@
 @endpush
 
 @push('CTA')
-    <div class="container-fluid mt-sm-150">
+    <div class="container-fluid mt-150 mt-sm-150">
         <div class="row mt-5">
             <div class="col-md-8 mx-auto search-container">
-                <p class="text-center ">BOOK NOW</p>
+                <p class="text-center">BOOK NOW</p>
                 <h2 class="text-center fs-48 fs-sm-25">
                     Premium Corporate Accommodation in London
                 </h2>

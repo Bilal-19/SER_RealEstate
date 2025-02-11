@@ -27,7 +27,7 @@
 @endpush
 
 @push('CTA')
-   <div class="container-fluid mt-sm-150">
+   <div class="container-fluid mt-sm-150 mt-150">
     <div class="row mt-5">
         <div class="col-md-9 mx-auto">
             <h2 class="text-center fs-48 fs-sm-25">

@@ -57,8 +57,8 @@
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-100 mt-sm-150">
-        <div class="row d-flex justify-content-evenly align-items-center ">
+    <div class="container-fluid mt-150 mt-sm-150">
+        <div class="mt-5 row d-flex justify-content-evenly align-items-center">
             <div class="col-md-6">
                 <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
                     class="img-fluid rounded">
@@ -97,9 +97,9 @@
                     tailored to
                     them.
                 </p>
-                <a href="{{ route('view.Experience') }}" class="brand-btn">Learn More</a>
+                <a href="{{ route('view.Experience') }}" class="brand-btn mb-sm-25">Learn More</a>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 mt-sm-25">
                 <img src="{{ asset('assets/images/kitchen.png') }}" alt="Kitchen" class="img-fluid rounded">
             </div>
         </div>

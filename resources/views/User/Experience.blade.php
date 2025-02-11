@@ -70,7 +70,7 @@
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-100 mt-sm-150">
+    <div class="container-fluid mt-150 mt-sm-150">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-6">
                 <img src="{{ asset('assets/images/sterling-experience.png') }}" alt=""

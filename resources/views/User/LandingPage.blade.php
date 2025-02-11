@@ -126,7 +126,7 @@
 @endpush
 
 @push('CTA')
-    <div class="container-fluid home-bg-img mb-5 mt-100 mt-sm-150">
+    <div class="container-fluid home-bg-img mb-5 mt-150 mt-sm-200">
         <div class="row">
             <div class="col-md-9 mx-auto text-light search-container mt-300 mt-sm-100">
                 <h2 class="text-center fs-56 fs-sm-28">

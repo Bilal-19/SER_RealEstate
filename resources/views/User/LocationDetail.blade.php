@@ -44,7 +44,7 @@
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-100 mt-sm-150">
+    <div class="container-fluid mt-150 mt-sm-150">
         <div class="row">
             <h3>Corporate Stays in {{ $locationName }}</h3>
         </div>
