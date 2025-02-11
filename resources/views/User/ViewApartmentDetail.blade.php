@@ -300,9 +300,9 @@
 
             function getRoomValue(a) {
                 if (a == 1) {
-                    paraEl.innerHTML = `Price from ${{ $findApartment->one_bedroom_price }} + VAT per night`
+                    paraEl.innerHTML = `Price from £{{ $findApartment->one_bedroom_price }} + VAT per night`
                 } else if (a == 2) {
-                    paraEl.innerHTML = `Price from ${{ $findApartment->two_bedroom_price }} + VAT per night`
+                    paraEl.innerHTML = `Price from £{{ $findApartment->two_bedroom_price }} + VAT per night`
                 } else {
                     paraEl.innerHTML = `Please select no of bedrooms.`
                 }
