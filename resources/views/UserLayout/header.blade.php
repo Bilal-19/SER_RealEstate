@@ -45,12 +45,6 @@
         }
 
         @media screen and (max-width: 768px) {
-            .navbar-brand img {
-                height: 70px;
-                width: 320px;*/;
-                object-fit: contain;
-            }
-
             .mt-sm-25{
                 margin-top: 25px;
             }
@@ -64,12 +58,11 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row sticky-header">
-            <nav class="navbar navbar-expand-lg bg-white">
+        <div class="row ">
+            <nav class="navbar navbar-expand-lg bg-white sticky-header">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        <img src="{{ asset('assets/images/ser_logo.png') }}" alt="Sterling Executive Residential Logo"
-                            class="img-fluid">
+                        <img src="{{ asset('assets/images/ser_header_logo.png') }}" alt="Sterling Executive Residential Logo">
                     </a>
                     <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
