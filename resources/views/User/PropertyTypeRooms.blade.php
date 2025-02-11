@@ -34,7 +34,7 @@
                                     class="img-fluid rounded apartment-thumbnail">
                             </a>
                             <p class="mb-0">{{ $record->street_address }}</p>
-                            <p>From £{{ $record->one_bedroom_price }} per night</p>
+                            <p class="fs-14">From £{{ $record->one_bedroom_price }} per night</p>
                         </div>
                     @endforeach
                 </div>

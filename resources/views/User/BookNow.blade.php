@@ -19,6 +19,21 @@
             font-size: 20px;
         }
 
+        .search-btn {
+            background-color: #c0c0c0;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
+
+        #book-apartment-searchbar .form-control {
+            border-right: 2px solid #ddd;
+        }
+
+        #book-apartment-searchbar .form-control:last-of-type {
+            border-right: none;
+        }
+
         @media screen and (max-width: 768px) {
             .form-control::placeholder {
                 font-size: 14px;

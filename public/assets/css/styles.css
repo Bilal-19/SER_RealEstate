@@ -18,104 +18,15 @@ body{
     color: #303030;
 }
 
-.sticky-header{
-    position: fixed;
-    width: -webkit-fill-available;
-}
-/* #top-header {
-    background-color: #c0c0c0;
-    color: white;
-} */
-
-/* #top-header a {
-    text-decoration: none;
-    color: white;
-} */
-
-.navbar-brand {
-    color: #c0c0c0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
-
-#first{
-    font-family: "Cormorant Garamond", serif;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
-#second{
-    font-family: "Montserrat", serif;
-    letter-spacing: 3px;
-    display: block;
-    text-align: center;
-}
-
-#sticky-header{
-    position: sticky;
-    top: 0;
-}
 
 .nav-link {
     color: #c0c0c0;
     font-weight: 500;
 }
 
-.nav-link-transition {
-    position: relative;
-}
 
-.nav-link-transition::after {
-    content: "";
-    height: 2px;
-    width: 100%;
-    /* background: #c0c0c0; */
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    opacity: 0;
-    transition: all 0.2s;
-    pointer-events: none;
-}
 
-/* Landing Page */
 
-#book-apartment-searchbar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.search-btn{
-    background-color: #c0c0c0;
-    border: none;
-    padding: 10px 12px;
-    border-radius: 6px;
-}
-.top-rated-apartment > img{
-    width: 100%;
-    border-radius: 10px;
-}
-
-.user-active-link{
-    text-decoration: underline;
-    color: #c0c0c0;
-    font-weight: 600;
-}
-
-#book-now-btn{
-    background-color: #c0c0c0;
-    color: #303030;
-    padding: 6px 8px;
-    border-radius: 6px;
-    width: 250px;
-    font-weight: 250;
-}
 
 
 

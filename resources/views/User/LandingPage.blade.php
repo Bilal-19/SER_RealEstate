@@ -33,7 +33,7 @@
 
         #explore-cta-apartment {
             position: relative;
-            right: -1150px;
+            right: -1050px;
             top: -90px;
             color: white;
             background-color: #c0c0c0;
@@ -88,6 +88,21 @@
             margin-bottom: 35px;
         }
 
+        .search-btn {
+            background-color: #c0c0c0;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
+
+
+        .top-rated-apartment>img {
+            width: 1200px;
+            border-radius: 10px;
+            display: block;
+            margin: 10px auto;
+        }
+
         @media screen and (max-width: 768px) {
             #explore-cta-apartment {
                 right: -160px;
@@ -118,7 +133,7 @@
                 margin-top: 20px;
             }
 
-            .mt-sm-150{
+            .mt-sm-150 {
                 margin-top: 150px;
             }
         }
@@ -164,7 +179,7 @@
                 <a href="{{ route('Property.Houses') }}" class="text-dark">
                     <h4>Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
                 </a>
-                <p>
+                <p class="col-md-11">
                     If you need the extra space, book an entire place for your team or family.
                 </p>
             </div>
@@ -174,7 +189,7 @@
                 <a href="{{ route('Property.Apartments') }}" class="text-dark">
                     <h4>Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
                 </a>
-                <p>
+                <p class="col-md-11">
                     Stay in some of the most iconic locations in London in shared buildings.
                 </p>
             </div>
@@ -183,7 +198,7 @@
                 <a href="{{ route('Property.Rooms') }}" class="text-dark">
                     <h4>Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
                 </a>
-                <p>
+                <p class="col-md-11">
                     Enjoy your own studio space with a common room to socialise with the rest of the team.
                 </p>
             </div>
@@ -194,7 +209,8 @@
         @isset($topRatedApartment)
             <div class="row mt-5 mb-5">
                 <div class="col-md-12 mx-auto top-rated-apartment">
-                    <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}</h2>
+                    <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}
+                    </h2>
                     <p class="col-md-9 fs-18 fs-sm-16">{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
                     <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
                         class="img-fluid mt-3">

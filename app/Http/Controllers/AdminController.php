@@ -206,12 +206,12 @@ class AdminController extends Controller
             $image = explode("|", $findApartment->multiple_images);
         }
 
-        if ($request->file('featuredImg')) {
+        if ($request->file('featured_img')) {
             // Creating timestamp of featured image
             $featuredImgTimeStamp = time() . '.' . $request->featured_img->getClientOriginalExtension();
 
             // Store featured image to public folder
-            $request->featuredImg->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
+            $request->featured_img->move('Apartment/Thubmbnail', $featuredImgTimeStamp);
         } else {
             $featuredImgTimeStamp = $findApartment->featured_image;
         }

@@ -3,12 +3,12 @@
 @push('style')
     <style>
         .about-bg {
-            background-image: linear-gradient(to right, rgba(0,0,0, 0.25) 0 100%), url('/assets/images/about_banner.jpg');
+            background-image: linear-gradient(to right, rgba(0,0,0, 0.25) 0 100%), url('/assets/images/about_banner.png');
             background-size: cover;
             background-attachment: scroll;
             background-repeat: no-repeat;
             background-position: center;
-            height: 1000px;
+            height: 850px;
             border-radius: 12px;
             margin: 50px auto;
             width: 92%;
