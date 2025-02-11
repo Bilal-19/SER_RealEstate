@@ -42,6 +42,17 @@
             display: block;
             margin: 10px auto;
         }
+
+        .flex-container{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #account-team{
+            border-radius: 12px;
+        }
+
         @media screen and (max-width: 768px){
             .standard-card{
                 margin-top: 20px;
@@ -52,6 +63,18 @@
             .mt-sm-150{
                 margin-top: 150px;
             }
+
+            .flex-container{
+                flex-direction: column-reverse;
+            }
+
+            #account-team{
+                margin-top: 50px;
+            }
+
+            .mb-sm-15{
+                margin-bottom: 15px;
+            }
         }
     </style>
 @endpush
@@ -59,9 +82,9 @@
 @section('user-main-section')
     <div class="container-fluid mt-150 mt-sm-150">
         <div class="mt-5 row d-flex justify-content-evenly align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-sm-15">
                 <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
-                    class="img-fluid rounded">
+                    class="img-fluid" id="account-team">
             </div>
             <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">Your Dedicated Account Team</h3>
@@ -81,7 +104,7 @@
 
 
     <div class="container-fluid mt-150 mt-sm-75">
-        <div class="row d-flex justify-content-evenly align-items-center ">
+        <div class="row flex-container">
             <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">Everything you Need</h3>
                 <p class="style-corporate-text">
@@ -99,7 +122,7 @@
                 </p>
                 <a href="{{ route('view.Experience') }}" class="brand-btn mb-sm-25">Learn More</a>
             </div>
-            <div class="col-md-7 mt-sm-25">
+            <div class="col-md-7 mt-sm-25 mb-sm-15">
                 <img src="{{ asset('assets/images/kitchen.png') }}" alt="Kitchen" class="img-fluid rounded">
             </div>
         </div>

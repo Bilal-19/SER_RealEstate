@@ -65,6 +65,10 @@
                .mt-sm-150{
                 margin-top: 150px;
             }
+
+            .mb-sm-15{
+                margin-bottom: 15px;
+            }
         }
     </style>
 @endpush
@@ -72,7 +76,7 @@
 @section('user-main-section')
     <div class="container-fluid mt-150 mt-sm-150">
         <div class="row d-flex justify-content-around align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-sm-15">
                 <img src="{{ asset('assets/images/sterling-experience.png') }}" alt=""
                     class="img-fluid sterling-experience-img">
             </div>
