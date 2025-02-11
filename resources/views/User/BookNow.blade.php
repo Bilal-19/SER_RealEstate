@@ -15,8 +15,11 @@
         }
 
         .form-control::placeholder {
-            color: white;
-            font-size: 20px;
+            color: #ffffff;
+            font-family: "Montserrat", serif;
+            text-align: center;
+            font-weight: lighter;
+            font-size: 18px;
         }
 
         .search-btn {

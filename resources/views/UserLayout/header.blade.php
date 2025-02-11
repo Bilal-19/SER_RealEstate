@@ -59,9 +59,16 @@
             font-weight: 200;
         }
 
+        .navbar-brand img{
+            height: 95px;
+        }
+
+
+
+
         @media screen and (max-width: 768px) {
             .navbar-brand img {
-                height: 80px;
+                height: 95px;
                 width: 291px;
             }
 
@@ -81,39 +88,33 @@
 </head>
 
 <body>
-    <div class="container-fluid mb-sm-150">
-        <div class="row ">
-            <nav class="navbar navbar-expand-lg bg-white sticky-header">
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        <img src={{ asset('assets/images/ser_header_logo.png') }} class="d-inline-block align-top"
-                            alt="">
+                        <img src={{ asset('assets/images/ser_header_logo.png') }} class="d-inline-block align-top" alt="">
                     </a>
-                    <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item mx-3">
-                                <a class="nav-link {{ request()->routeIs('view.Experience') ? 'user-active-link' : '' }}"
-                                    href="{{ route('view.Experience') }}">The Experience</a>
+                                <a class="nav-link {{ request()->routeIs('view.Experience') ? 'user-active-link' : '' }}" href="{{ route('view.Experience') }}">The Experience</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link {{ request()->routeIs('View.Corporate') ? 'user-active-link' : '' }}"
-                                    href="{{ route('View.Corporate') }}">Corporate</a>
+                                <a class="nav-link {{ request()->routeIs('View.Corporate') ? 'user-active-link' : '' }}" href="{{ route('View.Corporate') }}">Corporate</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link {{ request()->routeIs('View.Enquiry.Form') ? 'user-active-link' : '' }}"
-                                    href="{{ route('View.Enquiry.Form') }}">Join Sterling</a>
+                                <a class="nav-link {{ request()->routeIs('View.Enquiry.Form') ? 'user-active-link' : '' }}" href="{{ route('View.Enquiry.Form') }}">Join Sterling</a>
                             </li>
                         </ul>
-                        <a href="{{ route('Book.Now') }}" id="book-now-btn"><i class="fa fa-search mx-2"></i> Search a
-                            location</a>
+                        <a href="{{ route('Book.Now') }}" id="book-now-btn"><i class="fa fa-search mx-2"></i> Search a location</a>
                     </div>
                 </div>
             </nav>
+
         </div>
     </div>
     @stack('CTA')

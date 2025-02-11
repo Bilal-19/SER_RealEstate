@@ -172,17 +172,6 @@
             </div>
         </div>
 
-
-        {{-- <div class="row">
-    <div class="col-md-2 ms-auto">
-        <a href="" class="brand-btn">
-            Add to favourites
-            <img src="{{ asset('assets/images/star.png') }}" alt="" class="img-fluid"
-                style="mix-blend-mode: color-burn;">
-        </a>
-    </div>
-</div> --}}
-
         <div class="row mt-5">
             <div class="col-md-7">
                 <h4 class="mb-5">{{ $findApartment->apartment_name }}</h4>
@@ -234,10 +223,10 @@
                         </select>
                         <p class="mt-3" id="price-tag"></p>
                     </div>
-                    <button class="ms-auto">Check Availability</button>
+                    <button class="ms-auto mb-3">Check Availability</button>
                     @isset($isAvailable)
                         @if ($isAvailable == true)
-                            <p class="availability-text-success ff-poppins">
+                            <p class="availability-text-success mt-2">
                                 <img src="{{ asset('assets/images/success_circle.png') }}" alt="availability check">
                                 Apartment is Available
                             </p>
@@ -250,7 +239,7 @@
                                 ]) }}">Book
                                 Now</a>
                         @elseif ($isAvailable == false)
-                            <p class="availability-text-danger">Apartment is Not Available</p>
+                            <p class="availability-text-danger mt-2">Apartment is Not Available</p>
                         @endif
                     @endisset
                 </form>

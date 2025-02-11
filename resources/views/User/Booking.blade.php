@@ -20,14 +20,20 @@
         }
 
         .book-apartment-thumbnail {
-            height: 98px;
-            width: 120px;
+            height: 150px;
+            width: 150px;
+            object-fit: contain;
         }
 
         .price-container {
-            height: 390px;
+            height: 490px;
             width: 441px;
             padding: 24px;
+        }
+
+        .booking-flex-container{
+            display: flex;
+            justify-content: space-around;
         }
 
         @media screen and (max-width: 768px) {
@@ -36,7 +42,17 @@
             }
 
             .price-container {
-                margin-top: 10px;
+                height: 490px;
+                margin-bottom: 20px;
+                padding: 12px;
+            }
+
+            .mt-sm-150{
+                margin-top: 160px;
+            }
+
+            .booking-flex-container{
+                flex-direction: column-reverse;
             }
         }
     </style>
@@ -181,17 +197,17 @@
             'Turkey',
         ];
     @endphp
-    <div class="container-fluid mt-5 mb-5">
-        <div class="row d-flex justify-content-around">
+    <div class="container-fluid mb-5 mt-sm-150 mt-150">
+        <div class="row booking-flex-container">
             <div class="col-md-5 bg-white border-grey border-radius-16">
                 <div class="booking-container mt-3">
                     <h4 class=" fs-20">Booking Details</h4>
-                    <div class="d-flex mt-4">
-                        <div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
                             <p class=" mb-0">Check In Date:</p>
                             <p class="booking-date">{{ date('d M Y', strtotime($checkIn)) }}</p>
                         </div>
-                        <div class="mx-5">
+                        <div class="col-md-6">
                             <p class=" mb-0">Check Out Date:</p>
                             <p class="booking-date">{{ date('d M Y', strtotime($checkOut)) }}</p>
                         </div>
@@ -503,14 +519,14 @@
                 </form>
             </div>
             <div class="col-md-4 bg-white border-grey border-radius-16 price-container">
-                <div class="d-flex justify-content-around align-items-center">
-                    <div>
+                <div class="row">
+                    <div class="col-md-6">
                         <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featured_image) }}"
                             alt="{{ $findApartment->apartment_name }}"
                             class="img-fluid book-apartment-thumbnail rounded">
                     </div>
-                    <div>
-                        <h5 class="fs-18  fw-medium">{{ $findApartment->apartment_name }}</h5>
+                    <div class="col-md-6">
+                        <h5 class="fs-18 fw-medium">{{ $findApartment->apartment_name }}</h5>
                         <p>{{ $findApartment->street_address }}</p>
                     </div>
                 </div>
