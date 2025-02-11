@@ -32,17 +32,15 @@ Route::middleware('auth')->group(function () {
 
 Route::get("/", [UserController::class, 'index'])->name(name: 'Landing.Page');
 Route::get("appartments", [UserController::class, 'viewAppartments'])->name('View.Appartments');
-Route::get("benefits", [UserController::class, 'viewBenefits'])->name('View.Benefits');
 Route::get("corporate", [UserController::class, 'viewCorporate'])->name('View.Corporate');
-Route::get("about", [UserController::class, 'viewAbout'])->name('View.About');
-Route::get("blogs", [UserController::class, 'viewBlogs'])->name('View.Blogs');
-Route::get("join/sterling", [UserController::class, 'viewEnquiryForm'])->name('View.Enquiry.Form');
+Route::get("about", [UserController::class, 'aboutSterling'])->name('View.About');
+Route::get("join/sterling", [UserController::class, 'JoinSterlingEnquiry'])->name('View.Enquiry.Form');
 Route::get("experience", [UserController::class, 'viewExperience'])->name('view.Experience');
 Route::get("user/locations", [UserController::class, 'Locations'])->name('view.Locations');
 Route::get("contact/us", [UserController::class, 'ContactUs'])->name('view.ContactUs');
 Route::get("booking/enquiry", [UserController::class, 'ViewBookingEnquiry'])->name(name: 'Booking.Enquiry');
 Route::post("submit/booking/enquiry", [UserController::class, 'SubmitBookingEnquiry'])->name(name: 'SubmitBookingEnquiry');
-Route::get("general/enquiry", [UserController::class, 'ViewGeneralEnquiry'])->name(name: 'General.Enquiry');
+Route::get("general/enquiry", [UserController::class, 'generalEnquiry'])->name(name: 'General.Enquiry');
 Route::post("submit/general/enquiry", [UserController::class, 'SubmitGeneralEnquiry'])->name(name: 'SubmitGeneralEnquiry');
 Route::post("submit/location/enquiry", [UserController::class, 'SubmitLocationEnquiry'])->name(name: 'SubmitLocationEnquiry');
 Route::get("faqs", [UserController::class, 'FAQs'])->name(name: 'FAQs');
@@ -75,7 +73,6 @@ Route::post("/admin/update/standard/{id}", [AdminController::class, 'updateStand
 Route::get("/admin/blog", [AdminController::class, 'Blog'])->name('Blog');
 Route::get("/admin/add/blog", [AdminController::class, 'AddBlog'])->name('Add.Blog');
 Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name('Create.Blog');
-Route::get("/admin/read/blog/{id}", [UserController::class, 'readBlog'])->name('Read.Blog');
 Route::get("/admin/edit/blog/{id}", [AdminController::class, 'editBlog'])->name('Edit.Blog');
 Route::post("/admin/update/blog/{id}", [AdminController::class, 'updateBlog'])->name('Update.Blog');
 Route::get("/admin/delete/blog/{id}", [AdminController::class, 'deleteBlog'])->name('Delete.Blog');
@@ -102,7 +99,7 @@ Route::get("/edit/apartment/{id}", [AdminController::class, 'editApartment'])->n
 Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->name('Toggle.Fav');
 
 // Testimonials - Admin
-Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
+Route::get("/admin/testimonials", action: [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
 Route::get("/admin/add/testimonial", [AdminController::class, 'AddTestimonials'])->name('Admin.AddTestimonials');
 Route::post("/admin/create/testimonial", [AdminController::class, 'createTestimonials'])->name('Admin.CreateTestimonials');
 
@@ -116,10 +113,7 @@ Route::get("/booking/{id}/{checkIn}/{checkOut}/{bedrooms}", [UserController::cla
 Route::get("/thankyou", [UserController::class, 'ThankYou']);
 
 
-// Testing purpose
-Route::get("/nearby", [UserController::class, 'getNeighbours']);
-
-Route::get("/book/now", [UserController::class, 'BookNow'])->name('Book.Now');
+Route::get("/search/location", [UserController::class, 'SearchLocation'])->name('Book.Now');
 
 
 

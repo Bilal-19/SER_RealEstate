@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-use App\Http\Controllers\AdminController;
 use Stripe;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendPaymentVoucher;
@@ -37,11 +36,9 @@ class UserController extends Controller
     }
     public function index()
     {
-        $favApartmentRecords = DB::table('apartments')->where('isFavourite', '=', 1)->get();
         $topRatedApartment = DB::table('apartments')->where('isFavourite', '=', 1)->first();
         $fetchAllTestimonials = DB::table('feedback')->get();
         return view('User.LandingPage')->with(compact(
-            'favApartmentRecords',
             'topRatedApartment',
             'fetchAllTestimonials'
         ));
@@ -52,44 +49,19 @@ class UserController extends Controller
         return view('User.Appartments');
     }
 
-    public function viewBenefits()
-    {
-        $amenities = DB::table('amenity')->get();
-        $policies = DB::table('policy')->get();
-        return view('User.Benefits')->with(compact(
-            'amenities',
-            'policies'
-        ));
-    }
-
     public function viewCorporate()
     {
         $fetchAllStandards = DB::table('standards')->get();
         return view('User.Corporate', with(compact("fetchAllStandards")));
     }
 
-    public function viewAbout()
+    public function aboutSterling()
     {
         $blogRecords = DB::table('blogs')->limit(3)->get();
         return view('User.About')->with(compact('blogRecords'));
     }
 
-    public function viewBlogs()
-    {
-        $fetchAllBlogs = DB::table('blogs')->get();
-        return view("User.Blog")->with(compact('fetchAllBlogs'));
-    }
-
-    public function readBlog($id)
-    {
-        // Fetch first three blog
-        $fetchBlogs = DB::table('blogs')->limit(3)->get();
-
-        $fetchBlog = DB::table('blogs')->find($id);
-        return view('User.BlogDetail')->with(compact('fetchBlog', 'fetchBlogs'));
-    }
-
-    public function viewEnquiryForm()
+    public function JoinSterlingEnquiry()
     {
         return view("User.JoinSterling");
     }
@@ -308,48 +280,11 @@ class UserController extends Controller
     {
         return view('User.Thankyou');
     }
-
-    public function calculateNearestDistance($latitudeValue, $longitudeValue)
-    {
-        // $latitudeValue = '24.882311053274144';
-        // $longitudeValue = '67.04475512231853';
-        $nearestDistance = DB::table('apartments')
-            ->select(
-                '*',
-                DB::raw(
-                    "6371 * acos(cos(radians(" . $latitudeValue . "))
-            * cos(radians(apartments.latitude))
-            * cos(radians(apartments.longitude) - radians(" . $longitudeValue . ") )
-            + sin(radians(" . $latitudeValue . "))
-            * sin(radians(apartments.latitude))) AS Distance"
-                )
-            )
-            ->orderBy('Distance')
-            ->limit(8)
-            ->get();
-
-        return $nearestDistance;
-    }
     // Neighbors
-    public function getNeighbours()
+
+    public function SearchLocation()
     {
-        // Find first apartment
-        $firstApt = DB::table('apartments')->first();
-        if ($firstApt) {
-            $latitude = $firstApt->latitude;
-            $longitude = $firstApt->longitude;
-
-            $result = $this->calculateNearestDistance($latitude, $longitude);
-
-            return $result;
-        } else {
-            toastr()->error('No record found');
-        }
-    }
-
-    public function BookNow()
-    {
-        return view('User.BookNow');
+        return view('User.SearchLocation');
     }
 
     public function viewExperience()
@@ -489,7 +424,7 @@ class UserController extends Controller
         }
     }
 
-    public function ViewGeneralEnquiry()
+    public function generalEnquiry()
     {
         return view("User.GeneralEnquiry");
     }
