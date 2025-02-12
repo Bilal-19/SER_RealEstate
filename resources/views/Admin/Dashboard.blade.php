@@ -32,6 +32,12 @@
                         <i class="fa-solid fa-house-lock mx-2"></i> {{ $totalBookedApartments }} Booked
                     </h5>
                 </div>
+
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-sterling-sign"></i> {{ $totalRevenue }} Revenue
+                    </h5>
+                </div>
              </div>
             </div>
         </div>
