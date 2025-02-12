@@ -43,7 +43,7 @@
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="#" class="text-danger">
+                                <a href="{{route("Admin.DeleteTestimonial",["id"=>$record->id])}}" class="text-danger">
                                     <i class="fa-solid fa-trash"></i>
                                 </a>
                             </td>

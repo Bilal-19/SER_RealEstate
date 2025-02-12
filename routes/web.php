@@ -83,6 +83,7 @@ Route::get("admin/toggle/fav/apt/{id}", [AdminController::class, 'toggleFav'])->
 Route::get("/admin/testimonials", action: [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
 Route::get("/admin/add/testimonial", [AdminController::class, 'AddTestimonials'])->name('Admin.AddTestimonials');
 Route::post("/admin/create/testimonial", [AdminController::class, 'createTestimonials'])->name('Admin.CreateTestimonials');
+Route::get("/admin/del/testimonial/{id}", [AdminController::class, 'deleteTestimonial'])->name('Admin.DeleteTestimonial');
 
 
 

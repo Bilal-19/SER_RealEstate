@@ -22,8 +22,8 @@ class AdminController extends Controller
             $totalRevenue = DB::table('booking')->sum('total_amount');
 
             $totalApartments = DB::table('apartments')->count();
-            $totalAvailableApartments = DB::table('apartments')->where("status","=","available")->count();
-            $totalBookedApartments = DB::table('apartments')->where("status","=","Booked")->count();
+            $totalAvailableApartments = DB::table('apartments')->where("status", "=", "available")->count();
+            $totalBookedApartments = DB::table('apartments')->where("status", "=", "Booked")->count();
             return view('Admin.Dashboard')->with(compact(
                 'totalCorporateEnquiries',
                 "totalBookingEnquiries",
@@ -379,17 +379,20 @@ class AdminController extends Controller
         return view('Admin.CorporateEnquiries')->with(compact('fetchQueries'));
     }
 
-    public function getGeneralEnquiries(){
+    public function getGeneralEnquiries()
+    {
         $fetchQueries = DB::table('general_inquiry')->get();
         return view("Admin.GeneralEnquiries")->with(compact('fetchQueries'));
     }
 
-    public function getBookingEnquiries(){
+    public function getBookingEnquiries()
+    {
         $fetchQueries = DB::table('booking_inquiry')->get();
         return view("Admin.BookingEnquiries")->with(compact('fetchQueries'));
     }
 
-    public function getJoinSterlingEnquiries(){
+    public function getJoinSterlingEnquiries()
+    {
         $fetchQueries = DB::table('join_sterling_inquiry')->get();
         return view("Admin.JoinSterlingEnquiries")->with(compact('fetchQueries'));
     }
@@ -593,6 +596,19 @@ class AdminController extends Controller
 
         if ($isFeedbackCreated) {
             toastr()->success("Client testimonial added successfully");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    public function deleteTestimonial($id)
+    {
+        $isRecDeleted = DB::table("feedback")->where("id", "=", $id)->delete();
+
+        if ($isRecDeleted) {
+            toastr()->success("Selected testimonial deleted successfully");
             return redirect()->back();
         } else {
             toastr()->info('Something went wrong. Please try again later.');
