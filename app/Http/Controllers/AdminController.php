@@ -603,9 +603,38 @@ class AdminController extends Controller
         }
     }
 
+    public function editTestimonial($id)
+    {
+        $findRecord = DB::table("feedback")->find($id);
+        return view("Admin.EditTestimonial", with(compact("findRecord")));
+    }
+
+    public function updateTestimonial(Request $request, $id)
+    {
+        $isRecordUpdated = DB::table("feedback")->
+            where("id", "=", $id)->
+            update([
+                "name" => $request->client_name,
+                "message" => $request->client_message,
+                "rating" => $request->rating
+            ]);
+
+            if ($isRecordUpdated) {
+                toastr()->success("Selected testimonial updated successfully");
+                return redirect()->back();
+            } else {
+                toastr()->info('Something went wrong. Please try again later.');
+                return redirect()->back();
+            }
+
+
+    }
+
     public function deleteTestimonial($id)
     {
-        $isRecDeleted = DB::table("feedback")->where("id", "=", $id)->delete();
+        $isRecDeleted = DB::table("feedback")->
+            where("id", "=", $id)->
+            delete();
 
         if ($isRecDeleted) {
             toastr()->success("Selected testimonial deleted successfully");

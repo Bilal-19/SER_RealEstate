@@ -38,7 +38,7 @@
                             <td>{{ $record->rating }}</td>
                             <td>{{ $record->visibility }}</td>
                             <td class="text-center">
-                                <a href="#" class="text-primary">
+                                <a href="{{route("Admin.EditTestimonial",["id" => $record->id])}}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </td>

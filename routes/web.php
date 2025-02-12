@@ -84,6 +84,8 @@ Route::get("/admin/testimonials", action: [AdminController::class, 'Testimonials
 Route::get("/admin/add/testimonial", [AdminController::class, 'AddTestimonials'])->name('Admin.AddTestimonials');
 Route::post("/admin/create/testimonial", [AdminController::class, 'createTestimonials'])->name('Admin.CreateTestimonials');
 Route::get("/admin/del/testimonial/{id}", [AdminController::class, 'deleteTestimonial'])->name('Admin.DeleteTestimonial');
+Route::get("/admin/edit/testimonial/{id}", [AdminController::class, 'editTestimonial'])->name('Admin.EditTestimonial');
+Route::post("/admin/update/testimonial/{id}", [AdminController::class, 'updateTestimonial'])->name('Admin.UpdateTestimonial');
 
 
 
