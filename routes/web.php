@@ -55,36 +55,17 @@ Route::get("/view/available/appartment", [UserController::class, 'viewAvailableA
 Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Dashboard');
 Route::get("/admin/view/appartment", [AdminController::class, 'viewAppartment'])->name('View.Appartment');
 Route::get("/admin/add/appartment", [AdminController::class, 'addAppartment'])->name('Add.Appartment');
-Route::get("/admin/favourite/appartment", [AdminController::class, 'favouriteApartments'])->name('Favourite.Apartment');
+Route::get("/admin/top/rated/appartment", [AdminController::class, 'topRatedApartments'])->name('Favourite.Apartment');
 Route::get("/admin/add/favourite/appartment", [AdminController::class, 'addFavouriteApartment'])->name('Add.Favourite.Apartment');
 Route::post("/admin/create/favourite/appartment", [AdminController::class, 'createFavouriteApartment'])->name('Create.Favourite.Apartment');
 
-// Benefits - Admin
-Route::get("/admin/standards", [AdminController::class, 'Benefits'])->name('Standard');
-Route::get("/admin/add/standard", [AdminController::class, 'AddBenefit'])->name('Add.Standard');
+// Standards - Admin
+Route::get("/admin/standards", [AdminController::class, 'Standards'])->name('Standard');
+Route::get("/admin/add/standard", [AdminController::class, 'addStandard'])->name('Add.Standard');
 Route::post("/admin/create/standard", [AdminController::class, 'createStandard'])->name('Create.Standard');
 Route::get("/admin/edit/standard/{id}", [AdminController::class, 'editStandard'])->name('Edit.Standard');
 Route::get("/admin/delete/standard/{id}", [AdminController::class, 'deleteStandard'])->name('Delete.Standard');
 Route::post("/admin/update/standard/{id}", [AdminController::class, 'updateStandard'])->name('Update.Standard');
-
-
-
-// Blog - Admin
-Route::get("/admin/blog", [AdminController::class, 'Blog'])->name('Blog');
-Route::get("/admin/add/blog", [AdminController::class, 'AddBlog'])->name('Add.Blog');
-Route::post("/admin/create/blog", [AdminController::class, 'createBlog'])->name('Create.Blog');
-Route::get("/admin/edit/blog/{id}", [AdminController::class, 'editBlog'])->name('Edit.Blog');
-Route::post("/admin/update/blog/{id}", [AdminController::class, 'updateBlog'])->name('Update.Blog');
-Route::get("/admin/delete/blog/{id}", [AdminController::class, 'deleteBlog'])->name('Delete.Blog');
-
-
-// Policy - Admin
-Route::get("/admin/policy", [AdminController::class, 'Policy'])->name('Policy');
-Route::get("/admin/add/policy", [AdminController::class, 'AddPolicy'])->name('Add.Policy');
-Route::post("/admin/create/policy", [AdminController::class, 'createPolicy'])->name('Create.Policy');
-Route::get("/admin/edit/policy/{id}", [AdminController::class, 'editPolicy'])->name('Edit.Policy');
-Route::post("/admin/update/policy/{id}", [AdminController::class, 'updatePolicy'])->name('Update.Policy');
-Route::get("/admin/delete/policy/{id}", [AdminController::class, 'deletePolicy'])->name('Delete.Policy');
 
 
 // Apartment - Admin

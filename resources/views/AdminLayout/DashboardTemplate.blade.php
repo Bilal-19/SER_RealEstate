@@ -8,7 +8,6 @@
     <title>Sterling Executive International</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     <!-- Custom styles for this template -->
@@ -20,13 +19,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    {{-- Link Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
-    <link rel="stylesheet" href="{{asset("assets/css/Admin.css")}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/Admin.css') }}">
     @stack('style')
 </head>
 
@@ -168,8 +167,8 @@
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
         {{-- 'navbar-brand' --}}
         <a class="text-decoration-none text-light p-1 col-md-4 col-lg-2 me-0 d-flex align-items-center justify-content-between"
-            href="{{route('Dashboard')}}">
-            <img src="{{asset('company_logo.png')}}" alt="logo" style="height: 50px; width:50px;">
+            href="{{ route('Dashboard') }}">
+            <img src="{{ asset('company_logo.png') }}" alt="logo" style="height: 50px; width:50px;">
             <span class="mx-1">STERLING EXECUTIVE RESIDENTIAL</span>
         </a>
         <ul class="navbar-nav flex-row d-md-none">
@@ -220,7 +219,7 @@
 
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Apartments') ? 'admin-active-link text-light' : 'text-dark' }}"
-                                    aria-current="page" href="{{route('Apartments')}}">
+                                    aria-current="page" href="{{ route('Apartments') }}">
                                     <i class="fa-solid fa-building"></i>
                                     Apartments
                                 </a>
@@ -250,9 +249,9 @@
 
                             <li class="nav-item mb-2">
                                 <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('View.Booking') ? 'admin-active-link text-light' : 'text-dark' }}"
-                                    href="{{route('View.Booking')}}">
+                                    href="{{ route('View.Booking') }}">
                                     <i class="fa-solid fa-handshake"></i>
-                                   Booking
+                                    Booking
                                 </a>
                             </li>
 
@@ -264,55 +263,64 @@
                             </li> --}}
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Corporate.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Corporate.Enquiries')}}">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Corporate.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('Corporate.Enquiries') }}">
                                     <i class="fa-solid fa-briefcase"></i>Corporate Enquiries
                                 </a>
                             </li>
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('View.Users') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('View.Users')}}">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('View.Users') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('View.Users') }}">
                                     <i class="fa-solid fa-users"></i>User Management
                                 </a>
                             </li>
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Locations') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("Admin.Locations")}}">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Locations') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('Admin.Locations') }}">
                                     <i class="fa-solid fa-location-dot"></i>Locations
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Testimonials') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route('Admin.Testimonials')}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Testimonials') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('Admin.Testimonials') }}">
                                     <i class="fa-solid fa-quote-left"></i>Testimonials
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('General.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("General.Enquiries")}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('General.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('General.Enquiries') }}">
                                     <i class="fa-solid fa-info-circle"></i>General Enquiries
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Booking.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("Booking.Enquiries")}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Booking.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('Booking.Enquiries') }}">
                                     <i class="fa-solid fa-calendar-check"></i>Booking Enquiries
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Join.Sterling.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("Join.Sterling.Enquiries")}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Join.Sterling.Enquiries') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('Join.Sterling.Enquiries') }}">
                                     <i class="fa-solid fa-handshake"></i>Join Sterling Enquiries
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-2" >
-                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.FAQs') ? 'admin-active-link text-light' : 'text-dark' }}" href="{{route("Admin.FAQs")}}">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.FAQs') ? 'admin-active-link text-light' : 'text-dark' }}"
+                                    href="{{ route('Admin.FAQs') }}">
                                     <i class="fa-solid fa-question"></i>FAQs
                                 </a>
                             </li>
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3" href="{{route("Admin.Logout")}}">
+                                <a class="nav-link  d-flex align-items-center gap-3"
+                                    href="{{ route('Admin.Logout') }}">
                                     <i class="fas fa-sign-out"></i>
                                     Sign out
                                 </a>

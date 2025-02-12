@@ -24,11 +24,11 @@
                         <th>Delete</th>
                     </tr>
 
-                    @foreach ($fetchBenefits as $rec)
+                    @foreach ($fetchStandards as $rec)
                         <tr>
                             <td>{{ $rec->id }}</td>
                             <td>
-                                <img src="{{asset('Standards/'.$rec->standard_icon)}}" alt="{{$rec->standard_text}}">
+                                <img src="{{asset('Standards/'.$rec->standard_icon)}}" alt="{{$rec->standard_text}}" class="img-fluid">
                             </td>
                             <td>{{$rec->standard_text}}</td>
                             <td class="text-center">

@@ -14,19 +14,17 @@ class AdminController extends Controller
     {
         if (Auth::check()) {
             // Total Inquiries | Total Bookings | Revenue | Available Apartments
-            $totalInquiries = DB::table('corporate_inquiry')->count();
+            $totalCorporateEnquiries = DB::table('corporate_inquiry')->count();
             $totalBookings = DB::table('booking')->count();
             $totalRevenue = DB::table('booking')->sum('total_amount');
-            $totalBlogs = DB::table('blogs')->count();
             $totalApartments = DB::table('apartments')->count();
             // Bookings Trends | Revenue Trends
 
             // Recent Inquiries | Upcoming Bookings
             return view('Admin.Dashboard')->with(compact(
-                'totalInquiries',
+                'totalCorporateEnquiries',
                 'totalBookings',
                 'totalRevenue',
-                'totalBlogs',
                 'totalApartments'
             ));
         } else {
@@ -256,22 +254,22 @@ class AdminController extends Controller
         }
     }
     // Fav Appartment Section
-    public function favouriteApartments()
+    public function topRatedApartments()
     {
         $fetchFavApartment = DB::table('apartments')->where('isFavourite', '=', 1)->get();
-        return view('Admin.FavouriteApartment')->with(compact('fetchFavApartment'));
+        return view("Admin.TopRatedApartments")->with(compact('fetchFavApartment'));
     }
 
 
-    public function Benefits()
+    public function Standards()
     {
-        $fetchBenefits = DB::table('standards')->get();
-        return view('Admin.Benefits')->with(compact('fetchBenefits'));
+        $fetchStandards = DB::table('standards')->get();
+        return view('Admin.Standards')->with(compact('fetchStandards'));
     }
 
-    public function AddBenefit()
+    public function addStandard()
     {
-        return view("Admin.AddBenefits");
+        return view("Admin.AddStandards");
     }
 
 
@@ -338,165 +336,6 @@ class AdminController extends Controller
 
         if ($res) {
             toastr()->success('Record removed successfully');
-            return redirect()->back();
-        }
-    }
-
-
-    // Blog
-    public function Blog()
-    {
-        $fetchAllBlogs = DB::table('blogs')->get();
-        return view('Admin.Blog')->with(compact('fetchAllBlogs'));
-    }
-
-    public function AddBlog()
-    {
-        return view('Admin.AddBlog');
-    }
-
-    public function createBlog(Request $request)
-    {
-        $request->validate([
-            'thumbnailImage' => 'required',
-            'blogHeadline' => 'required',
-            'blogDetailContent' => 'required',
-            'blogPublishDate' => 'required'
-        ]);
-
-        $timeStampImg = time() . '.' . $request->thumbnailImage->getClientOriginalExtension();
-
-        // Store image to public folder
-        $request->thumbnailImage->move('Blog', $timeStampImg);
-        $result = DB::table('blogs')->insert([
-            'thumbnail_image' => $timeStampImg,
-            'blog_headline' => $request->blogHeadline,
-            'blog_content' => $request->blogDetailContent,
-            'publish_date' => $request->blogPublishDate,
-            'created_at' => now()
-        ]);
-
-        if ($result) {
-            toastr()->success('New blog published successfully');
-            return redirect()->back();
-        }
-    }
-
-    public function editBlog($id)
-    {
-        $findBlog = DB::table('blogs')->find($id);
-        return view('Admin.EditBlog')->with(compact('findBlog'));
-    }
-
-    public function updateBlog($id, Request $request)
-    {
-        // Create image timestamp path
-        if ($request->file('thumbnailImage')) {
-            $timestampImg = time() . '.' . $request->thumbnailImage->getClientOriginalExtenstion();
-            $request->thumbnailImage->move('Blog', $timestampImg);
-        } else {
-            $blog = DB::table('blogs')->find($id);
-            $timestampImg = $blog->thumbnail_image;
-        }
-        $isUpdated = DB::table('blogs')
-            ->where('id', '=', $id)
-            ->update([
-                'thumbnail_image' => $timestampImg,
-                'publish_date' => $request->blogPublishDate,
-                'blog_headline' => $request->blogHeadline,
-                'blog_content' => $request->blogDetailContent
-            ]);
-
-        if ($isUpdated) {
-            toastr()->success('Blog updated successfully');
-            return redirect()->back();
-        } else {
-            toastr()->error('No changes detected.');
-            return redirect()->back();
-        }
-    }
-
-    public function deleteBlog($id)
-    {
-        $isDeleted = DB::table('blogs')->where('id', '=', $id)->delete();
-        if ($isDeleted) {
-            toastr()->success('Blog deleted successfully');
-            return redirect()->back();
-        }
-    }
-
-    public function Policy()
-    {
-        $fetchAllPolicies = DB::table('policy')->get();
-        return view('Admin.Policy')->with(compact('fetchAllPolicies'));
-    }
-
-    public function AddPolicy()
-    {
-        return view('Admin.AddPolicy');
-    }
-
-    public function createPolicy(Request $request)
-    {
-        // Form Validation
-        $request->validate([
-            'icon' => 'required|file',
-            'policyName' => 'required'
-        ]);
-        // Store Policy Icon to Public folder
-        $timeStmpImg = time() . '.' . $request->icon->getClientOriginalExtension();
-
-        $request->icon->move('Policy/Icons', $timeStmpImg);
-        $res = DB::table('policy')->insert([
-            'policy_icon' => $timeStmpImg,
-            'policy_name' => $request->policyName,
-            'created_at' => now()
-        ]);
-
-        if ($res) {
-            toastr()->success('Policy Information Added Successfully');
-            return redirect()->back();
-        }
-    }
-
-    public function editPolicy($id)
-    {
-        $findPolicy = DB::table('Policy')->find($id);
-        return view('Admin.EditPolicy')->with(compact('findPolicy'));
-    }
-
-    public function updatePolicy($id, Request $request)
-    {
-
-        // Store Policy Icon to Public folder
-        if ($request->file('icon')) {
-            $timeStmpImg = time() . '.' . $request->icon->getClientOriginalExtension();
-            $request->icon->move('Policy/Icons', $timeStmpImg);
-        } else {
-            $timeStmpImg = DB::table('policy')->where('id', '=', $id)->value('policy_icon');
-        }
-
-
-        $result = DB::table('Policy')
-            ->where('id', '=', $id)
-            ->update([
-                'policy_icon' => $timeStmpImg,
-                'policy_name' => $request->policyName,
-                'updated_at' => now()
-            ]);
-
-        if ($result) {
-            toastr()->success('Policy record updated successfully');
-            return redirect()->back();
-        }
-    }
-
-    public function deletePolicy($id)
-    {
-        $isDeleted = DB::table('Policy')->where('id', '=', $id)->delete();
-
-        if ($isDeleted) {
-            toastr()->success('Policy record removed successfully');
             return redirect()->back();
         }
     }

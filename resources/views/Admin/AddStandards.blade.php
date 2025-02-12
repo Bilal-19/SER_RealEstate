@@ -9,7 +9,7 @@
             <form action="{{ route('Create.Standard') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-6 mx-auto">
-                    <label class="form-label mb-0">Upload an Icon Image for Standard: </label>
+                    <label class="form-label mb-0">Upload Icon: </label>
                     <input type="file" name="standard_icon" class="form-control">
                     <small class="text-danger">
                         @error('icon')
