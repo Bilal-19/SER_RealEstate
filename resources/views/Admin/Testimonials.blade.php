@@ -36,7 +36,13 @@
                             <td>{{ $record->name }}</td>
                             <td>{{ $record->message }}</td>
                             <td>{{ $record->rating }}</td>
-                            <td>{{ $record->visibility }}</td>
+                            <td class="text-center">
+                                @if ($record->visibility == 'Yes')
+                                    <a class="text-dark" href="{{route("Admin.ToggleVisibility", ["id"=>$record->id])}}"><i class="fa fa-eye"></i></a>
+                                @else
+                                <a class="text-dark" href="{{route("Admin.ToggleVisibility", ["id"=>$record->id])}}"><i class="fa fa-eye-slash"></i></a>
+                                @endif
+                            </td>
                             <td class="text-center">
                                 <a href="{{route("Admin.EditTestimonial",["id" => $record->id])}}" class="text-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>

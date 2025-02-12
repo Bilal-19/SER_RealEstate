@@ -619,15 +619,33 @@ class AdminController extends Controller
                 "rating" => $request->rating
             ]);
 
-            if ($isRecordUpdated) {
-                toastr()->success("Selected testimonial updated successfully");
-                return redirect()->back();
-            } else {
-                toastr()->info('Something went wrong. Please try again later.');
-                return redirect()->back();
-            }
+        if ($isRecordUpdated) {
+            toastr()->success("Selected testimonial updated successfully");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
 
+    public function toggleTestimonialVisibility($id)
+    {
+        $findTestimonial = DB::table("feedback")->where("id", "=", $id)->first();
+        $isVisible = $findTestimonial->visibility;
 
+        if ($isVisible == "No") {
+            DB::table("feedback")->
+                where("id", "=", $id)->
+                update(['visibility' => "Yes"]);
+            toastr()->success("Updated Testimonial Visibility");
+            return redirect()->back();
+        } else {
+            DB::table("feedback")->
+                where("id", "=", $id)->
+                update(['visibility' => "No"]);
+            toastr()->success("Updated Testimonial Visibility");
+            return redirect()->back();
+        }
     }
 
     public function deleteTestimonial($id)
