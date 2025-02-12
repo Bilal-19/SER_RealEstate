@@ -47,7 +47,7 @@
 <div class="container-fluid mt-sm-150 mt-150">
     <div class="row mt-100">
         <div class="col-md-11 mx-auto">
-            <h3>FAQs</h3>
+            <h3 class="fs-48 fs-sm-25">FAQs</h3>
         </div>
     </div>
 

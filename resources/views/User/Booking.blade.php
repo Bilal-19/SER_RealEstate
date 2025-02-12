@@ -20,9 +20,10 @@
         }
 
         .book-apartment-thumbnail {
-            height: 150px;
-            width: 150px;
+            height: 200px;
+            width: 200px;
             object-fit: contain;
+            border-radius: 12px;
         }
 
         .price-container {
@@ -199,7 +200,7 @@
     @endphp
     <div class="container-fluid mb-5 mt-sm-150 mt-150">
         <div class="row booking-flex-container">
-            <div class="col-md-5 bg-white border-grey border-radius-16">
+            <div class="col-md-5 border-grey border-radius-16">
                 <div class="booking-container mt-3">
                     <h4 class=" fs-20">Booking Details</h4>
                     <div class="row mt-4">
@@ -493,7 +494,7 @@
                         </li>
                     </ul>
 
-                    <p class="fw-medium  mb-0">Other Request</p>
+                    <p class="fw-medium mb-0">Other Request</p>
                     <textarea cols="30" rows="10" class="form-control" style="resize: none;" name="message"></textarea>
                     <small class="text-danger">
                         @error('message')
@@ -519,11 +520,11 @@
                 </form>
             </div>
             <div class="col-md-4 bg-white border-grey border-radius-16 price-container">
-                <div class="row">
+                <div class="row d-flex justify-content-around align-items-center">
                     <div class="col-md-6">
                         <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featured_image) }}"
                             alt="{{ $findApartment->apartment_name }}"
-                            class="img-fluid book-apartment-thumbnail rounded">
+                            class="img-fluid book-apartment-thumbnail">
                     </div>
                     <div class="col-md-6">
                         <h5 class="fs-18 fw-medium">{{ $findApartment->apartment_name }}</h5>

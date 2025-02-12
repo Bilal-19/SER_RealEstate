@@ -1,3 +1,13 @@
-body{
-    font-family: "Montserrat", serif;
+/* Dashboard */
+.nav-item > .nav-link:hover {
+    color: #191919;
+}
+.admin-active-link {
+    background-color: #545253;
+    color: #ececec;
+    border-radius: 2px;
+}
+
+.admin-active-link:hover {
+    color: #ececec;
 }

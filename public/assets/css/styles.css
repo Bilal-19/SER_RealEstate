@@ -1,117 +1,17 @@
-/* Color Preference */
-/* #000000  Black*/
-/* #c0c0c0 Silver*/
-/* #EBEBEE Light Gray*/
-/* #DFDFE1 Very Light Gray*/
-/* #545253 Charcoal Gray*/
-/* #131211 Dark Brown/Black */
-
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body{
+body {
     font-family: "Montserrat", serif;
     color: #303030;
 }
 
-
+/* ---------------------------------------- 1. Header ------------------------------------------------- */
 .nav-link {
     color: #c0c0c0;
     font-weight: 500;
 }
 
+/* ---------------------------------------- 2. Footer ------------------------------------------------- */
 
-
-
-
-
-
-.feedback-bg{
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('../images/grey-background.png');
-    background-size: cover;
-    background-attachment: scroll;
-    /* width: 95%; */
-    margin: 10px auto;
-    border-radius: 10px;
-}
-
-.brand-btn {
-    background-color: #c0c0c0;
-    color: white;
-    padding: 6px 8px;
-    border-radius: 8px;
-    border: none;
-}
-
-.brand-btn:hover {
-    background-color: #303030;
-}
-
-.brand-btn-invert {
-    background-color: white;
-    color: #c0c0c0;
-    padding: 10px 15px;
-    border-radius: 8px;
-}
-
-.brand-btn-invert:hover {
-    background-color: black;
-    color: white;
-    border: 1px solid black;
-}
-
-.favourite-card {
-    width: 299px;
-    height: 269px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.neighbourhood-img {
-    height: 200px;
-    width: 300px;
-}
-
-.blog-img {
-    height: 620px;
-    width: 620px;
-    object-fit: cover;
-}
-
-#contact-btn {
-    color: white;
-    border: 1px solid white;
-    text-decoration-line: none;
-    padding: 10px;
-}
-
-#contact-btn:hover {
-    background-color: white;
-    color: black;
-}
-
-#enquiry-btn {
-    background-color: white;
-    color: black;
-    padding: 11px 10px;
-    text-decoration: none;
-}
-#enquiry-btn:hover {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-a {
-    text-decoration: none;
-}
-
-.sitemap-link {
-    color: white;
-}
-
+/* Used to make the footer social icons in white color. */
 .fa-brands {
     color: white;
 }
@@ -120,499 +20,195 @@ a {
     background-color: #303030;
 }
 
-.rating{
-    height: 100px !important;
+/* Applied on Landing page, Experience page & Contact us page */
+.feedback-bg {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%),
+        url("../images/grey-background.png");
+    background-size: cover;
+    background-attachment: scroll;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
-.benefit-card {
-    width: 283px;
-    height: 353px;
-    padding: 32px 22px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-/* Hiding the logo which is appearing on the left side of the sidebae for desktop screen */
-.hide-img-md {
-    display: none;
+.brand-btn {
+    background-color: #c0c0c0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px 30px;
 }
 
-/* Benefit - Page */
-.benefits-point > li {
-    list-style-type: none;
-    font-family: "Inter", sans-serif;
+.brand-btn:hover {
+    background-color: #303030;
 }
 
-.benefits-point > li::before {
-    content: "\2713";
-    color: #545253;
-    margin-right: 20px;
+a {
+    text-decoration: none;
 }
 
-.amenities-points > li,
-.policy-points > li {
-    list-style-type: none;
-    border: 1px solid rgb(228, 228, 228);
-    background-color: #ffffff;
-    margin-bottom: 10px;
-    border-radius: 2px;
-    padding: 10px 12px;
-}
-
-/* Utility Classes */
-.mt-10{
+/* Utility Classes for Margin*/
+.mt-10 {
     margin-top: 10px;
 }
 
-.mt-15{
+.mt-15 {
     margin-top: 15px;
 }
 
-.mt-20{
+.mt-20 {
     margin-top: 20px;
 }
 
-.mt-50{
+.mt-50 {
     margin-top: 50px;
 }
 
-.mt-70{
+.mt-70 {
     margin-top: 70px;
 }
 
-.mt-100{
+.mt-100 {
     margin-top: 100px;
 }
 
-.mt-150{
+.mt-150 {
     margin-top: 150px;
 }
 
-.mt-200{
+.mt-200 {
     margin-top: 200px;
 }
 
-.mt-300{
+.mt-300 {
     margin-top: 300px;
 }
 
-.mt-400{
+.mt-400 {
     margin-top: 400px;
 }
 
-.mb-100{
+.mb-100 {
     margin-bottom: 100px;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
+/* Utility Classes for Font Size*/
 
-/* Custom Style */
-/* Font Family - Google */
-
-
-/* Font Size */
-
-.fs-14{
+/* Used in Available Apartments, Location Detail, Property Type Apartment, Rooms & House*/
+.fs-14 {
     font-size: 14px;
 }
 
+/* Used in Landing page */
 .fs-15 {
     font-size: 15px;
 }
 
-.fs-17 {
-    font-size: 17px;
-}
-
+/* Used in Landing page, Booking page & Thankyou page*/
 .fs-18 {
     font-size: 18px;
 }
 
+/* Used in Booking page */
 .fs-20 {
     font-size: 20px;
 }
 
-.fs-23 {
-    font-size: 23px;
-}
+/* Used in Apartments page & Booking page*/
 .fs-24 {
     font-size: 24px;
 }
-.fs-26{
+
+/* Used in Landing page */
+.fs-26 {
     font-size: 26px;
 }
 
-.fs-32 {
-    font-size: 32px;
-}
-
-.fs-36 {
-    font-size: 36px;
-}
-
+/* Used in Thankyou page */
 .fs-40 {
     font-size: 40px;
 }
 
+/* Used in Landing page, About, Apartments, Booking Enquiry */
+/* Used in Contact Us, Corporate, Experience, FAQs, Join Sterling */
+/* Locations, Search Locations & View Apartment Detail */
 .fs-48 {
     font-size: 48px;
 }
 
-.fs-50{
+/* Used in Corporate page */
+.fs-50 {
     font-size: 50px;
 }
+
+/* Used in Landing page */
 .fs-56 {
     font-size: 56px;
 }
 
-/* Font Weight */
-.fw-medium {
-    font-weight: 500;
-}
-
-.fw-semibold{
+/* Used in ThankYou page */
+.fw-semibold {
     font-weight: 600;
 }
-/* Text Style */
-/* .text-light-brown {
-    color: #b1895a;
-} */
 
-.text-silver{
-    color: #c0c0c0;
-}
-
-.text-charcoal-gray{
-    color: #545253;
-}
-
-.text-charcoal-black{
+/* Used in corporate, experience & view apartment detail page. */
+.text-charcoal-black {
     color: #303030;
 }
 
-/* Background */
-.bg-light-brown {
-    background-color: #b1895a;
+/* Used in Thank You Page */
+.bg-pale-gray {
+    background-color: #ececec;
 }
 
-.bg-light-gray {
-    background-color: #f1f1f1;
-}
-
-.bg-white {
-    background-color: #ffffff;
-}
-
-.bg-eerie-black {
-    background-color: #191919;
-}
-
-.bg-pale-gray{
-    background-color: #ECECEC;
-}
-
-.bg-silver{
-    background-color: #c0c0c0;
-}
-
-.bg-light-gray{
-    background-color: #bbbbbb;
-}
-/* Opactity */
-
-.opacity-90 {
-    opacity: 0.9;
-}
-
-/* Border */
-.border-top-light-grey {
-    border-top: 2px solid #c0c0c0;
-}
-.border-radius-16{
+/* Used in Booking Page */
+.border-radius-16 {
     border-radius: 16px;
 }
-.border-radius-18 {
-    border-radius: 18px;
-}
 
-/* Bootstrap 5 Slider */
 
-.blog-card {
-    height: 417px;
-    width: 382px;
-    margin-bottom: 10px;
-}
-.blog-card > img {
-    height: 230px;
-    width: 382px;
-    object-fit: cover;
-}
-.footer {
-    padding: 66px 100px;
-}
-#footer_bg {
-    background-image: url("../images/footer_img.jpg");
-    background-size: cover;
-}
 
-.footer-bottom-border {
-    border-bottom: 10px solid #c0c0c0;
-}
-
-.footer-search-btn {
-    text-align: center;
-    display: block;
-    height: 56px;
-    width: 187px;
-    padding: 12px 15px;
-    color: black;
-    background-color: #ffffff;
-    border-radius: 8px;
-}
-
-.footer-search-btn:hover {
-    background-color: black;
-    color: #ffffff;
-}
-
-/* Responsive Timeline */
-/* .timeline {
-    border-left: 1px solid hsl(0, 0%, 90%);
-    position: relative;
-    list-style: none;
-}
-
-.timeline .timeline-item {
-    position: relative;
-}
-
-.timeline .timeline-item:after {
-    position: absolute;
-    display: block;
-    top: 0;
-}
-
-.timeline .timeline-item:after {
-    background-color: #c0c0c0;
-    left: -45px;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    content: "";
-} */
-
-/* .form-label,
-.form-control {
-    font-family: "inter";
-}
-
-.form-control {
-    font-size: 15px;
-} */
-
-/* Spacing - Padding */
-.p-16{
-    padding: 16px;
-}
-
-/* Slider for Landing Page - Favourites Section
-.swiper {
-    width: 100%;
-}
-
-.swiper-slide {
-    width: 299px;
-    height: 269px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 10px;
-}
-
-.swiper .swiper-pagination-bullet {
-    background: #c0c0c0;
-    height: 10px;
-    width: 10px;
-    opacity: 0.8;
-}
-
-.swiper .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: #c0c0c0;
-    height: 10px;
-    width: 10px;
-}
-
-.swiper .swiper-slider-button {
-    height: 50px;
-    width: 50px;
-    border-radius: 12px;
-    color: #c0c0c0;
-    border: none;
-    background-color: black;
-    padding: 10px;
-}
-
-.swiper-slide > a > img {
-    height: 349px;
-    width: 299px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-.standard-amenity{
-    border: 1px solid rgb(182, 180, 180);
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-.reviews-style{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    border-radius: 7px;
-} */
-
-/* Dashboard */
-.nav-item > .nav-link:hover {
-    color: #191919;
-}
-.admin-active-link{
-    background-color: #545253;
-    color: #ECECEC;
-    border-radius: 2px;
-}
-
-.admin-active-link:hover{
-    color: #ECECEC;
-}
 
 /* Media Query */
 
 @media screen and (max-width: 768px) {
-    /* Hiding the logo which is appearing on the center of the navbar for small screen */
-    .hide-img-sm {
-        display: none;
-    }
-
-    .show-img-sm {
-        display: block;
-        margin-right: 100px;
-    }
-
-    .margin-sm-right-20 {
-        margin-right: 20px;
-    }
-
-    .mb-sm-10{
-        margin-bottom: 10px;
-    }
-
-    .mb-sm-40{
+    /* Used in Booking Enquiry, General Enquiry, Corporate Enquiry, Join Sterling Enquiry, Locations*/
+    .mb-sm-40 {
         margin-bottom: 40px;
     }
 
+    /* Used in Landing page, Apartments & Search Location page */
     .search-container {
         height: fit-content;
     }
 
-    .favourite-card > .card {
-        height: 300px;
-        width: 300px;
-        margin: 10px;
-    }
-
-    .neighbourhood-card {
-        height: 320px;
-        width: 320px;
-    }
-
-    #enquiry-btn {
-        display: block;
-        width: fit-content;
-        margin-top: 20px;
-    }
-
-    .fs-48{
-        font-size: 40px;
-    }
-
-    .fs-56 {
-        font-size: 23px;
-    }
-
-    .navbar-brand {
-        font-weight: 500;
-        font-size: 12px;
-    }
-
-
-    .reviews-style{
-        flex-direction: column;
-    }
-
-    .standard-amenity{
-        font-size: 14px;
-    }
-
-
-    .swiper-slide {
-        padding: 10px;
-    }
-
-    .swiper-slide > a > img {
-        height: 349px;
-        width: fit-content;
-        object-fit: contain;
-        margin-bottom: 10px;
-    }
-
-    #footer-link{
-        font-size: 15px;
-    }
-
-    /* Setting Font Size */
-    .fs-sm-28{
+    /* Used in Landing page & About page*/
+    .fs-sm-28 {
         font-size: 28px;
     }
 
-    .fs-sm-25{
+    /* Used in Landing page, Booking Enquiry, About, Contact Us, Corporate and many more. */
+    .fs-sm-25 {
         font-size: 25px;
     }
 
-    .fs-sm-18{
-        font-size: 18px;
-    }
-
-    .fs-sm-16{
+    .fs-sm-16 {
         font-size: 16px;
     }
 
-    .fs-sm-40{
-        font-size: 40px;
-    }
-
-    .mt-sm-25{
+    .mt-sm-25 {
         margin-top: 25px;
     }
 
-    .mt-sm-75{
+    .mt-sm-75 {
         margin-top: 75px;
     }
 
-    .mt-sm-100{
-        margin-top: 100px;
-    }
-
-    .mt-sm-150{
+    .mt-sm-150 {
         margin-top: 150px;
     }
 
-    .mt-sm-200{
+    .mt-sm-200 {
         margin-top: 200px;
     }
-
-    /* Landing Page */
-
 }

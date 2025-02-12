@@ -113,15 +113,13 @@ class UserController extends Controller
         if (count($availableApartments) > 1) {
             $latVal = $availableApartments->first()->latitude;
             $longVal = $availableApartments->first()->longitude;
-            $neighborhoodApartment = $this->calculateNearestDistance($latVal, $longVal);
         } else {
             $neighborhoodApartment = [];
         }
 
         return view('User.Appartments')->with(compact(
             'availableApartments',
-            'locations',
-            'neighborhoodApartment'
+            'locations'
         ));
     }
 

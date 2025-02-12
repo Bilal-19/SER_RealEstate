@@ -46,7 +46,7 @@
 @section('user-main-section')
     <div class="container-fluid mt-150 mt-sm-150">
         <div class="row">
-            <h3>Corporate Stays in {{ $locationName }}</h3>
+            <h3 class="fs-48 fs-sm-25">Corporate Stays in {{ $locationName }}</h3>
         </div>
 
         <div class="row mb-5 flex-div">

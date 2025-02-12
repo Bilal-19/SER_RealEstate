@@ -12,6 +12,9 @@
             border-radius: 12px;
             margin: 50px auto;
             width: 92%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
 
@@ -45,7 +48,7 @@
 @push('CTA')
     <div class="container-fluid about-bg mt-150 mt-sm-150">
         <div class="row text-center">
-            <div class="col-md-12 text-light mt-200 mt-sm-300">
+            <div class="col-md-12 text-light">
                 <h2 class="fs-48 fs-sm-28">
                     About Sterling
                 </h2>

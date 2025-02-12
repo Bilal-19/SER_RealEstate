@@ -12,11 +12,11 @@
             color: white;
         }
 
-        .brand-btn {
+        /* .brand-btn {
             font-weight: bold;
             border-radius: 12px;
             padding: 12px 30px;
-        }
+        } */
 
         @media screen and (max-width: 768px){
             .mt-sm-150{

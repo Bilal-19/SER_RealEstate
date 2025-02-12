@@ -75,10 +75,6 @@
             border-right: none;
         }
 
-        .fs-14{
-            font-size: 14px;
-        }
-
         .mt-150{
             margin-top: 150px;
         }
@@ -158,7 +154,7 @@
     <div class="row mx-auto mt-3 mb-3">
         @foreach ($availableApartments as $rec)
             <div class="col-md-10 mx-auto mb-3 apartment-container">
-                <div class="row bg-white rounded d-flex flex-row justify-content-around align-items-center">
+                <div class="row rounded d-flex flex-row justify-content-around align-items-center">
                     <div class="col-md-3">
                         <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featured_image) }}"
                             alt="{{ $rec->apartment_name }}" class="img-fluid mt-2 mb-2 rounded apartment-thumbnail-img">
@@ -166,7 +162,7 @@
                     <div class="col-md-6">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5 class=" fs-24">{{ $rec->apartment_name }}</h5>
+                                <h5 class="fs-24">{{ $rec->apartment_name }}</h5>
                                 <p>
                                     <img src="{{ asset('assets/images/locationIcon.png') }}"
                                         alt="{{ $rec->apartment_name }}">
@@ -178,7 +174,7 @@
                         </div>
                         <p>{!! Str::limit($rec->description, 120) !!}</p>
                         <a href="{{ route('Detail.View.Apartment', ['id' => $rec->id]) }}"
-                            class="btn btn-dark fw-medium">View Apartment</a>
+                            class="brand-btn fw-light">View Apartment</a>
                     </div>
                     <div class="col-md-3 mt-sm-25">
                         {!! $rec->map_location !!}

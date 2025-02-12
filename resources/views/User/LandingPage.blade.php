@@ -11,6 +11,10 @@
             border-radius: 15px;
             width: 97%;
             margin: 25px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .form-control {
@@ -44,9 +48,7 @@
         }
 
         #book-apartment-searchbar .form-control {
-            /* padding-top: 10px; */
             border-right: 2px solid #ddd;
-            /* border-radius: 0; */
         }
 
         #book-apartment-searchbar .form-control:last-of-type {
@@ -124,10 +126,6 @@
                 margin: 10px auto;
             }
 
-            .mt-sm-100 {
-                margin-top: 100px;
-            }
-
             .apartment-category-img {
                 margin-bottom: 10px;
                 margin-top: 20px;
@@ -141,9 +139,9 @@
 @endpush
 
 @push('CTA')
-    <div class="container-fluid home-bg-img mb-5 mt-150 mt-sm-200">
+    <div class="container-fluid home-bg-img mb-3 mt-150">
         <div class="row">
-            <div class="col-md-9 mx-auto text-light search-container mt-300 mt-sm-100">
+            <div class="col-md-12 mx-auto text-light search-container">
                 <h2 class="text-center fs-56 fs-sm-28">
                     Find your perfect stay
                 </h2>
@@ -151,7 +149,7 @@
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-5 col-12 mx-auto" id="book-apartment">
+            <div class="col-md-9 col-12 mx-auto" id="book-apartment">
                 <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
                     autocomplete="off">
                     @csrf
