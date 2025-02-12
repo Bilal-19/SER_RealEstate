@@ -318,7 +318,7 @@
                             </li>
 
                             <li class="nav-item mb-2">
-                                <a class="nav-link  d-flex align-items-center gap-3"
+                                <a class="nav-link  d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Logout') ? 'admin-active-link text-light' : 'text-dark' }}"
                                     href="{{ route('Admin.Logout') }}">
                                     <i class="fas fa-sign-out"></i>
                                     Sign out
