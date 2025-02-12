@@ -41,11 +41,11 @@
 
         <div class="row mt-5">
             <div class="col-md-12 text-center">
-                <p class="mb-0">Office Number/Name ,</p>
-                <p class="mb-0">Street, </p>
-                <p class="mb-0">London,</p>
-                <p>HAXX 2XX</p>
-                <p>079 2191 9426</p>
+                <p class="mb-0">Sterling Executive Residential,</p>
+                <p class="mb-0">20 Wenlock Road,</p>
+                <p class="mb-0">London, England,</p>
+                <p>N1 7GU</p>
+                <p>07554 359975</p>
             </div>
         </div>
 
