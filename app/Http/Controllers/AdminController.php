@@ -13,19 +13,27 @@ class AdminController extends Controller
     public function Dashboard()
     {
         if (Auth::check()) {
-            // Total Inquiries | Total Bookings | Revenue | Available Apartments
             $totalCorporateEnquiries = DB::table('corporate_inquiry')->count();
+            $totalBookingEnquiries = DB::table('booking_inquiry')->count();
+            $totalGeneralEnquiries = DB::table('general_inquiry')->count();
+            $totalPartnershipEnquiries = DB::table('join_sterling_inquiry')->count();
+
             $totalBookings = DB::table('booking')->count();
             $totalRevenue = DB::table('booking')->sum('total_amount');
-            $totalApartments = DB::table('apartments')->count();
-            // Bookings Trends | Revenue Trends
 
-            // Recent Inquiries | Upcoming Bookings
+            $totalApartments = DB::table('apartments')->count();
+            $totalAvailableApartments = DB::table('apartments')->where("status","=","available")->count();
+            $totalBookedApartments = DB::table('apartments')->where("status","=","Booked")->count();
             return view('Admin.Dashboard')->with(compact(
                 'totalCorporateEnquiries',
+                "totalBookingEnquiries",
+                "totalGeneralEnquiries",
+                "totalPartnershipEnquiries",
                 'totalBookings',
                 'totalRevenue',
-                'totalApartments'
+                'totalApartments',
+                "totalAvailableApartments",
+                "totalBookedApartments"
             ));
         } else {
             return view('auth.login');
@@ -39,7 +47,7 @@ class AdminController extends Controller
 
         if ($search !== null) {
             $fetchAllApartments = DB::table('apartments')
-                ->where('area_name', 'LIKE', "%$search%")
+                ->where('apartment_name', 'LIKE', "%$search%")
                 ->orWhere('street_address', 'LIKE', "%$search%")
                 ->get();
             return view('Admin.Apartments')->with(compact('fetchAllApartments'));
@@ -570,7 +578,7 @@ class AdminController extends Controller
 
     public function AddTestimonials()
     {
-        return view("Admin.AddFeedback");
+        return view("Admin.AddTestimonials");
     }
 
     public function createTestimonials(Request $request)

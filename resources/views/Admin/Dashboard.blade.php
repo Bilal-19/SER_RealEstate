@@ -1,56 +1,76 @@
 @extends('AdminLayout.DashboardTemplate')
-@push('style')
-    <style>
-        .analytic-card {
-            background-color: #c0c0c0;
-            border-radius: 6px;
-            text-align: center;
-            border-top: 3px solid black;
-            margin-right: 20px;
-            padding: 8px 6px;
-        }
-
-        @media (max-width: 768px) {
-            .analytic-card {
-                margin-bottom: 10px;
-                width: 60%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-    </style>
-@endpush
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
             <h3 class="text-center">Dashboard</h3>
         </div>
 
-        <div class="row mt-3">
-            <div class="col-md-2 analytic-card">
-                <h3 class="">{{ $totalCorporateEnquiries }}</h3>
-                <p class="">
-                    <i class="fas fa-envelope"></i>
-                    Corporate Enquiries
-                </p>
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+                <h3>Apartments</h3>
             </div>
+        </div>
 
-            <div class="col-md-2 analytic-card">
-                <h3 class="">{{ $totalBookings }}</h3>
-                <p class="">
-                    <i class="fas fa-calendar-check"></i>
-                    Total Bookings
-                </p>
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+             <div class="row">
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fas fa-building mx-1"></i>
+                        {{ $totalApartments }} Apartments
+                    </h5>
+                </div>
+
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-check-circle mx-1"></i> {{ $totalAvailableApartments }} Available
+                    </h5>
+                </div>
+
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-house-lock mx-2"></i> {{ $totalBookedApartments }} Booked
+                    </h5>
+                </div>
+             </div>
             </div>
+        </div>
 
-            <div class="col-md-2 analytic-card">
-                <h3 class="">£{{ $totalRevenue }}</h3>
-                <p class=""><i class="fas fa-coins"></i> Total Revenue</p>
+
+        <div class="row mt-5">
+            <div class="col-md-11 mx-auto">
+                <h3>Enquiries</h3>
             </div>
+        </div>
 
-            <div class="col-md-2 analytic-card">
-                <h3 class="">{{ $totalApartments }}</h3>
-                <p class=""><i class="fas fa-building"></i> Total Apartments</p>
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+             <div class="row">
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-landmark mx-2"></i>
+                        {{ $totalCorporateEnquiries }} Corporate
+                    </h5>
+                </div>
+
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-info-circle mx-2"></i> {{ $totalGeneralEnquiries }} General
+                    </h5>
+                </div>
+
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-calendar-check mx-2"></i> {{ $totalBookingEnquiries }} Booking
+                    </h5>
+                </div>
+
+                <div class="col-md-3 analytic-card">
+                    <h5>
+                        <i class="fa-solid fa-handshake mx-3"></i> {{ $totalPartnershipEnquiries }} Join Sterling
+                    </h5>
+                </div>
+             </div>
             </div>
         </div>
     </div>

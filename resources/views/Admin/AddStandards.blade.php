@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
-                    <button class="brand-btn">Submit</button>
+                    <button class="btn btn-dark">Submit</button>
                 </div>
             </form>
         </div>
