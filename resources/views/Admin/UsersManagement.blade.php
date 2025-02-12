@@ -2,10 +2,10 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="fw-bold  text-center">Users</h3>
+            <h3 class="text-center">Our Users</h3>
         </div>
 
-        <div class="row mt-3 ff-inter">
+        <div class="row mt-3 ">
             <div class="col-md-4">
                 <a href="{{ route('View.AddUser') }}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New
                     User</a>
@@ -13,7 +13,7 @@
         </div>
 
         <div class="row mt-3">
-            <div class="col-md-12">
+            <div class="col-md-12" style="overflow-x:auto;">
                 <table class="table table-striped table-bordered">
                     <tr>
                         <th>ID</th>

@@ -2,7 +2,7 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center mt-3">Booking <span class="fw-bold">Enquiries</span></h3>
+            <h3 class="text-center mt-3">Booking Enquiries</h3>
         </div>
 
         <div class="row">

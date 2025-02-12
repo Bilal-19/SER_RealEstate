@@ -12,7 +12,7 @@
             <h3 class="text-center">Top Rated Apartments</h3>
         </div>
 
-        <div class="row ff-inter">
+        <div class="row ">
             @foreach ($fetchFavApartment as $rec)
                 <div class="col-md-4">
                     <img src="{{ asset('Apartment/Thubmbnail/' . $rec->featured_image) }}" alt="" class="img-fluid thumbnail rounded">

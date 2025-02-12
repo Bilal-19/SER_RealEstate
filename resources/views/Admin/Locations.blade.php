@@ -13,7 +13,7 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center fw-bold">Our Locations</h3>
+            <h3 class="text-center">Our Locations</h3>
         </div>
 
         <div class="row">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="row mt-3">
-            <div class="col-md-12">
+            <div class="col-md-12" style="overflow-x:auto;">
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>ID</th>

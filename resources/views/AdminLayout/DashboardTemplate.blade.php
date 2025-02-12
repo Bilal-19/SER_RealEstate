@@ -164,12 +164,11 @@
         </symbol>
     </svg>
 
-    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <header class="navbar sticky-top flex-md-nowrap p-0 shadow" data-bs-theme="dark" style="background-color: #303030">
         {{-- 'navbar-brand' --}}
         <a class="text-decoration-none text-light p-1 col-md-4 col-lg-2 me-0 d-flex align-items-center justify-content-between"
             href="{{ route('Dashboard') }}">
-            <img src="{{ asset('company_logo.png') }}" alt="logo" style="height: 50px; width:50px;">
-            <span class="mx-1">STERLING EXECUTIVE RESIDENTIAL</span>
+            <img src="{{ asset("assets/images/ser_footer_logo.png") }}" alt="logo" class="img-fluid">
         </a>
         <ul class="navbar-nav flex-row d-md-none">
             <li class="nav-item text-nowrap">

@@ -2,17 +2,17 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="text-center  fw-bold">Apartments</h3>
+            <h3 class="text-center">Apartments</h3>
         </div>
 
         <div class="row mb-3">
-            <div class="col-md-12 ff-inter">
+            <div class="col-md-12 ">
                 <a href="{{ route('Add.Appartment') }}" class="btn btn-dark"><i class="fa-solid fa-circle-plus"></i> Add New
                     Apartment</a>
             </div>
         </div>
 
-        <div class="row ff-inter">
+        <div class="row ">
             <div class="col-md-12">
                 <form action="">
                     <div class="input-group">
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="row mt-3 ff-inter">
+        <div class="row mt-3 ">
             <div class="col-md-12" style="overflow-x:auto;">
                 <table class="table table-striped table-bordered table-responsive">
                     <tr>

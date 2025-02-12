@@ -1,5 +1,7 @@
 body{
     font-family: "Montserrat", serif;
+    color: #303030;
+    font-weight: 400;
 }
 
 /* Dashboard */
@@ -15,3 +17,5 @@ body{
 .admin-active-link:hover {
     color: #ececec;
 }
+
+
