@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('booking_inquiry', function (Blueprint $table) {
             $table->id();
-            $table->string("company_name");
+            $table->string("company_name")->nullable();
             $table->string("full_name");
             $table->string("email_address");
             $table->string("phone_number");

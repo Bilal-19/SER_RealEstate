@@ -1,4 +1,3 @@
-@stack('footer-cta')
 <div class="container-fluid text-light pb-2 mt-100 mt-sm-75" id="footer-color">
     <div class="row d-flex flex-md-row flex-sm-column justify-content-center align-items-around pt-5 mb-5">
         <div class="col-md-2">
@@ -44,9 +43,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
-
-{{-- Swiper JS Script --}}
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script src="{{ asset('assets/js/swiperJS.js') }}"></script>
 

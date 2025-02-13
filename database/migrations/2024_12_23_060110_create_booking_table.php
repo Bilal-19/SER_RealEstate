@@ -33,13 +33,6 @@ return new class extends Migration {
             $table->integer('total_days_to_stay');
             $table->integer('total_amount');
 
-            // Bank Account Details
-            $table->string('account_title');
-            $table->string('card_number');
-            $table->string('card_verification_code');
-            $table->string('expiration_month');
-            $table->string('expiration_year');
-
             $table->unsignedBigInteger('apartment_id');
 
             // Foreign key reference

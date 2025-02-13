@@ -57,8 +57,7 @@ class UserController extends Controller
 
     public function aboutSterling()
     {
-        $blogRecords = DB::table('blogs')->limit(3)->get();
-        return view('User.About')->with(compact('blogRecords'));
+        return view('User.About');
     }
 
     public function JoinSterlingEnquiry()
@@ -105,7 +104,7 @@ class UserController extends Controller
             ->orWhere('apartment_location', 'LIKE', "%$location%")
             ->whereDate('available_from', '<=', $request->checkInDate)
             ->whereDate('available_till', '>=', $request->checkOutDate)
-            ->where('status', '=', 'available')
+            ->where('status', '=', 'Available')
             ->get();
         $locations = DB::table('apartments')->select('latitude', 'longitude')->get();
 
@@ -146,8 +145,9 @@ class UserController extends Controller
 
         $checkInDate = $request->checkIn;
         $checkOutDate = $request->checkOut;
+        $bedrooms = $request->bedrooms;
 
-        if ($findApartment->status == 'booked') {
+        if ($findApartment->status == 'Booked') {
             $guestBooked = true;
         } else {
             $guestBooked = false;
@@ -161,13 +161,15 @@ class UserController extends Controller
             'checkInDate',
             'checkOutDate',
             'guestBooked',
-            'fetchAllStandards'
+            'fetchAllStandards',
+            'bedrooms'
         ));
 
     }
 
     public function Booking($id, $checkIn, $checkOut, $bedrooms)
     {
+
         $checkIn = request('checkIn');
         $checkOut = request('checkOut');
         $bedrooms = request('bedrooms');
@@ -192,6 +194,14 @@ class UserController extends Controller
     // Confirm Booking
     public function stripePost(Request $request, $apartmentID, $checkIn, $checkOut, $totalDays, $totalAmount, $apartment_price)
     {
+        // Check If the apartment is already booked or not
+        $findApartmentStatus = DB::table('apartments')->where("id", "=", $apartmentID)->first();
+        $isBooked = $findApartmentStatus->status;
+
+        if ($isBooked == "Booked") {
+            toastr()->info("This apartment is already booked.");
+            return redirect()->back();
+        }
         // Form Validation
         $request->validate([
             'fname' => 'required',
@@ -201,22 +211,17 @@ class UserController extends Controller
             'phone' => 'required',
             'postal_code' => 'required',
             'country' => 'required',
-            'message' => 'required',
-            'account_title' => 'required',
-            'card_number' => 'required',
-            'cvc' => 'required',
-            'expMonth' => 'required',
-            'expYear' => 'required'
+            'message' => 'required'
         ]);
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create([
             "amount" => $totalAmount * 100,
-            "currency" => "usd",
+            "currency" => "gbp",
             "source" => $request->stripeToken,
             "description" => "Amount deducted from your account"
         ]);
 
-        // // Booking Table Object
+        //Booking Table Object
         $res = DB::table('booking')->insert([
             'first_name' => $request->fname,
             'last_name' => $request->lname,
@@ -233,11 +238,6 @@ class UserController extends Controller
             'check_out' => $checkOut,
             'total_days_to_stay' => $totalDays,
             'total_amount' => $totalAmount,
-            'account_title' => $request->account_title,
-            'card_number' => $request->card_number,
-            'card_verification_code' => $request->cvc,
-            'expiration_month' => $request->expMonth,
-            'expiration_year' => $request->expYear,
             'totalAdults' => $request->adults,
             'totalChildrens' => $request->childrens,
             'apartment_id' => $apartmentID,
@@ -464,7 +464,7 @@ class UserController extends Controller
     public function propertyTypeHouse()
     {
         $fetchHouses = DB::table("apartments")
-            ->where('status', '=', 'available')
+            ->where('status', '=', 'Available')
             ->where('apartment_type', '=', 'House')
             ->get();
         return view("User.PropertyTypeHouse", with(compact("fetchHouses")));
@@ -473,7 +473,7 @@ class UserController extends Controller
     public function propertyTypeApartment()
     {
         $fetchApartments = DB::table("apartments")
-            ->where('status', '=', 'available')
+            ->where('status', '=', 'Available')
             ->where('apartment_type', '=', 'Apartment')
             ->get();
         return view("User.PropertyTypeApartment", with(compact("fetchApartments")));
@@ -482,7 +482,7 @@ class UserController extends Controller
     public function propertyTypeRooms()
     {
         $fetchRooms = DB::table("apartments")
-            ->where('status', '=', 'available')
+            ->where('status', '=', 'Available')
             ->where('apartment_type', '=', 'Rooms')
             ->get();
         return view("User.PropertyTypeRooms", with(compact("fetchRooms")));

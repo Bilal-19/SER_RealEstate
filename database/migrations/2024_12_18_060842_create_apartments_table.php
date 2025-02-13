@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->integer('sqfeet_area');
             $table->text('description');
             $table->text('neighbourhood_description');
-            $table->string('status')->default('available');
+            $table->string('status')->default('Available');
             $table->string('apartment_type');
 
             // Set Available Date

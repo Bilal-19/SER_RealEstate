@@ -32,7 +32,7 @@
             padding: 24px;
         }
 
-        .booking-flex-container{
+        .booking-flex-container {
             display: flex;
             justify-content: space-around;
         }
@@ -48,118 +48,18 @@
                 padding: 12px;
             }
 
-            .mt-sm-150{
+            .mt-sm-150 {
                 margin-top: 160px;
             }
 
-            .booking-flex-container{
+            .booking-flex-container {
                 flex-direction: column-reverse;
             }
         }
     </style>
 @endpush
 
-@push('scripts')
-    {{-- JavaScript --}}
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            var $form = $(".require-validation");
-            $('form.require-validation').bind('submit', function(e) {
-                var $form = $(".require-validation"),
-                    inputSelector = ['input[type=email]', 'input[type=password]',
-                        'input[type=text]', 'input[type=file]',
-                        'textarea'
-                    ].join(', '),
-                    $inputs = $form.find('.required').find(inputSelector),
-                    $errorMessage = $form.find('div.error'),
-                    valid = true;
-                $errorMessage.addClass('hide');
-                $('.has-error').removeClass('has-error');
-                $inputs.each(function(i, el) {
-                    var $input = $(el);
-                    if ($input.val() === '') {
-                        $input.parent().addClass('has-error');
-                        $errorMessage.removeClass('hide');
-                        e.preventDefault();
-                    }
 
-                });
-
-
-
-                if (!$form.data('cc-on-file')) {
-
-                    e.preventDefault();
-
-                    Stripe.setPublishableKey($form.data('stripe-publishable-key'));
-
-                    Stripe.createToken({
-
-                        number: $('.card-number').val(),
-
-                        cvc: $('.card-cvc').val(),
-
-                        exp_month: $('.card-expiry-month').val(),
-
-                        exp_year: $('.card-expiry-year').val()
-
-                    }, stripeResponseHandler);
-
-                }
-
-
-
-            });
-
-
-
-            /*------------------------------------------
-
-            --------------------------------------------
-
-            Stripe Response Handler
-
-            --------------------------------------------
-
-            --------------------------------------------*/
-
-            function stripeResponseHandler(status, response) {
-
-                if (response.error) {
-
-                    $('.error')
-
-                        .removeClass('hide')
-
-                        .find('.alert')
-
-                        .text(response.error.message);
-
-                } else {
-
-                    /* token contains id, last4, and card type */
-
-                    var token = response['id'];
-
-
-
-                    $form.find('input[type=text]').empty();
-
-                    $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
-
-                    $form.get(0).submit();
-
-                }
-
-            }
-
-
-
-        });
-    </script>
-@endpush
 
 @section('user-main-section')
     @php
@@ -234,7 +134,7 @@
                         'checkOut' => $checkOut,
                         'totalDays' => $stayDays,
                         'totalAmount' => $totalCost,
-                        'apartment_price' => $bedroomPrice
+                        'apartment_price' => $bedroomPrice,
                     ]) }}"
                     method="post" class="require-validation" data-cc-on-file="false"
                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
@@ -242,8 +142,7 @@
                     <div class="row d-flex justify-content-between">
                         <div class="col-md-6">
                             <label class="form-label fs-14 ">First Name: </label>
-                            <input type="text" class="form-control  fs-16" name="fname"
-                                value="{{ old('fname') }}">
+                            <input type="text" class="form-control  fs-16" name="fname" value="{{ old('fname') }}">
                             <small class="text-danger">
                                 @error('fname')
                                     {{ 'The first name field is required' }}
@@ -253,8 +152,7 @@
 
                         <div class="col-md-6">
                             <label class="form-label fs-14 ">Last Name: </label>
-                            <input type="text" class="form-control  fs-16" name="lname"
-                                value="{{ old('lname') }}">
+                            <input type="text" class="form-control  fs-16" name="lname" value="{{ old('lname') }}">
                             <small class="text-danger">
                                 @error('lname')
                                     {{ 'The last name field is required' }}
@@ -266,8 +164,7 @@
                     <div class="row d-flex justify-content-between mt-3">
                         <div class="col-md-6">
                             <label class="form-label fs-14 ">Email Address: </label>
-                            <input type="email" class="form-control  fs-16" name="email"
-                                value="{{ old('email') }}">
+                            <input type="email" class="form-control  fs-16" name="email" value="{{ old('email') }}">
                             <small class="text-danger">
                                 @error('email')
                                     {{ 'The email field is required' }}
@@ -277,8 +174,7 @@
 
                         <div class="col-md-6">
                             <label class="form-label fs-14 ">Phone Number: </label>
-                            <input type="text" class="form-control  fs-16" name="phone"
-                                value="{{ old('phone') }}">
+                            <input type="text" class="form-control  fs-16" name="phone" value="{{ old('phone') }}">
                             <small class="text-danger">
                                 @error('phone')
                                     {{ 'The phone number field is required' }}
@@ -290,8 +186,7 @@
                     <div class="row d-flex justify-content-between mt-3 mb-3">
                         <div class="col-md-6">
                             <label class="form-label fs-14 ">Country: </label>
-                            <select name="country" id="" class="form-select  fs-16"
-                                value="{{ old('country') }}">
+                            <select name="country" id="" class="form-select  fs-16" value="{{ old('country') }}">
                                 @foreach ($countries as $val)
                                     <option value="{{ $val }}">{{ $val }}</option>
                                 @endforeach
@@ -318,8 +213,7 @@
                     <div class="row mb-3">
                         <div>
                             <label class="form-label fs-14 ">Address: </label>
-                            <input type="text" class="form-control  fs-16" name="address"
-                                value="{{ old('address') }}">
+                            <input type="text" class="form-control  fs-16" name="address" value="{{ old('address') }}">
                             <small class="text-danger">
                                 @error('address')
                                     {{ 'The address field is required' }}
@@ -331,8 +225,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label class="form-label fs-14 ">Select No of Adults: </label>
-                            <select name="adults" id="" class="form-select  fs-16"
-                                value="{{ old('adults') }}">
+                            <select name="adults" id="" class="form-select  fs-16" value="{{ old('adults') }}">
                                 @for ($i = 1; $i < 4; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
@@ -364,7 +257,7 @@
                     <h4 class=" fs-24 mt-5">Payment Information</h4>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <label class="form-label">Name on Card</label>
                             <input class="form-control" type="text" name="account_title"
                                 value="{{ old('account_title') }}">
@@ -374,24 +267,17 @@
                                 @enderror
                             </small>
 
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Card Number</label>
-                                <input autocomplete="off" class="form-control card-number" type="text"
-                                    name="card_number" value="{{ old('card_number') }}">
-                                <small class="text-danger">
-                                    @error('card_number')
-                                        {{ 'The card number field is required' }}
-                                    @enderror
-                                </small>
-                            </div>
+                        </div> --}}
+                        <div class="col-md-12">
+                            <label class="form-label">Card Details</label>
+                            <div id="card-element" class="form-control"></div>
+                            <div id="card-errors" class="text-danger mt-2" role="alert"></div>
                         </div>
                     </div>
 
 
 
-                    <div class="row mb-5">
+                    {{-- <div class="row mb-5">
                         <div class="col-md-4">
                             <label class="form-label">CVC</label>
                             <input autocomplete="off" class="form-control card-cvc" placeholder="ex. 311" type="text"
@@ -422,12 +308,13 @@
                                 @enderror
                             </small>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <h5 class="fs-20">Terms & Conditions</h5>
                     <ul>
                         <li>
-                            Sterling Executive Residential will contact you after booking with important arrival and access information.
+                            Sterling Executive Residential will contact you after booking with important arrival and access
+                            information.
                         </li>
                         <li>
                             Please note that the maximum occupancy of each individual apartment varies between three to five
@@ -462,7 +349,8 @@
                             apply.
                         </li>
                         <li>
-                            Please inform Sterling Executive Residential Apartments Aldgate in advance of your expected arrival time.
+                            Please inform Sterling Executive Residential Apartments Aldgate in advance of your expected
+                            arrival time.
                         </li>
                         <li>
                             You can use the Special Requests box when booking, or contact the property directly with the
@@ -523,8 +411,7 @@
                 <div class="row d-flex justify-content-around align-items-center">
                     <div class="col-md-6">
                         <img src="{{ asset('Apartment/Thubmbnail/' . $findApartment->featured_image) }}"
-                            alt="{{ $findApartment->apartment_name }}"
-                            class="img-fluid book-apartment-thumbnail">
+                            alt="{{ $findApartment->apartment_name }}" class="img-fluid book-apartment-thumbnail">
                     </div>
                     <div class="col-md-6">
                         <h5 class="fs-18 fw-medium">{{ $findApartment->apartment_name }}</h5>
@@ -555,4 +442,52 @@
             </div>
         </div>
     </div>
+
+
+    @push('script')
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var stripe = Stripe("{{ env('STRIPE_KEY') }}");  // ✅ Correct Stripe initialization
+            var elements = stripe.elements();
+            var card = elements.create("card");
+            card.mount("#card-element"); // ✅ Attach card element to div
+
+            var $form = $(".require-validation");
+            $('form.require-validation').on('submit', function(e) {
+                e.preventDefault();
+
+                var $inputs = $form.find('.required').find('input, textarea'),
+                    $errorMessage = $form.find('div.error'),
+                    valid = true;
+
+                $errorMessage.addClass('hide');
+                $('.has-error').removeClass('has-error');
+
+                $inputs.each(function() {
+                    var $input = $(this);
+                    if ($input.val() === '') {
+                        $input.parent().addClass('has-error');
+                        $errorMessage.removeClass('hide');
+                        valid = false;
+                    }
+                });
+
+                if (!valid) return;
+
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+                        $('.error').removeClass('hide').find('.alert').text(result.error.message);
+                    } else {
+                        var token = result.token.id;
+                        $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+                        $form.get(0).submit();
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
+
 @endsection

@@ -28,7 +28,7 @@
             display: none;
         }
 
-        .accordion-header > button{
+        .accordion-header>button {
             color: #303030 !important;
             font-weight: 500;
             font-size: 18px;
@@ -38,35 +38,35 @@
             border-radius: 16px;
         }
 
-        .standard-card{
+        .standard-card {
             height: 100px;
             width: 100px;
         }
 
-        .standard-card img{
+        .standard-card img {
             display: block;
             margin: 10px auto;
         }
 
-        .style-experience-text{
+        .style-experience-text {
             line-height: 1.2;
             letter-spacing: 0.8px;
             text-align: justify;
             font-weight: 400;
         }
 
-        @media screen and (max-width: 768px){
-            .standard-card{
+        @media screen and (max-width: 768px) {
+            .standard-card {
                 margin-top: 20px;
                 height: fit-content;
                 width: fit-content;
             }
 
-               .mt-sm-150{
+            .mt-sm-150 {
                 margin-top: 150px;
             }
 
-            .mb-sm-15{
+            .mb-sm-15 {
                 margin-bottom: 15px;
             }
         }
@@ -170,8 +170,8 @@
                     @foreach ($fetchAllTestimonials as $record)
                         <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
                             <h5 class="col-12 col-md-12 fw-bold">“{{ $record->message }}”</h5>
-                            <p class="mb-0">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
-                            <p>{{ $record->name }}</p>
+                            <p class="mt-5 mb-2">{{ $record->name }}</p>
+                            <p class="mb-5">{!! calcStars($record->rating, 5 - $record->rating) !!}</p>
                         </div>
                     @endforeach
                 </div>

@@ -22,7 +22,7 @@ class AdminController extends Controller
             $totalRevenue = DB::table('booking')->sum('total_amount');
 
             $totalApartments = DB::table('apartments')->count();
-            $totalAvailableApartments = DB::table('apartments')->where("status", "=", "available")->count();
+            $totalAvailableApartments = DB::table('apartments')->where("status", "=", "Available")->count();
             $totalBookedApartments = DB::table('apartments')->where("status", "=", "Booked")->count();
             return view('Admin.Dashboard')->with(compact(
                 'totalCorporateEnquiries',

@@ -56,7 +56,7 @@
                     <div class="row mt-3">
                         <div class="col-md-4">
                             <label class="form-label mb-0">One Bedroom Price (Per Night):</label>
-                            <input class="form-control" type="number" placeholder="€500 per night" name="one_bed_price"
+                            <input class="form-control" type="number" placeholder="£200 per night" name="one_bed_price"
                                 value="{{ old('one_bed_price') }}">
                             <small class="text-danger">
                                 @error('one_bed_price')
@@ -67,7 +67,7 @@
 
                         <div class="col-md-4">
                             <label class="form-label mb-0">Two Bedroom Price (Per Night):</label>
-                            <input class="form-control" type="number" placeholder="€1000 per night" name="two_bed_price"
+                            <input class="form-control" type="number" placeholder="£350 per night" name="two_bed_price"
                                 value="{{ old('two_bed_price') }}">
                             <small class="text-danger">
                                 @error('two_bed_price')
