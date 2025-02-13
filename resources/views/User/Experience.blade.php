@@ -73,7 +73,7 @@
     <div class="container-fluid mt-150 mt-sm-200">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-6 mb-sm-15">
-                <img src="{{ asset('assets/images/sterling-experience.png') }}" alt=""
+                <img src="{{ asset('assets/images/sterling-experience.png') }}" alt="Sterling Experience"
                     class="img-fluid sterling-experience-img">
             </div>
             <div class="col-md-4">
@@ -106,7 +106,7 @@
         <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
                 <div class="col-md col-12 text-center standard-card">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}" class="img-fluid">
                     <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach

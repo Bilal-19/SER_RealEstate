@@ -173,7 +173,7 @@
                 <div class="row">
                     <div class="col-md-6 price-container">
                         <div>
-                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="single bedroom icon" class="img-fluid">
                         </div>
                         <div class="mx-3">
                             <p class="mb-0">One Bedroom Apartment</p>
@@ -184,7 +184,7 @@
 
                     <div class="col-md-6 price-container">
                         <div>
-                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="" class="img-fluid">
+                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="double bedroom icon" class="img-fluid">
                         </div>
                         <div class="mx-3">
                             <p class="mb-0">Two Bedroom Apartment</p>
@@ -281,7 +281,7 @@
         <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
                 <div class="col-md col-12 text-center standard-card mb-100">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}" class="img-fluid">
                     <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach

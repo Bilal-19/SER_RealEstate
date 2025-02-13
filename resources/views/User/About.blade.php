@@ -88,7 +88,7 @@
             <div class="col-md-11 mx-auto">
                 <div class="row">
                     <div class="col-md-3 col-10 mx-auto text-center">
-                        <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
+                        <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="Simple Booking" class="img-fluid mb-3">
                         <h5>Simple Booking</h5>
                         <p class="mt-5 mb-sm-0">
                             Our bespoke corporate client packages come with a designated account manager to tend to all
@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="col-md-3 col-10 mx-auto text-center ">
-                        <img src="{{ asset('assets/images/heart.png') }}" alt="" class="img-fluid mb-3">
+                        <img src="{{ asset('assets/images/heart.png') }}" alt="Supporting Tenants" class="img-fluid mb-3">
                         <h5>We Look After You</h5>
                         <p class="mt-5 mb-sm-0">
                             We will always be there to support you through the entirety of the booking process
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="col-md-3 col-10 mx-auto text-center ">
-                        <img src="{{ asset('assets/images/sofa.jpg') }}" alt="" class="img-fluid mb-3">
+                        <img src="{{ asset('assets/images/sofa.jpg') }}" alt="Feel Comfortable" class="img-fluid mb-3">
                         <h5>Feel At Home</h5>
                         <p class="mt-5 mb-sm-0">
                             You will have everything you need to feel right at home
@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="col-md-3 col-10 mx-auto text-center  ">
-                        <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="" class="img-fluid mb-3">
+                        <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="Providing security" class="img-fluid mb-3">
                         <h5>Feel Secure</h5>
                         <p class="mt-5 mb-sm-0">
                             We provide safe, secure accommodation with 24-hour support

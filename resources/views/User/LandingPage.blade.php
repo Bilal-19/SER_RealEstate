@@ -206,7 +206,7 @@
                     <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}
                     </h2>
                     <p class="col-md-9 fs-18 fs-sm-16">{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
-                    <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt=""
+                    <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt="{{ $topRatedApartment->apartment_name }}"
                         class="img-fluid mt-3">
                     <a href="{{ route('Detail.View.Apartment', ['id' => $topRatedApartment->id]) }}"
                         id="explore-cta-apartment">Explore</a>
@@ -283,7 +283,7 @@
 
         <div class="row mt-70">
             <div class="col-md-3 col-10 mx-auto text-center">
-                <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="" class="img-fluid mb-3">
+                <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="Simple Booking" class="img-fluid mb-3">
                 <h5>Simple Booking</h5>
                 <p class="mt-5 mb-sm-0">
                     Our bespoke corporate client packages come with a designated account manager to tend to all requests
@@ -291,7 +291,7 @@
             </div>
 
             <div class="col-md-3 col-10 mx-auto text-center ">
-                <img src="{{ asset('assets/images/heart.png') }}" alt="" class="img-fluid mb-3">
+                <img src="{{ asset('assets/images/heart.png') }}" alt="Supporting Tenants" class="img-fluid mb-3">
                 <h5>We Look After You</h5>
                 <p class="mt-5 mb-sm-0">
                     We will always be there to support you through the entirety of the booking process
@@ -299,7 +299,7 @@
             </div>
 
             <div class="col-md-3 col-10 mx-auto text-center ">
-                <img src="{{ asset('assets/images/sofa.jpg') }}" alt="" class="img-fluid mb-3">
+                <img src="{{ asset('assets/images/sofa.jpg') }}" alt="Feel Comfortable" class="img-fluid mb-3">
                 <h5>Feel At Home</h5>
                 <p class="mt-5 mb-sm-0">
                     You will have everything you need to feel right at home
@@ -307,7 +307,7 @@
             </div>
 
             <div class="col-md-3 col-10 mx-auto text-center  ">
-                <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="" class="img-fluid mb-3">
+                <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="Provide security" class="img-fluid mb-3">
                 <h5>Feel Secure</h5>
                 <p class="mt-5 mb-sm-0">
                     We provide safe, secure accommodation with 24-hour support

@@ -30,7 +30,7 @@
                     @foreach ($fetchRooms as $record)
                         <div class="col-md-6">
                             <a href="{{ route('Detail.View.Apartment', ['id' => $record->id]) }}">
-                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featured_image) }}" alt=""
+                                <img src="{{ asset('Apartment/Thubmbnail/' . $record->featured_image) }}" alt="{{$record->apartment_name}}"
                                     class="img-fluid rounded apartment-thumbnail">
                             </a>
                             <p class="mb-0">{{ $record->street_address }}</p>
