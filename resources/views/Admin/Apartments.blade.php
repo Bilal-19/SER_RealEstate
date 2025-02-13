@@ -33,6 +33,7 @@
                         <th>Available From</th>
                         <th>Available Till</th>
                         <th>Top Rated</th>
+                        <th>Availablity</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -56,6 +57,17 @@
                                     <a href="{{ route('Toggle.Fav', ['id' => $rec->id]) }}" title="Remove from favourites"
                                         class="text-dark">
                                         <i class="fa-solid fa-star"></i>
+                                    </a>
+                                @endif
+                            </td>
+                            <td class="text-center">
+                                @if ($rec->status == 'Available')
+                                    <a class="text-success">
+                                        <i class="fa-solid fa-check-circle mx-1"></i>
+                                    </a>
+                                @else
+                                    <a class="text-danger">
+                                        <i class="fa-solid fa-house-lock mx-2"></i>
                                     </a>
                                 @endif
                             </td>
