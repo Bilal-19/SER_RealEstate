@@ -44,7 +44,7 @@
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Your reservation:</strong> <span
                 style="float: right;">{{ $totalStay }} nights</span></p>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;"><strong>Total Received Amount:</strong> <span
-                style="float: right;">${{ $perNightPrice * $totalStay }}</span></p>
+                style="float: right;">£{{ $perNightPrice * $totalStay }}</span></p>
         <hr>
         <footer style="text-align: center; color: #6c757d; font-size: 14px; margin-top: 20px;">
             Thank you for your e-payment. If you have any questions, please contact us at info@sterling-executive.com

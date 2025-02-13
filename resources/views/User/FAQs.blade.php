@@ -33,18 +33,11 @@
             font-weight: 500;
             font-size: 18px;
         }
-
-        @media screen and (max-width: 768px){
-            .mt-sm-150{
-                margin-top: 150px;
-            }
-        }
-
     </style>
 @endpush
 
 @section('user-main-section')
-<div class="container-fluid mt-sm-150 mt-150">
+<div class="container-fluid mt-sm-200 mt-150">
     <div class="row mt-100">
         <div class="col-md-11 mx-auto">
             <h3 class="fs-48 fs-sm-25">FAQs</h3>

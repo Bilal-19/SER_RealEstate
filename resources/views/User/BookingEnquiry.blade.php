@@ -11,22 +11,11 @@
         .form-control::placeholder {
             color: white;
         }
-
-        /* .brand-btn {
-            font-weight: bold;
-            border-radius: 12px;
-            padding: 12px 30px;
-        } */
-        @media screen and (max-width: 768px){
-            .mt-sm-150{
-                margin-top: 150px;
-            }
-        }
     </style>
 @endpush
 
 @push('CTA')
-    <div class="container-fluid mt-150 mt-sm-150">
+    <div class="container-fluid mt-150 mt-sm-200">
         <div class="row mt-5">
             <div class="col-md-9 mx-auto">
                 <h2 class="text-center fs-48 fs-sm-25">

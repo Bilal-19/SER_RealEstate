@@ -130,16 +130,12 @@
                 margin-bottom: 10px;
                 margin-top: 20px;
             }
-
-            .mt-sm-150 {
-                margin-top: 150px;
-            }
         }
     </style>
 @endpush
 
 @push('CTA')
-    <div class="container-fluid home-bg-img mb-3 mt-150">
+    <div class="container-fluid home-bg-img mb-3 mt-150 mt-sm-200">
         <div class="row">
             <div class="col-md-12 mx-auto text-light search-container">
                 <h2 class="text-center fs-56 fs-sm-28">

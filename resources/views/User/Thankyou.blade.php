@@ -30,7 +30,7 @@
 @endpush
 
 @push('CTA')
-<div class="container-fluid mt-150">
+<div class="container-fluid mt-150 mt-sm-200">
     <div class="row">
         <div class="col-md-8 mx-auto style-container">
             <img src="{{ asset('assets/images/circle.jpg') }}" alt="confirmation tick" class="img-fluid mt-5">

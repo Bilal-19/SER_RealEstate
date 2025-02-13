@@ -35,16 +35,12 @@
             .flex-div {
                 flex-direction: column-reverse;
             }
-
-            .mt-sm-150{
-                margin-top: 150px;
-            }
         }
     </style>
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-150 mt-sm-150">
+    <div class="container-fluid mt-150 mt-sm-200">
         <div class="row">
             <h3 class="fs-48 fs-sm-25">Corporate Stays in {{ $locationName }}</h3>
         </div>
