@@ -17,7 +17,7 @@
 @endpush
 
 @section('user-main-section')
-    <div class="container-fluid mt-150 mt-sm-150">
+    <div class="container-fluid mt-150 mt-sm-200">
         <div class="row mb-5">
             <div class="col-md-6">
                 <div class="row d-flex justify-content-between">

@@ -20,14 +20,12 @@
 <body style="background-color: #f8f9fa; font-family: Arial, sans-serif; color: #343a40; padding: 20px;">
     <div class="container"
         style="max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-        <h2>Thanks {{ $name }}, Your Booking at {{ $areaName }} is Confirmed</h2>
-        <div
-            style="display: flex; flex-direction:row; justify-content:space-between; align-items:center; margin-right:10px;">
+        <div>
             <img src="{{ $message->embed(public_path() . '/company_logo.png') }}" alt="Company Logo"
-                style="height: 100px">
-            <h2 style="text-align: center; color: #0e1b29; font-size: 20px;">Sterling Executive Residential - Payment
-                Voucher</h2>
+                style="height: 100px; display:block; margin: auto;">
+            <h2 style="text-align: center; color: #0e1b29; font-size: 20px;">Payment Voucher</h2>
         </div>
+        <h2>Thanks {{ $name }}, Your Booking at {{ $areaName }} is Confirmed</h2>
 
         <hr>
         <p style="width:600px; padding: 5px 0px; font-size: 18px;">

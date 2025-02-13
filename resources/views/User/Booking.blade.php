@@ -98,7 +98,7 @@
             'Turkey',
         ];
     @endphp
-    <div class="container-fluid mb-5 mt-sm-150 mt-150">
+    <div class="container-fluid mb-5 mt-sm-200 mt-150">
         <div class="row booking-flex-container">
             <div class="col-md-5 border-grey border-radius-16">
                 <div class="booking-container mt-3">
