@@ -24,7 +24,7 @@
         <div
             style="display: flex; flex-direction:row; justify-content:space-between; align-items:center; margin-right:10px;">
             <img src="{{ $message->embed(public_path() . '/company_logo.png') }}" alt="Company Logo"
-                style="height: 80px; width: 80px;">
+                style="height: 100px">
             <h2 style="text-align: center; color: #0e1b29; font-size: 20px;">Sterling Executive Residential - Payment
                 Voucher</h2>
         </div>
@@ -47,7 +47,7 @@
                 style="float: right;">${{ $perNightPrice * $totalStay }}</span></p>
         <hr>
         <footer style="text-align: center; color: #6c757d; font-size: 14px; margin-top: 20px;">
-            Thank you for your e-payment. If you have any questions, please contact us at support@example.com.
+            Thank you for your e-payment. If you have any questions, please contact us at info@sterling-executive.com
         </footer>
     </div>
 

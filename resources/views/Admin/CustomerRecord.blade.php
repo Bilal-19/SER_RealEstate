@@ -123,7 +123,7 @@
         <tr>
             <th>Apartment Name: </th>
             <td>
-                {{ $fetchBookingRecord->area_name }}
+                {{ $fetchBookingRecord->apartment_name }}
             </td>
         </tr>
 

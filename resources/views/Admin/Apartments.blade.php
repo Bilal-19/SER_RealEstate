@@ -32,7 +32,7 @@
                         <th>Thumbnail Image</th>
                         <th>Available From</th>
                         <th>Available Till</th>
-                        <th>Favourites</th>
+                        <th>Top Rated</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
