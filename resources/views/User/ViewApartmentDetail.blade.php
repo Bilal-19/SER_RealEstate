@@ -173,7 +173,7 @@
                 <div class="row">
                     <div class="col-md-6 price-container">
                         <div>
-                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="single bedroom icon" class="img-fluid">
+                            <img src="{{ asset('assets/images/bed_price.webp') }}" alt="single bedroom icon" class="img-fluid">
                         </div>
                         <div class="mx-3">
                             <p class="mb-0">One Bedroom Apartment</p>
@@ -184,7 +184,7 @@
 
                     <div class="col-md-6 price-container">
                         <div>
-                            <img src="{{ asset('assets/images/bed_price.jpg') }}" alt="double bedroom icon" class="img-fluid">
+                            <img src="{{ asset('assets/images/bed_price.webp') }}" alt="double bedroom icon" class="img-fluid">
                         </div>
                         <div class="mx-3">
                             <p class="mb-0">Two Bedroom Apartment</p>
@@ -222,7 +222,7 @@
                     @isset($isAvailable)
                         @if ($isAvailable == true)
                             <p class="availability-text-success mt-2">
-                                <img src="{{ asset('assets/images/success_circle.png') }}" alt="availability check">
+                                <img src="{{ asset('assets/images/success_circle.webp') }}" alt="availability check">
                                 Apartment is Available
                             </p>
                             <a class="book-now-btn ms-auto"
@@ -243,16 +243,16 @@
 
         @php
             $features = [
-                ['key' => 'concierge', 'label' => 'Concierge', 'image' => 'concierge.png'],
-                ['key' => 'air_conditioning', 'label' => 'Air Conditioning', 'image' => 'air_conditioning.png'],
-                ['key' => 'kitchen', 'label' => 'Fully Equipped Kitchen', 'image' => 'equiped_kitchen.png'],
-                ['key' => 'pet_friendly', 'label' => 'Pet Friendly', 'image' => 'pet_friendly.png'],
-                ['key' => 'parking', 'label' => 'Parking', 'image' => 'parking.png'],
-                ['key' => 'personal_safe', 'label' => 'Personal Safe', 'image' => 'personal_safe.png'],
-                ['key' => 'washing', 'label' => 'Washing/Dryer', 'image' => 'dryer.png'],
-                ['key' => 'elevator', 'label' => 'Elevator in Building', 'image' => 'elevator.png'],
-                ['key' => 'private_balcony', 'label' => 'Private Balcony', 'image' => 'private-balcony.png'],
-                ['key' => 'dishwasher', 'label' => 'Dishwasher', 'image' => 'dishwasher.png'],
+                ['key' => 'concierge', 'label' => 'Concierge', 'image' => 'concierge.webp'],
+                ['key' => 'air_conditioning', 'label' => 'Air Conditioning', 'image' => 'air_conditioning.webp'],
+                ['key' => 'kitchen', 'label' => 'Fully Equipped Kitchen', 'image' => 'equiped_kitchen.webp'],
+                ['key' => 'pet_friendly', 'label' => 'Pet Friendly', 'image' => 'pet_friendly.webp'],
+                ['key' => 'parking', 'label' => 'Parking', 'image' => 'parking.webp'],
+                ['key' => 'personal_safe', 'label' => 'Personal Safe', 'image' => 'personal_safe.webp'],
+                ['key' => 'washing', 'label' => 'Washing/Dryer', 'image' => 'dryer.webp'],
+                ['key' => 'elevator', 'label' => 'Elevator in Building', 'image' => 'elevator.webp'],
+                ['key' => 'private_balcony', 'label' => 'Private Balcony', 'image' => 'private-balcony.webp'],
+                ['key' => 'dishwasher', 'label' => 'Dishwasher', 'image' => 'dishwasher.webp'],
             ];
         @endphp
 

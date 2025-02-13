@@ -21,13 +21,13 @@
         <div class="row mt-5 text-center d-flex justify-content-center align-items-center">
             <div class="col-md-1 enquiry-card mx-3">
                 <a href="{{ route('Booking.Enquiry') }}">
-                    <img src="{{ asset('assets/images/booking-enquiry.png') }}" alt="Booking Enquiry Icon" class="img-fluid">
+                    <img src="{{ asset('assets/images/booking-enquiry.webp') }}" alt="Booking Enquiry Icon" class="img-fluid">
                 </a>
                 <p>Booking Enquiries</p>
             </div>
             <div class="col-md-1 enquiry-card mx-3">
                 <a href="{{ route('General.Enquiry') }}">
-                    <img src="{{ asset('assets/images/general-enquiry.png') }}" alt="General Enquiry Icon" class="img-fluid">
+                    <img src="{{ asset('assets/images/general-enquiry.webp') }}" alt="General Enquiry Icon" class="img-fluid">
                 </a>
                 <p>General Enquiries</p>
             </div>

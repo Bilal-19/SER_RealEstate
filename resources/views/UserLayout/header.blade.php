@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
-        content="Discover luxury living with Sterling Executive Residential. Explore our exclusive range of apartments across the UK, designed for comfort and convenience. Easily find your ideal stay by selecting your desired location, check-in, and check-out dates to view available options. Experience exceptional accommodations tailored to meet your needs, whether for business or leisure. Book your perfect apartment today and enjoy unparalleled service, prime locations, and modern amenities. Sterling Executive Residential redefining apartment living in the UK.">
+        content="Discover luxury living with Sterling Executive Residential. Explore our exclusive UK apartments designed for comfort and convenience. Select your location, check-in, and check-out dates to find the perfect stay. Whether for business or leisure, enjoy exceptional accommodations tailored to your needs. Book today for unparalleled service, prime locations, and modern amenities. Redefining apartment living in the UK.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Sterling Executive Residential</title>
@@ -22,21 +22,12 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    {{-- Swiper JS CDN --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     {{-- Multiple Location Marker --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     @stack('style')
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 
     <style>
-        .sticky-header {
-            position: fixed;
-            width: -webkit-fill-available;
-            top: 0;
-        }
-
         .user-active-link {
             text-decoration: underline;
             color: #c0c0c0;
@@ -86,7 +77,7 @@
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        <img src={{ asset('assets/images/ser_header_logo.png') }} class="d-inline-block align-top" alt="">
+                        <img src={{ asset('assets/images/ser_header_logo.webp') }} class="d-inline-block align-top" alt="">
                     </a>
                     <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

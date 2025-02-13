@@ -83,7 +83,7 @@
     <div class="container-fluid mt-150 mt-sm-150">
         <div class="mt-5 row d-flex justify-content-evenly align-items-center">
             <div class="col-md-6 mb-sm-15">
-                <img src="{{ asset('assets/images/dedicated-account-team.png') }}" alt="Dedicated account team"
+                <img src="{{ asset('assets/images/dedicated-account-team.webp') }}" alt="Dedicated account team"
                     class="img-fluid" id="account-team">
             </div>
             <div class="col-md-4">
@@ -123,7 +123,7 @@
                 <a href="{{ route('view.Experience') }}" class="brand-btn mb-sm-25">Learn More</a>
             </div>
             <div class="col-md-7 mt-sm-25 mb-sm-15">
-                <img src="{{ asset('assets/images/kitchen.png') }}" alt="Kitchen" class="img-fluid rounded">
+                <img src="{{ asset('assets/images/kitchen.webp') }}" alt="Kitchen" class="img-fluid rounded">
             </div>
         </div>
     </div>

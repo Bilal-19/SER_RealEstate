@@ -73,7 +73,7 @@
     <div class="container-fluid mt-150 mt-sm-200">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="col-md-6 mb-sm-15">
-                <img src="{{ asset('assets/images/sterling-experience.png') }}" alt="Sterling Experience"
+                <img src="{{ asset('assets/images/sterling-experience.webp') }}" alt="Sterling Experience"
                     class="img-fluid sterling-experience-img">
             </div>
             <div class="col-md-4">

@@ -3,7 +3,7 @@
 @push('style')
     <style>
         .home-bg-img {
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('/assets/images/home_banner.png');
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0 100%), url('/assets/images/home_banner.webp');
             background-size: cover;
             background-attachment: scroll;
             background-repeat: no-repeat;
@@ -169,7 +169,7 @@
     <div class="container-fluid mt-150 mt-sm-75">
         <div class="row mt-5 d-flex justify-content-center">
             <div class="col-md-4 col-11">
-                <img src="{{ asset('assets/images/House.jpg') }}" alt="House" class="img-fluid apartment-category-img">
+                <img src="{{ asset('assets/images/House.webp') }}" alt="House" class="img-fluid apartment-category-img">
                 <a href="{{ route('Property.Houses') }}" class="text-dark">
                     <h4>Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
                 </a>
@@ -178,7 +178,7 @@
                 </p>
             </div>
             <div class="col-md-4 col-11">
-                <img src="{{ asset('assets/images/Apartment.jpg') }}" alt="Apartments"
+                <img src="{{ asset('assets/images/Apartment.webp') }}" alt="Apartments"
                     class="img-fluid apartment-category-img">
                 <a href="{{ route('Property.Apartments') }}" class="text-dark">
                     <h4>Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
@@ -188,7 +188,7 @@
                 </p>
             </div>
             <div class="col-md-4 col-11">
-                <img src="{{ asset('assets/images/Room.jpg') }}" alt="Rooms" class="img-fluid apartment-category-img">
+                <img src="{{ asset('assets/images/Room.webp') }}" alt="Rooms" class="img-fluid apartment-category-img">
                 <a href="{{ route('Property.Rooms') }}" class="text-dark">
                     <h4>Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
                 </a>
@@ -231,7 +231,7 @@
                 <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn">Learn more</a>
             </div>
             <div class="col-md-6 mt-sm-25">
-                <img src="{{ asset('assets/images/bed.jpg') }}"
+                <img src="{{ asset('assets/images/bed.webp') }}"
                     alt="A cozy and well-lit living space with a wooden chair, coffee table, indoor plants, bookshelves, and a modern TV setup"
                     class="img-fluid bedroom-img">
             </div>
@@ -283,31 +283,31 @@
 
         <div class="row mt-70">
             <div class="col-md-3 col-10 mx-auto text-center">
-                <img src="{{ asset('assets/images/check-mark.jpg') }}" alt="Simple Booking" class="img-fluid mb-3">
+                <img src="{{ asset('assets/images/check-mark.webp') }}" alt="Simple Booking" class="img-fluid mb-3">
                 <h5>Simple Booking</h5>
                 <p class="mt-5 mb-sm-0">
                     Our bespoke corporate client packages come with a designated account manager to tend to all requests
                 </p>
             </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center ">
-                <img src="{{ asset('assets/images/heart.png') }}" alt="Supporting Tenants" class="img-fluid mb-3">
+            <div class="col-md-3 col-10 mx-auto text-center">
+                <img src="{{ asset('assets/images/heart.webp') }}" alt="Supporting Tenants" class="img-fluid mb-3">
                 <h5>We Look After You</h5>
                 <p class="mt-5 mb-sm-0">
                     We will always be there to support you through the entirety of the booking process
                 </p>
             </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center ">
-                <img src="{{ asset('assets/images/sofa.jpg') }}" alt="Feel Comfortable" class="img-fluid mb-3">
+            <div class="col-md-3 col-10 mx-auto text-center">
+                <img src="{{ asset('assets/images/sofa.webp') }}" alt="Feel Comfortable" class="img-fluid mb-3">
                 <h5>Feel At Home</h5>
                 <p class="mt-5 mb-sm-0">
                     You will have everything you need to feel right at home
                 </p>
             </div>
 
-            <div class="col-md-3 col-10 mx-auto text-center  ">
-                <img src="{{ asset('assets/images/protecting_people.jpg') }}" alt="Provide security" class="img-fluid mb-3">
+            <div class="col-md-3 col-10 mx-auto text-center">
+                <img src="{{ asset('assets/images/protecting_people.webp') }}" alt="Provide security" class="img-fluid mb-3">
                 <h5>Feel Secure</h5>
                 <p class="mt-5 mb-sm-0">
                     We provide safe, secure accommodation with 24-hour support

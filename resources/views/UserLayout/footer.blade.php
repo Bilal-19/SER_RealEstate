@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-4 d-flex flex-column align-items-end mt-sm-30">
             <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                <img src="{{ asset('assets/images/ser_footer_logo.png') }}" alt="Sterling Executive Residential Logo">
+                <img src="{{ asset('assets/images/ser_footer_logo.webp') }}" alt="Sterling Executive Residential Logo">
             </a>
 
             <div class="mt-2">
