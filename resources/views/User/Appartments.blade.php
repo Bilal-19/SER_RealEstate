@@ -79,6 +79,13 @@
             margin-top: 150px;
         }
 
+        .search-btn {
+            background-color: #c0c0c0;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
+
         @media screen and (max-width: 768px){
             .mt-sm-150{
                 margin-top: 150px;
