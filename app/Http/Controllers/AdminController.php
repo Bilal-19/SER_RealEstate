@@ -40,6 +40,14 @@ class AdminController extends Controller
         }
     }
 
+    public function fetchApartment($id)
+    {
+        $findApartment = DB::table('apartments')->
+            where("id", "=", $id)->
+            first();
+        return $findApartment;
+    }
+
     // Appartment Section
     public function Apartments(Request $request)
     {
@@ -59,7 +67,7 @@ class AdminController extends Controller
 
     public function toggleFav($id)
     {
-        $findApartment = DB::table('apartments')->where("id","=",$id)->first();
+        $findApartment = $this->fetchApartment($id);
 
         if ($findApartment->isFavourite == 0) {
             DB::table('apartments')->where('id', $id)->update(['isFavourite' => 1]);
@@ -161,7 +169,7 @@ class AdminController extends Controller
 
     public function deleteApartment($id)
     {
-        $findApartment = DB::table('apartments')->where('id', '=', $id);
+        $findApartment = $this->fetchApartment($id);
         if ($findApartment) {
             $result = $findApartment->delete();
             toastr()->success('Record deleted successfully');
@@ -171,7 +179,7 @@ class AdminController extends Controller
 
     public function editApartment($id)
     {
-        $findApartment = DB::table('apartments')->where("id","=",$id)->first();
+        $findApartment = $this->fetchApartment($id);
         $images = explode('|', $findApartment->multiple_images);
         $fetchLocArr = DB::table("locations")->pluck('location');
         return view('Admin.EditApartment')->with(compact('findApartment', 'images', 'fetchLocArr'));
@@ -179,7 +187,7 @@ class AdminController extends Controller
 
     public function updateApartment($id, Request $request)
     {
-        $findApartment = DB::table('apartments')->where("id","=",$id)->first();
+        $findApartment = $this->fetchApartment($id);
         // Form Validation
         $request->validate([
             "apartment_name" => "required",
@@ -280,8 +288,6 @@ class AdminController extends Controller
         return view("Admin.AddStandards");
     }
 
-
-
     public function createStandard(Request $request)
     {
         // Form Validation
@@ -314,7 +320,7 @@ class AdminController extends Controller
 
     public function updateStandard($id, Request $request)
     {
-        $iconImg = DB::table('standards')->where("id","=",$id)->first();
+        $iconImg = DB::table('standards')->where("id", "=", $id)->first();
 
         if ($request->file('standard_icon')) {
             $timeStampImg = time() . '.' . $request->standard_icon->getClientOriginalExtension();
@@ -357,7 +363,7 @@ class AdminController extends Controller
 
     public function generatePDF($id)
     {
-        $fetchRecord = DB::table('booking')->where("id","=",$id)->first();
+        $fetchRecord = DB::table('booking')->where("id", "=", $id)->first();
         $fetchApartmentID = $fetchRecord->apartment_id;
         $fetchBookingRecord = DB::table('booking')
             ->join('apartments', 'booking.apartment_id', '=', 'apartments.id')
