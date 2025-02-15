@@ -59,7 +59,7 @@ class AdminController extends Controller
 
     public function toggleFav($id)
     {
-        $findApartment = DB::table('apartments')->find($id);
+        $findApartment = DB::table('apartments')->where("id","=",$id)->first();
 
         if ($findApartment->isFavourite == 0) {
             DB::table('apartments')->where('id', $id)->update(['isFavourite' => 1]);
@@ -171,7 +171,7 @@ class AdminController extends Controller
 
     public function editApartment($id)
     {
-        $findApartment = DB::table('apartments')->find($id);
+        $findApartment = DB::table('apartments')->where("id","=",$id)->first();
         $images = explode('|', $findApartment->multiple_images);
         $fetchLocArr = DB::table("locations")->pluck('location');
         return view('Admin.EditApartment')->with(compact('findApartment', 'images', 'fetchLocArr'));
@@ -179,7 +179,7 @@ class AdminController extends Controller
 
     public function updateApartment($id, Request $request)
     {
-        $findApartment = DB::table('apartments')->find($id);
+        $findApartment = DB::table('apartments')->where("id","=",$id)->first();
         // Form Validation
         $request->validate([
             "apartment_name" => "required",
@@ -314,7 +314,7 @@ class AdminController extends Controller
 
     public function updateStandard($id, Request $request)
     {
-        $iconImg = DB::table('standards')->find($id);
+        $iconImg = DB::table('standards')->where("id","=",$id)->first();
 
         if ($request->file('standard_icon')) {
             $timeStampImg = time() . '.' . $request->standard_icon->getClientOriginalExtension();
@@ -357,7 +357,7 @@ class AdminController extends Controller
 
     public function generatePDF($id)
     {
-        $fetchRecord = DB::table('booking')->find($id);
+        $fetchRecord = DB::table('booking')->where("id","=",$id)->first();
         $fetchApartmentID = $fetchRecord->apartment_id;
         $fetchBookingRecord = DB::table('booking')
             ->join('apartments', 'booking.apartment_id', '=', 'apartments.id')
