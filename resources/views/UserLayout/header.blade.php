@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-site-verification" content="hPCXHOPxwHuxZNC5xTD5nvDbnJPAhtGwynDqjBXO9fU" />
     <meta name="description"
         content="Discover luxury living with Sterling Executive Residential. Explore our exclusive UK apartments designed for comfort and convenience. Select your location, check-in, and check-out dates to find the perfect stay. Whether for business or leisure, enjoy exceptional accommodations tailored to your needs. Book today for unparalleled service, prime locations, and modern amenities. Redefining apartment living in the UK.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
