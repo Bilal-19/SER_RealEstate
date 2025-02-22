@@ -487,5 +487,19 @@ class UserController extends Controller
             ->get();
         return view("User.PropertyTypeRooms", with(compact("fetchRooms")));
     }
+
+    public function createSession($apartment_id)
+    {
+        $apartmentRec = DB::table("apartments")->find($apartment_id);
+        $sessionKey = '123';
+        session([$sessionKey => $apartmentRec]);
+    }
+
+    public function readSession()
+    {
+        $fetchAllVal = session()->get('123');
+        return $fetchAllVal;
+    }
+
 }
 

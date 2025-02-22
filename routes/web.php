@@ -17,7 +17,7 @@ Route::controller(UserController::class)->group(
         Route::get("about", 'aboutSterling')->name('View.About');
         Route::get("join-sterling", 'JoinSterlingEnquiry')->name('View.Enquiry.Form');
         Route::get("experience", 'viewExperience')->name('view.Experience');
-        Route::get("locations", 'Locations')->name('view.Locations');
+        Route::get("london-locations", 'Locations')->name('view.Locations');
         Route::get("contact-us", 'ContactUs')->name('view.ContactUs');
         Route::get("booking-enquiry", 'ViewBookingEnquiry')->name(name: 'Booking.Enquiry');
         Route::post("submit/booking-enquiry", 'SubmitBookingEnquiry')->name(name: 'SubmitBookingEnquiry');
@@ -43,6 +43,9 @@ Route::controller(UserController::class)->group(
         // Payment Routes
         Route::post("/booking/payment/{apartmentID}/{checkIn}/{checkOut}/{totalDays}/{totalAmount}/{apartment_price}", 'stripePost')->name('stripe.post');
 
+        // Session
+        Route::get("create/session/{id}", 'createSession')->name('Create.Session');
+        Route::get("read/session", 'readSession')->name('Read.Session');
     }
 );
 

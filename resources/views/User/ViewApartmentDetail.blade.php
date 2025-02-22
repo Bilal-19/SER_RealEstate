@@ -167,13 +167,20 @@
             </div>
         </div>
 
+        <div class="row text-end">
+            <div class="col-md-12">
+                <a href="{{route("Create.Session", ['id' => $findApartment->id])}}">Add to Favourite</a>
+            </div>
+        </div>
+
         <div class="row mt-5">
             <div class="col-md-7">
                 <h4 class="mb-5">{{ $findApartment->apartment_name }}</h4>
                 <div class="row">
                     <div class="col-md-6 price-container">
                         <div>
-                            <img src="{{ asset('assets/images/bed_price.webp') }}" alt="single bedroom icon" class="img-fluid">
+                            <img src="{{ asset('assets/images/bed_price.webp') }}" alt="single bedroom icon"
+                                class="img-fluid">
                         </div>
                         <div class="mx-3">
                             <p class="mb-0">One Bedroom Apartment</p>
@@ -184,7 +191,8 @@
 
                     <div class="col-md-6 price-container">
                         <div>
-                            <img src="{{ asset('assets/images/bed_price.webp') }}" alt="double bedroom icon" class="img-fluid">
+                            <img src="{{ asset('assets/images/bed_price.webp') }}" alt="double bedroom icon"
+                                class="img-fluid">
                         </div>
                         <div class="mx-3">
                             <p class="mb-0">Two Bedroom Apartment</p>
@@ -281,7 +289,8 @@
         <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
                 <div class="col-md col-12 text-center standard-card mb-100">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}" class="img-fluid">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}"
+                        class="img-fluid">
                     <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach

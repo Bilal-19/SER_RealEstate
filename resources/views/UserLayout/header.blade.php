@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="hPCXHOPxwHuxZNC5xTD5nvDbnJPAhtGwynDqjBXO9fU" />
     <meta name="description"
-        content="Discover luxury living with Sterling Executive Residential. Explore our exclusive UK apartments designed for comfort and convenience. Select your location, check-in, and check-out dates to find the perfect stay. Whether for business or leisure, enjoy exceptional accommodations tailored to your needs. Book today for unparalleled service, prime locations, and modern amenities. Redefining apartment living in the UK.">
+        content="Book large family homes or studio apartments in London. Enjoy fully equipped properties and tailored stays for teams. Perfect for corporate or family stays!">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Sterling Executive Residential</title>
