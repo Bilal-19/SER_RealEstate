@@ -19,19 +19,19 @@
         </div>
         <div class="col-md-4 d-flex flex-column align-items-end mt-sm-30">
             <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                <img src="{{ asset('assets/images/ser_footer_logo.webp') }}" alt="Sterling Executive Residential Logo">
+                <img src="{{ asset('assets/images/ser_footer_logo.webp') }}" alt="sterling-executive-logo">
             </a>
 
             <div class="mt-2">
-                <a href="#">
+                <a href="#" aria-label="Visit our Linkedin Profile">
                     <i class="fa-brands fa-linkedin fa-xl"></i>
                 </a>
                 <span>|</span>
-                <a href="https://www.facebook.com/profile.php?id=61569866642277">
+                <a href="https://www.facebook.com/profile.php?id=61569866642277" aria-label="Visit our Facebook Profile">
                     <i class="fa-brands fa-facebook fa-xl"></i>
                 </a>
                 <span>|</span>
-                <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ==">
+                <a href="https://www.instagram.com/sterlingexecutive/profilecard/?igsh=MXR3NDNicml4enc4cQ==" aria-label="Visit Our Instagram Profile">
                     <i class="fa-brands fa-instagram fa-xl"></i>
                 </a>
             </div>
@@ -44,7 +44,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
 
-<script src="{{ asset('assets/js/swiperJS.js') }}"></script>
 
 @stack('script')
 

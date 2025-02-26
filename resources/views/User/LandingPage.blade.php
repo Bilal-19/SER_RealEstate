@@ -156,7 +156,7 @@
                             value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
                         <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
                             value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                        <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"
+                        <button class="search-btn" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"
                                 style="color:white;"></i></button>
                     </div>
                 </form>
@@ -171,7 +171,7 @@
             <div class="col-md-4 col-11">
                 <img src="{{ asset('assets/images/House.webp') }}" alt="House" class="img-fluid apartment-category-img">
                 <a href="{{ route('Property.Houses') }}" class="text-dark">
-                    <h4>Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+                    <h2>Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h2>
                 </a>
                 <p class="col-md-11">
                     If you need the extra space, book an entire place for your team or family.
@@ -181,7 +181,7 @@
                 <img src="{{ asset('assets/images/Apartment.webp') }}" alt="Apartments"
                     class="img-fluid apartment-category-img">
                 <a href="{{ route('Property.Apartments') }}" class="text-dark">
-                    <h4>Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+                    <h2>Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h2>
                 </a>
                 <p class="col-md-11">
                     Stay in some of the most iconic locations in London in shared buildings.
@@ -190,7 +190,7 @@
             <div class="col-md-4 col-11">
                 <img src="{{ asset('assets/images/Room.webp') }}" alt="Rooms" class="img-fluid apartment-category-img">
                 <a href="{{ route('Property.Rooms') }}" class="text-dark">
-                    <h4>Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h4>
+                    <h2>Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h2>
                 </a>
                 <p class="col-md-11">
                     Enjoy your own studio space with a common room to socialise with the rest of the team.
@@ -203,8 +203,8 @@
         @isset($topRatedApartment)
             <div class="row mt-5 mb-5">
                 <div class="col-md-12 mx-auto top-rated-apartment">
-                    <h2 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}
-                    </h2>
+                    <h3 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}
+                    </h3>
                     <p class="col-md-9 fs-18 fs-sm-16">{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
                     <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt="{{ $topRatedApartment->apartment_name }}"
                         class="img-fluid mt-3">
@@ -228,7 +228,7 @@
                     in
                     between. Putting the needs of our guests and clients first is at the forefront of everything we do.
                 </p>
-                <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn">Learn more</a>
+                <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn" aria-label="Learn more about corporate services">Learn more</a>
             </div>
             <div class="col-md-6 mt-sm-25">
                 <img src="{{ asset('assets/images/bed.webp') }}"
@@ -252,7 +252,7 @@
                 <div class="col-md-12 rounded">
                     <div id="feedback" class="carousel slide">
                         <div class="carousel-inner" data-bs-ride="carousel" data-bs-interval="3000">
-                            <h5 class="text-start">Your go to service since 2025</h5>
+                            <h4 class="text-start">Your go to service since 2025</h4>
 
                             @foreach ($fetchAllTestimonials as $record)
                                 <div class="col-5 carousel-item text-start mt-5 {{ $record->id == 1 ? 'active' : '' }}">
@@ -273,7 +273,7 @@
     <div class="container-fluid mt-150 mt-sm-75">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
+                <h1 class="fs-48 fs-sm-25">The Sterling Experience</h1>
                 <p>
                     Sit back & relax, we've got everything covered. Here's why Sterling Executive should be your first
                     choice when selecting a serviced apartment.

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="hPCXHOPxwHuxZNC5xTD5nvDbnJPAhtGwynDqjBXO9fU" />
-    <meta name="description"
-        content="Book large family homes or studio apartments in London. Enjoy fully equipped properties and tailored stays for teams. Perfect for corporate or family stays!">
+    <meta name="description" content="Book large family homes or studio apartments in London. Enjoy fully equipped properties and tailored stays for teams. Perfect for corporate or family stays!">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Sterling Executive Residential</title>
@@ -27,6 +26,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     @stack('style')
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+
+    <link rel="canonical" href="https://sterling-executive.com/">
+
 
     <style>
         .user-active-link {
@@ -78,7 +80,7 @@
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ route('Landing.Page') }}">
-                        <img src={{ asset('assets/images/ser_header_logo.webp') }} class="d-inline-block align-top" alt="">
+                        <img src={{ asset('assets/images/ser_header_logo.webp') }} class="d-inline-block align-top" alt="sterling-executive-logo">
                     </a>
                     <button class="navbar-toggler bg-light ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
