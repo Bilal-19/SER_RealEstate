@@ -79,16 +79,14 @@
             <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">The Sterling Experience</h3>
                 <p class="mt-20 style-experience-text">
-                    We strive to make your stay as seamless and enjoyable as
-                    possible. From the moment you arrive, you can expect a warm welcome and
-                    attentive service tailored to your needs. Our team is dedicated to ensuring that
-                    every detail is taken care of, allowing you to focus on what truly matters—
-                    whether it's a successful business trip or a relaxing getaway. With our extensive
-                    knowledge of the local area, we can recommend the best dining experiences,
-                    cultural attractions, and leisure activities to enhance your stay. At Sterling
-                    Executive, we believe in going the extra mile to create memorable experiences
-                    for our guests, making you feel right at home, no matter how far you've
-                    traveled.
+                    We strive to make your stay as seamless and enjoyable as possible. From the moment you
+                    arrive, you can expect a warm welcome and attentive service tailored to your needs. Our team
+                    is dedicated to ensuring every detail is taken care of, whether you’re here for a successful
+                    business trip or a relaxing getaway. With our extensive knowledge of London, we can
+                    recommend the best dining experiences, fully equipped properties, and tailored stays for teams
+                    to enhance your stay. At Sterling Executive, we believe in going the extra mile to create
+                    memorable experiences for our guests. Whether you’re booking corporate housing in London
+                    or a large family home, we make you feel right at home, no matter how far you’ve traveled.
                 </p>
             </div>
         </div>
@@ -106,7 +104,8 @@
         <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
                 <div class="col-md col-12 text-center standard-card">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}" class="img-fluid">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}"
+                        class="img-fluid">
                     <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach

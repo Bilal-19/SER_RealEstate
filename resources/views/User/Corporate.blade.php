@@ -33,46 +33,46 @@
             font-weight: 600;
         }
 
-        .standard-card{
+        .standard-card {
             height: 100px;
             width: 100px;
         }
 
-        .standard-card img{
+        .standard-card img {
             display: block;
             margin: 10px auto;
         }
 
-        .flex-container{
+        .flex-container {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
         }
 
-        #account-team{
+        #account-team {
             border-radius: 12px;
         }
 
-        @media screen and (max-width: 768px){
-            .standard-card{
+        @media screen and (max-width: 768px) {
+            .standard-card {
                 margin-top: 20px;
                 height: fit-content;
                 width: fit-content;
             }
 
-            .mt-sm-150{
+            .mt-sm-150 {
                 margin-top: 150px;
             }
 
-            .flex-container{
+            .flex-container {
                 flex-direction: column-reverse;
             }
 
-            #account-team{
+            #account-team {
                 margin-top: 50px;
             }
 
-            .mb-sm-15{
+            .mb-sm-15 {
                 margin-bottom: 15px;
             }
         }
@@ -89,13 +89,12 @@
             <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">Your Dedicated Account Team</h3>
                 <p class="style-corporate-text">
-                    Our booking process and rates are transparent and easy to understand, created to meet different budgets
-                    based on the location, features and amenities that our clients want.
+                    Our easy booking for corporate housing ensures a transparent and hassle-free process. We
+                    offer competitive rates tailored to different budgets, based on location, features, and amenities.
                 </p>
                 <p class="style-corporate-text">
-                    Your dedicated Account Management Team and our on-boarding process ensure we are fully briefed on all
-                    your
-                    needs, making repeat bookings super easy.
+                    Your corporate housing services in London ensure we’re fully briefed on your needs, making
+                    repeat bookings simple and efficient.
                 </p>
             </div>
         </div>
@@ -108,17 +107,13 @@
             <div class="col-md-4">
                 <h3 class="fs-48 fs-sm-25">Everything you Need</h3>
                 <p class="style-corporate-text">
-                    We work to simplify the customer journey, yet take the time to get to know our guests as we understand
-                    no
-                    two are the same. We listen and don't shy away from the human touches that make your team feel supported
-                    and
-                    cared for.
+                    We work to simplify the customer journey while providing personalized service. Our corporate
+                    housing services in London cater to teams of all sizes, ensuring their stay is tailored to their
+                    unique requirements.
                 </p>
-
                 <p class="style-corporate-text mb-5">
-                    Our varied portfolio allows us to accommodate all the needs of your team, ensuring their stay is
-                    tailored to
-                    them.
+                    From fully equipped properties to studio apartments in London, we
+                    accommodate all needs, making your team feel supported and cared for.
                 </p>
                 <a href="{{ route('view.Experience') }}" class="brand-btn mb-sm-25">Learn More</a>
             </div>
@@ -141,7 +136,8 @@
         <div class="row d-flex justify-content-around align-items-center mx-auto">
             @foreach ($fetchAllStandards as $record)
                 <div class="col-md col-12 text-center standard-card">
-                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}" class="img-fluid">
+                    <img src="{{ asset('Standards/' . $record->standard_icon) }}" alt="{{ $record->standard_text }}"
+                        class="img-fluid">
                     <p class="text-center fw-medium text-charcoal-black mt-3">{{ $record->standard_text }}</p>
                 </div>
             @endforeach

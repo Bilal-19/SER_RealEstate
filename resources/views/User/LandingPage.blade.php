@@ -156,8 +156,8 @@
                             value="{{ old('checkInDate') }}" onfocus="(this.type='date')">
                         <input type="text" placeholder="Departure" required class="form-control" name="checkOutDate"
                             value="{{ old('checkOutDate') }}" onfocus="(this.type='date')">
-                        <button class="search-btn" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"
-                                style="color:white;"></i></button>
+                        <button class="search-btn" type="submit" aria-label="Search"><i
+                                class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
                     </div>
                 </form>
             </div>
@@ -174,7 +174,10 @@
                     <h2>Houses <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h2>
                 </a>
                 <p class="col-md-11">
-                    If you need the extra space, book an entire place for your team or family.
+                    If you need extra space for your team or family, book large family homes in London. Our fully
+                    equipped properties are designed to meet your needs, offering comfort and convenience for
+                    short or long stays.
+
                 </p>
             </div>
             <div class="col-md-4 col-11">
@@ -184,7 +187,10 @@
                     <h2>Apartments <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h2>
                 </a>
                 <p class="col-md-11">
-                    Stay in some of the most iconic locations in London in shared buildings.
+                    Stay in studio apartments in London or shared buildings located in some of the city’s most
+                    iconic neighborhoods. Whether you’re traveling for work or leisure, we provide tailored stays
+                    for teams and individuals alike.
+
                 </p>
             </div>
             <div class="col-md-4 col-11">
@@ -193,7 +199,9 @@
                     <h2>Rooms <i class="fa-solid fa-chevron-right" style="color: #333333;"></i></h2>
                 </a>
                 <p class="col-md-11">
-                    Enjoy your own studio space with a common room to socialise with the rest of the team.
+                    Enjoy your own studio space with a common room, perfect for socializing with colleagues or
+                    friends. Our properties are ideal for corporate groups or small teams looking for a seamless
+                    and enjoyable stay.
                 </p>
             </div>
         </div>
@@ -206,8 +214,8 @@
                     <h3 class="fw-bold fs-48 fs-sm-25 col-md-10">Book your stay at {{ $topRatedApartment->apartment_name }}
                     </h3>
                     <p class="col-md-9 fs-18 fs-sm-16">{{ Str::limit($topRatedApartment->description, 200, '...') }}</p>
-                    <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}" alt="{{ $topRatedApartment->apartment_name }}"
-                        class="img-fluid mt-3">
+                    <img src="{{ asset('Apartment/Thubmbnail/' . $topRatedApartment->featured_image) }}"
+                        alt="{{ $topRatedApartment->apartment_name }}" class="img-fluid mt-3">
                     <a href="{{ route('Detail.View.Apartment', ['id' => $topRatedApartment->id]) }}"
                         id="explore-cta-apartment">Explore</a>
                 </div>
@@ -228,7 +236,8 @@
                     in
                     between. Putting the needs of our guests and clients first is at the forefront of everything we do.
                 </p>
-                <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn" aria-label="Learn more about corporate services">Learn more</a>
+                <a href="{{ route('View.Corporate') }}" target="_blank" class="learn-more-btn"
+                    aria-label="Learn more about corporate services">Learn more</a>
             </div>
             <div class="col-md-6 mt-sm-25">
                 <img src="{{ asset('assets/images/bed.webp') }}"
@@ -307,7 +316,8 @@
             </div>
 
             <div class="col-md-3 col-10 mx-auto text-center">
-                <img src="{{ asset('assets/images/protecting_people.webp') }}" alt="Provide security" class="img-fluid mb-3">
+                <img src="{{ asset('assets/images/protecting_people.webp') }}" alt="Provide security"
+                    class="img-fluid mb-3">
                 <h5>Feel Secure</h5>
                 <p class="mt-5 mb-sm-0">
                     We provide safe, secure accommodation with 24-hour support
