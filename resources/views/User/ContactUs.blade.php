@@ -1,5 +1,7 @@
 @extends('UserLayout.main')
-
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/contact-us">
+@endpush
 @push('style')
     <style>
         .enquiry-card img {

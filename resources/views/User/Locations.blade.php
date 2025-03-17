@@ -1,5 +1,9 @@
 @extends('UserLayout.main')
 
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/london-locations">
+@endpush
+
 @push('style')
     <style>
         .thumbnail-img {

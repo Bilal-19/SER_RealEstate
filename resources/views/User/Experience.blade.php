@@ -1,5 +1,9 @@
 @extends('UserLayout.main')
 
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/experience">
+@endpush
+
 @push('style')
     <style>
         .accordion-button {

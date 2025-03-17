@@ -1,5 +1,7 @@
 @extends('UserLayout.main')
-
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/booking-enquiry">
+@endpush
 @push('style')
     <style>
         .form-control,

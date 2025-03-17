@@ -1,5 +1,9 @@
 @extends('UserLayout.main')
 
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/property-type-house">
+@endpush
+
 @push('style')
     <style>
         #map {

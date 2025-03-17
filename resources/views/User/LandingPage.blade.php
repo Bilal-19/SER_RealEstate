@@ -1,5 +1,9 @@
 @extends('UserLayout.main')
 
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/">
+@endpush
+
 @push('style')
     <style>
         .home-bg-img {
@@ -146,8 +150,8 @@
 
         <div class="row mb-5">
             <div class="col-md-9 col-12 mx-auto" id="book-apartment">
-                <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements" class="form mt-3 mb-3"
-                    autocomplete="off">
+                <form action="{{ route('Get.Available.Apartment') }}" method="get" id="form-elements"
+                    class="form mt-3 mb-3" autocomplete="off">
                     @csrf
                     <div id="book-apartment-searchbar" class="input-group">
                         <input type="text" placeholder="Location" class="form-control" name="location"

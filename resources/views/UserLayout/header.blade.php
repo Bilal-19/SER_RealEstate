@@ -27,8 +27,7 @@
     @stack('style')
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 
-    <link rel="canonical" href="https://sterling-executive.com/">
-
+    @stack('canonical-tag')
 
     <style>
         .user-active-link {

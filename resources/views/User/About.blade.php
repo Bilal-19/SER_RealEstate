@@ -1,5 +1,9 @@
 @extends('UserLayout.main')
 
+@push('canonical-tag')
+    <link rel="canonical" href="https://sterling-executive.com/about">
+@endpush
+
 @push('style')
     <style>
         .about-bg {

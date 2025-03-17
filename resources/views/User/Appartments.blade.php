@@ -1,4 +1,5 @@
 @extends('UserLayout.main')
+
 @push('style')
     <style>
         .form-control {
