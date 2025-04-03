@@ -167,12 +167,6 @@
             </div>
         </div>
 
-        <div class="row text-end">
-            <div class="col-md-12">
-                <a href="{{route("Create.Session", ['id' => $findApartment->id])}}">Add to Favourite</a>
-            </div>
-        </div>
-
         <div class="row mt-5">
             <div class="col-md-7">
                 <h4 class="mb-5">{{ $findApartment->apartment_name }}</h4>
